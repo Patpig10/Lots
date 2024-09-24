@@ -10,7 +10,7 @@ public class HeartSystem : MonoBehaviour
     public int maxLife = 3;  // Starting number of hearts
     private int life;
     private List<GameObject> hearts = new List<GameObject>();  // List to store spawned hearts
-
+    public float heartSpacing = 10f;
     private bool dead;
 
     private void Start()
@@ -44,8 +44,8 @@ public class HeartSystem : MonoBehaviour
 
             RectTransform heartRectTransform = newHeart.GetComponent<RectTransform>();
 
-            // Set the anchored position of the new heart
-            heartRectTransform.anchoredPosition = new Vector2(i * (heartRectTransform.rect.width), 0);
+            // Set the anchored position of the new heart with the customizable spacing
+            heartRectTransform.anchoredPosition = new Vector2(i * (heartRectTransform.rect.width + heartSpacing), 0);
         }
 
         UpdateHeartVisuals();  // Refresh heart visuals after spawning

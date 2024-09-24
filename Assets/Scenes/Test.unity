@@ -6415,6 +6415,7 @@ MonoBehaviour:
   heartPrefab: {fileID: 9066762220057609595, guid: e04e179d1bab0a54f93279a6b01b27bf, type: 3}
   heartContainer: {fileID: 718178418}
   maxLife: 3
+  heartSpacing: -50
 --- !u!95 &719751715
 Animator:
   serializedVersion: 5
