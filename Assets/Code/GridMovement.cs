@@ -19,7 +19,20 @@ public class GridMovement : MonoBehaviour
         if (!isMoving)
         {
             // Get player input for horizontal (X axis) and vertical (Z axis) movement
-            Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            float verticalInput = Input.GetAxisRaw("Vertical");
+
+            Vector3 input = Vector3.zero;
+
+            // Check for diagonal input and prioritize one direction (horizontal or vertical)
+            if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
+            {
+                input = new Vector3(horizontalInput, 0, 0);  // Prioritize horizontal movement
+            }
+            else if (Mathf.Abs(verticalInput) > 0)
+            {
+                input = new Vector3(0, 0, verticalInput);  // Prioritize vertical movement
+            }
 
             if (input != Vector3.zero)
             {
