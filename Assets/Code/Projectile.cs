@@ -27,6 +27,7 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
+    // This method is called when the projectile collides with a non-trigger collider
     void OnCollisionEnter(Collision collision)
     {
         // Optionally, destroy the projectile upon collision with any object
@@ -35,6 +36,18 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // You can add additional logic here, such as dealing damage or effects upon collision
+        // Additional logic such as dealing damage can go here
+    }
+
+    // This method is called when the projectile enters a trigger collider
+    void OnTriggerEnter(Collider other)
+    {
+        // Optionally, destroy the projectile upon entering a trigger collider
+        if (destroyOnCollision)
+        {
+            Destroy(gameObject);
+        }
+
+        // Additional logic such as dealing damage or triggering effects can go here
     }
 }
