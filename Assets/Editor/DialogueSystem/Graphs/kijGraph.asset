@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: kijGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: kij
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 337b7035-206e-4a66-993f-b3bcd2a4e112
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: Hello world
+    <Speaker>k__BackingField: Jim
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b14eeb0e-bee0-4fb6-9711-a2515a530e70
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -22.4, y: 85.600006}
+  - <ID>k__BackingField: b14eeb0e-bee0-4fb6-9711-a2515a530e70
+    <Name>k__BackingField: q
+    <Text>k__BackingField: Lol
+    <Speaker>k__BackingField: Tom
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e4a288c6-45dd-4d50-b621-788aab5524c8
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 335.2, y: 85.600006}
+  - <ID>k__BackingField: e4a288c6-45dd-4d50-b621-788aab5524c8
+    <Name>k__BackingField: r
+    <Text>k__BackingField: uuu
+    <Speaker>k__BackingField: Jim
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 716.8, y: 72}
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - DialogueName
+  - q
+  - r
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
