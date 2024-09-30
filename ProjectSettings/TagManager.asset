@@ -9,6 +9,7 @@ TagManager:
   - ScreenCamera
   - cockpit_capitalLaser
   - Unpassable
+  - Enemy
   layers:
   - Default
   - TransparentFX

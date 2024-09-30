@@ -18,8 +18,8 @@ public class EnemyShooter : MonoBehaviour
         // Increment the timer each frame
         fireTimer += Time.deltaTime;
 
-        // Detect player and shoot if within range
-        if (PlayerInRange() && fireTimer >= fireRate && IsPlayerInFront())
+        // Only shoot if the player is in range, in front, and the fireTimer has reached the fireRate
+        if (PlayerInRange() && IsPlayerInFront() && fireTimer >= fireRate)
         {
             ShootProjectile();
             fireTimer = 0f;  // Reset the timer after shooting
@@ -37,14 +37,14 @@ public class EnemyShooter : MonoBehaviour
         return distanceToPlayer <= detectionRange;
     }
 
-    // Check if the player is in front of the enemy within a certain angle range
+    // Check if the player is in front of the enemy within a narrow forward range
     private bool IsPlayerInFront()
     {
         Vector3 directionToPlayer = (player.position - transform.position).normalized;
         float dotProduct = Vector3.Dot(transform.forward, directionToPlayer);
 
-        // Only allow shooting if the player is within a 45-degree arc in front of the enemy
-        return dotProduct > 0.7f;  // Adjust this value to narrow or widen the angle
+        // Only allow shooting if the player is directly in front within a narrow angle
+        return dotProduct > 0.95f;  // Increase the threshold to make the forward range narrower
     }
 
     // Shoot a projectile
@@ -53,11 +53,7 @@ public class EnemyShooter : MonoBehaviour
         // Create the projectile at the fire point's position and rotation
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
-        // Optionally, make the projectile face the player before firing
-        if (shootTowardPlayer && player != null)
-        {
-            Vector3 directionToPlayer = (player.position - firePoint.position).normalized;
-            projectile.transform.forward = directionToPlayer;  // Rotate the projectile to face the player
-        }
+        // Restrict the projectile to fire forward only
+        projectile.transform.forward = transform.forward;  // Always shoot in the enemy's forward direction
     }
 }

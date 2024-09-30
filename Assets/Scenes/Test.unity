@@ -3819,7 +3819,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8507136079666283124, guid: a620ad77edb017746a52e7888a2cc159, type: 3}
   firePoint: {fileID: 507803681}
   fireRate: 2
-  detectionRange: 855.9
+  detectionRange: 2.5
   player: {fileID: 719751712}
   shootTowardPlayer: 1
 --- !u!4 &356850201 stripped
@@ -5632,7 +5632,7 @@ GameObject:
   - component: {fileID: 611807360}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19080,8 +19080,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 29.366842, y: 31.287872, z: 21.64513}
+  m_Center: {x: 0.83386445, y: 1.1847385, z: 10.322558}
 --- !u!1 &2061724435
 GameObject:
   m_ObjectHideFlags: 0
