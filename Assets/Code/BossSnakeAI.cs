@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BossSnakeAI : MonoBehaviour
 {
-
     public Transform[] blocks;            // Array of block transforms representing grid cells
     public GameObject bodyPrefab;         // The body segment prefab
     public float movementSpeed = 3f;      // Movement speed
@@ -12,10 +11,11 @@ public class BossSnakeAI : MonoBehaviour
     public float changeTargetInterval = 5f; // Time interval to change target
     public float bodyGrowthInterval = 2f;  // Time interval to spawn new body segment
     public int initialBodySize = 3;       // Initial size of the boss (number of body segments)
+    public float blockCooldownDuration = 30f; // Cooldown duration for blocks
 
     private Transform targetBlock;        // The target block to move towards
     private bool isMoving = false;        // Check if movement is ongoing
-    private Queue<Transform> recentBlocks = new Queue<Transform>(); // Queue to track the last two visited blocks
+    private Dictionary<Transform, float> blockCooldowns = new Dictionary<Transform, float>(); // Dictionary to track block cooldowns
     private List<Transform> bodyParts = new List<Transform>();      // List of body segments
     private List<Vector3> previousPositions = new List<Vector3>();  // List of previous positions on the grid
 
@@ -69,8 +69,10 @@ public class BossSnakeAI : MonoBehaviour
 
             foreach (Transform block in blocks)
             {
-                if (!recentBlocks.Contains(block) && !IsBlockOccupied(block))  // Check if the block hasn't been visited recently and is not occupied
+                // Check if the block is not on cooldown and not occupied
+                if (!IsBlockOnCooldown(block) && !IsBlockOccupied(block))
                 {
+                    Debug.Log("Considering block: " + block.name); // Debugging line
                     float distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(block.position.x, 0, block.position.z));
                     if (distance < minDistance)
                     {
@@ -82,16 +84,26 @@ public class BossSnakeAI : MonoBehaviour
 
             if (nearestBlock != null && nearestBlock != targetBlock)
             {
-                // Update target block and manage the recent blocks queue
-                if (recentBlocks.Count == 2)
-                {
-                    recentBlocks.Dequeue();  // Remove the oldest block from the queue
-                }
-                recentBlocks.Enqueue(nearestBlock); // Add the new block to the queue
+                // Update target block and set the cooldown
                 targetBlock = nearestBlock;
+                blockCooldowns[targetBlock] = Time.time + blockCooldownDuration; // Set cooldown
                 Debug.Log("New target block set: " + targetBlock.name); // Debugging line
             }
+            else
+            {
+                Debug.Log("No valid target block found."); // Debugging line
+            }
         }
+    }
+
+    // Check if a block is on cooldown
+    private bool IsBlockOnCooldown(Transform block)
+    {
+        if (blockCooldowns.TryGetValue(block, out float cooldownEndTime))
+        {
+            return Time.time < cooldownEndTime; // Check if the current time is less than the cooldown end time
+        }
+        return false; // Block not found in cooldowns, meaning it can be used
     }
 
     // Method to check if a block is occupied by any body segment
@@ -188,7 +200,8 @@ public class BossSnakeAI : MonoBehaviour
             newBodyPosition = bodyParts[bodyParts.Count - 1].position - (bodyParts[bodyParts.Count - 1].forward); // Ensure it is 1 unit behind the last body part
         }
 
-        Transform newBodyPart = Instantiate(bodyPrefab, newBodyPosition, Quaternion.identity).transform;
+        // Instantiate the new body part with a rotation of x = -90 degrees
+        Transform newBodyPart = Instantiate(bodyPrefab, newBodyPosition, Quaternion.Euler(-90f, 0f, 0f)).transform;
         bodyParts.Add(newBodyPart);
 
         // Add the initial setup position to the list
@@ -200,18 +213,51 @@ public class BossSnakeAI : MonoBehaviour
 
     // Method to update the movement of body segments to follow the head on a grid
     private void UpdateBodyMovement()
-    {
-        // Ensure there are enough previous positions to move the body parts
-        if (previousPositions.Count <= bodyParts.Count) return;
+    { // Ensure there are enough previous positions to move the body parts
+      // Ensure there are enough previous positions to move the body parts
+        if (previousPositions.Count < bodyParts.Count + 1) return;
 
-        // Move each body part to the grid position that the segment ahead of it was in
-        for (int i = 0; i < bodyParts.Count; i++)
+        // Start from the last body segment and move each to the position of the segment ahead of it
+        for (int i = bodyParts.Count - 1; i >= 0; i--)
         {
-            if (i < previousPositions.Count) // Ensure the index is within bounds
+            // The first body segment follows the position the head was previously at
+            Vector3 targetPosition = previousPositions[i + 1];
+
+            // Calculate the direction for rotation
+            Vector3 direction = targetPosition - bodyParts[i].position;
+
+            // Move the body part to the new position
+            bodyParts[i].position = targetPosition;
+
+            // Rotate the body part to face the correct direction
+            if (direction != Vector3.zero)
             {
-                // Move the body part to the grid position 1 behind the segment ahead
-                bodyParts[i].position = previousPositions[i + 1]; // Directly set the body part position to one behind the previous segment
+                float angle = 0f;
+
+                // Determine the angle based on the direction of movement (right, left, up, or down)
+                if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+                {
+                    // Moving along the X axis (right/left)
+                    angle = direction.x > 0 ? -90f : 90f;  // Right or Left
+                }
+                else
+                {
+                    // Moving along the Y axis (up/down)
+                    angle = direction.y > 0 ? 0f : 180f;  // Up or Down
+                }
+
+                // Apply the rotation on the Z axis with a fixed -90 on the X axis
+                bodyParts[i].rotation = Quaternion.Euler(-90f, 0f, angle);
             }
+        }
+
+        // After all body parts have moved, insert the head's position at the beginning of the previous positions list
+        previousPositions.Insert(0, transform.position);
+
+        // Keep the previous positions list to the size of the body parts + 1 (for the head)
+        if (previousPositions.Count > bodyParts.Count + 1)
+        {
+            previousPositions.RemoveAt(previousPositions.Count - 1);
         }
     }
 }
