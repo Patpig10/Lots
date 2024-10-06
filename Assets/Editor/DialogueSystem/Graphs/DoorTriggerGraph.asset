@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: DoorTriggerGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: DoorTrigger
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 5e55089f-4e6d-4b6e-9613-9519323c3fa2
+    <Name>k__BackingField: 2
+    <Text>k__BackingField: You turn back
+    <Speaker>k__BackingField: 'Door
+
+'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1120.7999, y: -314.40002}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 13551e50-40bb-43e2-a790-9bf3732fad4c
+    <Name>k__BackingField: Door
+    <Text>k__BackingField: You need a key to unlock the door
+    <Speaker>k__BackingField: Door
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Don't have key
+      <NodeID>k__BackingField: 5e55089f-4e6d-4b6e-9613-9519323c3fa2
+    - <Text>k__BackingField: Have Key
+      <NodeID>k__BackingField: 759ba53d-2f25-4766-af2f-22d0837f1eb5
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: 197.59999, y: -90.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 759ba53d-2f25-4766-af2f-22d0837f1eb5
+    <Name>k__BackingField: 3
+    <Text>k__BackingField: Door unlocked
+    <Speaker>k__BackingField: 'Door
+
+'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1063.2, y: 124}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - 2
+  - Door
+  - 3
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
