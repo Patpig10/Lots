@@ -15,16 +15,13 @@ public class GridMovement : MonoBehaviour
 
     void Update()
     {
-        // Only process input if the player isn't currently moving
         if (!isMoving)
         {
-            // Get player input for horizontal (X axis) and vertical (Z axis) movement
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             float verticalInput = Input.GetAxisRaw("Vertical");
 
             Vector3 input = Vector3.zero;
 
-            // Check for diagonal input and prioritize one direction (horizontal or vertical)
             if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
             {
                 input = new Vector3(horizontalInput, 0, 0);  // Prioritize horizontal movement
@@ -36,34 +33,27 @@ public class GridMovement : MonoBehaviour
 
             if (input != Vector3.zero)
             {
-                // Rotate player to face the correct direction (90-degree increments)
                 RotatePlayerSmooth(input);
 
-                // Check if the nearest block is passable before moving
-                if (FindNearestBlock(input)) // Find nearest block returns true if a valid block is found
+                if (FindNearestBlock(input))
                 {
-                    // Trigger the "Move" animation immediately when movement starts
                     if (animator != null)
                     {
                         animator.SetTrigger("Move");
                     }
 
-                    // Start smooth movement to the nearest block
                     StartCoroutine(MoveToBlock());
                 }
             }
         }
 
-        // Smoothly update the rotation each frame
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
-    // Smoothly rotate the player based on the movement direction
     private void RotatePlayerSmooth(Vector3 input)
     {
         float targetAngle = 0f;
 
-        // Determine the target rotation angle based on the input direction
         if (input.x > 0)       // Moving right
             targetAngle = 90f;
         else if (input.x < 0)  // Moving left
@@ -73,46 +63,33 @@ public class GridMovement : MonoBehaviour
         else if (input.z < 0)  // Moving backward
             targetAngle = 180f;
 
-        // Set the target rotation to smoothly rotate towards
         targetRotation = Quaternion.Euler(0, targetAngle, 0);
     }
 
-    // Find the nearest block in the direction of input
-    // Return true if a valid block is found, otherwise false
-
-    private bool FindNearestBlock(Vector3 direction)
+    public bool FindNearestBlock(Vector3 direction)
     {
         float minDistance = float.MaxValue;
         Transform nearestBlock = null;
 
-        // Normalize the direction once to avoid recalculating
         Vector3 normalizedDirection = direction.normalized;
 
         foreach (Transform block in blocks)
         {
-            // Calculate the vector from player to block and normalize
             Vector3 directionToBlock = (block.position - transform.position).normalized;
-
-            // Calculate dot product to check if the block is in the same direction as input
             float dotProduct = Vector3.Dot(normalizedDirection, directionToBlock);
 
-            // Only consider blocks in the direction of movement
             if (dotProduct > 0.9f)
             {
-                // Calculate distance to the block
                 float distance = Vector3.Distance(transform.position, block.position);
 
-                // If the block is unpassable and it's closer than other blocks, stop movement
                 if (block.CompareTag("Unpassable"))
                 {
-                    // If an unpassable block is in the direction and closer than others, stop movement
                     if (distance < minDistance)
                     {
-                        return false;  // Immediately stop if unpassable block is closest
+                        return false;
                     }
                 }
 
-                // If this block is passable and closer than previously found blocks, select it
                 if (distance < minDistance)
                 {
                     minDistance = distance;
@@ -121,20 +98,80 @@ public class GridMovement : MonoBehaviour
             }
         }
 
-        // Set the target block if one was found
         if (nearestBlock != null)
         {
             targetBlock = nearestBlock;
             return true;
         }
 
-        // No valid block found in the direction
         return false;
     }
 
+    public IEnumerator MoveToBlock()
+    {
+        isMoving = true;
 
-    // Coroutine for smooth movement to the target block
-    private IEnumerator MoveToBlock()
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = new Vector3(targetBlock.position.x, startPosition.y, targetBlock.position.z);
+        float journeyLength = Vector3.Distance(startPosition, targetPosition);
+        float startTime = Time.time;
+
+        while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
+        {
+            float distanceCovered = (Time.time - startTime) * movementSpeed;
+            float fractionOfJourney = distanceCovered / journeyLength;
+            transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+
+        isMoving = false;
+    }
+
+    public void Knockback(int knockbackDistance)
+    {
+        StartCoroutine(ApplyKnockback(knockbackDistance));
+    }
+
+    private IEnumerator ApplyKnockback(int knockbackDistance)
+    {
+        isMoving = true;  // Prevent other inputs during knockback
+
+        Vector3 knockbackDirection = new Vector3(0, 0, -1);  // Knockback is towards -Z (backwards)
+
+        for (int i = 0; i < knockbackDistance; i++)
+        {
+            if (FindNearestBlock(knockbackDirection))
+            {
+                Vector3 startPosition = transform.position;
+                Vector3 targetPosition = new Vector3(targetBlock.position.x, startPosition.y, targetBlock.position.z);
+
+                float journeyLength = Vector3.Distance(startPosition, targetPosition);
+                float startTime = Time.time;
+
+                while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
+                {
+                    float distanceCovered = (Time.time - startTime) * movementSpeed;
+                    float fractionOfJourney = distanceCovered / journeyLength;
+                    transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
+                    yield return null;
+                }
+
+                transform.position = targetPosition;
+            }
+            else
+            {
+                // If no valid block is found, stop the knockback process
+                break;
+            }
+        }
+
+        isMoving = false;  // Re-enable movement after knockback is complete
+    }
+
+
+    public IEnumerator MoveToBlockWithStrength(float knockbackSpeed)
     {
         isMoving = true;  // Set the flag to prevent movement while transitioning
 
@@ -145,7 +182,7 @@ public class GridMovement : MonoBehaviour
 
         while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
         {
-            float distanceCovered = (Time.time - startTime) * movementSpeed;
+            float distanceCovered = (Time.time - startTime) * knockbackSpeed;
             float fractionOfJourney = distanceCovered / journeyLength;
             transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
             yield return null;  // Wait for the next frame
@@ -154,18 +191,6 @@ public class GridMovement : MonoBehaviour
         transform.position = targetPosition;  // Snap to the final target position
 
         isMoving = false;  // Allow new movements
-    }
-    public void Knockback()
-    {
-        // Define the knockback direction (down on the grid, which is negative Z)
-        Vector3 knockbackDirection = new Vector3(0, 0, -1);
-
-        // Check if the nearest block in the knockback direction is passable
-        if (FindNearestBlock(knockbackDirection))
-        {
-            // Start movement to the block one grid down
-            StartCoroutine(MoveToBlock());
-        }
     }
 }
 

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 10f;       // Speed of the projectile
-    public float lifetime = 5f;     // Time before the projectile is destroyed
-    public bool destroyOnCollision = true; // Whether to destroy the projectile on collision
+    public float speed = 10f;                // Speed of the projectile
+    public float lifetime = 5f;              // Time before the projectile is destroyed
+    public bool destroyOnCollision = true;   // Whether to destroy the projectile on collision
+    public int knockbackDistance = 2;        // The number of grid cells to knock back the player
+    public float knockbackStrength = 5f;     // The strength of the knockback (speed of knockback movement)
 
     void Start()
     {
@@ -23,11 +25,42 @@ public class Projectile : MonoBehaviour
     // Move the projectile forward along its local forward axis
     private void MoveForward()
     {
-        // Move the projectile along its forward direction at the defined speed
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    // This method is called when the projectile collides with a non-trigger collider
+    // Handle non-trigger collisions (e.g., obstacles)
+  
+    // Handle trigger collisions (e.g., hitting the player)
+    void OnTriggerEnter(Collider other)
+    {
+        // Check if the collided object is the player
+        if (other.CompareTag("Player"))
+        {
+            // Try to get the PlayerKnockbackProjectile script attached to the player
+            PlayerKnockbackTest playerKnockback = other.GetComponent<PlayerKnockbackTest>();
+
+            if (playerKnockback != null)
+            {
+                // Calculate knockback direction (away from the projectile)
+                Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
+
+                // Apply knockback to the player
+               // playerKnockback.ApplyKnockback(knockbackDirection, knockbackDistance, knockbackStrength);
+            }
+
+            // Destroy the projectile upon hitting the player
+            if (destroyOnCollision)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else if (destroyOnCollision)
+        {
+            // Optionally, destroy the projectile upon entering a trigger collider that's not the player
+            Destroy(gameObject);
+        }
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         // Optionally, destroy the projectile upon collision with any object
@@ -35,19 +68,6 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        // Additional logic such as dealing damage can go here
     }
 
-    // This method is called when the projectile enters a trigger collider
-    void OnTriggerEnter(Collider other)
-    {
-        // Optionally, destroy the projectile upon entering a trigger collider
-        if (destroyOnCollision)
-        {
-            Destroy(gameObject);
-        }
-
-        // Additional logic such as dealing damage or triggering effects can go here
-    }
 }
