@@ -10,6 +10,7 @@ TagManager:
   - cockpit_capitalLaser
   - Unpassable
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerKnockbackTest : MonoBehaviour
 {
-    public float movementSpeed = 5f;       // Movement speed for knockback
-    public int knockbackDistance = 2;      // How many grid blocks to knock the player back
+    public int knockbackDistance = 2;      // Distance to knock back the player
     public GridMovement gridMovement;      // Reference to the existing GridMovement script
+    public float knockbackCooldown = 3f;   // Time before the player can move again after knockback
 
     private bool isKnockedBack = false;    // Check if the player is currently being knocked back
 
@@ -15,43 +15,38 @@ public class PlayerKnockbackTest : MonoBehaviour
         // Testing knockback with the "K" key
         if (Input.GetKeyDown(KeyCode.K) && !isKnockedBack)
         {
-            Vector3 knockbackDirection = -transform.forward;  // Knockback in the opposite direction of player's forward
-            StartCoroutine(ApplyKnockback(knockbackDirection, knockbackDistance));
+            // Knockback in the opposite direction of the player's current forward direction
+            Vector3 knockbackDirection = -transform.forward;
+            StartCoroutine(ApplyKnockback(knockbackDirection, knockbackDistance, 0f)); // No delay for test
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // Check if the collided object is a projectile
+        // Check if the collided object is a bullet
         if (other.CompareTag("Bullet") && !isKnockedBack)
         {
-            // Calculate knockback direction based on projectile's position relative to player
+            // Calculate knockback direction based on bullet's position relative to the player
             Vector3 knockbackDirection = (transform.position - other.transform.position).normalized;
-
-            // Start knockback coroutine
-            StartCoroutine(ApplyKnockback(knockbackDirection, knockbackDistance));
+            StartCoroutine(ApplyKnockback(knockbackDirection, knockbackDistance, knockbackCooldown));
         }
     }
 
-    public IEnumerator ApplyKnockback(Vector3 direction, int distance)
+    // Apply knockback with a cooldown before movement is allowed again
+    public IEnumerator ApplyKnockback(Vector3 direction, int distance, float cooldownTime)
     {
         isKnockedBack = true;
 
         for (int i = 0; i < distance; i++)
         {
-            // Use FindNearestBlock method from GridMovement to find the next block in the knockback direction
-            if (gridMovement.FindNearestBlock(direction))
-            {
-                // Move to the block using the existing MoveToBlock logic
-                yield return StartCoroutine(gridMovement.MoveToBlock());
-            }
-            else
-            {
-                // If no valid block is found, break the loop
-                break;
-            }
+            // Call the Knockback method from GridMovement
+            gridMovement.Knockback(1, direction); // Knockback by 1 block each time in the given direction
+            yield return new WaitForSeconds(0.1f); // Adjust timing if needed
         }
 
-        isKnockedBack = false;
+        // Wait for the cooldown period (3 seconds if hit by a bullet)
+        yield return new WaitForSeconds(cooldownTime);
+
+        isKnockedBack = false;  // Allow player movement again after the cooldown
     }
 }

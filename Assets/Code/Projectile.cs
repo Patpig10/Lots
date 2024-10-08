@@ -28,15 +28,13 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    // Handle non-trigger collisions (e.g., obstacles)
-  
     // Handle trigger collisions (e.g., hitting the player)
     void OnTriggerEnter(Collider other)
     {
         // Check if the collided object is the player
         if (other.CompareTag("Player"))
         {
-            // Try to get the PlayerKnockbackProjectile script attached to the player
+            // Try to get the PlayerKnockbackTest script attached to the player
             PlayerKnockbackTest playerKnockback = other.GetComponent<PlayerKnockbackTest>();
 
             if (playerKnockback != null)
@@ -45,7 +43,7 @@ public class Projectile : MonoBehaviour
                 Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
 
                 // Apply knockback to the player
-               // playerKnockback.ApplyKnockback(knockbackDirection, knockbackDistance, knockbackStrength);
+               // StartCoroutine(playerKnockback.ApplyKnockback(knockbackDirection, knockbackDistance));
             }
 
             // Destroy the projectile upon hitting the player

@@ -129,16 +129,14 @@ public class GridMovement : MonoBehaviour
         isMoving = false;
     }
 
-    public void Knockback(int knockbackDistance)
+    public void Knockback(int knockbackDistance, Vector3 knockbackDirection)
     {
-        StartCoroutine(ApplyKnockback(knockbackDistance));
+        StartCoroutine(ApplyKnockback(knockbackDistance, knockbackDirection));
     }
 
-    private IEnumerator ApplyKnockback(int knockbackDistance)
+    private IEnumerator ApplyKnockback(int knockbackDistance, Vector3 knockbackDirection)
     {
         isMoving = true;  // Prevent other inputs during knockback
-
-        Vector3 knockbackDirection = new Vector3(0, 0, -1);  // Knockback is towards -Z (backwards)
 
         for (int i = 0; i < knockbackDistance; i++)
         {
@@ -169,7 +167,6 @@ public class GridMovement : MonoBehaviour
 
         isMoving = false;  // Re-enable movement after knockback is complete
     }
-
 
     public IEnumerator MoveToBlockWithStrength(float knockbackSpeed)
     {
