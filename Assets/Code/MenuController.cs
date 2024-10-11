@@ -13,14 +13,18 @@ public class MenuController : MonoBehaviour
 
     void Start()
     {
-        // Calculate the closed position: Ensure the menu is completely off-screen or hidden
-        closedPosition = new Vector2(button.anchoredPosition.x + button.rect.width + dropdownMenu.rect.width, button.anchoredPosition.y);
+        // Ensure the button and dropdownMenu are using the same anchor and pivot settings.
+        dropdownMenu.pivot = new Vector2(0, 0.5f);  // Set pivot to be at the left-middle
+        button.pivot = new Vector2(0, 0.5f);        // Set pivot of button to left-middle for consistency
 
-        // Calculate the open position: Place it beside the button, fully visible
-        openPosition = new Vector2(button.anchoredPosition.x + button.rect.width, button.anchoredPosition.y);
+        // Calculate the closed position: Ensure the menu is completely off-screen to the right
+        closedPosition = new Vector2(button.localPosition.x + button.rect.width + dropdownMenu.rect.width, button.localPosition.y);
+
+        // Calculate the open position: Place it exactly beside the button
+        openPosition = new Vector2(button.localPosition.x + button.rect.width, button.localPosition.y);
 
         // Set the initial position of the menu to be completely closed (off to the side)
-        dropdownMenu.anchoredPosition = closedPosition;
+        dropdownMenu.localPosition = closedPosition;
     }
 
     public void ToggleMenu()
@@ -35,14 +39,14 @@ public class MenuController : MonoBehaviour
         Vector2 targetPosition = open ? openPosition : closedPosition;
 
         // Continue sliding until the menu reaches its target position
-        while (Vector2.Distance(dropdownMenu.anchoredPosition, targetPosition) > 0.1f)
+        while (Vector2.Distance(dropdownMenu.localPosition, targetPosition) > 0.1f)
         {
             // Lerp smoothly between current position and target position
-            dropdownMenu.anchoredPosition = Vector2.Lerp(dropdownMenu.anchoredPosition, targetPosition, Time.deltaTime * 10f);
+            dropdownMenu.localPosition = Vector2.Lerp(dropdownMenu.localPosition, targetPosition, Time.deltaTime * 10f);
             yield return null; // wait for the next frame
         }
 
         // Ensure it exactly hits the target position
-        dropdownMenu.anchoredPosition = targetPosition;
+        dropdownMenu.localPosition = targetPosition;
     }
 }
