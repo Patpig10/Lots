@@ -8190,7 +8190,7 @@ MonoBehaviour:
   m_RenderPostProcessing: 1
   m_Antialiasing: 1
   m_AntialiasingQuality: 2
-  m_StopNaN: 0
+  m_StopNaN: 1
   m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
@@ -9191,7 +9191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39375, y: 0}
   m_AnchorMax: {x: 0.5, y: 0.3044445}
-  m_AnchoredPosition: {x: -1.1230011, y: -0.80999756}
+  m_AnchoredPosition: {x: -1.1229858, y: -0.80999756}
   m_SizeDelta: {x: 77.740005, y: -75.73999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1521032390
