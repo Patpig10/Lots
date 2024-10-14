@@ -24,7 +24,7 @@ public class PlayerKnockbackTest : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Check if the collided object is a bullet
-        if (other.CompareTag("Bullet") && !isKnockedBack)
+        if (other.CompareTag("Bullet")|| other.CompareTag("Weapon") && !isKnockedBack)
         {
             // Calculate knockback direction based on bullet's position relative to the player
             Vector3 knockbackDirection = (transform.position - other.transform.position).normalized;
