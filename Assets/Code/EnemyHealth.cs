@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100; // The enemy's maximum health
     private int currentHealth; // The enemy's current health
     public Animator animator; // Reference to the Animator component
+    public GameObject Body;
    // public BoxCollider BoxCollider; // Reference to the BoxCollider component
 
     void Start()
@@ -38,7 +39,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         // For now, we just destroy the enemy GameObject
-        Destroy(gameObject);
+        Destroy(Body);
 
         // You could add effects like playing a death animation or dropping items here
     }
