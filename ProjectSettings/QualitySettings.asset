@@ -56,14 +56,11 @@ QualitySettings:
     terrainMaxTrees: 50
     excludedTargetPlatforms:
     - Nintendo Switch
-    - Standalone
-    - Android
     - iPhone
     - PS4
     - PS5
     - GameCoreXboxOne
     - GameCoreScarlett
-    - Windows Store Apps
   - serializedVersion: 3
     name: Mobile High
     pixelLightCount: 2
@@ -113,12 +110,10 @@ QualitySettings:
     terrainFadeLength: 5
     terrainMaxTrees: 50
     excludedTargetPlatforms:
-    - Standalone
     - PS4
     - PS5
     - GameCoreXboxOne
     - GameCoreScarlett
-    - Windows Store Apps
   - serializedVersion: 3
     name: PC Low
     pixelLightCount: 2
@@ -168,15 +163,12 @@ QualitySettings:
     terrainFadeLength: 5
     terrainMaxTrees: 50
     excludedTargetPlatforms:
-    - Android
     - iPhone
-    - Standalone
     - GameCoreXboxOne
     - Nintendo Switch
     - PS4
     - PS5
     - GameCoreScarlett
-    - Windows Store Apps
   - serializedVersion: 3
     name: PC High
     pixelLightCount: 2
@@ -226,7 +218,6 @@ QualitySettings:
     terrainFadeLength: 5
     terrainMaxTrees: 50
     excludedTargetPlatforms:
-    - Android
     - Nintendo Switch
     - iPhone
   m_TextureMipmapLimitGroupNames: []
