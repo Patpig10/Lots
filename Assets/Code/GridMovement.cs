@@ -6,15 +6,29 @@ public class GridMovement : MonoBehaviour
 {
     public float movementSpeed = 5f;      // Movement speed
     public float rotationSpeed = 180f;    // Speed of the rotation in degrees per second
-    public Transform[] blocks;            // Array of block transforms representing grid cells
-    public Animator animator;             // Animator reference
+    public Transform[] blocks;             // Array of block transforms representing grid cells
+    public Animator animator;              // Animator reference
 
-    private Transform targetBlock;        // The target block to move towards
-    private bool isMoving = false;        // Check if movement is ongoing
-    private Quaternion targetRotation;    // The target rotation to smoothly rotate towards
+    private Transform targetBlock;         // The target block to move towards
+    private bool isMoving = false;         // Check if movement is ongoing
+    private Quaternion targetRotation;     // The target rotation to smoothly rotate towards
+    public float searchRadius = 5f;        // Define the radius for searching blocks
+
+    void Start()
+    {
+        // Populate the blocks array with all GrassBlock objects in the scene
+        GrassBlock[] grassBlocks = FindObjectsOfType<GrassBlock>();
+        blocks = new Transform[grassBlocks.Length];
+
+        for (int i = 0; i < grassBlocks.Length; i++)
+        {
+            blocks[i] = grassBlocks[i].transform; // Add the transform of each GrassBlock to the blocks array
+        }
+    }
 
     void Update()
     {
+
         if (!isMoving)
         {
             float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -82,41 +96,53 @@ public class GridMovement : MonoBehaviour
                 continue; // Skip destroyed blocks
             }
 
-            Vector3 directionToBlock = (block.position - transform.position).normalized;
-            float dotProduct = Vector3.Dot(normalizedDirection, directionToBlock);
+            // Calculate the distance from the player to the block
+            float distanceToBlock = Vector3.Distance(transform.position, block.position);
 
-            if (dotProduct > 0.9f)
+            // Only consider blocks within the search radius
+            if (distanceToBlock <= searchRadius)
             {
-                float distance = Vector3.Distance(transform.position, block.position);
+                Vector3 directionToBlock = (block.position - transform.position).normalized;
+                float dotProduct = Vector3.Dot(normalizedDirection, directionToBlock);
 
-                if (block.CompareTag("Unpassable"))
+                // Only proceed if the block is within a certain angle (facing)
+                if (dotProduct > 0.9f)
                 {
-                    if (distance < minDistance)
+                    // Update the nearest block if it's closer and valid
+                    if (distanceToBlock < minDistance)
                     {
-                        return false;
+                        minDistance = distanceToBlock;
+                        nearestBlock = block; // Store the nearest valid block
                     }
-                }
-
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    nearestBlock = block;
                 }
             }
         }
 
         if (nearestBlock != null)
         {
-            targetBlock = nearestBlock;
-            return true;
+            // Check if the nearest block is unpassable before setting it as the target
+            if (nearestBlock.CompareTag("Unpassable"))
+            {
+                return false; // Block the movement if the target block is unpassable
+            }
+
+            targetBlock = nearestBlock; // Set the target block to move towards
+            return true; // Found a valid target block to move towards
         }
 
-        return false;
+        return false; // No valid block found
     }
 
     public IEnumerator MoveToBlock()
     {
         isMoving = true;
+
+        if (targetBlock == null)
+        {
+            Debug.LogWarning("Target block is null, cannot move.");
+            isMoving = false;
+            yield break; // Exit if there's no target block
+        }
 
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = new Vector3(targetBlock.position.x, startPosition.y, targetBlock.position.z);
@@ -134,6 +160,7 @@ public class GridMovement : MonoBehaviour
         transform.position = targetPosition;
 
         isMoving = false;
+        Debug.Log("Movement completed to block: " + targetBlock.name);
     }
 
     public void Knockback(int knockbackDistance, Vector3 knockbackDirection)
