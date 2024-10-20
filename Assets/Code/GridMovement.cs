@@ -35,6 +35,7 @@ public class GridMovement : MonoBehaviour
             {
                 RotatePlayerSmooth(input);
 
+                // Find the nearest block and check for unpassable blocks
                 if (FindNearestBlock(input))
                 {
                     if (animator != null)
@@ -75,6 +76,12 @@ public class GridMovement : MonoBehaviour
 
         foreach (Transform block in blocks)
         {
+            // Check if the block is still valid
+            if (block == null)
+            {
+                continue; // Skip destroyed blocks
+            }
+
             Vector3 directionToBlock = (block.position - transform.position).normalized;
             float dotProduct = Vector3.Dot(normalizedDirection, directionToBlock);
 
@@ -190,5 +197,3 @@ public class GridMovement : MonoBehaviour
         isMoving = false;  // Allow new movements
     }
 }
-
-

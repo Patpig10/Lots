@@ -84,5 +84,8 @@ public class HeartSystem : MonoBehaviour
             hearts[i].SetActive(i < life);  // Show hearts that represent the current life
         }
     }
-
+    public int GetCurrentLife()
+    {
+        return life;
+    }
 }

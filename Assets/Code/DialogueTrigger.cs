@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
+
     [SerializeField] public DSDialogueSO startingDialogue;    // Starting dialogue object
     [SerializeField] public TextMeshProUGUI textUI;           // Text UI for the dialogue text
     [SerializeField] public TextMeshProUGUI nameUI;           // Text UI for the speaker's name
@@ -42,7 +43,7 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void HideText()
+    public void HideText()
     {
         textUI.gameObject.SetActive(false);            // Hide the text UI
         nameUI.gameObject.SetActive(false);            // Hide the name UI
@@ -62,6 +63,7 @@ public class DialogueTrigger : MonoBehaviour
         if (nextDialogue == null)
         {
             Debug.Log("End of dialogue");
+            HideText(); // Hide the dialogue when there are no more dialogues
             return;
         }
 

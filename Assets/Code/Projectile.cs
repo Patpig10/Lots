@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     public bool destroyOnCollision = true;   // Whether to destroy the projectile on collision
     public int knockbackDistance = 2;        // The number of grid cells to knock back the player
     public float knockbackStrength = 5f;     // The strength of the knockback (speed of knockback movement)
-
+    public bool player = false;              // Whether the projectile is a player projectile
     void Start()
     {
         // Destroy the projectile after 'lifetime' seconds to prevent it from existing indefinitely
@@ -34,18 +34,23 @@ public class Projectile : MonoBehaviour
         // Check if the collided object is the player
         if (other.CompareTag("Player"))
         {
-            // Try to get the PlayerKnockbackTest script attached to the player
-            PlayerKnockbackTest playerKnockback = other.GetComponent<PlayerKnockbackTest>();
-
-            if (playerKnockback != null)
+            if (player == false)
             {
-                // Calculate knockback direction (away from the projectile)
-                Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
 
-                // Apply knockback to the player
-               // StartCoroutine(playerKnockback.ApplyKnockback(knockbackDirection, knockbackDistance));
+                // Try to get the PlayerKnockbackTest script attached to the player
+                PlayerKnockbackTest playerKnockback = other.GetComponent<PlayerKnockbackTest>();
+
+
+
+                if (playerKnockback != null)
+                {
+                    // Calculate knockback direction (away from the projectile)
+                    Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
+
+                    // Apply knockback to the player
+                    // StartCoroutine(playerKnockback.ApplyKnockback(knockbackDirection, knockbackDistance));
+                }
             }
-
             // Destroy the projectile upon hitting the player
             if (destroyOnCollision)
             {
