@@ -31,11 +31,15 @@ public class Projectile : MonoBehaviour
     // Handle trigger collisions (e.g., hitting the player)
     void OnTriggerEnter(Collider other)
     {
-        // Check if the collided object is the player
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Unpassable"))
         {
-            if (player == false)
-            {
+            Destroy(gameObject);
+
+        }
+        // Check if the collided object is the player
+        if (other.CompareTag("enemys"))
+        {
+            
 
                 // Try to get the PlayerKnockbackTest script attached to the player
                 PlayerKnockbackTest playerKnockback = other.GetComponent<PlayerKnockbackTest>();
@@ -50,18 +54,21 @@ public class Projectile : MonoBehaviour
                     // Apply knockback to the player
                     // StartCoroutine(playerKnockback.ApplyKnockback(knockbackDirection, knockbackDistance));
                 }
-            }
             // Destroy the projectile upon hitting the player
             if (destroyOnCollision)
             {
-                Destroy(gameObject);
+                Destroy(gameObject, 0.1f);
             }
         }
         else if (destroyOnCollision)
         {
             // Optionally, destroy the projectile upon entering a trigger collider that's not the player
-            Destroy(gameObject);
+            //Destroy(gameObject, 0.1f);
         }
+
+        //Destroy(gameObject) after 0.4 second
+        //Destroy(gameObject, 0.1f);
+
     }
 
     void OnCollisionEnter(Collision collision)
