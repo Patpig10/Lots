@@ -12,20 +12,32 @@ public class AttackHitbox : MonoBehaviour
         // Check if the player entered the hitbox
         if (other.CompareTag("Player"))
         {
-            // Get the player's HeartSystem component
-            HeartSystem playerHealth = other.GetComponent<HeartSystem>();
+            // Get the player's ShieldSystem component
+            ShieldSystem shieldSystem = other.GetComponent<ShieldSystem>();
 
-            if (playerHealth != null)
+            // If the shield is active, absorb damage
+            if (shieldSystem != null && shieldSystem.shieldActive)
             {
-                // Apply damage to the player using their HeartSystem
-                playerHealth.TakeDamage(damageAmount);
+                // Absorb damage using the shield's TakeDamageWithShield method
+                shieldSystem.TakeDamageWithShield(damageAmount);
+            }
+            else
+            {
+                // Get the player's HeartSystem component
+                HeartSystem playerHealth = other.GetComponent<HeartSystem>();
 
-                // Optionally apply knockback to the player (optional if needed)
-                Rigidbody playerRigidbody = other.GetComponent<Rigidbody>();
-                if (playerRigidbody != null)
+                if (playerHealth != null)
                 {
-                    Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
-                    playerRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode.Impulse);
+                    // Apply damage to the player using their HeartSystem
+                    playerHealth.TakeDamage(damageAmount);
+
+                    // Optionally apply knockback to the player (optional if needed)
+                    Rigidbody playerRigidbody = other.GetComponent<Rigidbody>();
+                    if (playerRigidbody != null)
+                    {
+                        Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
+                        playerRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode.Impulse);
+                    }
                 }
             }
         }

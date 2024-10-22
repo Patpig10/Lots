@@ -125,6 +125,7 @@ MonoBehaviour:
   destroyOnCollision: 1
   knockbackDistance: 2
   knockbackStrength: 5
+  player: 0
 --- !u!54 &5593586993860453390
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ GameObject:
   - component: {fileID: 5790321883752512200}
   m_Layer: 0
   m_Name: Bullet (1)
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,9 +290,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   lifetime: 5
-  destroyOnCollision: 0
+  destroyOnCollision: 1
   knockbackDistance: 2
   knockbackStrength: 5
+  player: 1
 --- !u!54 &7488755093207375237
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -331,5 +333,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbe1665f98cf6c4586982d74619c9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 0
-  knockbackForce: 5
+  damageAmount: 1
+  knockbackForce: 0

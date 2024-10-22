@@ -681,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   animator: {fileID: 4814348461490133317}
+  Body: {fileID: 5030527555155780478}
 --- !u!65 &2534285300527151452
 BoxCollider:
   m_ObjectHideFlags: 0

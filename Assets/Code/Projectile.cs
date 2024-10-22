@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -49,7 +50,7 @@ public class Projectile : MonoBehaviour
                 if (playerKnockback != null)
                 {
                     // Calculate knockback direction (away from the projectile)
-                    Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
+                  //  Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
 
                     // Apply knockback to the player
                     // StartCoroutine(playerKnockback.ApplyKnockback(knockbackDirection, knockbackDistance));
@@ -68,6 +69,17 @@ public class Projectile : MonoBehaviour
 
         //Destroy(gameObject) after 0.4 second
         //Destroy(gameObject, 0.1f);
+
+        if (other.CompareTag("Enemy"))
+        {
+            if (destroyOnCollision)
+            {
+                Destroy(gameObject, 0.1f);
+            }
+
+
+        }
+
 
     }
 

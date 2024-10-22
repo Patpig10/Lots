@@ -323,6 +323,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.unity.vfx-toolbox": {
+      "version": "https://github.com/Unity-Technologies/VFXToolbox.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "0b3d796c44356993625372ecb248fbe5149bd6fc"
+    },
     "com.unity.visualscripting": {
       "version": "1.9.4",
       "depth": 1,

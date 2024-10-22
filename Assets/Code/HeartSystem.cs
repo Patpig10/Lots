@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;  // For changing the heart colors
+
 
 public class HeartSystem : MonoBehaviour
 {
@@ -50,6 +52,7 @@ public class HeartSystem : MonoBehaviour
 
         UpdateHeartVisuals();  // Refresh heart visuals after spawning
     }
+
     public void TakeDamage(int damage)
     {
         life = Mathf.Clamp(life - damage, 0, maxLife);  // Decrease life but keep it within valid bounds
@@ -84,6 +87,20 @@ public class HeartSystem : MonoBehaviour
             hearts[i].SetActive(i < life);  // Show hearts that represent the current life
         }
     }
+
+    // Method to change the color of all hearts (blue for shield active, white for normal)
+    public void SetHeartColor(Color color)
+    {
+        foreach (GameObject heart in hearts)
+        {
+            Image heartImage = heart.GetComponent<Image>();
+            if (heartImage != null)
+            {
+                heartImage.color = color;
+            }
+        }
+    }
+
     public int GetCurrentLife()
     {
         return life;
