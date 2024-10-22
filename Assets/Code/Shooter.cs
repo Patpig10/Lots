@@ -23,13 +23,13 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+       /* if (Input.GetKeyDown(KeyCode.Q))
         {
             ShootProjectile();
-        }
+        }*/
     }
 
-    void ShootProjectile()
+  public void ShootProjectile()
     {
         // Check if the player has enough hearts to shoot
         if (heartSystem != null && heartSystem.GetCurrentLife() > 0)
