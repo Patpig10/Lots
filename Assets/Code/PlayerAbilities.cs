@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAbilities : MonoBehaviour
 {
@@ -17,6 +18,14 @@ public class PlayerAbilities : MonoBehaviour
     public bool isShieldUnlocked = false; // True if the Ice boss is defeated
     public bool isAoEUnlocked = false; // True if the Fire boss is defeated
 
+
+    // UI elements
+    public Image abilityIcon;
+
+    // Icon sprites for abilities
+    public Sprite shootIcon;
+    public Sprite shieldIcon;
+    public Sprite aoeIcon;
     private void Start()
     {
         // Get references to the components
@@ -26,6 +35,7 @@ public class PlayerAbilities : MonoBehaviour
 
         // Set initial selected ability (optional)
         selectedAbility = Ability.Shoot; // Default to Shoot
+
     }
 
     private void Update()
@@ -49,6 +59,8 @@ public class PlayerAbilities : MonoBehaviour
         {
             UseAbility();
         }
+        UpdateAbilityIcon();
+
     }
 
     private void SelectAbility(Ability ability)
@@ -117,5 +129,23 @@ public class PlayerAbilities : MonoBehaviour
     {
         isAoEUnlocked = true;
         Debug.Log("AoE ability unlocked!");
+    }
+
+    private void UpdateAbilityIcon()
+    {
+        switch (selectedAbility)
+        {
+            case Ability.Shoot:
+                abilityIcon.sprite = shootIcon;
+                break;
+
+            case Ability.Shield:
+                abilityIcon.sprite = shieldIcon;
+                break;
+
+            case Ability.AoE:
+                abilityIcon.sprite = aoeIcon;
+                break;
+        }
     }
 }
