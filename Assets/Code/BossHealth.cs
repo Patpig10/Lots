@@ -1,15 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BossHealth : MonoBehaviour
 {
 
     public int mainHealth = 20; // Set the total health of the boss
+    public Slider healthBar; // Reference to the health bar slider
     public GameObject brain;
+    private void Start()
+    {
+        // Initialize the health bar value to the boss's maximum health
+        if (healthBar != null)
+        {
+            healthBar.maxValue = mainHealth;
+            healthBar.value = mainHealth; // Set initial value to max health
+        }
+    }
+
     public void ApplyDamage(int damage)
     {
         mainHealth -= damage;
+
+        // Update the health bar
+        if (healthBar != null)
+        {
+            healthBar.value = mainHealth; // Update the slider to reflect current health
+        }
 
         // Check if the main health is depleted
         if (mainHealth <= 0)
@@ -20,10 +37,17 @@ public class BossHealth : MonoBehaviour
 
     private void DestroyBoss()
     {
+
+        // Destroy all BossSegment objects
+        BossSegment[] segments = FindObjectsOfType<BossSegment>();
+        foreach (BossSegment segment in segments)
+        {
+            Destroy(segment.gameObject);
+        }
+
+        Destroy(brain);
         // Handle boss destruction (e.g., animations, loot drops, etc.)
         Destroy(gameObject);
         Debug.Log("Boss defeated!");
-        Destroy(brain);
     }
-
 }
