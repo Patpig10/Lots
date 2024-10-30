@@ -27,7 +27,7 @@ public class PopupManager : MonoBehaviour
         popupText.text = message;
         popupPanel.SetActive(true); // Show the popup panel
         Time.timeScale = 0; // Freeze the game
-        StartCoroutine(HidePopupAfterDelay(3f)); // Hide the popup after 3 seconds
+        StartCoroutine(HidePopupAfterDelay(2f)); // Hide the popup after 3 seconds
     }
 
     private IEnumerator HidePopupAfterDelay(float delay)

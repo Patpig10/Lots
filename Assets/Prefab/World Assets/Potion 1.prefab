@@ -71,12 +71,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8771091787928289351, guid: d9311d88e8345ab4cb6ca7438bb006d9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4293388463042576250}
-    - targetCorrespondingSourceObject: {fileID: 8771091787928289351, guid: d9311d88e8345ab4cb6ca7438bb006d9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -6274480685349436122}
-    - targetCorrespondingSourceObject: {fileID: 8771091787928289351, guid: d9311d88e8345ab4cb6ca7438bb006d9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 499596010248450002}
   m_SourcePrefab: {fileID: -4161369568681901532, guid: d9311d88e8345ab4cb6ca7438bb006d9, type: 3}
 --- !u!1 &3402304231976253649 stripped
 GameObject:
@@ -96,55 +90,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Potion
-  healAmount: 1
-  heartSystem: {fileID: 0}
-  Shop: {fileID: 0}
-  Coins: 0
---- !u!54 &-6274480685349436122
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3402304231976253649}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &499596010248450002
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3402304231976253649}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 9, y: 7.000002, z: 13.000003}
-  m_Center: {x: 2.5, y: -2.5000005, z: 6.5000014}

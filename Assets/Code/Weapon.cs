@@ -16,6 +16,16 @@ public class Weapon : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage); // Deal damage to the enemy
+            return; // Exit the method after dealing damage
+        }
+
+        // Check if the object hit has a BossSegment component
+        BossSegment bossSegment = other.GetComponent<BossSegment>();
+
+        // If it does, apply damage to the boss segment
+        if (bossSegment != null)
+        {
+            bossSegment.TakeDamage(damage); // Deal damage to the boss segment
         }
     }
 }

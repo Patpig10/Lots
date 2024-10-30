@@ -14,9 +14,11 @@ public class HeartSystem : MonoBehaviour
     private List<GameObject> hearts = new List<GameObject>();  // List to store spawned hearts
     public float heartSpacing = 10f;
     private bool dead;
-
+    public Saving save;
     private void Start()
     {
+        save = GameObject.FindObjectOfType<Saving>();
+        maxLife = save.maxSavedLife;
         life = maxLife;  // Start with full life
         SpawnHearts();  // Dynamically spawn hearts
     }
@@ -77,6 +79,7 @@ public class HeartSystem : MonoBehaviour
         maxLife += extraHearts;  // Increase max life
         life = Mathf.Clamp(life, 0, maxLife);  // Ensure current life doesn't exceed maxLife
         SpawnHearts();  // Respawn hearts with the new max life
+        save.maxSavedLife++;
     }
 
     private void UpdateHeartVisuals()
