@@ -88,7 +88,13 @@ public class AOEplayerattack : MonoBehaviour
                 enemy.TakeDamage(damage);
                 enemiesHit.Add(enemy);
             }
+            BossSegment bossSegment = hit.GetComponent<BossSegment>();
+            if (bossSegment != null)
+            {
+                bossSegment.TakeDamage(damage); // Deal damage to the boss segment
+            }
         }
+
     }
 
     private void PlayFireAOEEffect()
