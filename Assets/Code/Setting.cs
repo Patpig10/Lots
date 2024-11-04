@@ -135,4 +135,16 @@ public class Setting : MonoBehaviour
         Time.timeScale = 1f;  // Resume game time
         isPaused = false;
     }
+    public void Quit()
+    {
+        // If we are running in a standalone build of the game
+
+        Application.Quit();
+
+
+
+        UnityEditor.EditorApplication.isPlaying = false;
+        // UnityEditor.EditorApplication.isPlaying = false;
+
+    }
 }

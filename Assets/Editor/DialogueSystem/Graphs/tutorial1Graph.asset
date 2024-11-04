@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: tutorial1Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: tutorial1
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 42185919-91a3-4614-bac9-5dd794bdfccf
+    <Name>k__BackingField: Ottointro
+    <Text>k__BackingField: 'Hello there old friend, what brought you to these neck
+      of the woods.
+
+'
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2e56fb05-4c14-450b-ad92-6a54be725d98
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -440.8, y: 35.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 2e56fb05-4c14-450b-ad92-6a54be725d98
+    <Name>k__BackingField: Ottointo2
+    <Text>k__BackingField: Hmm, I've heard some disturbing news from the land of
+      man as well. Let's hope for the best.
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 00c695bb-d76f-4083-8a25-f99460f8a149
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 329.6, y: 35.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 00c695bb-d76f-4083-8a25-f99460f8a149
+    <Name>k__BackingField: Ottointro3
+    <Text>k__BackingField: Hohohooo, I'll help you learn the basics. Call me your
+      eyes in the sky
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e4e99136-8a55-41a1-bc32-d6e7f9133eb4
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1197.6, y: 35.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e4e99136-8a55-41a1-bc32-d6e7f9133eb4
+    <Name>k__BackingField: Ottomovement
+    <Text>k__BackingField: 'Use WASD to travese through the forest. '
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 49f626ec-6000-49f7-995a-ec3f6caf0962
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1970.3999, y: 35.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 49f626ec-6000-49f7-995a-ec3f6caf0962
+    <Name>k__BackingField: Ottointroend
+    <Text>k__BackingField: I'll go up ahead, meet you there.
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2866.4, y: 35.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Ottointro
+  - Ottointo2
+  - Ottointro3
+  - Ottomovement
+  - Ottointroend
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
