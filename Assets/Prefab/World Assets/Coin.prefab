@@ -96,6 +96,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Coin
+  healAmount: 1
+  heartSystem: {fileID: 0}
+  Shop: {fileID: 0}
+  Coins: 100
 --- !u!65 &3633687211963380825
 BoxCollider:
   m_ObjectHideFlags: 0

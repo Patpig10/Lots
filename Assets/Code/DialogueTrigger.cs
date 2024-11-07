@@ -15,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private DSDialogueSO currentDialogue;                     // Current dialogue being shown
     public bool isPlayerInRange = false;                      // Track if the player is inside the trigger area
-
+    public bool Tutrial = false;
     private void Awake()
     {
         currentDialogue = startingDialogue; // Initialize the starting dialogue
@@ -28,6 +28,11 @@ public class DialogueTrigger : MonoBehaviour
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
             ShowText(); // Show the dialogue text when "F" is pressed
+        }
+
+        if(isPlayerInRange && Tutrial == true)
+        {
+            ShowText();
         }
     }
 

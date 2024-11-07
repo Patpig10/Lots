@@ -62,7 +62,7 @@ MonoBehaviour:
     <Speaker>k__BackingField: Otto
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 49f626ec-6000-49f7-995a-ec3f6caf0962
+      <NodeID>k__BackingField: 3f551111-2d51-44f1-9567-dc47e3710ae6
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 1970.3999, y: 35.2}
@@ -77,7 +77,20 @@ MonoBehaviour:
       <NodeID>k__BackingField: 
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 2866.4, y: 35.2}
+    <Position>k__BackingField: {x: 3570.4, y: 35.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 3f551111-2d51-44f1-9567-dc47e3710ae6
+    <Name>k__BackingField: Ottointeraction
+    <Text>k__BackingField: If there's a question mark above your head press F to
+      interact.
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 49f626ec-6000-49f7-995a-ec3f6caf0962
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2756, y: 35.2}
     <ImageData>k__BackingField: 
     <ImagePath>k__BackingField: 
   <OldGroupNames>k__BackingField: []
@@ -87,5 +100,6 @@ MonoBehaviour:
   - Ottointro3
   - Ottomovement
   - Ottointroend
+  - Ottointeraction
   <OldGroupedNodeNames>k__BackingField:
     list: []
