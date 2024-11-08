@@ -21980,6 +21980,7 @@ MonoBehaviour:
   nameUI: {fileID: 1918449577}
   Textbox: {fileID: 1115536255}
   isPlayerInRange: 0
+  Tutrial: 0
 --- !u!135 &753619743
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -38502,6 +38503,7 @@ MonoBehaviour:
   nameUI: {fileID: 640051347}
   Textbox: {fileID: 1889597445}
   isPlayerInRange: 0
+  Tutrial: 0
 --- !u!1 &1244164349
 GameObject:
   m_ObjectHideFlags: 0
@@ -64867,7 +64869,7 @@ PrefabInstance:
       objectReference: {fileID: 718178418}
     - target: {fileID: 3102187623962432034, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.527
+      value: 32.851
       objectReference: {fileID: 0}
     - target: {fileID: 3102187623962432034, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
       propertyPath: m_LocalPosition.y
