@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: OttocombatGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Ottocombat
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 425424bc-1271-4067-af4e-ae00994e15a1
+    <Name>k__BackingField: Otto2
+    <Text>k__BackingField: Hello again, there's some monsters beyond this point.
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 82e45722-f658-4790-814c-5a744cb8cea8
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 97.6, y: 76.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 82e45722-f658-4790-814c-5a744cb8cea8
+    <Name>k__BackingField: Ottocombat
+    <Text>k__BackingField: Use " E" to attck, those with shield you can't be attacked
+      in the front.
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 953fe868-2a3d-44d5-a086-ac7ecf3deb92
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 915.2, y: 76.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 953fe868-2a3d-44d5-a086-ac7ecf3deb92
+    <Name>k__BackingField: Ottoend
+    <Text>k__BackingField: Just stay safe, slime.
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1766.3999, y: 76.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Otto2
+  - Ottocombat
+  - Ottoend
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
