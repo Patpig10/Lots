@@ -159,9 +159,17 @@ public class GridMovement : MonoBehaviour
 
         transform.position = targetPosition;
 
+        // Check if the target block has a portal
+        Portal portal = targetBlock.GetComponent<Portal>();
+        if (portal != null)
+        {
+            portal.TeleportPlayer();  // Teleport the player using the portal
+        }
+
         isMoving = false;
         Debug.Log("Movement completed to block: " + targetBlock.name);
-    }
+    
+}
 
     public void Knockback(int knockbackDistance, Vector3 knockbackDirection)
     {

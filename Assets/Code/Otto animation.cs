@@ -19,4 +19,8 @@ public class Ottoanimation : MonoBehaviour
     {
         anim.SetTrigger("Fly1");
     }
+    public void fly2()
+    {
+        anim.SetTrigger("Fly2");
+    }
 }
