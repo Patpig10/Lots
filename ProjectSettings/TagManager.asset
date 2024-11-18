@@ -13,6 +13,7 @@ TagManager:
   - Bullet
   - Weapon
   - enemys
+  - Pushable
   layers:
   - Default
   - TransparentFX
