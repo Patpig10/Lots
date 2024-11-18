@@ -6,18 +6,67 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance; // Singleton instance for easy access
+  //  public static LevelManager Instance; // Singleton instance for easy access
+    public Saving Saving;
 
+    public GameObject button1;
+    public GameObject button2;
+    public GameObject button3;
+    public GameObject button4;
+    public GameObject buttonboss;
     private void Awake()
     {
-        if (Instance == null)
+
+
+      
+        
+    }
+
+    public void Update()
+    {
+
+        if (Saving.levelUnlocked == 1)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Keep the LevelManager between scenes
+            button1.SetActive(true);
+            button2.SetActive(false);
+            button3.SetActive(false);
+            button4.SetActive(false);
+            buttonboss.SetActive(false);
         }
-        else
+        if (Saving.levelUnlocked >= 2)
         {
-            Destroy(gameObject); // Avoid duplicates
+            button1.SetActive(true);
+            button2.SetActive(true);
+            button3.SetActive(false);
+            button4.SetActive(false);
+            buttonboss.SetActive(false);
+        }
+
+        if (Saving.levelUnlocked == 3)
+        {
+            button1.SetActive(true);
+            button2.SetActive(true);
+            button3.SetActive(true);
+            button4.SetActive(false);
+            buttonboss.SetActive(false);
+        }
+
+        if (Saving.levelUnlocked == 4)
+        {
+            button1.SetActive(true);
+            button2.SetActive(true);
+            button3.SetActive(true);
+            button4.SetActive(true);
+            buttonboss.SetActive(false);
+        }
+
+        if (Saving.levelUnlocked == 5)
+        {
+            button1.SetActive(true);
+            button2.SetActive(true);
+            button3.SetActive(true);
+            button4.SetActive(true);
+            buttonboss.SetActive(true);
         }
     }
 
@@ -73,4 +122,27 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Exiting Game...");
         Application.Quit();
     }
+
+    public void Level1()
+    {
+        LoadLevel(2);
+    }
+    public void Level2()
+    {
+        LoadLevel(2);
+    }
+    public void Level3()
+    {
+        LoadLevel(3);
+    }
+    public void Level4()
+    {
+        LoadLevel(4);
+    }
+    public void Level5()
+    {
+        LoadLevel(5);
+    }
+
+   
 }
