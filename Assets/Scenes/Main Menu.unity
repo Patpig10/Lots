@@ -97,7 +97,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: ec33c58d4a38f6e44822d051495a26a4, type: 2}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 281642655620a184dae13e30dc53ac0b, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -19681,6 +19681,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   animator: {fileID: 0}
+  isMoving: 0
   searchRadius: 5
 --- !u!4 &3881978351312196619
 Transform:
@@ -19813,6 +19814,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   animator: {fileID: 7698577697385290760}
+  isMoving: 0
   searchRadius: 5
 --- !u!23 &4596521867864964024
 MeshRenderer:

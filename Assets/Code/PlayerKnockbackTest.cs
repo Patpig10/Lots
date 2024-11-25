@@ -40,7 +40,7 @@ public class PlayerKnockbackTest : MonoBehaviour
         for (int i = 0; i < distance; i++)
         {
             // Call the Knockback method from GridMovement
-            gridMovement.Knockback(1, direction); // Knockback by 1 block each time in the given direction
+            //gridMovement.Knockback(1, direction); // Knockback by 1 block each time in the given direction
             yield return new WaitForSeconds(0.1f); // Adjust timing if needed
         }
 

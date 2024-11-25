@@ -10,9 +10,10 @@ public class GridMovement : MonoBehaviour
     public Animator animator;              // Animator reference
 
     private Transform targetBlock;         // The target block to move towards
-    private bool isMoving = false;         // Check if movement is ongoing
+    public bool isMoving = false;         // Check if movement is ongoing
     private Quaternion targetRotation;     // The target rotation to smoothly rotate towards
     public float searchRadius = 5f;        // Define the radius for searching blocks
+    private bool isKnockbackActive = false; // Separate knockback state
 
     void Start()
     {
@@ -28,6 +29,10 @@ public class GridMovement : MonoBehaviour
 
     void Update()
     {
+
+        // Prevent movement if knockback is active
+        if (isKnockbackActive)
+            return;
 
         if (!isMoving)
         {
@@ -168,17 +173,25 @@ public class GridMovement : MonoBehaviour
 
         isMoving = false;
         Debug.Log("Movement completed to block: " + targetBlock.name);
-    
-}
 
-    public void Knockback(int knockbackDistance, Vector3 knockbackDirection)
-    {
-        StartCoroutine(ApplyKnockback(knockbackDistance, knockbackDirection));
+        if (targetBlock == null)
+        {
+            Debug.LogWarning("Target block is null, cannot move.");
+            isMoving = false;  // Safeguard reset
+            yield break;
+        }
     }
 
+  /*  public void Knockback(int knockbackDistance, Vector3 knockbackDirection)
+    {
+        if (!isKnockbackActive) // Prevent multiple knockbacks from overlapping
+        {
+            StartCoroutine(ApplyKnockback(knockbackDistance, knockbackDirection));
+        }
+    }
     private IEnumerator ApplyKnockback(int knockbackDistance, Vector3 knockbackDirection)
     {
-        isMoving = true;  // Prevent other inputs during knockback
+        isKnockbackActive = true;
 
         for (int i = 0; i < knockbackDistance; i++)
         {
@@ -202,14 +215,14 @@ public class GridMovement : MonoBehaviour
             }
             else
             {
-                // If no valid block is found, stop the knockback process
-                break;
+                Debug.LogWarning("Knockback interrupted: no valid block found.");
+                break; // Stop the knockback process if no valid block is found
             }
         }
 
-        isMoving = false;  // Re-enable movement after knockback is complete
+        isKnockbackActive = false;
     }
-
+  */
     public IEnumerator MoveToBlockWithStrength(float knockbackSpeed)
     {
         isMoving = true;  // Set the flag to prevent movement while transitioning

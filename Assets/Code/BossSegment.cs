@@ -6,7 +6,7 @@ public class BossSegment : MonoBehaviour
 {
     public int segmentHealth = 3;    // Health for each segment, except the head
     public bool isHead = false;      // Flag to check if this is the head segment
-    private BossHealth bossHealth;   // Reference to the main boss health
+    [SerializeField] private BossHealth bossHealth; // Assign in Inspector
 
     private void Start()
     {
@@ -21,6 +21,11 @@ public class BossSegment : MonoBehaviour
         {
             Debug.LogError("BossHealth component not found on Boss object!");
         }
+
+        if (bossHealth == null)
+        {
+            Debug.LogError("BossHealth reference is not assigned in the Inspector!");
+        }
     }
 
     public void TakeDamage(int damage)
@@ -31,7 +36,7 @@ public class BossSegment : MonoBehaviour
         if (bossHealth == null)
         {
             Debug.LogError("BossHealth reference is null when taking damage!");
-            return; // Exit early to prevent further errors
+           return; // Exit early to prevent further errors
         }
 
         segmentHealth -= damage; // Decrease the segment’s own health
@@ -40,7 +45,7 @@ public class BossSegment : MonoBehaviour
         // Apply damage to the main boss health
         if (isHead)
         {
-            bossHealth.ApplyDamage(damage * 2); // Double damage for head
+           bossHealth.ApplyDamage(damage * 2); // Double damage for head
         }
         else
         {

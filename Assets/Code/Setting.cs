@@ -143,7 +143,7 @@ public class Setting : MonoBehaviour
 
 
 
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         // UnityEditor.EditorApplication.isPlaying = false;
 
     }
