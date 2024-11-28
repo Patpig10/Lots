@@ -96,5 +96,12 @@ public class Levelmenu : MonoBehaviour
     {
         LoadLevel(1);
     }
-
+    public void MainMenu()
+    {
+        LoadLevel(0);
+    }
+    public void hat()
+    {
+        LoadLevel(4);
+    }
 }

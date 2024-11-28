@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Ottomovement
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: Ottomovement
-  <Text>k__BackingField: 'Use WASD to travese through the forest. '
+  <Text>k__BackingField: Use WASD to travese through the forest. 1 - 3 number keys
+    to select ability, Q to use it.
   <Speaker>k__BackingField: Otto
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
