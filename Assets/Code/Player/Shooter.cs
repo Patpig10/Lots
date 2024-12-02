@@ -45,7 +45,7 @@ public class Shooter : MonoBehaviour
             }
 
             // Remove one heart
-            heartSystem.TakeDamage(1);
+           // heartSystem.TakeDamage(1);
         }
         else
         {

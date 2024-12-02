@@ -7,6 +7,8 @@ public class BossSegment : MonoBehaviour
     public int segmentHealth = 3;    // Health for each segment, except the head
     public bool isHead = false;      // Flag to check if this is the head segment
     [SerializeField] private BossHealth bossHealth; // Assign in Inspector
+    public bool hit = false;
+
 
     private void Start()
     {
@@ -36,7 +38,9 @@ public class BossSegment : MonoBehaviour
         if (bossHealth == null)
         {
             Debug.LogError("BossHealth reference is null when taking damage!");
-           return; // Exit early to prevent further errors
+            hit = true;
+            hit = false;
+            return; // Exit early to prevent further errors
         }
 
         segmentHealth -= damage; // Decrease the segment’s own health

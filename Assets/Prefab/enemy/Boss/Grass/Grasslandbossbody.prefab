@@ -238,6 +238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmentHealth: 3
   isHead: 0
+  bossHealth: {fileID: 0}
+  hit: 0
+  childRenderer: {fileID: 993811526340357685}
 --- !u!1 &6210902128132529383
 GameObject:
   m_ObjectHideFlags: 0
