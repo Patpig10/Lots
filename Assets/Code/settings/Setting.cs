@@ -15,11 +15,15 @@ public class Setting : MonoBehaviour
 
     private Resolution[] resolutions;
     private bool isPaused = false;
+    public GameObject Heart;
+    public GameObject box;
 
     void Start()
     {
         // Hide the settings panel at the start
         settingsPanel.SetActive(false);
+        Heart.SetActive(true);
+        box.SetActive(true);
 
         // Initialize and populate resolutions (unique by width/height)
         resolutions = Screen.resolutions
@@ -126,6 +130,8 @@ public class Setting : MonoBehaviour
         settingsPanel.SetActive(true);
         Time.timeScale = 0f;  // Freeze game time
         isPaused = true;
+        Heart.SetActive(false);
+        box.SetActive(false);
     }
 
     public void ResumeGame()
@@ -134,6 +140,8 @@ public class Setting : MonoBehaviour
         settingsPanel.SetActive(false);
         Time.timeScale = 1f;  // Resume game time
         isPaused = false;
+        Heart.SetActive(true);
+        box.SetActive(true);
     }
     public void Quit()
     {

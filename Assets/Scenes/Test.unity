@@ -31801,6 +31801,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8771091787928289351, guid: cb4e553d5deda9548a628b0410ed10a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1850224122}
+    - targetCorrespondingSourceObject: {fileID: 8771091787928289351, guid: cb4e553d5deda9548a628b0410ed10a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1850224123}
   m_SourcePrefab: {fileID: -4161369568681901532, guid: cb4e553d5deda9548a628b0410ed10a0, type: 3}
 --- !u!4 &1005208458 stripped
 Transform:
@@ -48214,6 +48217,8 @@ MonoBehaviour:
   qualityDropdown: {fileID: 1017448079}
   fullscreenToggle: {fileID: 1928917326}
   settingsPanel: {fileID: 1838924645}
+  Heart: {fileID: 718178417}
+  box: {fileID: 522128960}
 --- !u!114 &1526060106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56149,6 +56154,7 @@ MonoBehaviour:
   segmentHealth: 3
   isHead: 1
   bossHealth: {fileID: 0}
+  hit: 0
 --- !u!114 &1850224122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56164,6 +56170,20 @@ MonoBehaviour:
   mainHealth: 600
   healthBar: {fileID: 1935497288}
   brain: {fileID: 2107542617}
+--- !u!114 &1850224123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850224116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbe1665f98cf6c4586982d74619c9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
+  knockbackForce: 5
 --- !u!1 &1851831082
 GameObject:
   m_ObjectHideFlags: 0
@@ -64380,7 +64400,7 @@ MonoBehaviour:
   changeTargetInterval: 1
   bodyGrowthInterval: 5
   initialBodySize: 1
-  blockCooldownDuration: 15
+  blockCooldownDuration: 10
 --- !u!54 &2107542619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64510,6 +64530,7 @@ MonoBehaviour:
   segmentHealth: 125
   isHead: 1
   bossHealth: {fileID: 0}
+  hit: 0
 --- !u!1001 &2107920062
 PrefabInstance:
   m_ObjectHideFlags: 0
