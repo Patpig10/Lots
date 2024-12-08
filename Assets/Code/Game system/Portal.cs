@@ -7,6 +7,14 @@ public class Portal : MonoBehaviour
     public Transform destinationPortal;   // Assign the destination portal in the Inspector
     public Transform player;              // Assign the player transform in the Inspector (the child object)
 
+
+    public void Awake()
+    {
+        //find the player object
+        player = GameObject.Find("Player").transform;
+    }
+
+
     public void TeleportPlayer()
     {
         if (destinationPortal != null && player != null)

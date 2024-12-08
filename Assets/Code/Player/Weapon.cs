@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     {
         // Check if the object hit has an EnemyHealth component
         EnemyHealth enemy = other.GetComponent<EnemyHealth>();
-
+        //Dummyhealth dummy = other.GetComponent<Dummyhealth>();
         // If it does, apply damage to the enemy
         if (enemy != null)
         {
@@ -19,6 +19,13 @@ public class Weapon : MonoBehaviour
             return; // Exit the method after dealing damage
         }
 
+        Dummyhealth dummy = other.GetComponent<Dummyhealth>();
+
+        if (dummy != null)
+        {
+            dummy.TakeDamage(damage); // Deal damage to the enemy
+            return; // Exit the method after dealing damage
+        }
         // Check if the object hit has a BossSegment component
         BossSegment bossSegment = other.GetComponent<BossSegment>();
 
