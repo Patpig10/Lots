@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 6d53d438c0f36ee448f03ec49209e570, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.800003
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 6d53d438c0f36ee448f03ec49209e570, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 6d53d438c0f36ee448f03ec49209e570, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.75
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: -3910990755373119420, guid: 6d53d438c0f36ee448f03ec49209e570, type: 3}
       propertyPath: m_LocalRotation.w
@@ -105,12 +105,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 15.542323, y: 17.415031, z: 19.000004}
-  m_Center: {x: -1.453525, y: 1.6020497, z: 9.500001}
+  m_Size: {x: 15.542323, y: 21.325441, z: 19.000004}
+  m_Center: {x: -1.453525, y: 3.5572565, z: 9.500001}
 --- !u!95 &1260820841391340614
 Animator:
   serializedVersion: 5
@@ -172,5 +172,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0

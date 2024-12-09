@@ -10,9 +10,10 @@ public class Dummyhealth : MonoBehaviour
     public Animator animator; // Reference to the Animator component
     public GameObject Body;
     // public BoxCollider BoxCollider; // Reference to the BoxCollider component
-
+    public DummyManager dummyManager; // Reference to the DummyManager component    
     void Start()
     {
+        DummyManager dummyManager = GameObject.Find("gm").GetComponent<DummyManager>();
         // Initialize the enemy's health to the maximum value at the start
         currentHealth = maxHealth;
 
@@ -28,7 +29,7 @@ public class Dummyhealth : MonoBehaviour
 
         // Trigger the "Hurt" animation
         animator.SetTrigger("Hurt");
-
+        dummyManager.AddPoints(100);
         // Check if the enemy's health has dropped to or below zero
         if (currentHealth <= 0)
         {

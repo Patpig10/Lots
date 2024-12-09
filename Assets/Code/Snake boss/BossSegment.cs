@@ -8,6 +8,7 @@ public class BossSegment : MonoBehaviour
     public bool isHead = false;      // Flag to check if this is the head segment
     [SerializeField] private BossHealth bossHealth; // Assign in Inspector
     public bool hit = false;
+    public Animator animator; // Reference to the Animator component
 
 
     private void Start()
@@ -44,6 +45,7 @@ public class BossSegment : MonoBehaviour
         }
 
         segmentHealth -= damage; // Decrease the segment’s own health
+        animator.SetTrigger("Hurt");
         Debug.Log($"{gameObject.name} segment hit, remaining health: {segmentHealth}");
 
         // Apply damage to the main boss health

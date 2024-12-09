@@ -11,12 +11,17 @@ public class ItemPickup : MonoBehaviour
     public HeartSystem heartSystem;
     public Shop Shop;
     public int Coins;
+    public Saving save;
     private void Start()
     {
+
         playerBag = FindObjectOfType<Bag>(); // Finds the Bag component on the player
     }
+
     public void Awake()
     {
+        save = GameObject.FindObjectOfType<Saving>();
+  
         heartSystem = GameObject.FindObjectOfType<HeartSystem>();
         Shop = GameObject.FindObjectOfType<Shop>();
     }

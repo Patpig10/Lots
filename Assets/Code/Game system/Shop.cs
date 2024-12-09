@@ -10,15 +10,21 @@ public class Shop : MonoBehaviour
     public int cost;
     public int coins;
     public TextMeshProUGUI coinsText;  // Reference to the UI text displaying the player's coins
+    public Saving save;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        save = GameObject.FindObjectOfType<Saving>();
+        coins = save.maxcoins;  // Set the player's coins to the amount saved in the SaveData object
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        coins = save.maxcoins;  // Set the player's coins to the amount saved in the SaveData object
+
         coinsText.text = "Coins: " + coins.ToString();  // Update the UI text to display the player's coins
     }
 
@@ -45,6 +51,8 @@ public class Shop : MonoBehaviour
     public void AddCoins(int amount)
     {
         coins += amount;  // Add the specified amount of coins to the player's total
+        save.maxcoins = coins;  // Update the saved coins value
+        save.SavePlayerData();
     }
 
     public void Addhearts()

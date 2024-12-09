@@ -45918,6 +45918,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 4527529402009968521, guid: 3a49bc6978cf0e64f839fd6c525625cf, type: 3}
+      propertyPath: questionMark
+      value: 
+      objectReference: {fileID: 2016758564}
+    - target: {fileID: 4527529402009968521, guid: 3a49bc6978cf0e64f839fd6c525625cf, type: 3}
+      propertyPath: canContainKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527529402009968521, guid: 3a49bc6978cf0e64f839fd6c525625cf, type: 3}
+      propertyPath: canContainCoin
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4700830374196116225, guid: 3a49bc6978cf0e64f839fd6c525625cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.576807
@@ -69030,6 +69042,7 @@ MonoBehaviour:
   maxSavedLife: 3
   weaponSavedDamage: 20
   levelUnlocked: 1
+  maxcoins: 0
 --- !u!114 &1349901148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69047,6 +69060,7 @@ MonoBehaviour:
   cost: 0
   coins: 0
   coinsText: {fileID: 314495955}
+  save: {fileID: 0}
 --- !u!114 &1349901149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69064,6 +69078,7 @@ MonoBehaviour:
   heartSystem: {fileID: 253859561}
   Shop: {fileID: 1349901148}
   Coins: 0
+  save: {fileID: 0}
 --- !u!114 &1349901150
 MonoBehaviour:
   m_ObjectHideFlags: 0

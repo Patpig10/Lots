@@ -9,7 +9,7 @@ public class Saving : MonoBehaviour
     public int maxSavedLife = 3;
     public int weaponSavedDamage = 20;
     public int levelUnlocked = 1;
-
+    public int maxcoins = 0;
     private string saveFilePath;
 
     private void Start()
@@ -45,15 +45,24 @@ public class Saving : MonoBehaviour
         levelUnlocked = newLevel;
         SavePlayerData(); // Save data immediately after change
     }
+    public void OnConnectedToServer(int newCoins)
+    {
+        maxcoins = newCoins;
+        SavePlayerData(); // Save data immediately after change
+    }
+
+
 
     // Method to save player data to JSON
-    private void SavePlayerData()
+    public void SavePlayerData()
     {
         SaveData saveData = new SaveData
         {
             maxSavedLife = maxSavedLife,
             weaponSavedDamage = weaponSavedDamage,
-            levelUnlocked = levelUnlocked
+            levelUnlocked = levelUnlocked,
+            coins = maxcoins
+
         };
 
         // Convert the data to JSON format and save it to file
@@ -74,6 +83,7 @@ public class Saving : MonoBehaviour
             maxSavedLife = saveData.maxSavedLife;
             weaponSavedDamage = saveData.weaponSavedDamage;
             levelUnlocked = saveData.levelUnlocked;
+            maxcoins = saveData.coins;
 
             Debug.Log("Player data loaded!");
         }
@@ -88,5 +98,6 @@ public class Saving : MonoBehaviour
         public int maxSavedLife;
         public int weaponSavedDamage;
         public int levelUnlocked;
+        public int coins;
     }
 }

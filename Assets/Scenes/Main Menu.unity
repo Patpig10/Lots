@@ -1623,6 +1623,7 @@ MonoBehaviour:
   maxSavedLife: 3
   weaponSavedDamage: 20
   levelUnlocked: 1
+  coins: 0
 --- !u!1 &346030925
 GameObject:
   m_ObjectHideFlags: 0
@@ -13789,6 +13790,7 @@ GameObject:
   - component: {fileID: 904971818}
   - component: {fileID: 904971819}
   - component: {fileID: 904971820}
+  - component: {fileID: 904971821}
   m_Layer: 0
   m_Name: GM
   m_TagString: Untagged
@@ -13956,6 +13958,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156f60e7719814d498c48f128e5b55b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &904971821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904971815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72eadf5881bb5994cb121023b543e5f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSavedLife: 3
+  weaponSavedDamage: 20
+  levelUnlocked: 1
+  coins: 0
 --- !u!1 &915607787
 GameObject:
   m_ObjectHideFlags: 0
