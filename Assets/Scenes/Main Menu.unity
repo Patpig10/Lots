@@ -1623,7 +1623,7 @@ MonoBehaviour:
   maxSavedLife: 3
   weaponSavedDamage: 20
   levelUnlocked: 1
-  coins: 0
+  maxcoins: 0
 --- !u!1 &346030925
 GameObject:
   m_ObjectHideFlags: 0
@@ -6607,7 +6607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.012500001, y: 0.5511112}
   m_AnchorMax: {x: 0.21375002, y: 0.6133334}
-  m_AnchoredPosition: {x: 1.5, y: 3}
+  m_AnchoredPosition: {x: 1.5, y: 24}
   m_SizeDelta: {x: -1, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388481200
@@ -6886,7 +6886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0275, y: 0.44000003}
   m_AnchorMax: {x: 0.20500001, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 6.2000046}
+  m_AnchoredPosition: {x: -1, y: 37}
   m_SizeDelta: {x: 18, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432197935
@@ -7879,7 +7879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0275, y: 0.3177777}
   m_AnchorMax: {x: 0.22000001, y: 0.41555557}
-  m_AnchoredPosition: {x: -7, y: 4}
+  m_AnchoredPosition: {x: -7, y: 42}
   m_SizeDelta: {x: 6, y: -14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588765511
@@ -13973,7 +13973,7 @@ MonoBehaviour:
   maxSavedLife: 3
   weaponSavedDamage: 20
   levelUnlocked: 1
-  coins: 0
+  maxcoins: 0
 --- !u!1 &915607787
 GameObject:
   m_ObjectHideFlags: 0
@@ -18642,7 +18642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7311111}
   m_AnchorMax: {x: 0.24000001, y: 0.91333324}
-  m_AnchoredPosition: {x: -7, y: 22}
+  m_AnchoredPosition: {x: -7, y: -6}
   m_SizeDelta: {x: 8, y: -32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956361058

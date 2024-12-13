@@ -120,8 +120,8 @@
       "source": "registry",
       "dependencies": {
         "com.unity.timeline": "1.0.0",
-        "com.unity.modules.cloth": "1.0.0",
-        "com.unity.modules.unityanalytics": "1.0.0"
+        "com.unity.modules.unityanalytics": "1.0.0",
+        "com.unity.modules.cloth": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -130,8 +130,8 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.autodesk.fbx": "4.2.1",
-        "com.unity.timeline": "1.7.1"
+        "com.unity.timeline": "1.7.1",
+        "com.autodesk.fbx": "4.2.1"
       },
       "url": "https://packages.unity.com"
     },
@@ -225,9 +225,9 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.settings-manager": "1.0.3",
         "com.unity.modules.physics": "1.0.0",
-        "com.unity.settings-manager": "1.0.3"
+        "com.unity.modules.imgui": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -283,10 +283,10 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.recorder": "2.5.5",
         "com.unity.timeline": "1.6.3",
-        "com.unity.settings-manager": "1.0.3"
+        "com.unity.recorder": "2.5.5",
+        "com.unity.settings-manager": "1.0.3",
+        "com.unity.ugui": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -311,9 +311,9 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.ugui": "1.0.0",
+        "com.unity.settings-manager": "1.0.3",
         "com.unity.mathematics": "1.2.1",
-        "com.unity.settings-manager": "1.0.3"
+        "com.unity.ugui": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -352,9 +352,9 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.director": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
