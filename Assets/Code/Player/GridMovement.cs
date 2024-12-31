@@ -95,10 +95,10 @@ public class GridMovement : MonoBehaviour
 
         foreach (Transform block in blocks)
         {
-            // Check if the block is still valid
-            if (block == null)
+            // Check if the block is still valid and active
+            if (block == null || !block.gameObject.activeSelf)
             {
-                continue; // Skip destroyed blocks
+                continue; // Skip destroyed or inactive blocks
             }
 
             // Calculate the distance from the player to the block
