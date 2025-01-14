@@ -66,14 +66,14 @@ public class BossSnakeAI : MonoBehaviour
 
             foreach (Transform block in blocks)
             {
-                if (!IsBlockOnCooldown(block) && !IsBlockOccupied(block))
+                if (block == null || IsBlockOnCooldown(block) || IsBlockOccupied(block)) continue;
+
+                float distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z),
+                                                   new Vector3(block.position.x, 0, block.position.z));
+                if (distance < minDistance)
                 {
-                    float distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(block.position.x, 0, block.position.z));
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                        nearestBlock = block;
-                    }
+                    minDistance = distance;
+                    nearestBlock = block;
                 }
             }
 
@@ -287,7 +287,10 @@ public class BossSnakeAI : MonoBehaviour
                 previousPositions.RemoveAt(index + 1);
             }
 
-            occupiedGridPositions.Remove(bodyPart.position);
+            if (occupiedGridPositions.Contains(bodyPart.position))
+            {
+                occupiedGridPositions.Remove(bodyPart.position);
+            }
 
             Destroy(bodyPart.gameObject);
         }
