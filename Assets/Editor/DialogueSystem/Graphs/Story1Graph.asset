@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Story1Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Story1
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 6bdb64fc-b9ed-4689-a8b5-b8d9cb30e841
+    <Name>k__BackingField: Queenintro
+    <Text>k__BackingField: Slime, let me introduce myself. I am the Queen of the
+      Forest and the woman beside me. I'll let her speak.
+    <Speaker>k__BackingField: Queen of the Forest
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 50b9e48f-117c-40af-aaee-9caf7809e2bd
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 13.599999, y: 214.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 50b9e48f-117c-40af-aaee-9caf7809e2bd
+    <Name>k__BackingField: Lenaintro
+    <Text>k__BackingField: It's beem a while hasn't it slime. I'm Lena, the Princess
+      of the kingdom of man. Your friend the sword hero helped me escape before the
+      capital fall.
+    <Speaker>k__BackingField: Lena
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 70667dae-2d6a-4ede-a7c4-00f7f838f628
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 712.8, y: 214.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 70667dae-2d6a-4ede-a7c4-00f7f838f628
+    <Name>k__BackingField: Asuring
+    <Text>k__BackingField: Don't worry little one, I'm sure he's fine.
+    <Speaker>k__BackingField: Lena
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 935156ba-ded7-427b-9742-fed03a4b5a53
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1468, y: 214.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 935156ba-ded7-427b-9742-fed03a4b5a53
+    <Name>k__BackingField: Choice
+    <Text>k__BackingField: Since you're trustworthy will you accept this quest from
+      the Princess and I?
+    <Speaker>k__BackingField: Queen of the Forest
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Yes
+      <NodeID>k__BackingField: f2e4a808-8fd7-49b3-9609-691f5f1e08dc
+    - <Text>k__BackingField: No
+      <NodeID>k__BackingField: 710c906b-9b17-4c3c-ac77-9ce2d84771cb
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: 2214.4, y: 214.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 710c906b-9b17-4c3c-ac77-9ce2d84771cb
+    <Name>k__BackingField: rejectquest
+    <Text>k__BackingField: How disappointing, please stay in the village for your
+      safety and I promise we will resuce your friend
+    <Speaker>k__BackingField: Lena
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2922.4, y: 424.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: f2e4a808-8fd7-49b3-9609-691f5f1e08dc
+    <Name>k__BackingField: acceptquest
+    <Text>k__BackingField: Thank you slime, I knew you would help us
+    <Speaker>k__BackingField: Lena
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e77b05cb-2d69-4878-8c80-9d34f3d6d5ef
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2988, y: 36}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 616a64b6-cb3c-4782-b4a2-313c0dd81e17
+    <Name>k__BackingField: 3
+    <Text>k__BackingField: We need the gem to open the grand gate that divide the
+      realm of beast and man, the queen here already promise to help us to fight
+      the Lich but...
+    <Speaker>k__BackingField: Lana
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 5b173935-4e3c-4a4e-b10e-e57669cabdc5
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5348.8003, y: 36}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: b0eb88e6-8cb4-48db-948f-b60ac8981563
+    <Name>k__BackingField: 5
+    <Text>k__BackingField: But some can't forget how the sword hero helped us to
+      build this village as a safe place for all of us.
+    <Speaker>k__BackingField: Queen of the Forest
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 6fe239ad-25bb-48f3-84cc-e12b18d1719a
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6758.4004, y: 36}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 6fe239ad-25bb-48f3-84cc-e12b18d1719a
+    <Name>k__BackingField: 6
+    <Text>k__BackingField: After this, hopefully we can reunite again but first,
+      slime. we need you to get the gem from the guardain and return to us safely.
+    <Speaker>k__BackingField: Lana
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 7477.6, y: 36}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e77b05cb-2d69-4878-8c80-9d34f3d6d5ef
+    <Name>k__BackingField: 1
+    <Text>k__BackingField: Alright then since she trust you here's the plan.
+    <Speaker>k__BackingField: Queen of the Forest
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 75795941-334b-45df-9599-2ecf3c9bed62
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3781.5999, y: 36}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 75795941-334b-45df-9599-2ecf3c9bed62
+    <Name>k__BackingField: 2
+    <Text>k__BackingField: 'We must get back the gem of life from our guardian. Usually
+      I could talk to him but the fog there prevented me to conntect him. '
+    <Speaker>k__BackingField: Queen of the Forest
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 616a64b6-cb3c-4782-b4a2-313c0dd81e17
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4573.6, y: 36}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 5b173935-4e3c-4a4e-b10e-e57669cabdc5
+    <Name>k__BackingField: 4
+    <Text>k__BackingField: Only if she can get the other rulers to agree as well.
+      Many beasts still don't agree with helping the humans after they abandoned
+      us.
+    <Speaker>k__BackingField: Queen of the Forest
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b0eb88e6-8cb4-48db-948f-b60ac8981563
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6060.8003, y: 36}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Queenintro
+  - Lenaintro
+  - Asuring
+  - Choice
+  - rejectquest
+  - acceptquest
+  - 3
+  - 5
+  - 6
+  - 1
+  - 2
+  - 4
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: QuestgivingGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Questgiving
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 293890ea-1d52-4343-bd16-6504eb969f17
+    <Name>k__BackingField: Away
+    <Text>k__BackingField: Ok then, follow me to the Town Hall. The second building
+      to the left. Come alone
+    <Speaker>k__BackingField: Fairy Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1494.3999, y: 67.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: d18559e7-8daa-4ce8-bf8a-7b9749b3cfbe
+    <Name>k__BackingField: Villagewelcome
+    <Text>k__BackingField: Hello there, welcome to the beast village where anyone
+      is welcomed.
+    <Speaker>k__BackingField: Fairy Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 08084978-42e4-4ec1-86c0-b42e41f58869
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -104, y: 67.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 08084978-42e4-4ec1-86c0-b42e41f58869
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: Hmmm, so you want to save your friend in the castle...
+    <Speaker>k__BackingField: Fairy Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 293890ea-1d52-4343-bd16-6504eb969f17
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 715.2, y: 67.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Away
+  - Villagewelcome
+  - DialogueName
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
