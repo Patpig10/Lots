@@ -70,7 +70,11 @@ public class Saving : MonoBehaviour
         File.WriteAllText(saveFilePath, jsonData);
         Debug.Log("Player data saved!");
     }
-
+    public void Addlevel()
+    {
+        levelUnlocked++;
+        SavePlayerData();
+    }
     // Method to load player data from JSON
     private void LoadPlayerData()
     {
@@ -91,7 +95,8 @@ public class Saving : MonoBehaviour
         {
             Debug.LogWarning("Save file not found! Starting with default values.");
         }
-    }
+     
+}
     [System.Serializable]
     public class SaveData
     {
