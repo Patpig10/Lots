@@ -32,7 +32,7 @@ public class Door : MonoBehaviour
     private void OpenDoor()
     {
         // Set the door inactive or play an animation
-      
+      playerBag.RemoveItem(requiredKey);
         Destroy(doorObject);
 
     }
