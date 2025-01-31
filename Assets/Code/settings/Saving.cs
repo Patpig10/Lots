@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class Saving : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Saving : MonoBehaviour
     public int levelUnlocked = 1;
     public int maxcoins = 0;
     private string saveFilePath;
-
+    public bool completed = false;
     private void Start()
     {
         // Set the file path for the save file
@@ -70,10 +71,60 @@ public class Saving : MonoBehaviour
         File.WriteAllText(saveFilePath, jsonData);
         Debug.Log("Player data saved!");
     }
-    public void Addlevel()
+    public void LoadLeveltime()
     {
-        levelUnlocked++;
-        SavePlayerData();
+        StartCoroutine(LoadLevelWithDelay(1, 3f)); // Start the coroutine with a 3-second delay
+    }
+    private IEnumerator LoadLevelWithDelay(int sceneIndex, float delay)
+    {
+        yield return new WaitForSeconds(delay); // Wait for the specified delay (3 seconds)
+
+        if (sceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(sceneIndex); // Load the scene after the delay
+        }
+        else
+        {
+            Debug.LogError("Scene index " + sceneIndex + " out of range!"); // Log an error if the scene index is invalid
+        }
+    }
+    public void Addlevel2()
+    {
+        if (levelUnlocked > 1)
+        {
+            completed = true;
+        }
+        if (completed)
+        {
+            levelUnlocked++;
+            SavePlayerData();
+            LoadLeveltime();
+        }
+
+    }
+    public void Addlevel3()
+    {
+        if (levelUnlocked > 2)
+        {
+            completed = true;
+        }
+        if (completed)
+        {
+            levelUnlocked++;
+            SavePlayerData();
+        }
+    }
+    public void Addlevel4()
+    {
+        if (levelUnlocked > 3)
+        {
+            completed = true;
+        }
+        if (completed)
+        {
+            levelUnlocked++;
+            SavePlayerData();
+        }
     }
     // Method to load player data from JSON
     private void LoadPlayerData()
