@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2445991064615010043}
   - component: {fileID: 4606791353653941669}
   - component: {fileID: 2486608764139870258}
+  - component: {fileID: 415945390540884016}
   - component: {fileID: 6532799357504721898}
   - component: {fileID: 8602719470914127505}
-  - component: {fileID: 415945390540884016}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -109,6 +109,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &415945390540884016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551798222075531259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbe1665f98cf6c4586982d74619c9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 0
+  knockbackForce: 5
 --- !u!114 &6532799357504721898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   lifetime: 5
-  destroyOnCollision: 1
+  destroyOnCollision: 0
+  destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5
   player: 0
@@ -154,20 +169,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &415945390540884016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5551798222075531259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdbe1665f98cf6c4586982d74619c9b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 0
-  knockbackForce: 5
 --- !u!1 &6177189338585312435
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,9 +181,9 @@ GameObject:
   - component: {fileID: 924040395452038213}
   - component: {fileID: 545085215885200437}
   - component: {fileID: 3720427184476711797}
+  - component: {fileID: 3477235414210352101}
   - component: {fileID: 298183044038142323}
   - component: {fileID: 3353053624851963238}
-  - component: {fileID: 3477235414210352101}
   m_Layer: 0
   m_Name: Fireball 1
   m_TagString: Untagged
@@ -277,6 +278,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 5.2541814}
   m_Center: {x: -3.2396927e-15, y: 0, z: 2.1270907}
+--- !u!114 &3477235414210352101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6177189338585312435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbe1665f98cf6c4586982d74619c9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
+  knockbackForce: 0
 --- !u!114 &298183044038142323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,10 +306,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   lifetime: 5
-  destroyOnCollision: 1
+  destroyOnCollision: 0
+  destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5
-  player: 1
+  player: 0
 --- !u!54 &3353053624851963238
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -322,20 +338,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3477235414210352101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6177189338585312435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdbe1665f98cf6c4586982d74619c9b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 1
-  knockbackForce: 0
 --- !u!1001 &4029371261233288592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,6 +428,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8504295857359798207, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504295857359798207, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
+      propertyPath: destroyOnCollision
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

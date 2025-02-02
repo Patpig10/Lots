@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     public float speed = 10f;                // Speed of the projectile
     public float lifetime = 5f;              // Time before the projectile is destroyed
     public bool destroyOnCollision = true;   // Whether to destroy the projectile on collision
+    public bool destroyOnCollisionPlayer = true;
     public int knockbackDistance = 2;        // The number of grid cells to knock back the player
     public float knockbackStrength = 5f;     // The strength of the knockback (speed of knockback movement)
     public bool player = false;              // Whether the projectile is a player projectile
@@ -37,6 +38,14 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
 
         }
+        if (other.CompareTag("Player"))
+        {
+            if (destroyOnCollisionPlayer)
+            {
+                Destroy(gameObject, 0.1f);
+            }
+        }
+
         // Check if the collided object is the player
         if (other.CompareTag("enemys"))
         {

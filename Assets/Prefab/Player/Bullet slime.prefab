@@ -125,6 +125,7 @@ MonoBehaviour:
   speed: 3
   lifetime: 5
   destroyOnCollision: 1
+  destroyOnCollisionPlayer: 0
   knockbackDistance: 2
   knockbackStrength: 5
   player: 1
@@ -291,6 +292,7 @@ MonoBehaviour:
   speed: 3
   lifetime: 5
   destroyOnCollision: 1
+  destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5
   player: 0
@@ -435,6 +437,7 @@ MonoBehaviour:
   speed: 3
   lifetime: 5
   destroyOnCollision: 0
+  destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5
   player: 1
