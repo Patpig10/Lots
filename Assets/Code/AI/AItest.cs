@@ -62,21 +62,24 @@ public class AItest : MonoBehaviour
 
         foreach (Transform block in blocks)
         {
-            if (!recentBlocks.Contains(block) && !IsBlockOccupied(block)) // Avoid recently visited or occupied blocks
+            // Skip blocks that are unpassable, recently visited, or occupied
+            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block))
             {
-                // Check if the block is horizontally or vertically aligned with the AI's position
-                if (Mathf.Abs(block.position.x - transform.position.x) < 0.1f ||
-                    Mathf.Abs(block.position.z - transform.position.z) < 0.1f)
-                {
-                    // Calculate the Manhattan distance to the player
-                    float distanceToPlayer = Mathf.Abs(block.position.x - player.position.x) +
-                                             Mathf.Abs(block.position.z - player.position.z);
+                continue;
+            }
 
-                    if (distanceToPlayer < minDistanceToPlayer)
-                    {
-                        minDistanceToPlayer = distanceToPlayer;
-                        nearestBlock = block;
-                    }
+            // Check if the block is horizontally or vertically aligned with the AI's position
+            if (Mathf.Abs(block.position.x - transform.position.x) < 0.1f ||
+                Mathf.Abs(block.position.z - transform.position.z) < 0.1f)
+            {
+                // Calculate the Manhattan distance to the player
+                float distanceToPlayer = Mathf.Abs(block.position.x - player.position.x) +
+                                         Mathf.Abs(block.position.z - player.position.z);
+
+                if (distanceToPlayer < minDistanceToPlayer)
+                {
+                    minDistanceToPlayer = distanceToPlayer;
+                    nearestBlock = block;
                 }
             }
         }
@@ -103,14 +106,17 @@ public class AItest : MonoBehaviour
 
             foreach (Transform block in blocks)
             {
-                if (!recentBlocks.Contains(block) && !IsBlockOccupied(block)) // Avoid recently visited or occupied blocks
+                // Skip blocks that are unpassable, recently visited, or occupied
+                if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block))
                 {
-                    float distance = Vector3.Distance(transform.position, block.position);
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                        nearestBlock = block;
-                    }
+                    continue;
+                }
+
+                float distance = Vector3.Distance(transform.position, block.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestBlock = block;
                 }
             }
 
@@ -169,7 +175,7 @@ public class AItest : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(block.position, 0.1f); // Check for objects in the block's position
         foreach (Collider collider in colliders)
         {
-            if (collider.CompareTag("Enemy")) // If an object tagged "Enemy" is found, the block is occupied
+            if (collider.CompareTag("Enemy") || collider.CompareTag("Unpassable")) // If an object tagged "Enemy" or "Unpassable" is found, the block is occupied
             {
                 return true;
             }

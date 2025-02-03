@@ -8,10 +8,13 @@ public class BlockAndBridgeManager : MonoBehaviour
     public Transform blockSpawnLocation;  // Location to spawn the block
     public GameObject bridge;             // Reference to the bridge GameObject
 
+    private GameObject currentBlock;      // Reference to the current block instance
+
     private void Start()
     {
         // Start a coroutine to deactivate the bridge after 1 second
         StartCoroutine(DeactivateBridgeAfterDelay(0.1f));
+        SpawnBlock();
     }
 
     private IEnumerator DeactivateBridgeAfterDelay(float delay)
@@ -25,6 +28,7 @@ public class BlockAndBridgeManager : MonoBehaviour
             bridge.SetActive(false);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         // Check if the colliding object has the "Pushable" tag
@@ -44,16 +48,28 @@ public class BlockAndBridgeManager : MonoBehaviour
     // Method to reset the block and deactivate the bridge
     public void ResetBlockAndBridge()
     {
-        // Spawn a new block at the specified location
-        if (pushableBlockPrefab != null && blockSpawnLocation != null)
+        // Destroy the current block if it exists
+        if (currentBlock != null)
         {
-            Instantiate(pushableBlockPrefab, blockSpawnLocation.position, blockSpawnLocation.rotation);
+            Destroy(currentBlock);
         }
+
+        // Spawn a new block at the specified location
+        SpawnBlock();
 
         // Deactivate the bridge
         if (bridge != null)
         {
             bridge.SetActive(false);
+        }
+    }
+
+    // Helper method to spawn a new block
+    private void SpawnBlock()
+    {
+        if (pushableBlockPrefab != null && blockSpawnLocation != null)
+        {
+            currentBlock = Instantiate(pushableBlockPrefab, blockSpawnLocation.position, blockSpawnLocation.rotation);
         }
     }
 }

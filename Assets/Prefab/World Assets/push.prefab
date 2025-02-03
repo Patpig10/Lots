@@ -248,8 +248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridBlocks: []
   movementSpeed: 5
-  pushDistance: 1
-  stuckThreshold: 0.35
+  pushDistance: 3
+  stuckThreshold: 0.02
 --- !u!1 &8265257958760859193
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class PlayerAbilities : MonoBehaviour
     public bool isAoEUnlocked = false; // True if the Fire boss is defeated
 
     // UI elements
-    public Image abilityIcon;
+    public GameObject abilityPanel; // Reference to the ability panel GameObject
 
     // Icon sprites for abilities
     public Sprite shootIcon;
@@ -46,6 +46,9 @@ public class PlayerAbilities : MonoBehaviour
 
         // Set initial selected ability (optional)
         selectedAbility = Ability.Shoot; // Default to Shoot
+
+        // Update the ability panel on start
+        UpdateAbilityPanel();
     }
 
     private void Update()
@@ -69,7 +72,9 @@ public class PlayerAbilities : MonoBehaviour
         {
             UseAbility();
         }
-        UpdateAbilityIcon();
+
+        // Update the ability panel every frame
+        UpdateAbilityPanel();
     }
 
     private void SelectAbility(Ability ability)
@@ -178,35 +183,41 @@ public class PlayerAbilities : MonoBehaviour
     {
         isShootUnlocked = true;
         Debug.Log("Shoot ability unlocked!");
+        UpdateAbilityPanel(); // Update the panel when an ability is unlocked
     }
 
     public void UnlockShieldAbility()
     {
         isShieldUnlocked = true;
         Debug.Log("Shield ability unlocked!");
+        UpdateAbilityPanel(); // Update the panel when an ability is unlocked
     }
 
     public void UnlockAoEAbility()
     {
         isAoEUnlocked = true;
         Debug.Log("AoE ability unlocked!");
+        UpdateAbilityPanel(); // Update the panel when an ability is unlocked
     }
 
-    private void UpdateAbilityIcon()
+    private void UpdateAbilityPanel()
     {
-        switch (selectedAbility)
+        // Check if no abilities are unlocked
+        if (!isShootUnlocked && !isShieldUnlocked && !isAoEUnlocked)
         {
-            case Ability.Shoot:
-                abilityIcon.sprite = shootIcon;
-                break;
-
-            case Ability.Shield:
-                abilityIcon.sprite = shieldIcon;
-                break;
-
-            case Ability.AoE:
-                abilityIcon.sprite = aoeIcon;
-                break;
+            // Disable the ability panel
+            if (abilityPanel != null)
+            {
+                abilityPanel.SetActive(false);
+            }
+        }
+        else
+        {
+            // Enable the ability panel if at least one ability is unlocked
+            if (abilityPanel != null)
+            {
+                abilityPanel.SetActive(true);
+            }
         }
     }
 }
