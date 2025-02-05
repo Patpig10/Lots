@@ -37,5 +37,6 @@ public class Portal : MonoBehaviour
         {
             TeleportPlayer();
         }
+        TeleportPlayer();
     }
 }

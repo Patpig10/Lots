@@ -16,12 +16,12 @@ public class AOEplayerattack : MonoBehaviour
     private void Update()
     {
         // Check if the player presses the 'T' key
-        if (Input.GetKeyDown(KeyCode.T))
+        /*if (Input.GetKeyDown(KeyCode.T))
         {
             enemiesHit.Clear(); // Clear the list of previously hit enemies
             StartCoroutine(ExpandingAOEAttack()); // Start the expanding AOE attack
             PlayFireAOEEffect(); // Play the fire AOE effect
-        }
+        }*/
     }
 
     public void AOE()

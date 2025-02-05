@@ -129,11 +129,11 @@ public class LevelManager : MonoBehaviour
     }
     public void Level2()
     {
-        LoadLevel(2);
+        LoadLevel(6);
     }
     public void Level3()
     {
-        LoadLevel(3);
+        LoadLevel(8);
     }
     public void Level4()
     {

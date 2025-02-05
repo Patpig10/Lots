@@ -22,6 +22,11 @@ public class Saving : MonoBehaviour
         LoadPlayerData();
     }
 
+    public void awake()
+    {
+        
+    }
+
     // Automatically save player data when the application quits
     private void OnApplicationQuit()
     {
@@ -90,7 +95,7 @@ public class Saving : MonoBehaviour
     }
     public void Addlevel2()
     {
-        if (levelUnlocked > 1)
+        if (levelUnlocked >= 1)
         {
             completed = true;
         }
@@ -104,7 +109,7 @@ public class Saving : MonoBehaviour
     }
     public void Addlevel3()
     {
-        if (levelUnlocked > 2)
+        if (levelUnlocked >= 2)
         {
             completed = true;
         }
@@ -116,7 +121,7 @@ public class Saving : MonoBehaviour
     }
     public void Addlevel4()
     {
-        if (levelUnlocked > 3)
+        if (levelUnlocked >= 3)
         {
             completed = true;
         }
