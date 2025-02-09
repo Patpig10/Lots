@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using JetBrains.Annotations;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -8,8 +10,10 @@ public class EnemyHealth : MonoBehaviour
     private int currentHealth; // The enemy's current health
     public Animator animator; // Reference to the Animator component
     public GameObject Body;
-   // public BoxCollider BoxCollider; // Reference to the BoxCollider component
-
+    public GameObject damagepoints; // Prefab for the floating text
+    public float textDuration = 1f; // How long the floating text stays visible
+    public Vector3 textOffset = new Vector3(0, 2, 0); // Offset for the popup text
+    public Vector3 Randoml = new Vector3(1, 0, 0);
     void Start()
     {
         // Initialize the enemy's health to the maximum value at the start
@@ -24,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
     {
         // Reduce the enemy's current health by the damage amount
         currentHealth -= damageAmount;
+        ShowFloatingText(damageAmount);
 
         // Trigger the "Hurt" animation
         animator.SetTrigger("Hurt");
@@ -33,6 +38,31 @@ public class EnemyHealth : MonoBehaviour
         {
             Die(); // Call the Die method when health reaches 0
         }
+    }
+
+    // Method to display floating damage text
+    public void ShowFloatingText(int damageAmount)
+    {
+     var go =  Instantiate (damagepoints, transform.position, Quaternion.identity, transform);
+        // Calculate the position with the offset
+
+
+        //transform.localPosition = new Vector3(Random.Range(-Randoml.x, Randoml.x), Random.Range(-Randoml.y, Randoml.y), Random.Range(-Randoml.z, Randoml.z));
+
+        // Set the text to display the damage amount
+        TextMeshPro textMesh = go.GetComponent<TextMeshPro>();
+        if (textMesh != null)
+        {
+            textMesh.text = currentHealth.ToString();
+            // textMesh.text = damageAmount.ToString();
+        }
+        else
+        {
+            Debug.LogError("The damagepoints prefab does not have a TextMeshPro component.");
+        }
+
+        // Destroy the floating text after a delay
+        Destroy(go, textDuration);
     }
 
     // Method to handle what happens when the enemy dies
