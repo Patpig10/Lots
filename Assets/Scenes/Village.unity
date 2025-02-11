@@ -25496,12 +25496,14 @@ MonoBehaviour:
   isShieldUnlocked: 0
   isAoEUnlocked: 0
   abilityPanel: {fileID: 589675636}
+  abilityIcon: {fileID: 334897231}
   shootIcon: {fileID: 21300000, guid: bf7cdb1dd2051f6468cb3f2b0b8252b8, type: 3}
   shieldIcon: {fileID: 21300000, guid: b139637ab1897324d8fd83f6be1d3ca9, type: 3}
   aoeIcon: {fileID: 21300000, guid: b37bfc2f5db221748a006369275ba54e, type: 3}
   shootCooldown: 1
   shieldCooldown: 5
   aoeCooldown: 10
+  Abilityhole: {fileID: 0}
 --- !u!114 &1282812771
 MonoBehaviour:
   m_ObjectHideFlags: 0

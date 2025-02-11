@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: SnakebossGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Snakeboss
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 1487eb7f-11d8-4f86-aa29-6abe78a92842
+    <Name>k__BackingField: snakebossintro
+    <Text>k__BackingField: WHO DARE TO ENTER MY DOMAIN!
+    <Speaker>k__BackingField: Guardian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 0f0b962e-2ad1-4191-bf11-f10d906eceae
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 108, y: -158.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 0f0b962e-2ad1-4191-bf11-f10d906eceae
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: You shouldn't be here, little one....leave before I lose
+      control.
+    <Speaker>k__BackingField: Guardian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: d06248e1-79b4-4ca0-b6c5-666a4be8d3b5
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 864, y: -158.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: d06248e1-79b4-4ca0-b6c5-666a4be8d3b5
+    <Name>k__BackingField: Battle
+    <Text>k__BackingField: The Queen...... please forgive me.
+    <Speaker>k__BackingField: Guardian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b626f945-23b6-4b7b-b6a2-b6ce52eb814c
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1632.8, y: -158.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: b626f945-23b6-4b7b-b6a2-b6ce52eb814c
+    <Name>k__BackingField: cc
+    <Text>k__BackingField: Fight me, and become the champion she needs
+    <Speaker>k__BackingField: Guardian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2436, y: -158.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - snakebossintro
+  - DialogueName
+  - Battle
+  - cc
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

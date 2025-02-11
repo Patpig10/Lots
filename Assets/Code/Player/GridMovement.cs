@@ -6,29 +6,27 @@ public class GridMovement : MonoBehaviour
 {
     public float movementSpeed = 5f;      // Movement speed
     public float rotationSpeed = 180f;    // Speed of the rotation in degrees per second
-    public Transform[] blocks;             // Array of block transforms representing grid cells
+    public List<Transform> blocks;        // List of block transforms representing grid cells
     public Animator animator;              // Animator reference
 
     private Transform targetBlock;         // The target block to move towards
     public bool isMoving = false;         // Check if movement is ongoing
     private Quaternion targetRotation;     // The target rotation to smoothly rotate towards
-    public float searchRadius = 5f;        // Define the radius for searching blocks
+    public float searchRadius = 1.5f;      // Define the radius for searching blocks (adjacent blocks only)
     private bool isKnockbackActive = false; // Separate knockback state
 
     void Start()
     {
-        // Populate the blocks array with all GrassBlock objects in the scene
-        GrassBlock[] grassBlocks = FindObjectsOfType<GrassBlock>();
-        blocks = new Transform[grassBlocks.Length];
+        // Initialize the blocks list
+        blocks = new List<Transform>();
 
-        for (int i = 0; i < grassBlocks.Length; i++)
-        {
-            blocks[i] = grassBlocks[i].transform; // Add the transform of each GrassBlock to the blocks array
-        }
+        // Populate the blocks list with all GrassBlock objects in the scene
+        UpdateBlocksList();
     }
 
     void Update()
     {
+        UpdateBlocksList();
 
         // Prevent movement if knockback is active
         if (isKnockbackActive)
@@ -41,13 +39,14 @@ public class GridMovement : MonoBehaviour
 
             Vector3 input = Vector3.zero;
 
-            if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
+            // Enforce single-axis movement (no diagonal movement)
+            if (Mathf.Abs(horizontalInput) > 0 && Mathf.Abs(verticalInput) == 0)
             {
-                input = new Vector3(horizontalInput, 0, 0);  // Prioritize horizontal movement
+                input = new Vector3(horizontalInput, 0, 0);  // Only horizontal movement
             }
-            else if (Mathf.Abs(verticalInput) > 0)
+            else if (Mathf.Abs(verticalInput) > 0 && Mathf.Abs(horizontalInput) == 0)
             {
-                input = new Vector3(0, 0, verticalInput);  // Prioritize vertical movement
+                input = new Vector3(0, 0, verticalInput);  // Only vertical movement
             }
 
             if (input != Vector3.zero)
@@ -62,7 +61,12 @@ public class GridMovement : MonoBehaviour
                         animator.SetTrigger("Move");
                     }
 
+                    Debug.Log("Moving to block: " + targetBlock.name);
                     StartCoroutine(MoveToBlock());
+                }
+                else
+                {
+                    Debug.Log("No valid block found in direction: " + input);
                 }
             }
         }
@@ -101,10 +105,16 @@ public class GridMovement : MonoBehaviour
                 continue; // Skip destroyed or inactive blocks
             }
 
+            // Skip unpassable blocks
+            if (block.CompareTag("Unpassable"))
+            {
+                continue; // Ignore unpassable blocks
+            }
+
             // Calculate the distance from the player to the block
             float distanceToBlock = Vector3.Distance(transform.position, block.position);
 
-            // Only consider blocks within the search radius
+            // Only consider blocks within the search radius (adjacent blocks)
             if (distanceToBlock <= searchRadius)
             {
                 Vector3 directionToBlock = (block.position - transform.position).normalized;
@@ -125,12 +135,6 @@ public class GridMovement : MonoBehaviour
 
         if (nearestBlock != null)
         {
-            // Check if the nearest block is unpassable before setting it as the target
-            if (nearestBlock.CompareTag("Unpassable"))
-            {
-                return false; // Block the movement if the target block is unpassable
-            }
-
             targetBlock = nearestBlock; // Set the target block to move towards
             return true; // Found a valid target block to move towards
         }
@@ -182,47 +186,6 @@ public class GridMovement : MonoBehaviour
         }
     }
 
-  /*  public void Knockback(int knockbackDistance, Vector3 knockbackDirection)
-    {
-        if (!isKnockbackActive) // Prevent multiple knockbacks from overlapping
-        {
-            StartCoroutine(ApplyKnockback(knockbackDistance, knockbackDirection));
-        }
-    }
-    private IEnumerator ApplyKnockback(int knockbackDistance, Vector3 knockbackDirection)
-    {
-        isKnockbackActive = true;
-
-        for (int i = 0; i < knockbackDistance; i++)
-        {
-            if (FindNearestBlock(knockbackDirection))
-            {
-                Vector3 startPosition = transform.position;
-                Vector3 targetPosition = new Vector3(targetBlock.position.x, startPosition.y, targetBlock.position.z);
-
-                float journeyLength = Vector3.Distance(startPosition, targetPosition);
-                float startTime = Time.time;
-
-                while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
-                {
-                    float distanceCovered = (Time.time - startTime) * movementSpeed;
-                    float fractionOfJourney = distanceCovered / journeyLength;
-                    transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
-                    yield return null;
-                }
-
-                transform.position = targetPosition;
-            }
-            else
-            {
-                Debug.LogWarning("Knockback interrupted: no valid block found.");
-                break; // Stop the knockback process if no valid block is found
-            }
-        }
-
-        isKnockbackActive = false;
-    }
-  */
     public IEnumerator MoveToBlockWithStrength(float knockbackSpeed)
     {
         isMoving = true;  // Set the flag to prevent movement while transitioning
@@ -243,5 +206,24 @@ public class GridMovement : MonoBehaviour
         transform.position = targetPosition;  // Snap to the final target position
 
         isMoving = false;  // Allow new movements
+    }
+
+    // Method to update the blocks list dynamically
+    public void UpdateBlocksList()
+    {
+        // Clear the current list
+        blocks.Clear();
+
+        // Find all active GrassBlock objects in the scene and add them to the list
+        GrassBlock[] grassBlocks = FindObjectsOfType<GrassBlock>();
+        foreach (GrassBlock block in grassBlocks)
+        {
+            if (block.gameObject.activeSelf)
+            {
+                blocks.Add(block.transform);
+            }
+        }
+
+        Debug.Log("Blocks list updated. Total blocks: " + blocks.Count);
     }
 }

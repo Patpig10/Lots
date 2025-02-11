@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     public float textDuration = 1f; // How long the floating text stays visible
     public Vector3 textOffset = new Vector3(0, 2, 0); // Offset for the popup text
     public Vector3 Randoml = new Vector3(1, 0, 0);
+    public GameObject targetObject; // The GameObject to destroy
     void Start()
     {
         // Initialize the enemy's health to the maximum value at the start
@@ -43,9 +44,13 @@ public class EnemyHealth : MonoBehaviour
     // Method to display floating damage text
     public void ShowFloatingText(int damageAmount)
     {
-     var go =  Instantiate (damagepoints, transform.position, Quaternion.identity, transform);
+        damagepoints.transform.position += targetObject.transform.position + textOffset;
+        var go =  Instantiate (damagepoints, targetObject.transform.position, Quaternion.identity, transform);
         // Calculate the position with the offset
 
+        // damagepoints.transform.position += textOffset;
+
+        damagepoints.transform.localPosition = new Vector3(Random.Range(-Randoml.x, Randoml.x), Random.Range(-Randoml.y, Randoml.y), Random.Range(-Randoml.z, Randoml.z));
 
         //transform.localPosition = new Vector3(Random.Range(-Randoml.x, Randoml.x), Random.Range(-Randoml.y, Randoml.y), Random.Range(-Randoml.z, Randoml.z));
 
@@ -68,6 +73,7 @@ public class EnemyHealth : MonoBehaviour
     // Method to handle what happens when the enemy dies
     private void Die()
     {
+        Debug.LogError("deadvvvvvvv");
         // For now, we just destroy the enemy GameObject
         Destroy(Body);
 

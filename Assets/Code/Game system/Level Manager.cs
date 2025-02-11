@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
             buttonboss.SetActive(false);
         }
 
-        if (Saving.levelUnlocked == 3)
+        if (Saving.levelUnlocked >= 3)
         {
             button1.SetActive(true);
             button2.SetActive(true);
@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
             buttonboss.SetActive(false);
         }
 
-        if (Saving.levelUnlocked == 4)
+        if (Saving.levelUnlocked >= 4)
         {
             button1.SetActive(true);
             button2.SetActive(true);
@@ -60,7 +60,7 @@ public class LevelManager : MonoBehaviour
             buttonboss.SetActive(false);
         }
 
-        if (Saving.levelUnlocked == 5)
+        if (Saving.levelUnlocked >= 5)
         {
             button1.SetActive(true);
             button2.SetActive(true);

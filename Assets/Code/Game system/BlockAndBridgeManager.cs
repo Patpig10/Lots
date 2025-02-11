@@ -9,9 +9,15 @@ public class BlockAndBridgeManager : MonoBehaviour
     public GameObject bridge;             // Reference to the bridge GameObject
 
     private GameObject currentBlock;      // Reference to the current block instance
+    public GameObject blocker;            // Reference to the blocker GameObject
+
+    private GridMovement gridMovement;    // Reference to the GridMovement script
 
     private void Start()
     {
+        // Get the GridMovement component
+        gridMovement = FindObjectOfType<GridMovement>();
+
         // Start a coroutine to deactivate the bridge after 1 second
         StartCoroutine(DeactivateBridgeAfterDelay(0.1f));
         SpawnBlock();
@@ -41,6 +47,16 @@ public class BlockAndBridgeManager : MonoBehaviour
             if (bridge != null)
             {
                 bridge.SetActive(true);
+                Destroy(blocker);
+
+                // Add GrassBlock component to all child objects of the bridge
+                AddGrassBlockToBridgeChildren();
+
+                // Update the blocks list in the GridMovement script
+                if (gridMovement != null)
+                {
+                    gridMovement.UpdateBlocksList();
+                }
             }
         }
     }
@@ -70,6 +86,22 @@ public class BlockAndBridgeManager : MonoBehaviour
         if (pushableBlockPrefab != null && blockSpawnLocation != null)
         {
             currentBlock = Instantiate(pushableBlockPrefab, blockSpawnLocation.position, blockSpawnLocation.rotation);
+        }
+    }
+
+    // Method to add GrassBlock component to all child objects of the bridge
+    private void AddGrassBlockToBridgeChildren()
+    {
+        if (bridge != null)
+        {
+            foreach (Transform child in bridge.transform)
+            {
+                // Add the GrassBlock component to the child if it doesn't already have it
+                if (child.GetComponent<GrassBlock>() == null)
+                {
+                    child.gameObject.AddComponent<GrassBlock>();
+                }
+            }
         }
     }
 }

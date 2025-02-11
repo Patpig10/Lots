@@ -20,6 +20,7 @@ public class PlayerAbilities : MonoBehaviour
 
     // UI elements
     public GameObject abilityPanel; // Reference to the ability panel GameObject
+    public Image abilityIcon; // Reference to the Image component for the ability icon
 
     // Icon sprites for abilities
     public Sprite shootIcon;
@@ -31,6 +32,7 @@ public class PlayerAbilities : MonoBehaviour
     public float shootCooldown = 2f; // Cooldown for Shoot
     public float shieldCooldown = 5f; // Cooldown for Shield
     public float aoeCooldown = 10f; // Cooldown for AoE
+    public GameObject Abilityhole;
 
     // Cooldown states
     private bool canUseShoot = true;
@@ -81,6 +83,7 @@ public class PlayerAbilities : MonoBehaviour
     {
         selectedAbility = ability;
         Debug.Log("Selected Ability: " + selectedAbility);
+        UpdateAbilityPanel(); // Update the panel when an ability is selected
     }
 
     private void UseAbility()
@@ -217,6 +220,23 @@ public class PlayerAbilities : MonoBehaviour
             if (abilityPanel != null)
             {
                 abilityPanel.SetActive(true);
+            }
+
+            // Update the ability icon based on the selected ability
+            if (abilityIcon != null)
+            {
+                switch (selectedAbility)
+                {
+                    case Ability.Shoot:
+                        abilityIcon.sprite = shootIcon;
+                        break;
+                    case Ability.Shield:
+                        abilityIcon.sprite = shieldIcon;
+                        break;
+                    case Ability.AoE:
+                        abilityIcon.sprite = aoeIcon;
+                        break;
+                }
             }
         }
     }
