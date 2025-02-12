@@ -89,7 +89,6 @@ public class GridMovement : MonoBehaviour
 
         targetRotation = Quaternion.Euler(0, targetAngle, 0);
     }
-
     public bool FindNearestBlock(Vector3 direction)
     {
         float minDistance = float.MaxValue;
@@ -99,16 +98,9 @@ public class GridMovement : MonoBehaviour
 
         foreach (Transform block in blocks)
         {
-            // Check if the block is still valid and active
             if (block == null || !block.gameObject.activeSelf)
             {
                 continue; // Skip destroyed or inactive blocks
-            }
-
-            // Skip unpassable blocks
-            if (block.CompareTag("Unpassable"))
-            {
-                continue; // Ignore unpassable blocks
             }
 
             // Calculate the distance from the player to the block
@@ -127,20 +119,22 @@ public class GridMovement : MonoBehaviour
                     if (distanceToBlock < minDistance)
                     {
                         minDistance = distanceToBlock;
-                        nearestBlock = block; // Store the nearest valid block
+                        nearestBlock = block;
                     }
                 }
             }
         }
 
-        if (nearestBlock != null)
+        if (nearestBlock != null && !nearestBlock.CompareTag("Unpassable")) // **Check here**
         {
-            targetBlock = nearestBlock; // Set the target block to move towards
+            targetBlock = nearestBlock;
             return true; // Found a valid target block to move towards
         }
 
+        targetBlock = null; // Reset if no valid block is found
         return false; // No valid block found
     }
+
 
     public IEnumerator MoveToBlock()
     {
