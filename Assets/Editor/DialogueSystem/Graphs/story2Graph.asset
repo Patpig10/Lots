@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: story2Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: story2
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: cb5989e1-73ba-43aa-ab72-c003fdd5f53f
+    <Name>k__BackingField: 6
+    <Text>k__BackingField: '"What now?"'
+    <Speaker>k__BackingField: Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 9e58627c-b034-4ba2-9f1d-a37307b81946
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1576, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e6188ddd-74f3-4c3e-9513-f7cc7ba0d71b
+    <Name>k__BackingField: r2
+    <Text>k__BackingField: "\"They've broken through the fog! What\u2019s the status
+      of the evacuation?\"\r"
+    <Speaker>k__BackingField: Scout
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b3906490-a42b-497b-bc90-92f29d35ca8b
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 116, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 371bdb5d-941f-4e0d-a2c7-b14bd197c918
+    <Name>k__BackingField: s
+    <Text>k__BackingField: "\"Bring him to me.\"\r"
+    <Speaker>k__BackingField: Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3996, y: 173.6}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: a8d657b8-e3fd-4307-bc32-79e6d02e727b
+    <Name>k__BackingField: d
+    <Text>k__BackingField: " \"We don\u2019t know\u2026 but he\u2019s saving our
+      people.\"\r"
+    <Speaker>k__BackingField: Guard
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 371bdb5d-941f-4e0d-a2c7-b14bd197c918
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3185.5999, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 368b604e-47af-4f11-b549-7aa24c017ac8
+    <Name>k__BackingField: f
+    <Text>k__BackingField: '"A human? Did the kingdom finally send reinforcements?"
+
+'
+    <Speaker>k__BackingField: Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: a8d657b8-e3fd-4307-bc32-79e6d02e727b
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2516.8, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: b3906490-a42b-497b-bc90-92f29d35ca8b
+    <Name>k__BackingField: 4
+    <Text>k__BackingField: " \"Seventy percent of the beastmen have reached the deepest
+      part of the forest... but there's a problem.\"\r"
+    <Speaker>k__BackingField: Guard
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: cb5989e1-73ba-43aa-ab72-c003fdd5f53f
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 841.60004, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 9e58627c-b034-4ba2-9f1d-a37307b81946
+    <Name>k__BackingField: w
+    <Text>k__BackingField: " \"A human appeared out of nowhere\u2014he's carrying
+      beastmen to the stronghold.\""
+    <Speaker>k__BackingField: Guard
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 368b604e-47af-4f11-b549-7aa24c017ac8
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1858.3999, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - 6
+  - r2
+  - s
+  - d
+  - f
+  - 4
+  - w
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

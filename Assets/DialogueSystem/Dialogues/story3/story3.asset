@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: story3
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: story3
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: 99e3abdd957807945b3c70ecae4a0a0e, type: 2}
+  - {fileID: 11400000, guid: e5bd8bb54a5783b4fba9efd621c397cf, type: 2}
+  - {fileID: 11400000, guid: 5be3d17b2293c35448b4684f393291c5, type: 2}
+  - {fileID: 11400000, guid: a165aef28b8f89a4c912134475c0b1d2, type: 2}
+  - {fileID: 11400000, guid: c72415435bc8e9e47970d8ee0cfe3c0f, type: 2}
+  - {fileID: 11400000, guid: 9147210250e158141b640f0d9a4ff529, type: 2}
+  - {fileID: 11400000, guid: f60bd69ea85bded498f654e6c8681df1, type: 2}
+  - {fileID: 11400000, guid: ba85fa1938266b340adb3e813499dc66, type: 2}
+  - {fileID: 11400000, guid: d8d91bfc43556f74790abfd2d847e78e, type: 2}

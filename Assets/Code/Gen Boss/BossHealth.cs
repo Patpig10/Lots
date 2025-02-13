@@ -5,11 +5,14 @@ using UnityEngine.UI;
 public class BossHealth : MonoBehaviour
 {
 
+    private Saving savingSystem;
+
     public int mainHealth = 20; // Set the total health of the boss
     public Slider healthBar; // Reference to the health bar slider
     public GameObject brain;
     private void Start()
     {
+
         // Initialize the health bar value to the boss's maximum health
         if (healthBar != null)
         {
@@ -20,6 +23,13 @@ public class BossHealth : MonoBehaviour
 
     public void ApplyDamage(int damage)
     {
+        savingSystem = FindObjectOfType<Saving>();
+
+        if (savingSystem != null)
+        {
+            // Set the weapon damage to the saved value
+            damage = savingSystem.weaponSavedDamage;
+        }
         mainHealth -= damage;
 
         // Update the health bar

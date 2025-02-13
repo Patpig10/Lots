@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: 4
-  <Text>k__BackingField: Only if she can get the other rulers to agree as well. Many
-    beasts still don't agree with helping the humans after they abandoned us.
-  <Speaker>k__BackingField: Queen of the Forest
+  <Text>k__BackingField: " \"Damn it... Why?\"\r"
+  <Speaker>k__BackingField: Queen
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 816fe81ed89dbfc408511c92f98b3844, type: 2}

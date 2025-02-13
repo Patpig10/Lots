@@ -39601,7 +39601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1372278494156860513, guid: 197a3c9c47f68b846ab3ae82403f68a9, type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1372278494156860513, guid: 197a3c9c47f68b846ab3ae82403f68a9, type: 3}
       propertyPath: m_IsActive
@@ -39609,11 +39609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1691487395077484202, guid: 197a3c9c47f68b846ab3ae82403f68a9, type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8743187430573067445, guid: 197a3c9c47f68b846ab3ae82403f68a9, type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8771091787928289351, guid: 197a3c9c47f68b846ab3ae82403f68a9, type: 3}
       propertyPath: m_Name
@@ -39621,7 +39621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8771091787928289351, guid: 197a3c9c47f68b846ab3ae82403f68a9, type: 3}
       propertyPath: m_Layer
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40064,7 +40064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8857e8ffea0488b49a2c2efd4b1c23e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainHealth: 600
+  mainHealth: 240
   healthBar: {fileID: 473200549}
   brain: {fileID: 1662623032}
 --- !u!114 &1189895289
@@ -51667,7 +51667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8771091787928289351, guid: 197a3c9c47f68b846ab3ae82403f68a9, type: 3}
       propertyPath: m_TagString
-      value: Unpassable
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -53948,7 +53948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSavedLife: 3
-  weaponSavedDamage: 20
+  weaponSavedDamage: 120
   levelUnlocked: 1
   maxcoins: 0
   completed: 0
@@ -56337,7 +56337,7 @@ MonoBehaviour:
   pauseDuration: 1
   changeTargetInterval: 1
   bodyGrowthInterval: 5
-  initialBodySize: 1
+  initialBodySize: 8
   blockCooldownDuration: 10
 --- !u!54 &1662623034
 Rigidbody:
@@ -69676,7 +69676,7 @@ Transform:
   m_GameObject: {fileID: 2003087981}
   serializedVersion: 2
   m_LocalRotation: {x: 0.25881907, y: -0, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 35, y: 3.6, z: 106.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

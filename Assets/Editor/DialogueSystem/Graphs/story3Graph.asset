@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: story3Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: story3
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: b55df9e4-a355-4e24-ac03-907f754057ae
+    <Name>k__BackingField: r3
+    <Text>k__BackingField: The fog fades as the Sword Hero leads the Queen to the
+      sanctuary, where the Forest Guardian slumbers.
+    <Speaker>k__BackingField: 
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 6b66c693-b3bd-4228-8bf0-7bc55f8eda32
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1408.8, y: -28.800001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 6cd5e746-6dd8-4918-824f-45d8710ef4bd
+    <Name>k__BackingField: r
+    <Text>k__BackingField: "\"A war\u2026 You wish to wield me as a weapon, like
+      the humans once did. I refuse.\"\r"
+    <Speaker>k__BackingField: Forest Guardian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: ac72d48b-003e-4297-b0d0-49f6e4a4befd
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3508.8, y: -28.800001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: ac72d48b-003e-4297-b0d0-49f6e4a4befd
+    <Name>k__BackingField: t
+    <Text>k__BackingField: " \"No! We don\u2019t want war. I just don\u2019t want
+      anyone else to suffer at the hands of the Lich.\"\r\n"
+    <Speaker>k__BackingField: Sword Hero
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 660df508-a534-4de8-bf7c-9e30af4af989
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4224, y: -28.800001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 3fbfd45c-068a-44b7-a85a-ed6541a8b830
+    <Name>k__BackingField: u
+    <Text>k__BackingField: "\"Not all of us see it that way. There was a time when
+      we were all one people. Fear shattered that peace and turned beastmen into
+      monsters. But if we defeat the Lich, we can restore what was lost.\"\r"
+    <Speaker>k__BackingField: Sword Hero
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: d889e9f7-10d5-47fd-9aef-f359fad5927e
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5659.2, y: -28.800001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: d889e9f7-10d5-47fd-9aef-f359fad5927e
+    <Name>k__BackingField: i
+    <Text>k__BackingField: " \"Hmph\u2026 Queen of the Forest, I have my doubts.
+      But if you wish for my protection, I will grant it\u2014\""
+    <Speaker>k__BackingField: Forest Guardian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 13c18798-442a-48b0-8ed2-e12390c34367
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6365.6, y: -28.800001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 6b66c693-b3bd-4228-8bf0-7bc55f8eda32
+    <Name>k__BackingField: w
+    <Text>k__BackingField: "\"Who dares trespass in my domain? Speak, or leave with
+      your life.\"\r"
+    <Speaker>k__BackingField: Forest Guardian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: efa47185-8d9b-487f-b431-dc4e9e381380
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2127.2, y: -28.800001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: efa47185-8d9b-487f-b431-dc4e9e381380
+    <Name>k__BackingField: e
+    <Text>k__BackingField: "\"We seek your aid. My people are suffering\u2014\"\r"
+    <Speaker>k__BackingField: Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 6cd5e746-6dd8-4918-824f-45d8710ef4bd
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2793.6, y: -28.800001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 660df508-a534-4de8-bf7c-9e30af4af989
+    <Name>k__BackingField: y
+    <Text>k__BackingField: "\"A human with a noble heart... But tell me, why risk
+      yourself for them? I still remember when this land was divided by hatred.\"\r"
+    <Speaker>k__BackingField: Forest Guardian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 3fbfd45c-068a-44b7-a85a-ed6541a8b830
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4922.4, y: -28.800001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 13c18798-442a-48b0-8ed2-e12390c34367
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: "\"Only if your champion proves himself\u2026 by defeating
+      me.\""
+    <Speaker>k__BackingField: Forest Guardian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 7113.6, y: -28.800001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - r3
+  - r
+  - t
+  - u
+  - i
+  - w
+  - e
+  - y
+  - DialogueName
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

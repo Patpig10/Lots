@@ -15,8 +15,15 @@ public class EnemyHealth : MonoBehaviour
     public Vector3 textOffset = new Vector3(0, 2, 0); // Offset for the popup text
     public Vector3 Randoml = new Vector3(1, 0, 0);
     public GameObject targetObject; // The GameObject to destroy
+    private Saving savingSystem;
+    public GameObject potionPrefab; // Reference to the potion prefab
+    public float potionSpawnChance = 0.2f; // Chance to spawn a potion (50% by default)
+    public float coinSpawnChance = 0.5f; // Chance to spawn a potion (50% by default)
+    public GameObject coin;
     void Start()
     {
+        savingSystem = FindObjectOfType<Saving>();
+
         // Initialize the enemy's health to the maximum value at the start
         currentHealth = maxHealth;
 
@@ -27,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
     // This function will be called when the enemy takes damage
     public void TakeDamage(int damageAmount)
     {
+        damageAmount = savingSystem.weaponSavedDamage;
         // Reduce the enemy's current health by the damage amount
         currentHealth -= damageAmount;
         ShowFloatingText(damageAmount);
@@ -77,6 +85,15 @@ public class EnemyHealth : MonoBehaviour
         // For now, we just destroy the enemy GameObject
         Destroy(Body);
 
-        // You could add effects like playing a death animation or dropping items here
+        // Spawn a potion with a certain chance
+        if (Random.value <= potionSpawnChance && potionPrefab != null)
+        {
+            Instantiate(potionPrefab, transform.position, Quaternion.identity);
+        }
+        if (Random.value <= coinSpawnChance && coin != null)
+        {
+            Instantiate(coin, transform.position, Quaternion.identity);
+        }
+
     }
 }

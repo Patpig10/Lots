@@ -9,10 +9,14 @@ public class BossSegment : MonoBehaviour
     [SerializeField] private BossHealth bossHealth; // Assign in Inspector
     public bool hit = false;
     public Animator animator; // Reference to the Animator component
+    private Saving savingSystem;
 
 
     private void Start()
     {
+        savingSystem = FindObjectOfType<Saving>();
+
+       
         // Find and reference the BossHealth script on the boss object
         GameObject bossObject = GameObject.Find("Grasslandbosshead"); // Ensure this name matches your boss GameObject
         if (bossObject != null)
@@ -33,6 +37,17 @@ public class BossSegment : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        //savingSystem = FindObjectOfType<Saving>();
+
+        if (savingSystem != null)
+        {
+            // Set the weapon damage to the saved value
+            damage = savingSystem.weaponSavedDamage;
+        }
+        else
+        {
+            Debug.LogWarning("Saving system not found! Using default damage value.");
+        }
         Debug.Log($"{gameObject.name} segment taking damage: {damage}");
 
         // Check if bossHealth is assigned before using it

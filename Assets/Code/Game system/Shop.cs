@@ -35,6 +35,7 @@ public class Shop : MonoBehaviour
         {
             heartSystem.AddLife(1);  // Call the AddHeart method from the HeartSystem script
             coins -= cost;  // Subtract the cost from the player's coins
+            save.maxcoins = coins;
         }
     }
 
@@ -44,10 +45,12 @@ public class Shop : MonoBehaviour
         if (coins >= cost)
         {
             weapon.damage += 10;  // Increase the damage of the weapon
+            save.SetWeaponDamage(weapon.damage);  // Update the saved damage value
             coins -= cost;  // Subtract the cost from the player's coins
+            save.maxcoins = coins;  // Update the saved coins value
+            save.SavePlayerData();  // Save the updated data
         }
     }
-
     public void AddCoins(int amount)
     {
         coins += amount;  // Add the specified amount of coins to the player's total
@@ -63,6 +66,7 @@ public class Shop : MonoBehaviour
             heartSystem.UpgradeMaxLife(1);  // Call the AddHeart method from the HeartSystem script
             heartSystem.AddLife(1);
             coins -= cost;  // Subtract the cost from the player's coins
+            save.maxcoins = coins;
         }
     }
 }

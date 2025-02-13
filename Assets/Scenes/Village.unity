@@ -32543,7 +32543,7 @@ MonoBehaviour:
   cost: 0
   coins: 10000
   coinsText: {fileID: 1338298369}
-  save: {fileID: 0}
+  save: {fileID: 1256430678}
 --- !u!4 &1673913779
 Transform:
   m_ObjectHideFlags: 0

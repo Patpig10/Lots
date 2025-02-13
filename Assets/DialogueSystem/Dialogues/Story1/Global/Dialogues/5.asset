@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: 5
-  <Text>k__BackingField: But some can't forget how the sword hero helped us to build
-    this village as a safe place for all of us.
-  <Speaker>k__BackingField: Queen of the Forest
+  <Text>k__BackingField: " \"Why must this happen to us? Our people\u2014our kin\u2014turning
+    into mindless monsters, slaves of the Lich.\""
+  <Speaker>k__BackingField: Queen
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 9916dbac9bce1fc4792c2f3ded492c00, type: 2}
