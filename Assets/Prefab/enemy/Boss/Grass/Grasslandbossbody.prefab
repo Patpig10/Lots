@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64eafd8349e80c45b862d1edd7acc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segmentHealth: 50
+  segmentHealth: 75
   isHead: 0
   bossHealth: {fileID: 0}
   hit: 0
