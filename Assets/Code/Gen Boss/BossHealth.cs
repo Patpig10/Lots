@@ -10,6 +10,7 @@ public class BossHealth : MonoBehaviour
     public int mainHealth = 20; // Set the total health of the boss
     public Slider healthBar; // Reference to the health bar slider
     public GameObject brain;
+    public GameObject emblem; // Object to spawn when boss is destroyed
     private void Start()
     {
 
@@ -41,6 +42,8 @@ public class BossHealth : MonoBehaviour
         // Check if the main health is depleted
         if (mainHealth <= 0)
         {
+            Instantiate(emblem, transform.position, Quaternion.identity);
+
             DestroyBoss();
         }
     }

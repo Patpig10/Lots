@@ -5115,6 +5115,7 @@ GameObject:
   - component: {fileID: 165845905}
   - component: {fileID: 165845904}
   - component: {fileID: 165845903}
+  - component: {fileID: 165845907}
   - component: {fileID: 165845906}
   m_Layer: 0
   m_Name: Emeblem of life
@@ -5122,7 +5123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &165845903
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5182,13 +5183,34 @@ Transform:
   m_GameObject: {fileID: 165845902}
   serializedVersion: 2
   m_LocalRotation: {x: -0.49018136, y: -0.5096295, z: -0.5096295, w: 0.49018136}
-  m_LocalPosition: {x: 37.524, y: 0.965, z: 128.219}
+  m_LocalPosition: {x: 37.396, y: 0.56, z: 115.983}
   m_LocalScale: {x: 0.06047, y: 0.06047, z: 0.06047}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &165845906
+--- !u!65 &165845906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165845902}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12.811859, y: 10, z: 8.999999}
+  m_Center: {x: -6.6839495, y: 0.9999998, z: 7.499998}
+--- !u!114 &165845907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5197,11 +5219,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 165845902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49edb3ab312e6fe44bd4db67884fe6e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9662d489af1fb0247bc76d6267a68817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1189895285}
-  emblem: {fileID: 165845902}
+  interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1582305449}
+        m_TargetAssemblyTypeName: Saving, Assembly-CSharp
+        m_MethodName: shootunlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &167309643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40061,6 +40096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grasslandbosshead
       objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: cb4e553d5deda9548a628b0410ed10a0, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40144,6 +40183,7 @@ MonoBehaviour:
   mainHealth: 6000
   healthBar: {fileID: 473200549}
   brain: {fileID: 1662623032}
+  emblem: {fileID: 165845902}
 --- !u!114 &1189895289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42658,9 +42698,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd283009bda69ed469faded9814535c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShootUnlocked: 1
-  isShieldUnlocked: 1
-  isAoEUnlocked: 1
+  isShootUnlocked: 0
+  isShieldUnlocked: 0
+  isAoEUnlocked: 0
   abilityPanel: {fileID: 717810138}
   abilityIcon: {fileID: 1999944091}
   shootIcon: {fileID: 21300000, guid: bf7cdb1dd2051f6468cb3f2b0b8252b8, type: 3}
@@ -54029,6 +54069,9 @@ MonoBehaviour:
   levelUnlocked: 1
   maxcoins: 0
   completed: 0
+  isShootUnlocked: 0
+  isShieldUnlocked: 0
+  isAoEUnlocked: 0
 --- !u!4 &1582305450
 Transform:
   m_ObjectHideFlags: 0
@@ -56300,7 +56343,7 @@ GameObject:
   - component: {fileID: 1662623033}
   m_Layer: 0
   m_Name: Grasslandboss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

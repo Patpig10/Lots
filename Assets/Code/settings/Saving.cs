@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Saving : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Saving : MonoBehaviour
     public int maxcoins = 0;
     private string saveFilePath;
     public bool completed = false;
+    public bool isShootUnlocked = false;
+    public bool isShieldUnlocked = false;
+    public bool isAoEUnlocked = false;
     private void Start()
     {
         // Set the file path for the save file
@@ -21,7 +25,7 @@ public class Saving : MonoBehaviour
         // Automatically load player data when the game starts
         LoadPlayerData();
     }
-
+    
     public void awake()
     {
         
@@ -37,6 +41,22 @@ public class Saving : MonoBehaviour
     public void SetMaxLife(int newLife)
     {
         maxSavedLife = newLife;
+        SavePlayerData(); // Save data immediately after change
+    }
+
+    public void shootunlock()
+    {
+        isShootUnlocked = true;
+        SavePlayerData();
+    }
+    public void shieldunlock()
+    {
+        isShieldUnlocked = true;
+        SavePlayerData();
+    }
+    public void aoeunlock()
+    {
+        isAoEUnlocked = true;
         SavePlayerData(); // Save data immediately after change
     }
 
@@ -67,7 +87,11 @@ public class Saving : MonoBehaviour
             maxSavedLife = maxSavedLife,
             weaponSavedDamage = weaponSavedDamage,
             levelUnlocked = levelUnlocked,
-            coins = maxcoins
+            coins = maxcoins,
+            isAoEUnlocked = isAoEUnlocked,
+            isShootUnlocked = isShootUnlocked,
+            isShieldUnlocked = isShieldUnlocked,
+
 
         };
 
@@ -144,6 +168,9 @@ public class Saving : MonoBehaviour
             weaponSavedDamage = saveData.weaponSavedDamage;
             levelUnlocked = saveData.levelUnlocked;
             maxcoins = saveData.coins;
+            isAoEUnlocked = saveData.isAoEUnlocked;
+            isShootUnlocked = saveData.isShootUnlocked;
+            isShieldUnlocked = saveData.isShieldUnlocked;
 
             Debug.Log("Player data loaded!");
         }
@@ -160,5 +187,8 @@ public class Saving : MonoBehaviour
         public int weaponSavedDamage;
         public int levelUnlocked;
         public int coins;
+        public bool isAoEUnlocked;
+        public bool isShootUnlocked;
+        public bool isShieldUnlocked;
     }
 }

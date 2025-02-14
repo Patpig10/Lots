@@ -38,9 +38,10 @@ public class PlayerAbilities : MonoBehaviour
     private bool canUseShoot = true;
     private bool canUseShield = true;
     private bool canUseAoE = true;
-
+    Saving save;
     private void Start()
     {
+        save = GameObject.FindObjectOfType<Saving>();
         // Get references to the components
         shieldSystem = GetComponent<ShieldSystem>();
         shootAbility = GetComponent<Shooter>(); // Assuming you have a ShootAbility script
@@ -48,6 +49,10 @@ public class PlayerAbilities : MonoBehaviour
 
         // Set initial selected ability (optional)
         selectedAbility = Ability.Shoot; // Default to Shoot
+
+        isShootUnlocked = save.isShootUnlocked;
+        isShieldUnlocked = save.isShieldUnlocked;
+        isAoEUnlocked = save.isAoEUnlocked;
 
         // Update the ability panel on start
         UpdateAbilityPanel();
@@ -77,14 +82,46 @@ public class PlayerAbilities : MonoBehaviour
 
         // Update the ability panel every frame
         UpdateAbilityPanel();
+        if(save.isShootUnlocked == true)
+        {
+            UnlockShootAbility();
+           // UpdateAbilityPanel();
+            //Abilityhole.SetActive(false);
+
+        }
+        if (save.isAoEUnlocked == true)
+        {
+            UnlockAoEAbility();
+            // UpdateAbilityPanel();
+            //Abilityhole.SetActive(false);
+
+        }
+        if (save.isShieldUnlocked == true)
+        {
+            UnlockShieldAbility();
+            // UpdateAbilityPanel();
+            //Abilityhole.SetActive(false);
+
+        }
     }
 
     private void SelectAbility(Ability ability)
     {
-        selectedAbility = ability;
-        Debug.Log("Selected Ability: " + selectedAbility);
-        UpdateAbilityPanel(); // Update the panel when an ability is selected
+        // Check if the ability is unlocked before allowing selection
+        if ((ability == Ability.Shoot && isShootUnlocked) ||
+            (ability == Ability.Shield && isShieldUnlocked) ||
+            (ability == Ability.AoE && isAoEUnlocked))
+        {
+            selectedAbility = ability;
+            Debug.Log("Selected Ability: " + selectedAbility);
+            UpdateAbilityPanel(); // Update UI
+        }
+        else
+        {
+            Debug.Log("This ability is locked!");
+        }
     }
+
 
     private void UseAbility()
     {
@@ -184,23 +221,32 @@ public class PlayerAbilities : MonoBehaviour
     // Call these methods when bosses are defeated to unlock abilities
     public void UnlockShootAbility()
     {
+        save.isShootUnlocked = true;
         isShootUnlocked = true;
         Debug.Log("Shoot ability unlocked!");
         UpdateAbilityPanel(); // Update the panel when an ability is unlocked
+        save.SavePlayerData();
+
     }
 
     public void UnlockShieldAbility()
     {
+        save.isShieldUnlocked = true;
         isShieldUnlocked = true;
         Debug.Log("Shield ability unlocked!");
         UpdateAbilityPanel(); // Update the panel when an ability is unlocked
+        save.SavePlayerData();
+
     }
 
     public void UnlockAoEAbility()
     {
+        save.isAoEUnlocked = true;
         isAoEUnlocked = true;
         Debug.Log("AoE ability unlocked!");
         UpdateAbilityPanel(); // Update the panel when an ability is unlocked
+        save.SavePlayerData();
+
     }
 
     private void UpdateAbilityPanel()
