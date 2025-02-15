@@ -15,6 +15,7 @@ TagManager:
   - enemys
   - Pushable
   - Trigger
+  - Fire
   layers:
   - Default
   - TransparentFX

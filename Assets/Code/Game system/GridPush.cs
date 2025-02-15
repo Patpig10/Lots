@@ -13,7 +13,6 @@ public class GridPush : MonoBehaviour
     private float stuckTimer = 0f;    // Timer to detect if the block is stuck
     public float stuckThreshold = 1f; // How long the block can be stuck before taking action
 
-
     void Start()
     {
         // Populate the blocks array with all GrassBlock objects in the scene
@@ -25,6 +24,7 @@ public class GridPush : MonoBehaviour
             gridBlocks[i] = grassBlocks[i].transform; // Add the transform of each GrassBlock to the blocks array
         }
     }
+
     void Update()
     {
         // If the block is being pushed, detect player input
@@ -143,8 +143,8 @@ public class GridPush : MonoBehaviour
         // Perform some action if the block has been stuck for too long
         Debug.Log("Block is stuck. Taking action...");
 
-        // You could reset the block's position or push it in a different direction, depending on your game design
-        // For example, try a random move or reset to the initial position
-        StartCoroutine(MoveBlock(Vector3.forward)); // Try a default move as a fallback action
+        // Try to move the block in a random direction
+        Vector3 randomDirection = new Vector3(Random.Range(-1, 2), 0, Random.Range(-1, 2)).normalized;
+        StartCoroutine(MoveBlock(randomDirection));
     }
 }

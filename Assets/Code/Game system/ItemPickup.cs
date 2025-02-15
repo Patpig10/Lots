@@ -49,6 +49,10 @@ public class ItemPickup : MonoBehaviour
 
                 PopupManager.Instance.ShowPopup($"You got a {itemName}. You can now open the door"); // Show popup
             }
+            if (itemName == "Emeblem of life")
+            {
+                PopupManager.Instance.ShowPopup($"Oh great hero I give you the {itemName}."); // Show popup
+            }
 
             Destroy(gameObject); // Destroy the item GameObject
         }

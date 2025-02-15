@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Quest1Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Quest1
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: add1408d-b8a7-4269-b1f1-81f99d1b21f0
+    <Name>k__BackingField: foresth
+    <Text>k__BackingField: A gift for helping the spirit of the forest
+    <Speaker>k__BackingField: 
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 155.2, y: -30.400002}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 27440d00-98a7-4fa8-a6c8-493addf56471
+    <Name>k__BackingField: s
+    <Text>k__BackingField: If the Princess has placed her trust in you, then I shall
+      offer you the same. You have my support.
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 7437.6, y: -38.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 7e3282cf-a4cf-4e14-962b-016967a288d3
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: Princess, as much as I value our reunion, we must focus
+      on the urgent matter at hand.
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 992b724c-1fa2-4e48-a95f-d67b23f91d0a
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2284, y: -38.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 992b724c-1fa2-4e48-a95f-d67b23f91d0a
+    <Name>k__BackingField: w
+    <Text>k__BackingField: "Right... You\u2019ve probably heard by now\u2014the Lich
+      has returned, spreading corruption through our kingdom, just as it did with
+      the Beastmen long ago."
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 7e8f97de-bcf8-43da-bdee-bd29f3c2cae1
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2984, y: -38.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: c2a1dacf-6e51-4104-93c8-54e05bd673b5
+    <Name>k__BackingField: quest1
+    <Text>k__BackingField: "It\u2019s been a long time since we last met, hasn\u2019t
+      it?"
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 7e3282cf-a4cf-4e14-962b-016967a288d3
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1522.3999, y: -38.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 7e8f97de-bcf8-43da-bdee-bd29f3c2cae1
+    <Name>k__BackingField: b
+    <Text>k__BackingField: And I refuse to see that war reignite. But there is another
+      complication we must face
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 1eadbc81-90a6-40b0-afe7-64747ad2cffc
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3698.4, y: -38.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 1eadbc81-90a6-40b0-afe7-64747ad2cffc
+    <Name>k__BackingField: f
+    <Text>k__BackingField: To access the kingdom through this side of the wall, we
+      need the emblems of all three kingdoms to unlock the gate.
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2c431090-f74d-4467-bd3b-5a6fdbdbc874
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4512, y: -38.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 2c431090-f74d-4467-bd3b-5a6fdbdbc874
+    <Name>k__BackingField: g
+    <Text>k__BackingField: "But our guardian, the one entrusted with the emblem of
+      life, has been corrupted by the Lich. To reclaim it, we must first defeat him.\r"
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 0421ea99-983c-4f92-8ed6-40738bddc95d
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5218.4004, y: -38.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 0421ea99-983c-4f92-8ed6-40738bddc95d
+    <Name>k__BackingField: m
+    <Text>k__BackingField: "That\u2019s where we need your help. With your strength,
+      we can defeat the guardian and secure the emblem, while we work on gaining
+      the Beastmen's support.\r\n"
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e16709bd-38b6-4539-8472-6b69af987146
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5899.2, y: -38.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e16709bd-38b6-4539-8472-6b69af987146
+    <Name>k__BackingField: v
+    <Text>k__BackingField: " I\u2019ve updated your map. Head to the village exits
+      and make your way to 1-2."
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 27440d00-98a7-4fa8-a6c8-493addf56471
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6697.6, y: -38.4}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - foresth
+  - s
+  - DialogueName
+  - w
+  - quest1
+  - b
+  - f
+  - g
+  - m
+  - v
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

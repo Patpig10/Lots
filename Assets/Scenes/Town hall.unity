@@ -156,6 +156,9 @@ MonoBehaviour:
   levelUnlocked: 1
   maxcoins: 0
   completed: 0
+  isShootUnlocked: 0
+  isShieldUnlocked: 0
+  isAoEUnlocked: 0
 --- !u!4 &4280680
 Transform:
   m_ObjectHideFlags: 0
@@ -934,6 +937,10 @@ PrefabInstance:
     - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
       propertyPath: m_Name
       value: hat floor (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6059,6 +6066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hat floor (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6846,7 +6857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1fefcda6253d948bc294ef23c53e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingDialogue: {fileID: 11400000, guid: 8d1e33f00fea1c347a929aa19872cca4, type: 2}
+  startingDialogue: {fileID: 11400000, guid: 1c935b2bf0902e2499044599e84ba1bd, type: 2}
   textUI: {fileID: 200039306}
   nameUI: {fileID: 240880923}
   Textbox: {fileID: 364852715}
@@ -7378,6 +7389,10 @@ PrefabInstance:
     - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
       propertyPath: m_Name
       value: hat floor (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7980,6 +7995,10 @@ PrefabInstance:
     - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
       propertyPath: m_Name
       value: bench desk (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9918,6 +9937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bench desk (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11030,6 +11053,10 @@ PrefabInstance:
     - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
       propertyPath: m_Name
       value: hat floor (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13098,6 +13125,10 @@ PrefabInstance:
     - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
       propertyPath: m_Name
       value: hat floor (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16798,6 +16829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hat floor (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17380,6 +17415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hat floor (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17663,6 +17702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hat floor (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: 49ec7aaa9b235a34098bcb638588f6b1, type: 3}
+      propertyPath: m_TagString
+      value: Unpassable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17844,30 +17887,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: OnOptionChosen
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 400932199}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2111774143}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

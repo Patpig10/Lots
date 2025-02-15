@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: Quest1
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Quest1
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: 2148d6e8e73001243bdc25f959b13449, type: 2}
+  - {fileID: 11400000, guid: 9a7746b0c6bc3784bb82beca6d4c7176, type: 2}
+  - {fileID: 11400000, guid: 96e72be4b522e7a42bfd1c00e657fe1e, type: 2}
+  - {fileID: 11400000, guid: 329ad31209f1528489d08dc35eb77b35, type: 2}
+  - {fileID: 11400000, guid: 1c935b2bf0902e2499044599e84ba1bd, type: 2}
+  - {fileID: 11400000, guid: cfb8d678c29a08642ac3bd3a9913bce3, type: 2}
+  - {fileID: 11400000, guid: 6a6981435fa821642b502e680df281c0, type: 2}
+  - {fileID: 11400000, guid: c419929ffd3c89c4698b4c5f4f972eb4, type: 2}
+  - {fileID: 11400000, guid: 7e0e716d844a599418d1b7cbceb194f6, type: 2}
+  - {fileID: 11400000, guid: c937527f615eca644b42e8c6fe6b75e6, type: 2}

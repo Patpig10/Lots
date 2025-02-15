@@ -131,6 +131,10 @@ public class Saving : MonoBehaviour
         }
 
     }
+    public void ToVillage()
+    {
+        SceneManager.LoadScene(6);
+    }
     public void Addlevel3()
     {
         if (levelUnlocked >= 2)
@@ -178,7 +182,7 @@ public class Saving : MonoBehaviour
         {
             Debug.LogWarning("Save file not found! Starting with default values.");
         }
-     
+  
 }
     [System.Serializable]
     public class SaveData

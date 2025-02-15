@@ -12,6 +12,9 @@ public class BossSnakeAI : MonoBehaviour
     public float bodyGrowthInterval = 2f;
     public int initialBodySize = 3;
     public float blockCooldownDuration = 30f;
+    public float speedIncreaseInterval = 20f;
+    public float speedIncreaseAmount = 0.5f;
+    public float bodyGrowthRateIncreaseAmount = 0.1f;
 
     private Transform targetBlock;
     private bool isMoving = false;
@@ -21,10 +24,20 @@ public class BossSnakeAI : MonoBehaviour
     private HashSet<Vector3> occupiedGridPositions = new HashSet<Vector3>();
 
     private float growthTimer = 0f;
+    private float speedIncreaseTimer = 0f;
+    private Transform player;
+    private bool isChasingPlayer = false;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (player == null)
+        {
+            Debug.LogError("Player not found! Make sure the player has the tag 'Player'.");
+        }
+
         StartCoroutine(ChangeTargetRoutine());
+        StartCoroutine(IncreaseSpeedOverTime());
 
         // Initialize the snake's body
         for (int i = 0; i < initialBodySize; i++)
@@ -48,6 +61,24 @@ public class BossSnakeAI : MonoBehaviour
         }
     }
 
+    private IEnumerator IncreaseSpeedOverTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(speedIncreaseInterval);
+
+            // Increase movement speed
+            movementSpeed += speedIncreaseAmount;
+
+            // Increase body growth rate
+            bodyGrowthInterval -= bodyGrowthRateIncreaseAmount;
+            if (bodyGrowthInterval < 0.1f) // Ensure it doesn't get too fast
+            {
+                bodyGrowthInterval = 0.1f;
+            }
+        }
+    }
+
     private IEnumerator ChangeTargetRoutine()
     {
         while (true)
@@ -66,7 +97,7 @@ public class BossSnakeAI : MonoBehaviour
 
             foreach (Transform block in blocks)
             {
-                if (block == null || IsBlockOnCooldown(block) || IsBlockOccupied(block)) continue;
+                if (block == null || IsBlockOnCooldown(block)) continue;
 
                 float distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z),
                                                    new Vector3(block.position.x, 0, block.position.z));
@@ -92,11 +123,6 @@ public class BossSnakeAI : MonoBehaviour
             return Time.time < cooldownEndTime;
         }
         return false;
-    }
-
-    private bool IsBlockOccupied(Transform block)
-    {
-        return occupiedGridPositions.Contains(block.position);
     }
 
     private IEnumerator MoveToBlock()
@@ -168,71 +194,11 @@ public class BossSnakeAI : MonoBehaviour
         Transform newBodyPart = Instantiate(bodyPrefab, newBodyPosition, Quaternion.Euler(-90f, 0f, 0f)).transform;
         bodyParts.Add(newBodyPart);
 
-        // Start a coroutine to destroy every second body part after 3 seconds
-        if (bodyParts.Count % 2 == 0)
-        {
-            MeshRenderer meshRenderer = newBodyPart.Find("Layer.1").GetComponent<MeshRenderer>();
-            MeshRenderer meshRenderer2 = newBodyPart.Find("Layer.2").GetComponent<MeshRenderer>();
-
-            if (meshRenderer != null)
-            {
-                meshRenderer.enabled = false; // Disable the mesh renderer to make it invisible
-                meshRenderer2.enabled = false; // Disable the mesh renderer to make it invisible
-
-            }
-            //StartCoroutine(DestroyBodyAfterDelay(newBodyPart, 3f));
-           
-        }
-
         // Track previous positions if it's initial setup
         if (isInitialSetup)
         {
             previousPositions.Add(newBodyPosition);
         }
-    }
-
-    private IEnumerator DestroyBodyAfterDelay(Transform bodyPart, float delay)
-    {
-        // Wait for the specified delay
-        yield return new WaitForSeconds(delay);
-
-        // Check if the body part still exists and remove it from the list
-        if (bodyParts.Contains(bodyPart))
-        {
-            int index = bodyParts.IndexOf(bodyPart);
-            bodyParts.RemoveAt(index);
-
-            Destroy(bodyPart.gameObject); // Destroy the body part's game object
-        }
-    }
-
-    private Vector3 FindSafeSpawnPosition()
-    {
-        Transform lastBodyPart = bodyParts[bodyParts.Count - 1];
-        Vector3 spawnPosition = lastBodyPart.position - lastBodyPart.forward;
-
-        if (!occupiedGridPositions.Contains(spawnPosition))
-        {
-            return spawnPosition;
-        }
-
-        Vector3[] potentialPositions = new Vector3[]
-        {
-            lastBodyPart.position + Vector3.right,
-            lastBodyPart.position + Vector3.left,
-            lastBodyPart.position + Vector3.forward,
-            lastBodyPart.position + Vector3.back
-        };
-
-        foreach (Vector3 position in potentialPositions)
-        {
-            if (!occupiedGridPositions.Contains(position))
-            {
-                return position;
-            }
-        }
-
-        return lastBodyPart.position - lastBodyPart.forward;
     }
 
     private void UpdateBodyMovement()
