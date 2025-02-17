@@ -39,7 +39,7 @@ public class GuideUpdater : MonoBehaviour
                 guideText.text = "Defeat the boss.";
                 break;
             default:
-                guideText.text = "Explore and progress through the game.";
+                guideText.text = "Choose where you want to continue(Ice caps or Molten Core).";
                 break;
         }
     }
