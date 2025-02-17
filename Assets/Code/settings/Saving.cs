@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class Saving : MonoBehaviour
 {
-
     public int maxSavedLife = 3;
     public int weaponSavedDamage = 20;
     public int levelUnlocked = 1;
@@ -17,6 +15,18 @@ public class Saving : MonoBehaviour
     public bool isShootUnlocked = false;
     public bool isShieldUnlocked = false;
     public bool isAoEUnlocked = false;
+    public bool Grassemblem = false;
+    // Default values for reset
+    private const int DEFAULT_MAX_LIFE = 3;
+    private const int DEFAULT_WEAPON_DAMAGE = 20;
+    private const int DEFAULT_LEVEL_UNLOCKED = 1;
+    private const int DEFAULT_COINS = 0;
+    private const bool DEFAULT_SHOOT_UNLOCKED = false;
+    private const bool DEFAULT_SHIELD_UNLOCKED = false;
+    private const bool DEFAULT_AOE_UNLOCKED = false;
+    public const bool DEFAULT_GRASSEMBLEM = false;
+
+
     private void Start()
     {
         // Set the file path for the save file
@@ -25,10 +35,30 @@ public class Saving : MonoBehaviour
         // Automatically load player data when the game starts
         LoadPlayerData();
     }
-    
-    public void awake()
+
+    // Reset function
+    public void ResetGame()
     {
-        
+        // Step 1: Delete the save file if it exists
+        if (File.Exists(saveFilePath))
+        {
+            File.Delete(saveFilePath);
+            Debug.Log("Save file deleted!");
+        }
+
+        // Step 2: Reset all player data to default values
+        maxSavedLife = DEFAULT_MAX_LIFE;
+        weaponSavedDamage = DEFAULT_WEAPON_DAMAGE;
+        levelUnlocked = DEFAULT_LEVEL_UNLOCKED;
+        maxcoins = DEFAULT_COINS;
+        isShootUnlocked = DEFAULT_SHOOT_UNLOCKED;
+        isShieldUnlocked = DEFAULT_SHIELD_UNLOCKED;
+        isAoEUnlocked = DEFAULT_AOE_UNLOCKED;
+        Grassemblem = DEFAULT_GRASSEMBLEM;
+
+        // Step 3: Save the default values to a new save file
+        SavePlayerData();
+        Debug.Log("Game reset to default values!");
     }
 
     // Automatically save player data when the application quits
@@ -44,9 +74,15 @@ public class Saving : MonoBehaviour
         SavePlayerData(); // Save data immediately after change
     }
 
+
     public void shootunlock()
     {
         isShootUnlocked = true;
+        SavePlayerData();
+    }
+    public void Grassemblemunlock()
+    {
+        Grassemblem = true;
         SavePlayerData();
     }
     public void shieldunlock()
@@ -54,6 +90,7 @@ public class Saving : MonoBehaviour
         isShieldUnlocked = true;
         SavePlayerData();
     }
+
     public void aoeunlock()
     {
         isAoEUnlocked = true;
@@ -71,13 +108,12 @@ public class Saving : MonoBehaviour
         levelUnlocked = newLevel;
         SavePlayerData(); // Save data immediately after change
     }
+
     public void OnConnectedToServer(int newCoins)
     {
         maxcoins = newCoins;
         SavePlayerData(); // Save data immediately after change
     }
-
-
 
     // Method to save player data to JSON
     public void SavePlayerData()
@@ -91,8 +127,7 @@ public class Saving : MonoBehaviour
             isAoEUnlocked = isAoEUnlocked,
             isShootUnlocked = isShootUnlocked,
             isShieldUnlocked = isShieldUnlocked,
-
-
+            Grassemblem = Grassemblem,
         };
 
         // Convert the data to JSON format and save it to file
@@ -100,10 +135,12 @@ public class Saving : MonoBehaviour
         File.WriteAllText(saveFilePath, jsonData);
         Debug.Log("Player data saved!");
     }
+
     public void LoadLeveltime()
     {
         StartCoroutine(LoadLevelWithDelay(1, 3f)); // Start the coroutine with a 3-second delay
     }
+
     private IEnumerator LoadLevelWithDelay(int sceneIndex, float delay)
     {
         yield return new WaitForSeconds(delay); // Wait for the specified delay (3 seconds)
@@ -117,6 +154,7 @@ public class Saving : MonoBehaviour
             Debug.LogError("Scene index " + sceneIndex + " out of range!"); // Log an error if the scene index is invalid
         }
     }
+
     public void Addlevel2()
     {
         if (levelUnlocked >= 1)
@@ -129,12 +167,13 @@ public class Saving : MonoBehaviour
             SavePlayerData();
             LoadLeveltime();
         }
-
     }
+
     public void ToVillage()
     {
         SceneManager.LoadScene(6);
     }
+
     public void Addlevel3()
     {
         if (levelUnlocked >= 2)
@@ -147,6 +186,7 @@ public class Saving : MonoBehaviour
             SavePlayerData();
         }
     }
+
     public void Addlevel4()
     {
         if (levelUnlocked >= 3)
@@ -159,6 +199,7 @@ public class Saving : MonoBehaviour
             SavePlayerData();
         }
     }
+
     // Method to load player data from JSON
     private void LoadPlayerData()
     {
@@ -175,15 +216,15 @@ public class Saving : MonoBehaviour
             isAoEUnlocked = saveData.isAoEUnlocked;
             isShootUnlocked = saveData.isShootUnlocked;
             isShieldUnlocked = saveData.isShieldUnlocked;
-
+            Grassemblem = saveData.Grassemblem;
             Debug.Log("Player data loaded!");
         }
         else
         {
             Debug.LogWarning("Save file not found! Starting with default values.");
         }
-  
-}
+    }
+
     [System.Serializable]
     public class SaveData
     {
@@ -194,5 +235,6 @@ public class Saving : MonoBehaviour
         public bool isAoEUnlocked;
         public bool isShootUnlocked;
         public bool isShieldUnlocked;
+        public bool Grassemblem;
     }
 }

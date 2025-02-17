@@ -14,6 +14,11 @@ public class LevelManager : MonoBehaviour
     public GameObject button3;
     public GameObject button4;
     public GameObject buttonboss;
+    public GameObject Forest;
+    public GameObject Ice;
+    public GameObject fire;
+    public GameObject Ice1;
+    public GameObject fire1;
     private void Awake()
     {
 
@@ -22,51 +27,26 @@ public class LevelManager : MonoBehaviour
         
     }
 
-    public void Update()
+    void Update()
     {
+        SetButtonState(button1, Saving.levelUnlocked >= 1);
+        SetButtonState(button2, Saving.levelUnlocked >= 2);
+        SetButtonState(button3, Saving.levelUnlocked >= 3);
+        SetButtonState(button4, Saving.levelUnlocked >= 4);
+        SetButtonState(buttonboss, Saving.levelUnlocked >= 5);
 
-        if (Saving.levelUnlocked == 1)
-        {
-            button1.SetActive(true);
-            button2.SetActive(false);
-            button3.SetActive(false);
-            button4.SetActive(false);
-            buttonboss.SetActive(false);
-        }
-        if (Saving.levelUnlocked >= 2)
-        {
-            button1.SetActive(true);
-            button2.SetActive(true);
-            button3.SetActive(false);
-            button4.SetActive(false);
-            buttonboss.SetActive(false);
-        }
+        SetButtonState(Forest, true);
+        SetButtonState(Ice, Saving.levelUnlocked == 6);
+        SetButtonState(fire, Saving.levelUnlocked == 6);
+        SetButtonState(Ice1, Saving.levelUnlocked == 6);
+        SetButtonState(fire1, Saving.levelUnlocked == 6);
+    }
 
-        if (Saving.levelUnlocked >= 3)
+    void SetButtonState(GameObject button, bool shouldBeActive)
+    {
+        if (button.activeSelf != shouldBeActive)
         {
-            button1.SetActive(true);
-            button2.SetActive(true);
-            button3.SetActive(true);
-            button4.SetActive(false);
-            buttonboss.SetActive(false);
-        }
-
-        if (Saving.levelUnlocked >= 4)
-        {
-            button1.SetActive(true);
-            button2.SetActive(true);
-            button3.SetActive(true);
-            button4.SetActive(true);
-            buttonboss.SetActive(false);
-        }
-
-        if (Saving.levelUnlocked >= 5)
-        {
-            button1.SetActive(true);
-            button2.SetActive(true);
-            button3.SetActive(true);
-            button4.SetActive(true);
-            buttonboss.SetActive(true);
+            button.SetActive(shouldBeActive);
         }
     }
 

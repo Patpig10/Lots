@@ -36,7 +36,7 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void ShowText()
+    public void ShowText()
     {
         if (currentDialogue != null)
         {

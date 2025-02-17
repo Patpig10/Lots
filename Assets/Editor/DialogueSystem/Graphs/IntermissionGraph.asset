@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: IntermissionGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Intermission
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: e7ad1d3b-9fd7-4942-80b0-115bd641b5f3
+    <Name>k__BackingField: Quest2
+    <Text>k__BackingField: "Thank the goddess you\u2019re safe! Are you hurt anywhere?"
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b2d7340a-2b29-4dd7-ba94-076b8abc3a95
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 164.8, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: b2d7340a-2b29-4dd7-ba94-076b8abc3a95
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: "Enough talk. I see that you retrieved the emblem and
+      bested our guardian\u2014a feat worth praise. But there\u2019s still much to
+      do."
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: de29bd25-4e5e-4cb7-a967-289a02430578
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 830.4, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: de29bd25-4e5e-4cb7-a967-289a02430578
+    <Name>k__BackingField: b
+    <Text>k__BackingField: "Indeed. The people here alone won\u2019t be enough to
+      turn the tide against the Lich. We need the other two emblems to unlock the
+      gate to the human side\u2026 but the other rulers aren\u2019t exactly cooperative."
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: eb7ba875-4efa-4ac2-9a3b-d001f4eb07b0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1590.3999, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: eb7ba875-4efa-4ac2-9a3b-d001f4eb07b0
+    <Name>k__BackingField: j
+    <Text>k__BackingField: "That ice brat won\u2019t lift a finger unless it benefits
+      her\u2014or worse unless it\u2019s her birthday. I wouldn\u2019t count on her."
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 09fdbaeb-4137-455c-8276-c39e14baf2cf
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2326.4, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 09fdbaeb-4137-455c-8276-c39e14baf2cf
+    <Name>k__BackingField: f
+    <Text>k__BackingField: "The Flame Empress, on the other hand, is hosting a combat
+      tournament. The grand prize? The emblem. In her own words\u2014"
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 6900cd44-02a3-4fb2-b1c8-99f738e39c98
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3120.8, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 6900cd44-02a3-4fb2-b1c8-99f738e39c98
+    <Name>k__BackingField: n
+    <Text>k__BackingField: "\"Gotta make the bait big if I wanna lure out the hidden
+      dragon that\u2019ll rock my world!\""
+    <Speaker>k__BackingField: Princess (mimicking)
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: bf077e37-57e8-4f2f-bd2f-a192ac143753
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3833.5999, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: bf077e37-57e8-4f2f-bd2f-a192ac143753
+    <Name>k__BackingField: d
+    <Text>k__BackingField: "That does sound like her. You can challenge either of
+      them in any order. I placed my faith in your friend once\u2014now, I place
+      it in you."
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4559.2, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Quest2
+  - DialogueName
+  - b
+  - j
+  - f
+  - n
+  - d
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
