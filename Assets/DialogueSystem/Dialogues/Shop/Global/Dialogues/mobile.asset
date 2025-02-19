@@ -16,7 +16,9 @@ MonoBehaviour:
   <Text>k__BackingField: Welcome young slime, what do you wish to do.
   <Speaker>k__BackingField: Shop Keeper
   <Choices>k__BackingField:
-  - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 0}
-  <DialogueType>k__BackingField: 0
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 56b14cff7c0aca84d8d2873c6bfba13e, type: 2}
+  - <Text>k__BackingField: New Choice
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 55c3f5982f43397408a82c9daee71196, type: 2}
+  <DialogueType>k__BackingField: 1
   <IsStartingDialogue>k__BackingField: 1

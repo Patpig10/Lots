@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: pushGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: push
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 28ad4742-de98-4d9f-91a8-31c395261abb
+    <Name>k__BackingField: push
+    <Text>k__BackingField: You can block the blocks to the build icon (tools icons).
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e8ad72d8-812a-46ce-acab-38e1d5b90edf
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 151.2, y: 88.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e8ad72d8-812a-46ce-acab-38e1d5b90edf
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: You can use the red button to reset the block
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 820.8, y: 88.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - push
+  - DialogueName
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

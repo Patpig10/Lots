@@ -10,10 +10,10 @@ public class ButtonPressHandler : MonoBehaviour
     public Button targetButton; // Main button to track presses
     public GameObject[] buttonsToDelete; // Buttons to delete permanently
     public GameObject[] toggleButtons; // Buttons that can be toggled on/off
-
+    public bool land3;
     private static int pressCount = 0; // Tracks button presses
     private static bool buttonsDeleted = false; // Prevents buttons from coming back
-
+    public Saving Saving;
     public int count = 9; // Number of presses needed for deletion
     private string saveFilePath;
 
@@ -53,6 +53,7 @@ public class ButtonPressHandler : MonoBehaviour
         {
             if (button != null)
             {
+                Saving.Addlevel3();
                 Destroy(button);
             }
         }

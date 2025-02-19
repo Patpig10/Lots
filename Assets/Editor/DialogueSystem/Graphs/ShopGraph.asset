@@ -15,20 +15,49 @@ MonoBehaviour:
   <FileName>k__BackingField: Shop
   <Groups>k__BackingField: []
   <Nodes>k__BackingField:
-  - <ID>k__BackingField: d1e9ed5a-0c8a-4f43-9c18-5877a92b01da
-    <Name>k__BackingField: mobile
-    <Text>k__BackingField: Welcome young slime, what do you wish to do.
-    <Speaker>k__BackingField: Shop Keeper
+  - <ID>k__BackingField: b4233eb7-a45e-4b88-aa0f-eb77e2074aae
+    <Name>k__BackingField: stones
+    <Text>k__BackingField: There are stones here that can give you a peep into the
+      past, not worth the trouble to sell them though
+    <Speaker>k__BackingField: Speaker
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 55.2, y: 68.8}
+    <Position>k__BackingField: {x: 1111.2, y: 535.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 3b806454-4649-4980-a0c0-bcbc2154fc20
+    <Name>k__BackingField: mobile
+    <Text>k__BackingField: Welcome young slime, what do you wish to do.
+    <Speaker>k__BackingField: Shop Keeper
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: b4233eb7-a45e-4b88-aa0f-eb77e2074aae
+    - <Text>k__BackingField: New Choice
+      <NodeID>k__BackingField: 71983230-b9a7-4a33-b4a0-391031d9f6c3
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: 150.4, y: 763.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 71983230-b9a7-4a33-b4a0-391031d9f6c3
+    <Name>k__BackingField: fog
+    <Text>k__BackingField: left, up and right if I remember correctly
+    <Speaker>k__BackingField: Speaker
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 909.60004, y: 831.2}
     <ImageData>k__BackingField: 
     <ImagePath>k__BackingField: 
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
+  - stones
   - mobile
+  - fog
   <OldGroupedNodeNames>k__BackingField:
     list: []

@@ -157,7 +157,7 @@ public class Saving : MonoBehaviour
 
     public void Addlevel2()
     {
-        if (levelUnlocked >= 1)
+        if (levelUnlocked == 1)
         {
             completed = true;
         }
@@ -176,7 +176,7 @@ public class Saving : MonoBehaviour
 
     public void Addlevel3()
     {
-        if (levelUnlocked >= 2)
+        if (levelUnlocked == 2)
         {
             completed = true;
         }
@@ -189,7 +189,19 @@ public class Saving : MonoBehaviour
 
     public void Addlevel4()
     {
-        if (levelUnlocked >= 3)
+        if (levelUnlocked == 3)
+        {
+            completed = true;
+        }
+        if (completed)
+        {
+            levelUnlocked++;
+            SavePlayerData();
+        }
+    }
+    public void Addlevel5()
+    {
+        if (levelUnlocked == 4)
         {
             completed = true;
         }

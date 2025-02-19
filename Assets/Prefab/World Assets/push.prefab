@@ -249,7 +249,7 @@ MonoBehaviour:
   gridBlocks: []
   movementSpeed: 5
   pushDistance: 3
-  stuckThreshold: 0.02
+  stuckThreshold: 0.000002
 --- !u!1 &8265257958760859193
 GameObject:
   m_ObjectHideFlags: 0

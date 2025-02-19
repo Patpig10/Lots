@@ -6102,7 +6102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &364852715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10957,6 +10957,8 @@ MonoBehaviour:
   buttonsToDelete:
   - {fileID: 2141110298}
   toggleButtons: []
+  land3: 0
+  Saving: {fileID: 4280679}
   count: 9
 --- !u!114 &701867996
 MonoBehaviour:
@@ -26894,6 +26896,8 @@ MonoBehaviour:
   buttonsToDelete:
   - {fileID: 2141110298}
   toggleButtons: []
+  land3: 0
+  Saving: {fileID: 0}
   count: 9
 --- !u!65 &2039034233
 BoxCollider:
