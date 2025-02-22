@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour
 
     public void Heal()
     {
-        cost = 40;
+        cost = 60;
         if (coins >= cost)
         {
             heartSystem.AddLife(1);  // Call the AddHeart method from the HeartSystem script
@@ -41,7 +41,7 @@ public class Shop : MonoBehaviour
 
     public void UpgradeWeapon()
     {
-        cost = 50;
+        cost = 150;
         if (coins >= cost)
         {
             weapon.damage += 10;  // Increase the damage of the weapon
@@ -60,13 +60,15 @@ public class Shop : MonoBehaviour
 
     public void Addhearts()
     {
-        cost = 40;
+        cost = 250;
         if (coins >= cost)
         {
             heartSystem.UpgradeMaxLife(1);  // Call the AddHeart method from the HeartSystem script
             heartSystem.AddLife(1);
             coins -= cost;  // Subtract the cost from the player's coins
             save.maxcoins = coins;
+            save.SavePlayerData();
+
         }
     }
 }

@@ -9,7 +9,7 @@ public class HeartSystem : MonoBehaviour
 {
     public GameObject heartPrefab;  // Prefab of the heart (UI Image or Sprite)
     public Transform heartContainer;  // Container where hearts will be spawned
-    public int maxLife = 3;  // Starting number of hearts
+    public int maxLife = 7;  // Starting number of hearts
     private int life;
     private List<GameObject> hearts = new List<GameObject>();  // List to store spawned hearts
     public float heartSpacing = 10f;
@@ -22,9 +22,11 @@ public class HeartSystem : MonoBehaviour
         life = maxLife;  // Start with full life
         SpawnHearts();  // Dynamically spawn hearts
     }
-
+   
     void Update()
     {
+      
+
         if (dead)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // Reload level or show game over
@@ -33,6 +35,9 @@ public class HeartSystem : MonoBehaviour
 
     private void SpawnHearts()
     {
+    
+        
+       
         // Clear old hearts
         foreach (GameObject heart in hearts)
         {
@@ -108,4 +113,12 @@ public class HeartSystem : MonoBehaviour
     {
         return life;
     }
+
+    public void fullheal()
+    {
+        life=save.maxSavedLife;
+    }
 }
+
+
+

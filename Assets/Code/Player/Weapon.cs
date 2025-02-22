@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public int damage = 20; // Default damage, will be overridden by saved value
 
-    private Saving savingSystem;
+    public Saving savingSystem;
 
     private void Start()
     {

@@ -8892,7 +8892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31250003, y: 0.83900005}
   m_AnchorMax: {x: 0.9250001, y: 0.9677679}
-  m_AnchoredPosition: {x: -1.9997559, y: 5.5}
+  m_AnchoredPosition: {x: -1.9997559, y: -12}
   m_SizeDelta: {x: -390, y: 21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &364462324
@@ -14902,7 +14902,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.359974, y: 12}
+  m_AnchoredPosition: {x: -26.359974, y: -0}
   m_SizeDelta: {x: 215.5346, y: 58.1761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578033767
@@ -16895,6 +16895,7 @@ MonoBehaviour:
   keyPrefab: {fileID: 8350088554682426763, guid: 9bc521c12ef2b6c4dbb802b26f34222a, type: 3}
   potionPrefab: {fileID: 3402304231976253649, guid: 9b2cb3df0270b8346b9f118337f8a62f, type: 3}
   spawnPoint: {fileID: 2071521137}
+  isPlayerNearby: 0
   canContainCoin: 1
   canContainKey: 0
   canContainPotion: 0
@@ -29496,7 +29497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.359974, y: -8.2119}
+  m_AnchoredPosition: {x: -26.359974, y: -20.211918}
   m_SizeDelta: {x: 215.5346, y: 58.1761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166373108
@@ -41106,6 +41107,7 @@ MonoBehaviour:
   keyPrefab: {fileID: 8350088554682426763, guid: 9bc521c12ef2b6c4dbb802b26f34222a, type: 3}
   potionPrefab: {fileID: 3402304231976253649, guid: 9b2cb3df0270b8346b9f118337f8a62f, type: 3}
   spawnPoint: {fileID: 1883840312}
+  isPlayerNearby: 0
   canContainCoin: 1
   canContainKey: 0
   canContainPotion: 0
@@ -50631,6 +50633,7 @@ MonoBehaviour:
   keyPrefab: {fileID: 8350088554682426763, guid: 9bc521c12ef2b6c4dbb802b26f34222a, type: 3}
   potionPrefab: {fileID: 3402304231976253649, guid: 9b2cb3df0270b8346b9f118337f8a62f, type: 3}
   spawnPoint: {fileID: 2071521137}
+  isPlayerNearby: 0
   canContainCoin: 1
   canContainKey: 0
   canContainPotion: 0
@@ -50723,6 +50726,7 @@ MonoBehaviour:
   keyPrefab: {fileID: 8350088554682426763, guid: 9bc521c12ef2b6c4dbb802b26f34222a, type: 3}
   potionPrefab: {fileID: 3402304231976253649, guid: 9b2cb3df0270b8346b9f118337f8a62f, type: 3}
   spawnPoint: {fileID: 1883840312}
+  isPlayerNearby: 0
   canContainCoin: 1
   canContainKey: 0
   canContainPotion: 0

@@ -10,7 +10,7 @@ public class Chest : MonoBehaviour
     public GameObject potionPrefab; // Reference to the potion prefab
     public Transform spawnPoint;    // Point where the item will be spawned
 
-    private bool isPlayerNearby = false; // To track if the player is close to the chest
+    public bool isPlayerNearby = false; // To track if the player is close to the chest
 
     // Booleans to control what loot items are available for this chest
     public bool canContainCoin = true;

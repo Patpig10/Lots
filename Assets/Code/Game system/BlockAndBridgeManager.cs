@@ -12,6 +12,8 @@ public class BlockAndBridgeManager : MonoBehaviour
     public GameObject blocker;            // Reference to the blocker GameObject
 
     private GridMovement gridMovement;    // Reference to the GridMovement script
+    public bool riverblock = false;
+
 
     private void Start()
     {
@@ -20,7 +22,15 @@ public class BlockAndBridgeManager : MonoBehaviour
 
         // Start a coroutine to deactivate the bridge after 1 second
         StartCoroutine(DeactivateBridgeAfterDelay(0.1f));
-        SpawnBlock();
+        if(riverblock == true)
+        {
+            riverspawnblock();
+        }
+        else
+        {
+            SpawnBlock();
+        }
+       // SpawnBlock();
     }
 
     private IEnumerator DeactivateBridgeAfterDelay(float delay)
@@ -85,10 +95,27 @@ public class BlockAndBridgeManager : MonoBehaviour
     {
         if (pushableBlockPrefab != null && blockSpawnLocation != null)
         {
+            // Instantiate the block
             currentBlock = Instantiate(pushableBlockPrefab, blockSpawnLocation.position, blockSpawnLocation.rotation);
+
+            // Force X rotation to 0
+            Vector3 currentRotation = currentBlock.transform.rotation.eulerAngles;
+            currentBlock.transform.rotation = Quaternion.Euler(0, currentRotation.y, currentRotation.z);
         }
     }
+    public void riverspawnblock()
+    {
+        if (pushableBlockPrefab != null && blockSpawnLocation != null)
+        {
+            // Instantiate the block
+            currentBlock = Instantiate(pushableBlockPrefab, blockSpawnLocation.position, blockSpawnLocation.rotation);
 
+            // Force X rotation to 0
+            Vector3 currentRotation = currentBlock.transform.rotation.eulerAngles;
+            currentBlock.transform.rotation = Quaternion.Euler(0, 180, currentRotation.z);
+        }
+
+    }
     // Method to add GrassBlock component to all child objects of the bridge
     private void AddGrassBlockToBridgeChildren()
     {

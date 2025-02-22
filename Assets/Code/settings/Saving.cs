@@ -213,7 +213,7 @@ public class Saving : MonoBehaviour
     }
 
     // Method to load player data from JSON
-    private void LoadPlayerData()
+    public void LoadPlayerData()
     {
         if (File.Exists(saveFilePath))
         {

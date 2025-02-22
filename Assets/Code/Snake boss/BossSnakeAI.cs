@@ -15,7 +15,7 @@ public class BossSnakeAI : MonoBehaviour
     public float speedIncreaseInterval = 20f;
     public float speedIncreaseAmount = 0.5f;
     public float bodyGrowthRateIncreaseAmount = 0.1f;
-
+    public GameObject targetIndicatorPrefab;
     private Transform targetBlock;
     private bool isMoving = false;
     private Dictionary<Transform, float> blockCooldowns = new Dictionary<Transform, float>();
@@ -27,6 +27,8 @@ public class BossSnakeAI : MonoBehaviour
     private float speedIncreaseTimer = 0f;
     private Transform player;
     private bool isChasingPlayer = false;
+    public GameObject activeIndicator;
+    public float lightDelay = 1.5f; // Time before the boss moves after the light appears
 
     void Start()
     {
@@ -90,6 +92,7 @@ public class BossSnakeAI : MonoBehaviour
 
     private void FindNearestBlock()
     {
+
         if (blocks.Length > 0)
         {
             float minDistance = float.MaxValue;
@@ -112,8 +115,32 @@ public class BossSnakeAI : MonoBehaviour
             {
                 targetBlock = nearestBlock;
                 blockCooldowns[targetBlock] = Time.time + blockCooldownDuration;
+
+                // Move the indicator to the center of the target block with rotation and height
+                if (activeIndicator == null)
+                {
+                    activeIndicator = Instantiate(targetIndicatorPrefab, GetBlockCenter(targetBlock), Quaternion.Euler(90f, 0f, 0f));
+                }
+                else
+                {
+                    activeIndicator.transform.position = GetBlockCenter(targetBlock);
+                    activeIndicator.transform.rotation = Quaternion.Euler(90f, 0f, 0f); // Rotate X by 90 degrees
+                    activeIndicator.SetActive(true);
+                }
             }
         }
+    }
+
+    private Vector3 GetBlockCenter(Transform block)
+    {
+        Collider blockCollider = block.GetComponent<Collider>();
+        if (blockCollider != null)
+        {
+            Vector3 center = blockCollider.bounds.center;
+            center.y = 3f; // Set the Y height to 3
+            return center;
+        }
+        return new Vector3(block.position.x, 3f, block.position.z); // Fallback with Y height of 3
     }
 
     private bool IsBlockOnCooldown(Transform block)
@@ -128,21 +155,21 @@ public class BossSnakeAI : MonoBehaviour
     private IEnumerator MoveToBlock()
     {
         isMoving = true;
+
+        // Deactivate indicator
+        if (activeIndicator != null)
+        {
+            activeIndicator.SetActive(false);
+        }
+
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = targetBlock.position;
         targetPosition.y = startPosition.y;
 
         Vector3 directionToTarget = (targetPosition - startPosition).normalized;
-        float angle = 0f;
-
-        if (Mathf.Abs(directionToTarget.x) > Mathf.Abs(directionToTarget.z))
-        {
-            angle = directionToTarget.x > 0 ? 90f : -90f;
-        }
-        else
-        {
-            angle = directionToTarget.z > 0 ? 0f : 180f;
-        }
+        float angle = (Mathf.Abs(directionToTarget.x) > Mathf.Abs(directionToTarget.z)) ?
+                      (directionToTarget.x > 0 ? 90f : -90f) :
+                      (directionToTarget.z > 0 ? 0f : 180f);
 
         transform.rotation = Quaternion.Euler(0, angle, 0);
 
@@ -160,7 +187,6 @@ public class BossSnakeAI : MonoBehaviour
 
         transform.position = targetPosition;
         previousPositions.Insert(0, targetPosition);
-
         occupiedGridPositions.Add(transform.position);
 
         if (previousPositions.Count > bodyParts.Count + 1)

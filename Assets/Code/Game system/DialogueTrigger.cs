@@ -95,4 +95,9 @@ public class DialogueTrigger : MonoBehaviour
             HideText();                 // Hide the dialogue text when the player leaves the area
         }
     }
+    public void Reset()
+    {
+        currentDialogue = startingDialogue; // Reset the dialogue to the starting point
+        HideText();                         // Hide the dialogue text
+    }
 }

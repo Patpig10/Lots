@@ -6,10 +6,8 @@ public class GridPush : MonoBehaviour
 {
     public Transform[] gridBlocks;  // Array of grid block transforms
     public float movementSpeed = 5f; // Speed at which the block moves
-    public float pushDistance = 1f;  // Minimum distance for the block to start moving when pushed
-    private bool isBeingPushed = false; // Flag to check if the block is being pushed
     private Vector3 targetPosition; // Target position for the block
-    private bool isMoving = false; // Check if the block is currently moving
+    public bool isMoving = false; // Check if the block is currently moving
     private float stuckTimer = 0f;    // Timer to detect if the block is stuck
     public float stuckThreshold = 1f; // How long the block can be stuck before taking action
 
@@ -27,89 +25,47 @@ public class GridPush : MonoBehaviour
 
     void Update()
     {
-        // If the block is being pushed, detect player input
-        if (isBeingPushed && !isMoving)
+        // If the block is not moving, increment the stuck timer
+        if (!isMoving)
         {
-            Vector3 playerDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            stuckTimer += Time.deltaTime;
 
-            // Only push if player is not too close to the block
-            if (playerDirection != Vector3.zero && Vector3.Distance(transform.position, playerDirection) > pushDistance)
+            // If stuck too long, reset or try another action
+            if (stuckTimer > stuckThreshold)
             {
-                StartCoroutine(MoveBlock(playerDirection));
+                // Disable or remove the HandleStuckBlock call to prevent automatic movement
+                // HandleStuckBlock();
+                stuckTimer = 0f; // Reset stuck timer
             }
-            else
-            {
-                // If the block is not moving, increment the stuck timer
-                stuckTimer += Time.deltaTime;
-
-                // If stuck too long, reset or try another action
-                if (stuckTimer > stuckThreshold)
-                {
-                    HandleStuckBlock();
-                    stuckTimer = 0f; // Reset stuck timer
-                }
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // Detect when the player is near the block (the player needs to push it)
-        if (other.CompareTag("Player"))
-        {
-            isBeingPushed = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        // Stop pushing when the player leaves the block's proximity
-        if (other.CompareTag("Player"))
-        {
-            isBeingPushed = false;
         }
     }
 
     public IEnumerator MoveBlock(Vector3 direction)
     {
         isMoving = true;  // Block is moving
-        Vector3 moveDirection = Vector3.zero;
-
-        // Only move in cardinal directions
-        if (direction.x > 0)        // Moving right
-            moveDirection = Vector3.right;
-        else if (direction.x < 0)   // Moving left
-            moveDirection = Vector3.left;
-        else if (direction.z > 0)   // Moving forward
-            moveDirection = Vector3.forward;
-        else if (direction.z < 0)   // Moving backward
-            moveDirection = Vector3.back;
 
         // Calculate the target grid position by adding move direction
-        if (moveDirection != Vector3.zero)
+        targetPosition = transform.position + direction;
+
+        // Snap the target position to the nearest grid block
+        Transform targetBlock = FindNearestGridBlock(targetPosition);
+        if (targetBlock != null && !targetBlock.CompareTag("Unpassable"))
         {
-            targetPosition = transform.position + moveDirection;
+            // Lock the Y-axis to avoid sinking
+            targetPosition = new Vector3(targetBlock.position.x, transform.position.y, targetBlock.position.z);
 
-            // Snap the target position to the nearest grid block
-            Transform targetBlock = FindNearestGridBlock(targetPosition);
-            if (targetBlock != null && !targetBlock.CompareTag("Unpassable"))
+            // Move the block to the new grid position smoothly
+            while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
             {
-                // Lock the Y-axis to avoid sinking
-                targetPosition = new Vector3(targetBlock.position.x, transform.position.y, targetBlock.position.z);
-
-                // Move the block to the new grid position smoothly
-                while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
-                    yield return null;
-                }
-
-                // Snap to the target grid position with locked Y
-                transform.position = targetPosition;
-
-                // Reset the stuck timer because it successfully moved
-                stuckTimer = 0f;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
+                yield return null;
             }
+
+            // Snap to the target grid position with locked Y
+            transform.position = targetPosition;
+
+            // Reset the stuck timer because it successfully moved
+            stuckTimer = 0f;
         }
 
         isMoving = false;  // Movement completed
@@ -138,13 +94,40 @@ public class GridPush : MonoBehaviour
         return closestGridBlock;
     }
 
-    private void HandleStuckBlock()
+    // New functions for moving in specific directions
+    public void MoveForward()
     {
-        // Perform some action if the block has been stuck for too long
-        Debug.Log("Block is stuck. Taking action...");
+        if (!isMoving)
+        {
+            StartCoroutine(MoveBlock(Vector3.forward));
+            Debug.Log("Moving forward");
+        }
+    }
 
-        // Try to move the block in a random direction
-        Vector3 randomDirection = new Vector3(Random.Range(-1, 2), 0, Random.Range(-1, 2)).normalized;
-        StartCoroutine(MoveBlock(randomDirection));
+    public void MoveBackward()
+    {
+        if (!isMoving)
+        {
+            StartCoroutine(MoveBlock(Vector3.back));
+            Debug.Log("Moving backward");
+        }
+    }
+
+    public void MoveLeft()
+    {
+        if (!isMoving)
+        {
+            StartCoroutine(MoveBlock(Vector3.left));
+            Debug.Log("Moving left");
+        }
+    }
+
+    public void MoveRight()
+    {
+        if (!isMoving)
+        {
+            StartCoroutine(MoveBlock(Vector3.right));
+            Debug.Log("Moving right");
+        }
     }
 }
