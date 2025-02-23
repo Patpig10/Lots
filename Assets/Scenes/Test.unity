@@ -7990,7 +7990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridBlocks: []
   movementSpeed: 5
-  pushDistance: 1
+  isMoving: 0
   stuckThreshold: 0.35
 --- !u!54 &251085608
 Rigidbody:
@@ -19950,7 +19950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridBlocks: []
   movementSpeed: 5
-  pushDistance: 2
+  isMoving: 0
   stuckThreshold: 0.35
 --- !u!1 &686634426
 GameObject:
@@ -20484,6 +20484,15 @@ MonoBehaviour:
   maxHealth: 1
   animator: {fileID: 1559828319}
   Body: {fileID: 1559828312}
+  damagepoints: {fileID: 0}
+  textDuration: 1
+  textOffset: {x: 0, y: 2, z: 0}
+  Randoml: {x: 1, y: 0, z: 0}
+  targetObject: {fileID: 0}
+  potionPrefab: {fileID: 0}
+  potionSpawnChance: 0.2
+  coinSpawnChance: 0.5
+  coin: {fileID: 0}
 --- !u!1 &699615838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8771091787928289351, guid: 969131ea81cc79e41ab40bf99ccd49ad, type: 3}
@@ -21304,6 +21313,7 @@ MonoBehaviour:
   isShootUnlocked: 1
   isShieldUnlocked: 1
   isAoEUnlocked: 1
+  abilityPanel: {fileID: 0}
   abilityIcon: {fileID: 346921748}
   shootIcon: {fileID: 21300000, guid: bf7cdb1dd2051f6468cb3f2b0b8252b8, type: 3}
   shieldIcon: {fileID: 21300000, guid: b139637ab1897324d8fd83f6be1d3ca9, type: 3}
@@ -21311,6 +21321,7 @@ MonoBehaviour:
   shootCooldown: 1
   shieldCooldown: 5
   aoeCooldown: 10
+  Abilityhole: {fileID: 0}
 --- !u!114 &719751737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46020,6 +46031,11 @@ MonoBehaviour:
   weaponSavedDamage: 20
   levelUnlocked: 1
   maxcoins: 0
+  completed: 0
+  isShootUnlocked: 0
+  isShieldUnlocked: 0
+  isAoEUnlocked: 0
+  Grassemblem: 0
 --- !u!4 &1456948390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3910990755373119420, guid: 969131ea81cc79e41ab40bf99ccd49ad, type: 3}
@@ -48686,6 +48702,15 @@ MonoBehaviour:
   maxHealth: 1
   animator: {fileID: 1559828319}
   Body: {fileID: 1559828312}
+  damagepoints: {fileID: 0}
+  textDuration: 1
+  textOffset: {x: 0, y: 2, z: 0}
+  Randoml: {x: 1, y: 0, z: 0}
+  targetObject: {fileID: 0}
+  potionPrefab: {fileID: 0}
+  potionSpawnChance: 0.2
+  coinSpawnChance: 0.5
+  coin: {fileID: 0}
 --- !u!54 &1559828321
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -56094,6 +56119,7 @@ MonoBehaviour:
   mainHealth: 600
   healthBar: {fileID: 1935497288}
   brain: {fileID: 2107542617}
+  emblem: {fileID: 0}
 --- !u!114 &1850224123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61424,6 +61450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  savingSystem: {fileID: 0}
 --- !u!65 &2007268641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64345,6 +64372,12 @@ MonoBehaviour:
   bodyGrowthInterval: 5
   initialBodySize: 1
   blockCooldownDuration: 10
+  speedIncreaseInterval: 20
+  speedIncreaseAmount: 0.5
+  bodyGrowthRateIncreaseAmount: 0.1
+  targetIndicatorPrefab: {fileID: 0}
+  activeIndicator: {fileID: 0}
+  lightDelay: 1.5
 --- !u!54 &2107542619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -66525,6 +66558,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8443279507833639446}
   m_SourcePrefab: {fileID: 100100000, guid: a49b6ba99ff763445a276181ff5f980e, type: 3}
+--- !u!1001 &6261074529898027371
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.0566463
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.164
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20.752523
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425618083116591333, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5815756688045643702, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
+      propertyPath: m_Name
+      value: Ice shard attack
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b56c7a5da03fea4391b74fe0d7e7357, type: 3}
 --- !u!65 &6440707584016737251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67075,6 +67165,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 719751712}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 8771091787928289351, guid: 57088430ae30847428de0e23b8694c56, type: 3}
     - target: {fileID: 7659565288645974288, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: m_Name
       value: Ice blast
@@ -67318,3 +67412,4 @@ SceneRoots:
   - {fileID: 856040869}
   - {fileID: 69870232}
   - {fileID: 1360148191}
+  - {fileID: 6261074529898027371}

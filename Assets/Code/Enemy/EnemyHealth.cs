@@ -40,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
         ShowFloatingText(damageAmount);
 
         // Trigger the "Hurt" animation
-        animator.SetTrigger("Hurt");
+        //animator.SetTrigger("Hurt");
 
         // Check if the enemy's health has dropped to or below zero
         if (currentHealth <= 0)

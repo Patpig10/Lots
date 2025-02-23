@@ -11,14 +11,22 @@ public class AItest : MonoBehaviour
     public float detectionRadius = 10f;   // Radius to detect the player
 
     private Transform targetBlock;        // The next block to move towards
-    private bool isMoving = false;        // Check if movement is ongoing
+    public bool isMoving = false;        // Check if movement is ongoing
     private Queue<Transform> recentBlocks = new Queue<Transform>(); // Queue to track the last two visited blocks
 
     void Start()
     {
         StartCoroutine(ChangeTargetRoutine());
     }
+    private void OnEnable()
+    {
+        isMoving = false;
+        targetBlock = null;
+        //recentBlocks.Clear();
 
+        // Start the movement routine
+        StartCoroutine(ChangeTargetRoutine());
+    }
     void Update()
     {
         if (!isMoving)
