@@ -107528,7 +107528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983317d43d372934d82b8251888a15dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainHealth: 20
+  mainHealth: 2000
   healthBar: {fileID: 915026863}
   brain: {fileID: 1947325596}
   emblem: {fileID: 14869676}
@@ -107540,7 +107540,7 @@ MonoBehaviour:
   meltRadius: 2
   meltDuration: 3
   meltEffect: {fileID: 0}
-  shieldCooldown: 5
+  shieldCooldown: 10
   gracePeriod: 2
 --- !u!4 &1947325600 stripped
 Transform:

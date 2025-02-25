@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Recorder.OutputPath;
 
 public class MeltableObject : MonoBehaviour
 {
@@ -9,23 +8,23 @@ public class MeltableObject : MonoBehaviour
     public float meltDuration = 3f; // Time it takes for the object to melt completely
     public GameObject meltEffect; // Optional: Visual effect for melting
     public GameObject[] itemsToActivate; // Array of inactive items to activate once melted
-    public GameObject loot;
+    public GameObject loot; // Loot to activate after melting
+    public GameObject ground; // Specific GameObject to change the tag of when melted
+    public GameObject meltobject; // Specific GameObject to deactivate when the block is extremely small
+
     private bool isMelting = false;
     private float meltTimer = 0f;
     private GameObject spawnedMeltEffect; // Reference to the spawned melt effect
     private Vector3 initialScale; // Initial scale of the object
+    private bool hasDeactivatedMeltobject = false; // Track if meltobject has been deactivated
 
     void Start()
     {
         // Store the initial scale of the object
         initialScale = transform.localScale;
-        // Activate all items in the itemsToActivate array
 
-       // loot.SetActive(false);
-        //after 1 second setActive to true
+        // Activate all items in the itemsToActivate array after 1 second
         Invoke("ActivateItems", 1f);
-
-
     }
 
     void Update()
@@ -44,26 +43,45 @@ public class MeltableObject : MonoBehaviour
                 // Destroy the spawned melt effect if it exists
                 if (spawnedMeltEffect != null)
                 {
-                   // Destroy(spawnedMeltEffect);
+                    Destroy(spawnedMeltEffect);
                 }
 
                 // Activate the inactive items
                 ActivateItems();
                 loot.SetActive(true);
-                gameObject.SetActive(false); // Destroy the object after melting
+
+                // Change the tag of the specific ground GameObject to "Untagged"
+                if (ground != null)
+                {
+                    ground.tag = "Untagged";
+                }
+
+                // Deactivate the GameObject this script is attached to
+                gameObject.SetActive(false); // Set the object to inactive
             }
             else
             {
                 // Shrink the object over time
                 float scaleFactor = 1f - (meltTimer / meltDuration);
                 transform.localScale = initialScale * scaleFactor;
+
+                // Deactivate the meltobject when the block is extremely small
+                if (!hasDeactivatedMeltobject && scaleFactor <= 0.1f) // Adjust the threshold as needed
+                {
+                    if (meltobject != null)
+                    {
+                        ground.tag = "Untagged";
+                        meltobject.SetActive(false);
+                        hasDeactivatedMeltobject = true; // Ensure this only happens once
+                    }
+                }
             }
         }
     }
 
     void CheckForHeat()
     {
-        // Find all objects with the "Heat" tag within the melt radius
+        // Find all objects with the "Fire" tag within the melt radius
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, meltRadius);
         foreach (var hitCollider in hitColliders)
         {
@@ -90,8 +108,6 @@ public class MeltableObject : MonoBehaviour
     void ActivateItems()
     {
         // Activate all items in the itemsToActivate array
-
         loot.SetActive(false);
-        
     }
 }
