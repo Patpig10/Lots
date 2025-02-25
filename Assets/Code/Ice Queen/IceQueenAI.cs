@@ -103,8 +103,8 @@ public class IceQueenAI : MonoBehaviour
 
         foreach (Transform block in blocks)
         {
-            // Skip blocks that are unpassable, recently visited, or occupied
-            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block))
+            // Skip blocks that are unpassable, recently visited, occupied, or occupied by the player
+            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
             {
                 continue;
             }
@@ -143,7 +143,6 @@ public class IceQueenAI : MonoBehaviour
             Debug.Log("Moving away from the player via block: " + targetBlock.name);
         }
     }
-
     // Method to move the AI towards a guided spot
     private void MoveToGuidedSpot()
     {
@@ -190,8 +189,8 @@ public class IceQueenAI : MonoBehaviour
 
         foreach (Transform block in blocks)
         {
-            // Skip blocks that are unpassable, recently visited, or occupied
-            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block))
+            // Skip blocks that are unpassable, recently visited, occupied, or occupied by the player
+            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
             {
                 continue;
             }
@@ -223,7 +222,6 @@ public class IceQueenAI : MonoBehaviour
             Debug.Log("Moving closer to the player via block: " + targetBlock.name);
         }
     }
-
     // Method to find the nearest block to a given position
     private Transform FindNearestBlockToPosition(Vector3 position)
     {
@@ -259,8 +257,8 @@ public class IceQueenAI : MonoBehaviour
 
             foreach (Transform block in blocks)
             {
-                // Skip blocks that are unpassable, recently visited, or occupied
-                if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block))
+                // Skip blocks that are unpassable, recently visited, occupied, or occupied by the player
+                if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
                 {
                     continue;
                 }
@@ -343,6 +341,18 @@ public class IceQueenAI : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             if (collider.CompareTag("Enemy") || collider.CompareTag("Unpassable")) // If an object tagged "Enemy" or "Unpassable" is found, the block is occupied
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    private bool IsBlockOccupiedByPlayer(Transform block)
+    {
+        Collider[] colliders = Physics.OverlapSphere(block.position, 0.1f); // Check for objects in the block's position
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Player")) // If an object tagged "Player" is found, the block is occupied
             {
                 return true;
             }

@@ -53,5 +53,11 @@ public class Weapon : MonoBehaviour
         {
             bossSegment.TakeDamage(damage); // Deal damage to the boss segment
         }
+
+        IceBossHealth iceBossHealth = other.GetComponent<IceBossHealth>();
+        if (iceBossHealth != null)
+        {
+            iceBossHealth.ApplyDamage(damage);
+        }
     }
 }
