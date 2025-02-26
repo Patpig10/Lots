@@ -16,6 +16,10 @@ public class Saving : MonoBehaviour
     public bool isShieldUnlocked = false;
     public bool isAoEUnlocked = false;
     public bool Grassemblem = false;
+    public bool ice;
+    public bool fire;
+    public bool Arena;
+    public bool Arenaclear;
     // Default values for reset
     private const int DEFAULT_MAX_LIFE = 3;
     private const int DEFAULT_WEAPON_DAMAGE = 20;
@@ -25,6 +29,12 @@ public class Saving : MonoBehaviour
     private const bool DEFAULT_SHIELD_UNLOCKED = false;
     private const bool DEFAULT_AOE_UNLOCKED = false;
     public const bool DEFAULT_GRASSEMBLEM = false;
+    public const bool DEFAULT_ice = false;
+    public const bool DEFAULT_fire = false;
+    public const bool DEFAULT_arena = false;
+    public const bool DEFAULT_arenaclear = false;
+
+
 
 
     private void Start()
@@ -55,6 +65,10 @@ public class Saving : MonoBehaviour
         isShieldUnlocked = DEFAULT_SHIELD_UNLOCKED;
         isAoEUnlocked = DEFAULT_AOE_UNLOCKED;
         Grassemblem = DEFAULT_GRASSEMBLEM;
+        fire = DEFAULT_fire;
+        ice = DEFAULT_ice;
+        Arena = DEFAULT_arena;
+        Arenaclear = DEFAULT_arenaclear;
 
         // Step 3: Save the default values to a new save file
         SavePlayerData();
@@ -128,6 +142,11 @@ public class Saving : MonoBehaviour
             isShootUnlocked = isShootUnlocked,
             isShieldUnlocked = isShieldUnlocked,
             Grassemblem = Grassemblem,
+            ice = ice,
+            fire = fire,
+            Arena = Arena,
+            Arenaclear = Arenaclear
+
         };
 
         // Convert the data to JSON format and save it to file
@@ -211,6 +230,70 @@ public class Saving : MonoBehaviour
             SavePlayerData();
         }
     }
+      public void Addlevelice1()
+    {
+        if (levelUnlocked == 5)
+        {
+            completed = true;
+        }
+        if (completed)
+        {
+            ice = true;
+            levelUnlocked++;
+            SavePlayerData();
+        }
+    }
+    public void Addlevelice2()
+    {
+        if (levelUnlocked == 6)
+        {
+            completed = true;
+        }
+        if (completed)
+        {
+            levelUnlocked++;
+            SavePlayerData();
+        }
+    }
+    public void Addleveliceboss()
+    {
+        if (levelUnlocked == 7)
+        {
+            completed = true;
+        }
+        if (completed)
+        {
+            levelUnlocked++;
+            SavePlayerData();
+        }
+    }
+    public void Addlevelfire1()
+    {
+        if (levelUnlocked == 5)
+        {
+            completed = true;
+        }
+        if (completed)
+        {
+            fire = true;
+            Arena = true;
+
+            SavePlayerData();
+        }
+    }
+
+    public void Addlevelfireboss()
+    {
+        if (Arena == true)
+        {
+            completed = true;
+        }
+        if (completed)
+        {
+            Arenaclear = true;
+            SavePlayerData();
+        }
+    }
 
     // Method to load player data from JSON
     public void LoadPlayerData()
@@ -229,6 +312,10 @@ public class Saving : MonoBehaviour
             isShootUnlocked = saveData.isShootUnlocked;
             isShieldUnlocked = saveData.isShieldUnlocked;
             Grassemblem = saveData.Grassemblem;
+            ice = saveData.ice;
+            fire = saveData.fire;
+            Arena = saveData.Arena;
+            Arenaclear = saveData.Arenaclear;
             Debug.Log("Player data loaded!");
         }
         else
@@ -248,5 +335,9 @@ public class Saving : MonoBehaviour
         public bool isShootUnlocked;
         public bool isShieldUnlocked;
         public bool Grassemblem;
+        public bool ice;
+        public bool fire;
+        public bool Arena;
+        public bool Arenaclear;
     }
 }

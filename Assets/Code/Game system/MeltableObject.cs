@@ -72,6 +72,7 @@ public class MeltableObject : MonoBehaviour
                     {
                         ground.tag = "Untagged";
                         meltobject.SetActive(false);
+                        loot.SetActive(true);
                         hasDeactivatedMeltobject = true; // Ensure this only happens once
                     }
                 }

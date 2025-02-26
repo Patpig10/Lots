@@ -19,6 +19,11 @@ public class LevelManager : MonoBehaviour
     public GameObject fire;
     public GameObject Ice1;
     public GameObject fire1;
+    public GameObject levelIce1;
+    public GameObject levelFire1;
+    public GameObject levelIce2;
+    public GameObject levelIceBoss;
+    public GameObject levelFireBoss;
     private void Awake()
     {
 
@@ -34,12 +39,19 @@ public class LevelManager : MonoBehaviour
         SetButtonState(button3, Saving.levelUnlocked >= 3);
         SetButtonState(button4, Saving.levelUnlocked >= 4);
         SetButtonState(buttonboss, Saving.levelUnlocked >= 5);
+        SetButtonState(levelIce1, Saving.levelUnlocked >= 6);
+        SetButtonState(levelFire1, Saving.levelUnlocked >= 6);
+        SetButtonState(levelIce2, Saving.levelUnlocked >= 7 && Saving.ice == true);
+        SetButtonState(levelIceBoss, Saving.levelUnlocked >= 8 && Saving.ice == true);
+        SetButtonState(levelFireBoss, Saving.Arena == true && Saving.fire == true);
+
+
 
         SetButtonState(Forest, true);
-        SetButtonState(Ice, Saving.levelUnlocked == 6);
-        SetButtonState(fire, Saving.levelUnlocked == 6);
-        SetButtonState(Ice1, Saving.levelUnlocked == 6);
-        SetButtonState(fire1, Saving.levelUnlocked == 6);
+        SetButtonState(Ice, Saving.levelUnlocked >= 6);
+        SetButtonState(fire, Saving.levelUnlocked >= 6);
+        SetButtonState(Ice1, Saving.levelUnlocked >= 6);
+        SetButtonState(fire1, Saving.levelUnlocked >= 6);
     }
 
     void SetButtonState(GameObject button, bool shouldBeActive)
@@ -123,6 +135,10 @@ public class LevelManager : MonoBehaviour
     {
         LoadLevel(9);
     }
+    public void Level6()
+    {
+        LoadLevel(10);
+    }
 
-   
+
 }
