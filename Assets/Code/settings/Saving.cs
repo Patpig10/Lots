@@ -16,6 +16,8 @@ public class Saving : MonoBehaviour
     public bool isShieldUnlocked = false;
     public bool isAoEUnlocked = false;
     public bool Grassemblem = false;
+    public bool Iceemblem = false;
+    public bool Fireemblem = false;
     public bool ice;
     public bool fire;
     public bool Arena;
@@ -33,6 +35,9 @@ public class Saving : MonoBehaviour
     public const bool DEFAULT_fire = false;
     public const bool DEFAULT_arena = false;
     public const bool DEFAULT_arenaclear = false;
+    public const bool DEFAULT_IceEMBLEM = false;
+    public const bool DEFAULT_FireEMBLEM = false;
+
 
 
 
@@ -70,6 +75,7 @@ public class Saving : MonoBehaviour
         Arena = DEFAULT_arena;
         Arenaclear = DEFAULT_arenaclear;
 
+
         // Step 3: Save the default values to a new save file
         SavePlayerData();
         Debug.Log("Game reset to default values!");
@@ -99,6 +105,17 @@ public class Saving : MonoBehaviour
         Grassemblem = true;
         SavePlayerData();
     }
+    public void Iceemblemunlock()
+    {
+        Iceemblem = true;
+        SavePlayerData();
+    }
+    public void Fireemblemunlock()
+    {
+        Fireemblem = true;
+        SavePlayerData();
+    }
+
     public void shieldunlock()
     {
         isShieldUnlocked = true;
@@ -145,7 +162,9 @@ public class Saving : MonoBehaviour
             ice = ice,
             fire = fire,
             Arena = Arena,
-            Arenaclear = Arenaclear
+            Arenaclear = Arenaclear,
+            Iceemblem = Iceemblem,
+            Fireemblem = Fireemblem
 
         };
 
@@ -316,6 +335,8 @@ public class Saving : MonoBehaviour
             fire = saveData.fire;
             Arena = saveData.Arena;
             Arenaclear = saveData.Arenaclear;
+            Iceemblem = saveData.Iceemblem;
+            Fireemblem = saveData.Fireemblem;
             Debug.Log("Player data loaded!");
         }
         else
@@ -339,5 +360,7 @@ public class Saving : MonoBehaviour
         public bool fire;
         public bool Arena;
         public bool Arenaclear;
+        public bool Iceemblem;
+        public bool Fireemblem;
     }
 }

@@ -15,7 +15,39 @@ public class GuideUpdater : MonoBehaviour
 
     void UpdateGuide()
     {
-        if (Saving.isShootUnlocked && Saving.levelUnlocked ==5)
+        // Check for specific conditions first
+        if (Saving.levelUnlocked == 7 && Saving.ice == true)
+        {
+            guideText.text = "Enter the ice palace by helping or fighting.";
+            return;
+        }
+
+        if (Saving.levelUnlocked == 8 && Saving.ice == true && Saving.Iceemblem == false)
+        {
+            guideText.text = "Defeat the Queen.";
+            return;
+        }
+        if (Saving.Iceemblem == true && Saving.Fireemblem == true)
+        {
+            guideText.text = "Head back to the village";
+            return;
+        }
+
+
+        if (Saving.Iceemblem == true && Saving.Fireemblem == false && Saving.fire == false)
+        {
+            guideText.text = "Head to the Molten Core.";
+            return;
+        }
+
+        if (Saving.Arena == true && Saving.fire == true && Saving.Fireemblem == false && Saving.levelUnlocked >= 6)
+        {
+            guideText.text = "Defeat the champion.";
+            return;
+        }
+
+        // Default progression based on levelUnlocked
+        if (Saving.isShootUnlocked && Saving.levelUnlocked == 5)
         {
             guideText.text = "Return to the village.";
             return;
@@ -39,7 +71,7 @@ public class GuideUpdater : MonoBehaviour
                 guideText.text = "Defeat the boss.";
                 break;
             default:
-                guideText.text = "Choose where you want to continue(Ice caps or Molten Core).";
+                guideText.text = "Choose where you want to continue (Ice caps or Molten Core).";
                 break;
         }
     }
