@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: chefssGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: chefss
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: d92877f4-0673-489e-9b59-e8392ffca896
+    <Name>k__BackingField: Chefmilk
+    <Text>k__BackingField: "Damn it, Cook! We don\u2019t have time for spills."
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e6a671c1-ce73-415c-985b-4b0870f1f867
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 111.2, y: 155.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e6a671c1-ce73-415c-985b-4b0870f1f867
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: What do you want, twerp?
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: a019ee8b-3e69-4d1a-8ffa-9e32823d10ff
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 874.4, y: 155.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: a019ee8b-3e69-4d1a-8ffa-9e32823d10ff
+    <Name>k__BackingField: d
+    <Text>k__BackingField: " My key? Yeah, I have it\u2014but I\u2019m too busy with
+      the Queen\u2019s cake to deal with you"
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e111d710-d466-4825-9c85-f0656f3805c7
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1567.2, y: 155.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e111d710-d466-4825-9c85-f0656f3805c7
+    <Name>k__BackingField: j
+    <Text>k__BackingField: ' If you want it, then make yourself useful.'
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: ba0be0b7-5d91-46f8-8f34-c0a96d204b45
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2397.5999, y: 155.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: ba0be0b7-5d91-46f8-8f34-c0a96d204b45
+    <Name>k__BackingField: hh
+    <Text>k__BackingField: "Go fetch the milk from the freezer room\u2014the far-left
+      room in the castle\u2014since a certain someone dropped the last jug."
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3144, y: 155.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Chefmilk
+  - DialogueName
+  - d
+  - j
+  - hh
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

@@ -24965,6 +24965,12 @@ MonoBehaviour:
   isShieldUnlocked: 0
   isAoEUnlocked: 0
   Grassemblem: 0
+  Iceemblem: 0
+  Fireemblem: 0
+  ice: 0
+  fire: 0
+  Arena: 0
+  Arenaclear: 0
 --- !u!4 &1256430679
 Transform:
   m_ObjectHideFlags: 0

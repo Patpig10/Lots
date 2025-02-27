@@ -12,9 +12,12 @@ public class ItemPickup : MonoBehaviour
     public Shop Shop;
     public int Coins;
     public Saving save;
+    public int Key;
+    public Keytraker Keytraker;
+    public bool multipleKeys  = false;
     private void Start()
     {
-
+       // Key = Keytraker.keysLeft;
         playerBag = FindObjectOfType<Bag>(); // Finds the Bag component on the player
     }
 
@@ -55,6 +58,35 @@ public class ItemPickup : MonoBehaviour
             }
 
             Destroy(gameObject); // Destroy the item GameObject
+            if (itemName == "Key1")
+            {
+               Keytraker.keysLeft--;
+
+                PopupManager.Instance.ShowPopup($"You got a {itemName}. You only need to get {Keytraker.keysLeft} more keys");
+
+            }
+
+            if (itemName == "Key2")
+            {
+               Keytraker.keysLeft--;
+
+                PopupManager.Instance.ShowPopup($"You got a {itemName}. You only need to get {Keytraker.keysLeft} more keys");
+
+            }
+
+            if (itemName == "Key3")
+            {
+               Keytraker.keysLeft--;
+
+                PopupManager.Instance.ShowPopup($"You got a {itemName}. You only need to get {Keytraker.keysLeft} more keys");
+            }
+
+            if (itemName == "Milk")
+            {
+                Keytraker.keysLeft--;
+
+                PopupManager.Instance.ShowPopup($"You got Milk. Return to the Chef.");
+            }
         }
     }
 

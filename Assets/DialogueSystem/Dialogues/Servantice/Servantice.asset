@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: Servantice
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Servantice
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: b32b5eca61bd1e2419fbbbed6c68d0a2, type: 2}
+  - {fileID: 11400000, guid: 121dea32e79b48543b9466dadcaeacf0, type: 2}
+  - {fileID: 11400000, guid: fbc6c2603853ab242a22538af1154556, type: 2}
+  - {fileID: 11400000, guid: 4105f82d4b870274c958e01592142084, type: 2}
+  - {fileID: 11400000, guid: 9f0709833c1a42b47b71b489839a8a33, type: 2}

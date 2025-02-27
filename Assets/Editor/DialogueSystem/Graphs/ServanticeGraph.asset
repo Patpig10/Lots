@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: ServanticeGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Servantice
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 730d7d3b-078d-4398-b63b-222dddce1ba6
+    <Name>k__BackingField: Servant
+    <Text>k__BackingField: "Ah, welcome, esteemed guest! Are you here for the party?\r"
+    <Speaker>k__BackingField: Servant
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: bb124d87-8dbc-4744-8429-771922c62c67
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 43.2, y: -18.400002}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: bb124d87-8dbc-4744-8429-771922c62c67
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: "Hah! You wish to meet the Queen herself? That\u2019s
+      quite ambitious."
+    <Speaker>k__BackingField: Servant
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 27f00eff-790c-4e64-af16-d36814d6f9c9
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 835.2, y: -18.400002}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 27f00eff-790c-4e64-af16-d36814d6f9c9
+    <Name>k__BackingField: f
+    <Text>k__BackingField: "The only way into the Grand Hall before the party is
+      by gathering three keys. Lucky for you, I can help with that. One key is in
+      the freezer to the left, and the chef has another\u2014just have a little chat
+      with him."
+    <Speaker>k__BackingField: Servant
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 459ded3c-3a62-4248-97b0-059c483b98e6
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1636, y: -18.400002}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 459ded3c-3a62-4248-97b0-059c483b98e6
+    <Name>k__BackingField: j
+    <Text>k__BackingField: "As for the last one\u2026 well, I had it, but it seems
+      I may have\u2026 misplaced it. It should be somewhere around here. If you find
+      it, it\u2019s yours.\r"
+    <Speaker>k__BackingField: Servant
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 4516aab1-32d5-48b4-b907-0a5afe44d59f
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2368.8, y: -18.400002}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 4516aab1-32d5-48b4-b907-0a5afe44d59f
+    <Name>k__BackingField: fg
+    <Text>k__BackingField: "Oh, and before you go\u2014if you ever find yourself
+      facing the Queen in battle, be warned. Her shield makes her invincible. You\u2019ll
+      need to find a way to melt it if you want a fighting chance.\r\n"
+    <Speaker>k__BackingField: Servant
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3082.4, y: -26.400002}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Servant
+  - DialogueName
+  - f
+  - j
+  - fg
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
