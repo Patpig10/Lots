@@ -16,6 +16,7 @@ TagManager:
   - Pushable
   - Trigger
   - Fire
+  - Block
   layers:
   - Default
   - TransparentFX

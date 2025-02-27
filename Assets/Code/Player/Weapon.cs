@@ -34,6 +34,10 @@ public class Weapon : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage); // Deal damage to the enemy
+            if(tag=="Block")
+            {
+                enemy.TakeDamage(damage -= 20);
+            }
             return; // Exit the method after dealing damage
         }
 
@@ -59,5 +63,7 @@ public class Weapon : MonoBehaviour
         {
             iceBossHealth.ApplyDamage(damage);
         }
+
+       
     }
 }

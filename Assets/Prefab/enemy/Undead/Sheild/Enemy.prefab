@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842830859164423593}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.35988274, y: -0.0034711799, z: -0.0829489, w: 0.92929643}
-  m_LocalPosition: {x: -0, y: 3.251461, z: -0.0000003874302}
+  m_LocalRotation: {x: -0.39578167, y: 0.031029422, z: 0.0384623, w: 0.917014}
+  m_LocalPosition: {x: -0.00007587672, y: 3.25145, z: -0.00000667572}
   m_LocalScale: {x: 0.99999994, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1798894888561381824}
   m_Father: {fileID: 8589152043276969940}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -46.741, y: 2.213, z: 3.847}
 --- !u!1 &1045985907674215438
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5710890474580308417}
   m_Layer: 0
-  m_Name: Bone.018
+  m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,14 +599,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3941225051441912815}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1853901, y: -0.05847852, z: -0.61978716, w: 0.76031226}
-  m_LocalPosition: {x: -0.0000003799796, y: 1.534268, z: 0.00000012293458}
+  m_LocalRotation: {x: 0.25966135, y: 0.3694667, z: -0.5153083, w: 0.72837335}
+  m_LocalPosition: {x: 0.000023126602, y: 1.5342555, z: 0.000011056661}
   m_LocalScale: {x: 1, y: 0.9999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5710890474580308417}
   m_Father: {fileID: 558871434068392626}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 49.38, y: 24.56, z: -59.128}
 --- !u!1 &4075415902548463169
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626953857830158351}
   m_Layer: 0
-  m_Name: Armature
+  m_Name: bones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -881,6 +881,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  isMoving: 0
 --- !u!65 &981438104702729725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1069,12 +1070,12 @@ GameObject:
   - component: {fileID: 8134870479901358624}
   - component: {fileID: 3769451033554091536}
   m_Layer: 0
-  m_Name: Layer_1
+  m_Name: sheild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1276980476880781590
 Transform:
   m_ObjectHideFlags: 0
@@ -1150,7 +1151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8398489199128526277}
   m_Layer: 0
-  m_Name: Bone.011
+  m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1164,14 +1165,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6609351774678293164}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06241796, y: -0.0022035548, z: 0.0107310815, w: 0.99799}
-  m_LocalPosition: {x: -0.0000005066395, y: 2.3464992, z: -0.00000010244548}
+  m_LocalRotation: {x: 0.062422313, y: -0.015675401, z: 0.012143131, w: 0.9978529}
+  m_LocalPosition: {x: 0.26418358, y: 2.3531232, z: 0.085841954}
   m_LocalScale: {x: 0.9999999, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6745871764765687283}
   m_Father: {fileID: 2899239697082913112}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.178, y: -1.719, z: 1.287}
 --- !u!1 &6815932164454394845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1567,10 @@ MonoBehaviour:
   textOffset: {x: 0, y: 2, z: 0}
   Randoml: {x: 1, y: 0, z: 0}
   targetObject: {fileID: 0}
+  potionPrefab: {fileID: 0}
+  potionSpawnChance: 0.2
+  coinSpawnChance: 0.5
+  coin: {fileID: 0}
 --- !u!65 &2534285300527151452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1607,6 +1612,10 @@ MonoBehaviour:
   textOffset: {x: 0.5, y: 0, z: 0}
   Randoml: {x: 1, y: 0, z: 0}
   targetObject: {fileID: 8878724551127139263}
+  potionPrefab: {fileID: 0}
+  potionSpawnChance: 0.2
+  coinSpawnChance: 0.5
+  coin: {fileID: 0}
 --- !u!54 &200829600727732221
 Rigidbody:
   m_ObjectHideFlags: 0
