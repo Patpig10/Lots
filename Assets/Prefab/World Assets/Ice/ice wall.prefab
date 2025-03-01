@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3847745603141264862}
+  - component: {fileID: 6978653246141418390}
   m_Layer: 0
   m_Name: ice wall
   m_TagString: Untagged
@@ -33,6 +34,27 @@ Transform:
   - {fileID: 2388351750248285064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -179.027}
+--- !u!65 &6978653246141418390
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4019243529095387031}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 31.629929, y: 1, z: 29.002237}
+  m_Center: {x: 0.4819483, y: 5.0840526e-10, z: 14.001124}
 --- !u!1 &7765010008168714678
 GameObject:
   m_ObjectHideFlags: 0

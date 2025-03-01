@@ -390,7 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lifetime: 5
-  destroyOnCollision: 0
+  destroyOnCollision: 1
   destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5

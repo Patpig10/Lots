@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: HappychefGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Happychef
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 779fc5aa-132c-4533-b000-a922392e65b2
+    <Name>k__BackingField: Happychefg
+    <Text>k__BackingField: ' Hahaha! Nice work, slime! The queen will be thrilled.'
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 9c33a7d3-85ef-4c3d-9ac4-bf8e8ec9bf38
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 52.8, y: 94.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 9c33a7d3-85ef-4c3d-9ac4-bf8e8ec9bf38
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: "If you ever need a job, my kitchen\u2019s always open."
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b8d69a68-0b44-4bca-8f6b-2b6f3a59bf78
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 736.8, y: 94.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: b8d69a68-0b44-4bca-8f6b-2b6f3a59bf78
+    <Name>k__BackingField: d
+    <Text>k__BackingField: " Oh, right\u2014you need my key? Go ahead, take it."
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2620d539-d0c8-4d9b-9f30-ab9552416ea6
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1418.3999, y: 94.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 2620d539-d0c8-4d9b-9f30-ab9552416ea6
+    <Name>k__BackingField: r
+    <Text>k__BackingField: "Looking for the Freezer Key? You\u2019ll have to melt
+      the ice in the first room on the left."
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 1f50b458-ed0b-46be-b1e9-7a7386ecf8c1
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2104.8, y: 94.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 1f50b458-ed0b-46be-b1e9-7a7386ecf8c1
+    <Name>k__BackingField: f
+    <Text>k__BackingField: ' Too many people kept losing their keys, so we had to
+      start hiding them.'
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 952dbec7-d754-4770-8b9b-1a7a9cb75091
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2856, y: 94.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 952dbec7-d754-4770-8b9b-1a7a9cb75091
+    <Name>k__BackingField: df
+    <Text>k__BackingField: Anyway, good luck with the queen!
+    <Speaker>k__BackingField: Chef
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3556.8, y: 94.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Happychefg
+  - DialogueName
+  - d
+  - r
+  - f
+  - df
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

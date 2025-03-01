@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: BossIce
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: BossIce
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: 5c35883da629fb44dba458e68df2d7b0, type: 2}
+  - {fileID: 11400000, guid: 2d626338d84453644b17744c7b135012, type: 2}
+  - {fileID: 11400000, guid: f96c2ccf9005d2d4da81c3a7f6558a67, type: 2}
+  - {fileID: 11400000, guid: 2818f6d56187b7d47a06db412902a5c8, type: 2}

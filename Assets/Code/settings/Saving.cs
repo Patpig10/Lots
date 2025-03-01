@@ -212,6 +212,12 @@ public class Saving : MonoBehaviour
         SceneManager.LoadScene(6);
     }
 
+    public void ToIceboss()
+    {
+        SceneManager.LoadScene(12);
+    }
+
+
     public void Addlevel3()
     {
         if (levelUnlocked == 2)

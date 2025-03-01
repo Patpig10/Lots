@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: BossIceGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: BossIce
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 8675b10d-8fdd-4ea6-925f-59926ac7add9
+    <Name>k__BackingField: icewelcome
+    <Text>k__BackingField: "Oh! A visitor? How lovely! Though, I must say, my grand
+      hall isn\u2019t quite ready for guests just yet\u2026"
+    <Speaker>k__BackingField: Ice Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 829a2b6f-1a1e-4493-992a-56e19e74f7a0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 36.8, y: -204.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 829a2b6f-1a1e-4493-992a-56e19e74f7a0
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: " \u2026Wait. You\u2019re not an invited guest. Who are
+      you?\u2014A slime?! Ugh, how vile!"
+    <Speaker>k__BackingField: Ice Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e1703115-2bae-426f-898e-5954ddfd5a21
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 791.2, y: -204.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e1703115-2bae-426f-898e-5954ddfd5a21
+    <Name>k__BackingField: Diab
+    <Text>k__BackingField: "Let me guess\u2014she sent you, didn\u2019t she? Hmph.
+      So now she desperately needs my emblem for something? How typical. And she
+      sends you of all things? How insulting!"
+    <Speaker>k__BackingField: Ice Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 46e52892-383a-4858-b5ff-ff2db647f861
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1627.2, y: -204.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 46e52892-383a-4858-b5ff-ff2db647f861
+    <Name>k__BackingField: ggg
+    <Text>k__BackingField: "Well, too bad! I don\u2019t care what her little emergency
+      is. She\u2019s not getting it, and neither are you. If you won\u2019t leave,
+      I\u2019ll just have to personally deal with you!"
+    <Speaker>k__BackingField: Ice Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2459.2, y: -204.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - icewelcome
+  - DialogueName
+  - Diab
+  - ggg
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

@@ -303,6 +303,14 @@ public class IceQueenAI : MonoBehaviour
 
         while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
         {
+            // Check if the AI is colliding with an unpassable block
+            if (IsCollidingWithUnpassable())
+            {
+                Debug.Log("Collided with an unpassable block. Stopping movement.");
+                isMoving = false;
+                yield break; // Exit the coroutine
+            }
+
             float distanceCovered = (Time.time - startTime) * currentSpeed;
             float fractionOfJourney = distanceCovered / journeyLength;
             transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
@@ -355,6 +363,36 @@ public class IceQueenAI : MonoBehaviour
             if (collider.CompareTag("Player")) // If an object tagged "Player" is found, the block is occupied
             {
                 return true;
+            }
+        }
+        return false;
+    }
+
+    private bool IsPathBlocked(Vector3 startPosition, Vector3 targetPosition)
+    {
+        Vector3 direction = (targetPosition - startPosition).normalized;
+        float distance = Vector3.Distance(startPosition, targetPosition);
+
+        // Perform a raycast to check for unpassable blocks
+        RaycastHit hit;
+        if (Physics.Raycast(startPosition, direction, out hit, distance))
+        {
+            if (hit.collider.CompareTag("Unpassable"))
+            {
+                return true; // Path is blocked by an unpassable block
+            }
+        }
+
+        return false; // Path is clear
+    }
+    private bool IsCollidingWithUnpassable()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f); // Adjust radius as needed
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Unpassable"))
+            {
+                return true; // Colliding with an unpassable block
             }
         }
         return false;

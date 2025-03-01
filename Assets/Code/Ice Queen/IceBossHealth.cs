@@ -37,7 +37,7 @@ public class IceBossHealth : MonoBehaviour
     // Grace Period Variables
     public float gracePeriod = 2f; // Time after reset during which the shield cannot be melted
     private bool isGracePeriodActive = false; // Whether the grace period is active
-
+   // public GameObject Emeblem;
     private void Start()
     {
         // Initialize the health bar

@@ -29,11 +29,34 @@ public class Door : MonoBehaviour
         }
     }
 
+    public void Checkingbag()
+    {
+        if (playerBag != null && playerBag.HasItem(requiredKey))
+        {
+
+            playerBag.RemoveItem(requiredKey); // Removes the key from the bag
+            //OpenDoor(); // Calls the method to open the door
+            
+            Debug.Log("Door opened with " + requiredKey + "!");
+        }
+        else
+        {
+            Debug.Log("The door requires a " + requiredKey + " key.");
+        }
+    }
+
     private void OpenDoor()
     {
         // Set the door inactive or play an animation
       playerBag.RemoveItem(requiredKey);
         Destroy(doorObject);
+
+    }
+    private void grab()
+    {
+        // Set the door inactive or play an animation
+        playerBag.RemoveItem(requiredKey);
+        
 
     }
 
