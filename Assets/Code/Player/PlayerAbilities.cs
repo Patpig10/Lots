@@ -38,7 +38,15 @@ public class PlayerAbilities : MonoBehaviour
     private bool canUseShoot = true;
     private bool canUseShield = true;
     private bool canUseAoE = true;
+
+    // Remaining cooldown times
+    private float shootCooldownRemaining = 0f;
+    private float shieldCooldownRemaining = 0f;
+    private float aoeCooldownRemaining = 0f;
+
     Saving save;
+    public Slider cooldownSlider;
+
     private void Start()
     {
         save = GameObject.FindObjectOfType<Saving>();
@@ -56,6 +64,12 @@ public class PlayerAbilities : MonoBehaviour
 
         // Update the ability panel on start
         UpdateAbilityPanel();
+
+        // Set the slider to inactive by default
+        if (cooldownSlider != null)
+        {
+            cooldownSlider.gameObject.SetActive(false);
+        }
     }
 
     private void Update()
@@ -82,26 +96,22 @@ public class PlayerAbilities : MonoBehaviour
 
         // Update the ability panel every frame
         UpdateAbilityPanel();
-        if(save.isShootUnlocked == true)
+
+        // Update the cooldown slider based on the selected ability
+        UpdateCooldownSlider();
+
+        // Unlock abilities if conditions are met
+        if (save.isShootUnlocked == true)
         {
             UnlockShootAbility();
-           // UpdateAbilityPanel();
-            //Abilityhole.SetActive(false);
-
         }
         if (save.isAoEUnlocked == true)
         {
             UnlockAoEAbility();
-            // UpdateAbilityPanel();
-            //Abilityhole.SetActive(false);
-
         }
         if (save.isShieldUnlocked == true)
         {
             UnlockShieldAbility();
-            // UpdateAbilityPanel();
-            //Abilityhole.SetActive(false);
-
         }
     }
 
@@ -115,13 +125,15 @@ public class PlayerAbilities : MonoBehaviour
             selectedAbility = ability;
             Debug.Log("Selected Ability: " + selectedAbility);
             UpdateAbilityPanel(); // Update UI
+
+            // Show the slider if the selected ability is on cooldown
+            UpdateSliderVisibility();
         }
         else
         {
             Debug.Log("This ability is locked!");
         }
     }
-
 
     private void UseAbility()
     {
@@ -183,39 +195,115 @@ public class PlayerAbilities : MonoBehaviour
 
     private IEnumerator AbilityCooldown(string abilityName, float cooldown)
     {
+        // Show the slider when cooldown starts
+        if (cooldownSlider != null)
+        {
+            cooldownSlider.gameObject.SetActive(true);
+        }
+
+        // Disable the ability
         switch (abilityName)
         {
             case "Shoot":
                 canUseShoot = false;
+                shootCooldownRemaining = cooldown;
                 break;
 
             case "Shield":
                 canUseShield = false;
+                shieldCooldownRemaining = cooldown;
                 break;
 
             case "AoE":
                 canUseAoE = false;
+                aoeCooldownRemaining = cooldown;
                 break;
         }
 
-        yield return new WaitForSeconds(cooldown);
-
-        switch (abilityName)
+        // Gradually decrease the remaining cooldown time
+        while (true)
         {
-            case "Shoot":
-                canUseShoot = true;
+            switch (abilityName)
+            {
+                case "Shoot":
+                    shootCooldownRemaining -= Time.deltaTime;
+                    if (shootCooldownRemaining <= 0)
+                    {
+                        shootCooldownRemaining = 0;
+                        canUseShoot = true;
+                        Debug.Log("Shoot ability is ready to use again!");
+                        UpdateSliderVisibility(); // Hide the slider if the current ability's cooldown is done
+                        yield break;
+                    }
+                    break;
+
+                case "Shield":
+                    shieldCooldownRemaining -= Time.deltaTime;
+                    if (shieldCooldownRemaining <= 0)
+                    {
+                        shieldCooldownRemaining = 0;
+                        canUseShield = true;
+                        Debug.Log("Shield ability is ready to use again!");
+                        UpdateSliderVisibility(); // Hide the slider if the current ability's cooldown is done
+                        yield break;
+                    }
+                    break;
+
+                case "AoE":
+                    aoeCooldownRemaining -= Time.deltaTime;
+                    if (aoeCooldownRemaining <= 0)
+                    {
+                        aoeCooldownRemaining = 0;
+                        canUseAoE = true;
+                        Debug.Log("AoE ability is ready to use again!");
+                        UpdateSliderVisibility(); // Hide the slider if the current ability's cooldown is done
+                        yield break;
+                    }
+                    break;
+            }
+            yield return null;
+        }
+    }
+
+    private void UpdateCooldownSlider()
+    {
+        // Update the slider based on the selected ability's remaining cooldown
+        switch (selectedAbility)
+        {
+            case Ability.Shoot:
+                cooldownSlider.maxValue = shootCooldown;
+                cooldownSlider.value = shootCooldownRemaining;
                 break;
 
-            case "Shield":
-                canUseShield = true;
+            case Ability.Shield:
+                cooldownSlider.maxValue = shieldCooldown;
+                cooldownSlider.value = shieldCooldownRemaining;
                 break;
 
-            case "AoE":
-                canUseAoE = true;
+            case Ability.AoE:
+                cooldownSlider.maxValue = aoeCooldown;
+                cooldownSlider.value = aoeCooldownRemaining;
                 break;
         }
+    }
 
-        Debug.Log(abilityName + " is ready to use again!");
+    private void UpdateSliderVisibility()
+    {
+        // Show the slider if the selected ability is on cooldown, otherwise hide it
+        switch (selectedAbility)
+        {
+            case Ability.Shoot:
+                cooldownSlider.gameObject.SetActive(shootCooldownRemaining > 0);
+                break;
+
+            case Ability.Shield:
+                cooldownSlider.gameObject.SetActive(shieldCooldownRemaining > 0);
+                break;
+
+            case Ability.AoE:
+                cooldownSlider.gameObject.SetActive(aoeCooldownRemaining > 0);
+                break;
+        }
     }
 
     // Call these methods when bosses are defeated to unlock abilities
@@ -226,7 +314,6 @@ public class PlayerAbilities : MonoBehaviour
         Debug.Log("Shoot ability unlocked!");
         UpdateAbilityPanel(); // Update the panel when an ability is unlocked
         save.SavePlayerData();
-
     }
 
     public void UnlockShieldAbility()
@@ -236,7 +323,6 @@ public class PlayerAbilities : MonoBehaviour
         Debug.Log("Shield ability unlocked!");
         UpdateAbilityPanel(); // Update the panel when an ability is unlocked
         save.SavePlayerData();
-
     }
 
     public void UnlockAoEAbility()
@@ -246,7 +332,6 @@ public class PlayerAbilities : MonoBehaviour
         Debug.Log("AoE ability unlocked!");
         UpdateAbilityPanel(); // Update the panel when an ability is unlocked
         save.SavePlayerData();
-
     }
 
     private void UpdateAbilityPanel()

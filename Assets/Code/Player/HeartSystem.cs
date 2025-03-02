@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;  // For changing the heart colors
-
+using UnityEngine.UI;
 
 public class HeartSystem : MonoBehaviour
 {
@@ -15,6 +14,8 @@ public class HeartSystem : MonoBehaviour
     public float heartSpacing = 10f;
     private bool dead;
     public Saving save;
+    private const int maxHeartsInRow = 8;  // Maximum number of hearts in a row
+
     private void Start()
     {
         save = GameObject.FindObjectOfType<Saving>();
@@ -22,11 +23,9 @@ public class HeartSystem : MonoBehaviour
         life = maxLife;  // Start with full life
         SpawnHearts();  // Dynamically spawn hearts
     }
-   
+
     void Update()
     {
-      
-
         if (dead)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // Reload level or show game over
@@ -35,9 +34,6 @@ public class HeartSystem : MonoBehaviour
 
     private void SpawnHearts()
     {
-    
-        
-       
         // Clear old hearts
         foreach (GameObject heart in hearts)
         {
@@ -53,8 +49,24 @@ public class HeartSystem : MonoBehaviour
 
             RectTransform heartRectTransform = newHeart.GetComponent<RectTransform>();
 
-            // Set the anchored position of the new heart with the customizable spacing
-            heartRectTransform.anchoredPosition = new Vector2(i * (heartRectTransform.rect.width + heartSpacing), 0);
+            // Calculate the position of the heart
+            if (i < maxHeartsInRow)
+            {
+                // Position the first 8 hearts normally (first row)
+                heartRectTransform.anchoredPosition = new Vector2(i * (heartRectTransform.rect.width + heartSpacing), 0);
+            }
+            else if (i < 2 * maxHeartsInRow)
+            {
+                // Position the next 8 hearts (9th to 16th) on top of the first row (second row)
+                int overlapIndex = (i - maxHeartsInRow) % maxHeartsInRow;  // Calculate which heart to overlap
+                heartRectTransform.anchoredPosition = hearts[overlapIndex].GetComponent<RectTransform>().anchoredPosition;
+            }
+            else
+            {
+                // Position additional hearts (17th and beyond) on top of the second row (third row)
+                int overlapIndex = (i - 2 * maxHeartsInRow) % maxHeartsInRow;  // Calculate which heart to overlap
+                heartRectTransform.anchoredPosition = hearts[overlapIndex + maxHeartsInRow].GetComponent<RectTransform>().anchoredPosition;
+            }
         }
 
         UpdateHeartVisuals();  // Refresh heart visuals after spawning
@@ -93,10 +105,38 @@ public class HeartSystem : MonoBehaviour
         for (int i = 0; i < hearts.Count; i++)
         {
             hearts[i].SetActive(i < life);  // Show hearts that represent the current life
+
+            // Change color based on the row
+            if (i < maxHeartsInRow)
+            {
+                // First row: Red
+                Image heartImage = hearts[i].GetComponent<Image>();
+                if (heartImage != null)
+                {
+                    heartImage.color = Color.red;  // First row hearts are red
+                }
+            }
+            else if (i < 2 * maxHeartsInRow)
+            {
+                // Second row: Green
+                Image heartImage = hearts[i].GetComponent<Image>();
+                if (heartImage != null)
+                {
+                    heartImage.color = Color.green;
+                }
+            }
+            else
+            {
+                // Third row: Purple
+                Image heartImage = hearts[i].GetComponent<Image>();
+                if (heartImage != null)
+                {
+                    heartImage.color = new Color(0.5f, 0f, 0.5f);  // Purple color
+                }
+            }
         }
     }
 
-    // Method to change the color of all hearts (blue for shield active, white for normal)
     public void SetHeartColor(Color color)
     {
         foreach (GameObject heart in hearts)
@@ -114,11 +154,9 @@ public class HeartSystem : MonoBehaviour
         return life;
     }
 
-    public void fullheal()
+    public void FullHeal()
     {
-        life=save.maxSavedLife;
+        life = save.maxSavedLife;
+        UpdateHeartVisuals();
     }
 }
-
-
-
