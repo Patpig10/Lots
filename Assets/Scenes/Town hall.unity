@@ -3285,6 +3285,63 @@ RectTransform:
   m_AnchoredPosition: {x: 29.332932, y: -59.143295}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &153709577
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.326
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.409
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.06407156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.06407156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70419806
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70419806
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325676955267205640, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -169.603
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194864773767957483, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
+      propertyPath: m_Name
+      value: talk icon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44ca85d9d3c070f49b13e14a71c75df6, type: 3}
 --- !u!1 &157674150
 GameObject:
   m_ObjectHideFlags: 0
@@ -29521,3 +29578,4 @@ SceneRoots:
   - {fileID: 5312381281800370899}
   - {fileID: 1142343767}
   - {fileID: 1450454974}
+  - {fileID: 153709577}
