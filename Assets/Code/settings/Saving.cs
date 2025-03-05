@@ -59,6 +59,8 @@ public class Saving : MonoBehaviour
         {
             File.Delete(saveFilePath);
             Debug.Log("Save file deleted!");
+            File.Delete(Application.dataPath + "forest primness");
+            UnityEditor.AssetDatabase.Refresh();
         }
 
         // Step 2: Reset all player data to default values

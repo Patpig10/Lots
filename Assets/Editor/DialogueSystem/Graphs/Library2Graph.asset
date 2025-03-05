@@ -1,0 +1,156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Library2Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Library2
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 3470535b-d56b-43ae-8be6-f46371ac627d
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: "Oh? Let\u2019s hear it, then."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 4b2b6e89-0a45-4ad0-9550-72537176d5d0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 687.2, y: 90.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 4b2b6e89-0a45-4ad0-9550-72537176d5d0
+    <Name>k__BackingField: g
+    <Text>k__BackingField: "Okay, so\u2026 the God of the Wild created us monsters\u2014"
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 7c2eba09-7d2d-43cc-a883-95a0dc5c9fe0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1000, y: 90.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 7c2eba09-7d2d-43cc-a883-95a0dc5c9fe0
+    <Name>k__BackingField: gg
+    <Text>k__BackingField: Beastmen, child. But go on.
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 9b6f7e4e-c7cb-4cfb-81a0-58f63519bb3a
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1836.7999, y: 90.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 9b6f7e4e-c7cb-4cfb-81a0-58f63519bb3a
+    <Name>k__BackingField: yhtht
+    <Text>k__BackingField: Right! Beastmen. He shaped us from the earth and water,
+      and our forms change depending on where we live.
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: f7ef5e82-b8b7-428f-88fa-c6faea70ca4b
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2572.8, y: 90.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: f7ef5e82-b8b7-428f-88fa-c6faea70ca4b
+    <Name>k__BackingField: yty
+    <Text>k__BackingField: "But the Goddess\u2026 she made humans in the image of
+      the gods, granting heroes blessings and creating miracles to protect the land."
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: d49f48bb-e980-4712-94df-595b2ea36717
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3431.2, y: 96.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: d49f48bb-e980-4712-94df-595b2ea36717
+    <Name>k__BackingField: gd
+    <Text>k__BackingField: "Hah\u2026 Seems like someone\u2019s been doing research.
+      Well done."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: ab59dd86-7702-4085-8d2a-6ad711f3810d
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4144, y: 96.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: ab59dd86-7702-4085-8d2a-6ad711f3810d
+    <Name>k__BackingField: ggsss
+    <Text>k__BackingField: ' Thanks! Oh, oh! Can you tell me about the heroes?'
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: dff1e219-008f-419b-91b9-97b4371c80b3
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4867.2, y: 96.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: dff1e219-008f-419b-91b9-97b4371c80b3
+    <Name>k__BackingField: ntnt
+    <Text>k__BackingField: Please? Pleeease? Pretty please?
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 894ad50c-f90e-4e3f-8a2c-9218010fc8ba
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5470.4004, y: 96.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 894ad50c-f90e-4e3f-8a2c-9218010fc8ba
+    <Name>k__BackingField: jhhg
+    <Text>k__BackingField: "Sigh\u2026 You never let up, do you? Fine, but\u2014next
+      time you visit."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6220, y: 96.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: b54019d4-b023-4101-8243-832f08190581
+    <Name>k__BackingField: teachgodssss
+    <Text>k__BackingField: Hey, hey! I think I finally understand the difference
+      between the God of the Wild and the Goddess!
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 3470535b-d56b-43ae-8be6-f46371ac627d
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -166.40001, y: 95.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - DialogueName
+  - g
+  - gg
+  - yhtht
+  - yty
+  - gd
+  - ggsss
+  - ntnt
+  - jhhg
+  - teachgodssss
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

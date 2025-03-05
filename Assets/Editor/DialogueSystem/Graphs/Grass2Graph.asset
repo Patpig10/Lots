@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Grass2Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Grass2
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 82fa18a6-adb2-4fb5-8e71-2efb9460f4e0
+    <Name>k__BackingField: Grass2nn
+    <Text>k__BackingField: Who would have thought the heroes had fallen so far?
+    <Speaker>k__BackingField: Annoyed Fairy
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 3c8a951e-e691-4c5a-bda8-d6f53015dc86
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2516.8, y: 116.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 3c8a951e-e691-4c5a-bda8-d6f53015dc86
+    <Name>k__BackingField: e
+    <Text>k__BackingField: "There are rumors\u2026 some say the Lich was once one
+      of them."
+    <Speaker>k__BackingField: Gossiping Fairy
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: c4a677c9-b5ec-4532-9e55-311c92d6fa28
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3201.6, y: 116.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: c4a677c9-b5ec-4532-9e55-311c92d6fa28
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: Shhh! Spreading such talk could throw the land into chaos.
+    <Speaker>k__BackingField: Annoyed Fairy
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 8a06c712-f180-449b-abfb-6bca0e142173
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4004, y: 116.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 96c2db45-fe64-491f-a3b7-0620c649dc60
+    <Name>k__BackingField: dd
+    <Text>k__BackingField: "Enough. Let\u2019s change the subject."
+    <Speaker>k__BackingField: Annoyed Fairy
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5716.8, y: 116.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 8a06c712-f180-449b-abfb-6bca0e142173
+    <Name>k__BackingField: fg
+    <Text>k__BackingField: "But who could it be? The Sword Hero and the Archer Hero
+      were away from the Land of Man, but the\u2014"
+    <Speaker>k__BackingField: Gossiping Fairy
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 96c2db45-fe64-491f-a3b7-0620c649dc60
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4922.4, y: 116.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Grass2nn
+  - e
+  - DialogueName
+  - dd
+  - fg
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

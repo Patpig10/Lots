@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: Grass2
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Grass2
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: d1510d7f85f43324ebc87b973e9bc951, type: 2}
+  - {fileID: 11400000, guid: e1c5be61ffef9c44e856146c9aa243c1, type: 2}
+  - {fileID: 11400000, guid: 6dbd1e6f91c18564ab2520ad77d70829, type: 2}
+  - {fileID: 11400000, guid: c880c4b1fd5302a4c98ab4847e056c8a, type: 2}
+  - {fileID: 11400000, guid: e96503e12a56b4544806682f5a4cb332, type: 2}

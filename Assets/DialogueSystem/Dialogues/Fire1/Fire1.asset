@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: Fire1
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Fire1
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: c94a10f8bf6e75240b650d874c82f355, type: 2}
+  - {fileID: 11400000, guid: 3ef97d7552192904f86cea874b1fbb6d, type: 2}
+  - {fileID: 11400000, guid: dc7d128aadbd3594faac27269f54aa7c, type: 2}
+  - {fileID: 11400000, guid: dc6cc15a7e05b344c9998e5914cdc674, type: 2}

@@ -23,6 +23,22 @@ public class HatManager : MonoBehaviour
 
     private string saveFilePath;
 
+    public void ResetHats()
+    {
+        if (File.Exists(saveFilePath))
+        {
+            File.Delete(saveFilePath);
+        }
+        Default = true;
+        Crown = false;
+        Forest = false;
+        Funny = false;
+        havedefault = true;
+        havecrown = false;
+        haveforest = false;
+        havefunny = false;
+        SaveHats();
+    }
     private void Awake()
     {
         saveFilePath = Path.Combine(Application.persistentDataPath, "hatData.json");

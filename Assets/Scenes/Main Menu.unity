@@ -1763,6 +1763,12 @@ MonoBehaviour:
   isShieldUnlocked: 0
   isAoEUnlocked: 0
   Grassemblem: 0
+  Iceemblem: 0
+  Fireemblem: 0
+  ice: 0
+  fire: 0
+  Arena: 0
+  Arenaclear: 0
 --- !u!1 &346030925
 GameObject:
   m_ObjectHideFlags: 0
@@ -14118,6 +14124,12 @@ MonoBehaviour:
   isShieldUnlocked: 0
   isAoEUnlocked: 0
   Grassemblem: 0
+  Iceemblem: 0
+  Fireemblem: 0
+  ice: 0
+  fire: 0
+  Arena: 0
+  Arenaclear: 0
 --- !u!1 &915607787
 GameObject:
   m_ObjectHideFlags: 0
@@ -19471,6 +19483,9 @@ GameObject:
   - component: {fileID: 2083527107}
   - component: {fileID: 2083527106}
   - component: {fileID: 2083527105}
+  - component: {fileID: 2083527109}
+  - component: {fileID: 2083527108}
+  - component: {fileID: 2083527110}
   m_Layer: 5
   m_Name: Reset
   m_TagString: Untagged
@@ -19578,6 +19593,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2083527109}
+        m_TargetAssemblyTypeName: Townhallzone, Assembly-CSharp
+        m_MethodName: ResetFairy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2083527108}
+        m_TargetAssemblyTypeName: HatManager, Assembly-CSharp
+        m_MethodName: ResetHats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2083527110}
+        m_TargetAssemblyTypeName: LibraryTalk, Assembly-CSharp
+        m_MethodName: ResetTalking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2083527106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19616,6 +19667,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083527103}
   m_CullTransparentMesh: 1
+--- !u!114 &2083527108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083527103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7702f7d3379aa4ca595616b5eaf3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Default: 1
+  Crown: 0
+  Forest: 0
+  Funny: 0
+  havedefault: 1
+  havecrown: 0
+  haveforest: 0
+  havefunny: 0
+  DefaultHat: {fileID: 0}
+  CrownHat: {fileID: 0}
+  ForestHat: {fileID: 0}
+  FunnyHat: {fileID: 0}
+--- !u!114 &2083527109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083527103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353fa184b2094d940b392f71a1d5a504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 0}
+--- !u!114 &2083527110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083527103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087a774837b6f854f9f29ef5a076f887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectsToActivate: []
+  talkCount: 1
 --- !u!1 &2127644835
 GameObject:
   m_ObjectHideFlags: 0
@@ -20509,6 +20611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  savingSystem: {fileID: 0}
 --- !u!33 &7745625802685694536
 MeshFilter:
   m_ObjectHideFlags: 0

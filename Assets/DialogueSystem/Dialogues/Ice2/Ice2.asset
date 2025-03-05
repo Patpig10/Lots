@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: Ice2
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Ice2
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: c757af5cfe90a7a489192d8d9c470535, type: 2}
+  - {fileID: 11400000, guid: 92ff7c172ddf72040897851a1ea333a1, type: 2}
+  - {fileID: 11400000, guid: 0b7ba81640032604899e31fb5d39e2aa, type: 2}
+  - {fileID: 11400000, guid: bcc469c0f5e9e7b41ba00165c829aa2a, type: 2}

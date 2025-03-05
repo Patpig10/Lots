@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Ice1Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Ice1
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 95755086-3baa-443c-8ea9-c3aa92990f7b
+    <Name>k__BackingField: Ice1cv
+    <Text>k__BackingField: "Ugh, it\u2019s that time of year again\u2026 the Queen\u2019s
+      grand party. Even on the brink of war, she insists it must be extravagant.\r"
+    <Speaker>k__BackingField: Servant Snowman
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: c71c2afb-2b33-4c6c-8e4c-c43014699f8d
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 34.4, y: 191.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: c71c2afb-2b33-4c6c-8e4c-c43014699f8d
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: "Is that why you volunteered to gather berries from the
+      forest? Just to escape your duties?\r"
+    <Speaker>k__BackingField: Gossiping Fairy
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 813af88f-24cb-47ea-bf0f-1f7883f82ef4
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 806.4, y: 191.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 713f59bd-f650-45d5-9c32-28c510d22819
+    <Name>k__BackingField: f
+    <Text>k__BackingField: "Be careful. You know how she gets when things aren\u2019t
+      perfect."
+    <Speaker>k__BackingField: Gossiping Fairy
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2573.6, y: 191.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 813af88f-24cb-47ea-bf0f-1f7883f82ef4
+    <Name>k__BackingField: G
+    <Text>k__BackingField: "Shhh! I just\u2026\r"
+    <Speaker>k__BackingField: Servant Snowman
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: f99c2bd3-0255-4942-b28c-6725cef83342
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1526.4, y: 191.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: f99c2bd3-0255-4942-b28c-6725cef83342
+    <Name>k__BackingField: w
+    <Text>k__BackingField: " I just can\u2019t deal with the endless preparations.
+      And the yelling."
+    <Speaker>k__BackingField: Servant Snowman
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 713f59bd-f650-45d5-9c32-28c510d22819
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1856, y: 191.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Ice1cv
+  - DialogueName
+  - f
+  - G
+  - w
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

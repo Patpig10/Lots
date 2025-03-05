@@ -8,6 +8,12 @@ public class Townhallzone : MonoBehaviour
     public GameObject targetObject; // The GameObject to destroy
     private string saveFilePath;
 
+    [System.Serializable]
+    private class ObjectState
+    {
+        public bool isDestroyed;
+    }
+
     private void Start()
     {
         if (targetObject == null)
@@ -15,17 +21,27 @@ public class Townhallzone : MonoBehaviour
             targetObject = gameObject; // Default to the current GameObject if not set
         }
 
-        // Define the save file path
-        saveFilePath = Path.Combine(Application.persistentDataPath, GetUniqueObjectID() + ".txt");
+        // Define the save file path for JSON
+        saveFilePath = Path.Combine(Application.persistentDataPath, GetUniqueObjectID() + ".json");
 
-        // Check if the GameObject should be destroyed based on saved state
+        // Check if the GameObject should be destroyed based on saved JSON state
         if (File.Exists(saveFilePath))
         {
-            string savedState = File.ReadAllText(saveFilePath);
-            if (savedState == "destroyed")
+            string savedStateJson = File.ReadAllText(saveFilePath);
+            ObjectState savedState = JsonUtility.FromJson<ObjectState>(savedStateJson);
+
+            if (savedState.isDestroyed)
             {
-                Destroy(targetObject);
+                targetObject.SetActive(false);
             }
+        }
+    }
+
+    public void ResetFairy()
+    {
+        if (File.Exists(saveFilePath))
+        {
+            File.Delete(saveFilePath); // Delete the JSON file to reset the state
         }
     }
 
@@ -36,8 +52,11 @@ public class Townhallzone : MonoBehaviour
         {
             Destroy(targetObject);
 
-            // Save the destroyed state to a file
-            File.WriteAllText(saveFilePath, "destroyed");
+            // Save the destroyed state to a JSON file
+            ObjectState state = new ObjectState();
+            state.isDestroyed = true;
+            string jsonState = JsonUtility.ToJson(state);
+            File.WriteAllText(saveFilePath, jsonState);
         }
     }
 

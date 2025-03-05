@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Fire1Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Fire1
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: c67fa237-2177-488e-8895-39c198a62333
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: ' Not surprising. The Champion was getting old and losing
+      his edge.'
+    <Speaker>k__BackingField: Battle Fan Flammer
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 98fd9641-e47e-436d-b306-89d8d01c56d1
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5818.4, y: 108.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 98fd9641-e47e-436d-b306-89d8d01c56d1
+    <Name>k__BackingField: a
+    <Text>k__BackingField: Damn, I hope we can make it in time for the main event.
+    <Speaker>k__BackingField: Excited Flammer
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e788c903-f917-46dc-aa7a-60839d55c5cb
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6558.4, y: 108.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e788c903-f917-46dc-aa7a-60839d55c5cb
+    <Name>k__BackingField: cv
+    <Text>k__BackingField: Same here. It'll be fun to see what kind of new talent
+      shows up.
+    <Speaker>k__BackingField: Battle Fan Flammer
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 7318.4, y: 108.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: fb14a638-0c2a-4e97-aead-71e0455472a2
+    <Name>k__BackingField: Fire1
+    <Text>k__BackingField: Did you hear? The Trial by Fire is starting earlier than
+      usual this year.
+    <Speaker>k__BackingField: Excited Flammer
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: c67fa237-2177-488e-8895-39c198a62333
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5075.2, y: 108.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - DialogueName
+  - a
+  - cv
+  - Fire1
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

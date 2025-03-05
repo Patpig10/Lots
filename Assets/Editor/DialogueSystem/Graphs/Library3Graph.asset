@@ -1,0 +1,336 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Library3Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Library3
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: ebc23a8a-0305-4f8d-a7dc-241415bbb7e2
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: Yes! I already know about the Bow Hero, the Sword Hero,
+      and the Shield Hero!
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 88001461-0399-4d9f-b9f2-dce42bbf21ff
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -334.4, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 88001461-0399-4d9f-b9f2-dce42bbf21ff
+    <Name>k__BackingField: m
+    <Text>k__BackingField: "Mm. They were the ones who freed us from the Lich\u2019s
+      control during the war."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 537b15c5-5330-49a5-94dd-576ad470c4dc
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 369.6, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 537b15c5-5330-49a5-94dd-576ad470c4dc
+    <Name>k__BackingField: i
+    <Text>k__BackingField: "But\u2026 they didn\u2019t stay together, right? They
+      went their separate ways?"
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 932c96c5-f96b-4f84-9221-a842d10dffaf
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1081.6, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 932c96c5-f96b-4f84-9221-a842d10dffaf
+    <Name>k__BackingField: kll
+    <Text>k__BackingField: "Hmph. Books can only tell part of the truth. What happened
+      after\u2026 isn\u2019t so simple."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e3642487-723e-4ec3-95a0-db8e5c87c84d
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1760.7999, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e3642487-723e-4ec3-95a0-db8e5c87c84d
+    <Name>k__BackingField: mn
+    <Text>k__BackingField: Huh? Were you there during the war?
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: d6ed49c9-bdd4-497d-9f8d-a897e59ee77a
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2447.2, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: e609a940-c106-4d78-9d97-af532aaad2d4
+    <Name>k__BackingField: n
+    <Text>k__BackingField: "There were five heroes. The three you know\u2026 and
+      two others.\r"
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2b28fb5d-5eab-4b24-99e2-aac444512f07
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3849.5999, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 2b28fb5d-5eab-4b24-99e2-aac444512f07
+    <Name>k__BackingField: ml
+    <Text>k__BackingField: "They never had grand titles, so we just call them\u2026
+      the Magician and the Scientist."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 54a13303-671f-42a9-8a03-6f60edb58dc9
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4621.6, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 54a13303-671f-42a9-8a03-6f60edb58dc9
+    <Name>k__BackingField: nm
+    <Text>k__BackingField: "Huh? But why don\u2019t the books mention them?"
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: c3500201-e96c-4ab8-9bab-a2dde00b20d0
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5327.2, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: c3500201-e96c-4ab8-9bab-a2dde00b20d0
+    <Name>k__BackingField: kk
+    <Text>k__BackingField: "\u2026"
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 0257f14d-b8e9-4307-9093-ee6950762526
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6059.2, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 0257f14d-b8e9-4307-9093-ee6950762526
+    <Name>k__BackingField: kjhg
+    <Text>k__BackingField: "The Scientist\u2026 helped in ways no one else could.
+      He found a cure for the Lich\u2019s control, built weapons for the heroes to
+      use\u2026"
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b92021dc-3de4-457c-99b3-6f2da68ba730
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6366.4004, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 61b96c7b-c05b-456f-9f44-d06fd5f54340
+    <Name>k__BackingField: af
+    <Text>k__BackingField: "That\u2019s so weird. And the Magician?"
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: bb6732d9-5ebc-4655-b0b3-d7922a2a7b12
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 7791.2, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: bb6732d9-5ebc-4655-b0b3-d7922a2a7b12
+    <Name>k__BackingField: sa
+    <Text>k__BackingField: "\u2026"
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 969f70b0-a297-493f-abfb-8e6a3b1aa3e4
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 8522.4, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 969f70b0-a297-493f-abfb-8e6a3b1aa3e4
+    <Name>k__BackingField: kg
+    <Text>k__BackingField: "The war\u2026 it started for reasons we may never truly
+      understand."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 9b8fe338-fba2-4873-b3e6-4a85c2e172a8
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 8875.2, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 6fc5673c-533a-42c2-99fa-696fb6362404
+    <Name>k__BackingField: q3w
+    <Text>k__BackingField: "\u2026 No. That\u2019s enough."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2de3b21c-b46f-460f-a905-26d92003be1a
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 10363.2, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 2f4ae1ef-2a87-4922-aac0-d0ec28de982e
+    <Name>k__BackingField: ssc
+    <Text>k__BackingField: "\u2026 It was erased. Scrubbed from history by the Queen
+      herself\u2026 out of respect for the Sword Hero."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: c560b822-b19f-49ba-be40-040b4c8313b3
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 11392.8, y: 176}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: d3053079-452e-4327-b596-5038435811a3
+    <Name>k__BackingField: sad
+    <Text>k__BackingField: "(More than you can imagine\u2026)\r"
+    <Speaker>k__BackingField: Slime
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: d2fd195c-52d0-471a-abb2-c0f8e4226c84
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 12852.8, y: 176}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: d2fd195c-52d0-471a-abb2-c0f8e4226c84
+    <Name>k__BackingField: sv
+    <Text>k__BackingField: "Ahem. That\u2019s quite enough for tonight. Off you go\u2014I\u2019m
+      closing up soon."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 13620.8, y: 176}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 9b8fe338-fba2-4873-b3e6-4a85c2e172a8
+    <Name>k__BackingField: er
+    <Text>k__BackingField: "The beasts turning into monsters\u2026 the undead rising\u2026
+      it was all chaos. But that brat\u2014"
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 6fc5673c-533a-42c2-99fa-696fb6362404
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 9636.8, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: b92021dc-3de4-457c-99b3-6f2da68ba730
+    <Name>k__BackingField: fgb
+    <Text>k__BackingField: "And then\u2026 he left. No one knows why. Not even the
+      books can tell you that. Only the heroes would know\u2026 but they never spoke
+      of it."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 61b96c7b-c05b-456f-9f44-d06fd5f54340
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 7084.8003, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: d6ed49c9-bdd4-497d-9f8d-a897e59ee77a
+    <Name>k__BackingField: f
+    <Text>k__BackingField: Not all of it. I was about your age when the worst of
+      it was over. But I remember enough.
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: e609a940-c106-4d78-9d97-af532aaad2d4
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3139.2, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 2f97f896-41cc-4f01-bc71-41216eb94cf4
+    <Name>k__BackingField: Teachheros
+    <Text>k__BackingField: "Ah, back already? I take it you\u2019re still hungry
+      for stories. Well, lucky for you, I just received some books about the heroes."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: ebc23a8a-0305-4f8d-a7dc-241415bbb7e2
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -1182.4, y: 146.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 2de3b21c-b46f-460f-a905-26d92003be1a
+    <Name>k__BackingField: kt
+    <Text>k__BackingField: Hey, wait! What do you mean? What happened to them?
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2f4ae1ef-2a87-4922-aac0-d0ec28de982e
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 10680.8, y: 160}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: c560b822-b19f-49ba-be40-040b4c8313b3
+    <Name>k__BackingField: svs
+    <Text>k__BackingField: "Whoa\u2026 were they close?"
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: d3053079-452e-4327-b596-5038435811a3
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 12123.2, y: 176}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - DialogueName
+  - m
+  - i
+  - kll
+  - mn
+  - n
+  - ml
+  - nm
+  - kk
+  - kjhg
+  - af
+  - sa
+  - kg
+  - q3w
+  - ssc
+  - sad
+  - sv
+  - er
+  - fgb
+  - f
+  - Teachheros
+  - kt
+  - svs
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

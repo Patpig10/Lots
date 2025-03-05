@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Library1Graph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Library1
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 2f8c2265-54ae-42dd-a8c3-fa1acd3ae1f9
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: Did you forget everything from class?
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 8f3d0b8f-4a44-4658-8903-0d465f7993a2
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 727.2, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: b5e8b84f-f9dd-4857-a426-0c7f29da7b25
+    <Name>k__BackingField: s
+    <Text>k__BackingField: ' Okay, yes. Just explain it.'
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 1f0e91d2-665e-4b01-b163-c57a32ba806f
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1729.6, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 1f0e91d2-665e-4b01-b163-c57a32ba806f
+    <Name>k__BackingField: h
+    <Text>k__BackingField: It all goes back to the wall that divided Man and Beast.
+      It was forged with the combined magic of the great leaders and the blessing
+      of the God of the Wild.
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 47aac30d-ef5e-475c-8c37-6681796eedf6
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2464, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: b1c2fa6d-684a-427b-9d6c-d8643e19f283
+    <Name>k__BackingField: ggg
+    <Text>k__BackingField: "We\u2019re getting there. After the wall was built, the
+      Queen proposed creating four keys\u2014Emblems\u2014and having the Goddess
+      bless them to strengthen its magic."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 46ebd955-d19b-48e1-a064-f5e37664aef8
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4031.2, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 46ebd955-d19b-48e1-a064-f5e37664aef8
+    <Name>k__BackingField: vvv
+    <Text>k__BackingField: "That\u2019s how we have the Frost Queen\u2019s shield,
+      the Forest\u2019s illusion fog, and the Fire Queen\u2019s enhanced flames."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: c5ec56fb-a441-46aa-8844-67a8207b4d95
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4828, y: 104.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: c5ec56fb-a441-46aa-8844-67a8207b4d95
+    <Name>k__BackingField: vvvvvv
+    <Text>k__BackingField: "Ooooh, I see. So\u2026 what\u2019s the difference between
+      the God of the Wild and the Goddess?\r"
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 33875a52-ff94-44c3-94ae-b0f62952d366
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5616, y: 118.40001}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 8f3d0b8f-4a44-4658-8903-0d465f7993a2
+    <Name>k__BackingField: d
+    <Text>k__BackingField: " No\u2026"
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b5e8b84f-f9dd-4857-a426-0c7f29da7b25
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1419.2, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 47aac30d-ef5e-475c-8c37-6681796eedf6
+    <Name>k__BackingField: hdd
+    <Text>k__BackingField: I thought it was the Goddess who blessed the wall.
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b1c2fa6d-684a-427b-9d6c-d8643e19f283
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3212.8, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 33875a52-ff94-44c3-94ae-b0f62952d366
+    <Name>k__BackingField: ddd
+    <Text>k__BackingField: "That\u2019s a lesson for another day."
+    <Speaker>k__BackingField: Librarian
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6273.6, y: 136.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: a00a13ff-924e-4b83-a987-aaffcb6add0a
+    <Name>k__BackingField: Teachemeblem
+    <Text>k__BackingField: Have you ever wondered what Emblems really are? How do
+      they even grant power?
+    <Speaker>k__BackingField: Fairy kid
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2f8c2265-54ae-42dd-a8c3-fa1acd3ae1f9
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -6.4, y: 91.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - DialogueName
+  - s
+  - h
+  - ggg
+  - vvv
+  - vvvvvv
+  - d
+  - hdd
+  - ddd
+  - Teachemeblem
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
