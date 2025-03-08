@@ -189,6 +189,10 @@ MonoBehaviour:
   textOffset: {x: 0, y: 0, z: 0}
   Randoml: {x: 0.5, y: 0, z: 0}
   targetObject: {fileID: 5011602801751562671}
+  potionPrefab: {fileID: 0}
+  potionSpawnChance: 0.2
+  coinSpawnChance: 0.5
+  coin: {fileID: 0}
 --- !u!95 &4681867741055100408
 Animator:
   serializedVersion: 5
@@ -344,6 +348,8 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
+  isMoving: 0
 --- !u!114 &4531855155130916722
 MonoBehaviour:
   m_ObjectHideFlags: 0

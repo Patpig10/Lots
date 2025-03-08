@@ -9,6 +9,7 @@ public class AItest : MonoBehaviour
     public float movementSpeed = 3f;      // Movement speed
     public float pauseDuration = 1f;      // Duration to pause at each block
     public float detectionRadius = 10f;   // Radius to detect the player
+    public float rotationSpeed = 5f;      // Speed at which the AI rotates to face the target
 
     private Transform targetBlock;        // The next block to move towards
     public bool isMoving = false;        // Check if movement is ongoing
@@ -18,15 +19,14 @@ public class AItest : MonoBehaviour
     {
         StartCoroutine(ChangeTargetRoutine());
     }
+
     private void OnEnable()
     {
         isMoving = false;
         targetBlock = null;
-        //recentBlocks.Clear();
-
-        // Start the movement routine
         StartCoroutine(ChangeTargetRoutine());
     }
+
     void Update()
     {
         if (!isMoving)
@@ -149,10 +149,8 @@ public class AItest : MonoBehaviour
         Vector3 targetPosition = targetBlock.position;
         targetPosition.y = startPosition.y;  // Ensure y remains constant
 
-        // Determine the rotation for straight movement
-        Vector3 directionToTarget = (targetPosition - startPosition).normalized;
-        float angle = Mathf.Atan2(directionToTarget.x, directionToTarget.z) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, angle, 0);
+        // Rotate to face the target block
+        yield return StartCoroutine(RotateTowardsTarget(targetPosition));
 
         float journeyLength = Vector3.Distance(startPosition, targetPosition);
         float startTime = Time.time;
@@ -161,6 +159,14 @@ public class AItest : MonoBehaviour
 
         while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
         {
+            // Check if the AI is colliding with an unpassable block
+            if (IsCollidingWithUnpassable())
+            {
+                Debug.Log("Collided with an unpassable block. Stopping movement.");
+                isMoving = false;
+                yield break; // Exit the coroutine
+            }
+
             float distanceCovered = (Time.time - startTime) * movementSpeed;
             float fractionOfJourney = distanceCovered / journeyLength;
             transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
@@ -177,6 +183,22 @@ public class AItest : MonoBehaviour
         isMoving = false;  // Allow new movements
     }
 
+    // Coroutine to rotate the AI to face the target position
+    private IEnumerator RotateTowardsTarget(Vector3 targetPosition)
+    {
+        Vector3 directionToTarget = (targetPosition - transform.position).normalized;
+        float targetAngle = Mathf.Atan2(directionToTarget.x, directionToTarget.z) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.Euler(0, targetAngle, 0);
+
+        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            yield return null;  // Wait for the next frame
+        }
+
+        transform.rotation = targetRotation;  // Snap to the final rotation
+    }
+
     // Method to check if a block is occupied by an object tagged as "Enemy"
     private bool IsBlockOccupied(Transform block)
     {
@@ -186,6 +208,20 @@ public class AItest : MonoBehaviour
             if (collider.CompareTag("Enemy") || collider.CompareTag("Unpassable")) // If an object tagged "Enemy" or "Unpassable" is found, the block is occupied
             {
                 return true;
+            }
+        }
+        return false;
+    }
+
+    // Method to check if the AI is colliding with an unpassable object
+    private bool IsCollidingWithUnpassable()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f); // Adjust radius as needed
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Unpassable"))
+            {
+                return true; // Colliding with an unpassable block
             }
         }
         return false;

@@ -12,28 +12,21 @@ public class AOEplayerattack : MonoBehaviour
     public GameObject aoeSphere; // Reference to the sphere GameObject
 
     private List<EnemyHealth> enemiesHit = new List<EnemyHealth>();
-
-    private void Update()
-    {
-        // Check if the player presses the 'T' key
-        /*if (Input.GetKeyDown(KeyCode.T))
-        {
-            enemiesHit.Clear(); // Clear the list of previously hit enemies
-            StartCoroutine(ExpandingAOEAttack()); // Start the expanding AOE attack
-            PlayFireAOEEffect(); // Play the fire AOE effect
-        }*/
-    }
+    private bool isAOEActive = false; // Track if the AOE attack is currently active
 
     public void AOE()
     {
-        enemiesHit.Clear();
-        StartCoroutine(ExpandingAOEAttack());
-      //  PlayFireAOEEffect();
+        if (!isAOEActive) // Prevent overlapping AOE attacks
+        {
+            enemiesHit.Clear();
+            StartCoroutine(ExpandingAOEAttack());
+        }
     }
 
     // Coroutine to handle the expanding AOE attack over time
-    public IEnumerator ExpandingAOEAttack()
+    private IEnumerator ExpandingAOEAttack()
     {
+        isAOEActive = true; // Mark AOE as active
         float currentRadius = 0f;
         float timeElapsed = 0f;
 
@@ -53,13 +46,19 @@ public class AOEplayerattack : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the AOE reaches max radius at the end, then start shrinking
+        // Ensure the AOE reaches max radius at the end
         DamageEnemiesInRadius(maxBlastRadius);
-        aoeSphere.SetActive(false); // Deactivate sphere once it's fully expanded
+
+        // Deactivate the sphere immediately after reaching max radius
+        aoeSphere.SetActive(false);
+
+        // Shrink the sphere (hidden, since it's already deactivated)
         yield return StartCoroutine(ShrinkSphere());
+
+        isAOEActive = false; // Mark AOE as inactive
     }
 
-    // Coroutine to shrink the sphere and deactivate it
+    // Coroutine to shrink the sphere (hidden, since it's already deactivated)
     private IEnumerator ShrinkSphere()
     {
         float shrinkDuration = 0.5f;
@@ -73,7 +72,9 @@ public class AOEplayerattack : MonoBehaviour
             yield return null;
         }
 
-        aoeSphere.SetActive(false); // Deactivate sphere once it's shrunk
+        // Ensure the sphere is fully shrunk and deactivated
+        aoeSphere.transform.localScale = Vector3.zero;
+        aoeSphere.SetActive(false);
     }
 
     // Method to damage enemies within a given radius
@@ -82,19 +83,49 @@ public class AOEplayerattack : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(playerTransform.position, radius);
         foreach (Collider hit in hitColliders)
         {
-            EnemyHealth enemy = hit.GetComponent<EnemyHealth>();
-            if (enemy != null && !enemiesHit.Contains(enemy))
+            // Skip if the hit object is null
+            if (hit == null)
             {
-                enemy.TakeDamage(damage);
-                enemiesHit.Add(enemy);
+                Debug.LogWarning("Null collider detected in AOE radius.");
+                continue;
             }
+
+            // Try to get the EnemyHealth component
+            EnemyHealth enemy = hit.GetComponent<EnemyHealth>();
+            if (enemy != null)
+            {
+                if (!enemiesHit.Contains(enemy))
+                {
+                    try
+                    {
+                        enemy.TakeDamage(damage);
+                        enemiesHit.Add(enemy);
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.LogError("Error damaging enemy: " + e.Message);
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogWarning("No EnemyHealth component found on: " + hit.name);
+            }
+
+            // Try to get the BossSegment component
             BossSegment bossSegment = hit.GetComponent<BossSegment>();
             if (bossSegment != null)
             {
-                bossSegment.TakeDamage(damage); // Deal damage to the boss segment
+                try
+                {
+                    bossSegment.TakeDamage(damage); // Deal damage to the boss segment
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError("Error damaging boss segment: " + e.Message);
+                }
             }
         }
-
     }
 
     private void PlayFireAOEEffect()

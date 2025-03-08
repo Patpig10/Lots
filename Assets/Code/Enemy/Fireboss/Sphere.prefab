@@ -99,11 +99,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expansionSpeed: 4
   maxSize: 11
-  damage: 1
+  damage: 5
   damageInterval: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 1
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!135 &8382804545266076282
 SphereCollider:
   m_ObjectHideFlags: 0
