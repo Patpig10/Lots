@@ -22,6 +22,9 @@ public class Saving : MonoBehaviour
     public bool fire;
     public bool Arena;
     public bool Arenaclear;
+    public bool storyButton2Destroyed;
+    public bool storyButton3Destroyed;
+    public bool generalButtonDestroyed;
     // Default values for reset
     private const int DEFAULT_MAX_LIFE = 3;
     private const int DEFAULT_WEAPON_DAMAGE = 20;
@@ -37,6 +40,9 @@ public class Saving : MonoBehaviour
     public const bool DEFAULT_arenaclear = false;
     public const bool DEFAULT_IceEMBLEM = false;
     public const bool DEFAULT_FireEMBLEM = false;
+    public const bool DEFAULT_storyButton2Destroyed = false;
+    public const bool DEFAULT_storyButton3Destroyed = false;
+    public const bool DEFAULT_generalButtonDestroyed = false;
 
 
 
@@ -76,6 +82,12 @@ public class Saving : MonoBehaviour
         ice = DEFAULT_ice;
         Arena = DEFAULT_arena;
         Arenaclear = DEFAULT_arenaclear;
+        Iceemblem = DEFAULT_IceEMBLEM;
+        Fireemblem = DEFAULT_FireEMBLEM;
+        storyButton2Destroyed = DEFAULT_storyButton2Destroyed;
+        storyButton3Destroyed = DEFAULT_storyButton3Destroyed;
+        generalButtonDestroyed = DEFAULT_generalButtonDestroyed;
+
 
 
         // Step 3: Save the default values to a new save file
@@ -166,7 +178,11 @@ public class Saving : MonoBehaviour
             Arena = Arena,
             Arenaclear = Arenaclear,
             Iceemblem = Iceemblem,
-            Fireemblem = Fireemblem
+            Fireemblem = Fireemblem,
+            storyButton2Destroyed = storyButton2Destroyed,
+            storyButton3Destroyed = storyButton3Destroyed,
+            generalButtonDestroyed = generalButtonDestroyed
+
 
         };
 
@@ -345,6 +361,9 @@ public class Saving : MonoBehaviour
             Arenaclear = saveData.Arenaclear;
             Iceemblem = saveData.Iceemblem;
             Fireemblem = saveData.Fireemblem;
+            storyButton2Destroyed = saveData.storyButton2Destroyed;
+            storyButton3Destroyed = saveData.storyButton3Destroyed;
+            generalButtonDestroyed = saveData.generalButtonDestroyed;
             Debug.Log("Player data loaded!");
         }
         else
@@ -370,5 +389,8 @@ public class Saving : MonoBehaviour
         public bool Arenaclear;
         public bool Iceemblem;
         public bool Fireemblem;
+        public bool storyButton2Destroyed; 
+        public bool storyButton3Destroyed; 
+        public bool generalButtonDestroyed; 
     }
 }

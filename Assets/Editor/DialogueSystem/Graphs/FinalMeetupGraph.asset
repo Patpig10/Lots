@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: FinalMeetupGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: FinalMeetup
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 90cd0049-42ae-4c8c-b3cc-682c86f4ab95
+    <Name>k__BackingField: FinalMeetup
+    <Text>k__BackingField: Slime! I knew you could do it!
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 50e6537c-45f6-4633-939d-4740780d7824
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 164, y: -40}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 50e6537c-45f6-4633-939d-4740780d7824
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: Princess, try to contain yourself.
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 906bf27a-583c-4527-94c4-45ee0b463134
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 848, y: -79.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 906bf27a-583c-4527-94c4-45ee0b463134
+    <Name>k__BackingField: d
+    <Text>k__BackingField: "But truly, well done. With your help, we\u2019ll break
+      through the wall and launch our assault on the castle."
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 01c426dc-9650-440f-8f49-e0f52b48d927
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1572, y: -79.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 01c426dc-9650-440f-8f49-e0f52b48d927
+    <Name>k__BackingField: df
+    <Text>k__BackingField: "While the army keeps the Lich\u2019s forces occupied,
+      you\u2019ll slip inside and face the Lich directly."
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 78d45b8c-8936-47ae-a826-fbf0da5faeaa
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2260, y: -51.2}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 78d45b8c-8936-47ae-a826-fbf0da5faeaa
+    <Name>k__BackingField: af
+    <Text>k__BackingField: " But please\u2026 if things take a turn for the worse,
+      don\u2019t hesitate to retreat. I can\u2019t bear to lose you too."
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2988.8, y: 24}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - FinalMeetup
+  - DialogueName
+  - d
+  - df
+  - af
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
