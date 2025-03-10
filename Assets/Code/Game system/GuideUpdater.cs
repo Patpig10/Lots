@@ -24,10 +24,10 @@ public class GuideUpdater : MonoBehaviour
 
         if (Saving.levelUnlocked == 8 && Saving.ice == true && Saving.Iceemblem == false)
         {
-            guideText.text = "Defeat the Queen.";
+            guideText.text = "Defeat the Ice Queen.";
             return;
         }
-        if (Saving.Iceemblem == true && Saving.Fireemblem == true)
+        if (Saving.Iceemblem == true && Saving.Fireemblem == true && Saving.Final == false)
         {
             guideText.text = "Head back to the village";
             return;
@@ -36,13 +36,19 @@ public class GuideUpdater : MonoBehaviour
 
         if (Saving.Iceemblem == true && Saving.Fireemblem == false && Saving.fire == false)
         {
-            guideText.text = "Head to the Molten Core.";
+            guideText.text = "Head to the Molten Arena.";
             return;
         }
 
         if (Saving.Arena == true && Saving.fire == true && Saving.Fireemblem == false && Saving.levelUnlocked >= 6)
         {
             guideText.text = "Defeat the champion.";
+            return;
+        }
+
+        if (Saving.Final == true && Saving.Iceemblem == true && Saving.Fireemblem == true && Saving.Grassemblem == true)
+        {
+            guideText.text = "Enter the Castle";
             return;
         }
 

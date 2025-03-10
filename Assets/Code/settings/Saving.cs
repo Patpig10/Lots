@@ -25,6 +25,18 @@ public class Saving : MonoBehaviour
     public bool storyButton2Destroyed;
     public bool storyButton3Destroyed;
     public bool generalButtonDestroyed;
+    public bool level2Added = false;
+    public bool level3Added = false;
+    public bool level4Added = false;
+    public bool level5Added = false;
+    public bool level6Added = false;
+    public bool levelice1Added = false;
+    public bool levelice2Added = false;
+    public bool levelicebossAdded = false;
+    public bool levelfire1Added = false;
+    public bool levelfirebossAdded = false;
+    public bool Final = false;
+
     // Default values for reset
     private const int DEFAULT_MAX_LIFE = 3;
     private const int DEFAULT_WEAPON_DAMAGE = 20;
@@ -43,6 +55,8 @@ public class Saving : MonoBehaviour
     public const bool DEFAULT_storyButton2Destroyed = false;
     public const bool DEFAULT_storyButton3Destroyed = false;
     public const bool DEFAULT_generalButtonDestroyed = false;
+    public const bool DEFAULT_Final = false;
+
 
 
 
@@ -87,7 +101,7 @@ public class Saving : MonoBehaviour
         storyButton2Destroyed = DEFAULT_storyButton2Destroyed;
         storyButton3Destroyed = DEFAULT_storyButton3Destroyed;
         generalButtonDestroyed = DEFAULT_generalButtonDestroyed;
-
+        Final = DEFAULT_Final;
 
 
         // Step 3: Save the default values to a new save file
@@ -141,7 +155,11 @@ public class Saving : MonoBehaviour
         isAoEUnlocked = true;
         SavePlayerData(); // Save data immediately after change
     }
-
+    public void Finals()
+    {
+        Final = true;
+        SavePlayerData();
+    }
     public void SetWeaponDamage(int newDamage)
     {
         weaponSavedDamage = newDamage;
@@ -181,7 +199,8 @@ public class Saving : MonoBehaviour
             Fireemblem = Fireemblem,
             storyButton2Destroyed = storyButton2Destroyed,
             storyButton3Destroyed = storyButton3Destroyed,
-            generalButtonDestroyed = generalButtonDestroyed
+            generalButtonDestroyed = generalButtonDestroyed,
+            Final = Final
 
 
         };
@@ -213,11 +232,11 @@ public class Saving : MonoBehaviour
 
     public void Addlevel2()
     {
-        if (levelUnlocked == 1)
+        if (!level2Added && levelUnlocked == 1)
         {
             completed = true;
         }
-        if (completed)
+        if (!level2Added && completed)
         {
             levelUnlocked++;
             SavePlayerData();
@@ -238,24 +257,26 @@ public class Saving : MonoBehaviour
 
     public void Addlevel3()
     {
-        if (levelUnlocked == 2)
+        if (!level3Added && levelUnlocked == 2) // Check if level 3 hasn't been added yet and levelUnlocked is 2
         {
             completed = true;
         }
-        if (completed)
+
+        if (!level3Added && completed) // Check if level 3 hasn't been added yet and completed is true
         {
             levelUnlocked++;
             SavePlayerData();
+            level3Added = true; // Set the flag to true to prevent further execution
         }
     }
 
     public void Addlevel4()
     {
-        if (levelUnlocked == 3)
+        if (!level4Added && levelUnlocked == 3)
         {
             completed = true;
         }
-        if (completed)
+        if (!level4Added && completed)
         {
             levelUnlocked++;
             SavePlayerData();
@@ -263,11 +284,23 @@ public class Saving : MonoBehaviour
     }
     public void Addlevel5()
     {
-        if (levelUnlocked == 4)
+        if (!level5Added && levelUnlocked == 4)
         {
             completed = true;
         }
-        if (completed)
+        if (!level5Added && completed)
+        {
+            levelUnlocked++;
+            SavePlayerData();
+        }
+    }
+    public void Addlevel6()
+    {
+        if (!level6Added && levelUnlocked == 5)
+        {
+            completed = true;
+        }
+        if (!level6Added && completed)
         {
             levelUnlocked++;
             SavePlayerData();
@@ -275,36 +308,43 @@ public class Saving : MonoBehaviour
     }
       public void Addlevelice1()
     {
-        if (levelUnlocked == 5)
+        if (!levelice1Added && levelUnlocked == 5)
         {
             completed = true;
         }
-        if (completed)
+        if (!levelice1Added && completed)
         {
             ice = true;
             levelUnlocked++;
             SavePlayerData();
         }
     }
+
+    public void Ice()
+    {
+        ice = true;
+        SavePlayerData();
+    }
     public void Addlevelice2()
     {
-        if (levelUnlocked == 6)
+        if (!levelice2Added && levelUnlocked == 6)
         {
             completed = true;
         }
-        if (completed)
+        if (!levelice2Added && completed)
         {
+            ice = true;
             levelUnlocked++;
             SavePlayerData();
         }
     }
     public void Addleveliceboss()
     {
-        if (levelUnlocked == 7)
+        if (!levelicebossAdded && levelUnlocked == 7)
         {
             completed = true;
         }
-        if (completed)
+        if (!levelicebossAdded && completed)
         {
             levelUnlocked++;
             SavePlayerData();
@@ -312,11 +352,11 @@ public class Saving : MonoBehaviour
     }
     public void Addlevelfire1()
     {
-        if (levelUnlocked == 5)
+        if (!levelfire1Added && levelUnlocked == 5)
         {
             completed = true;
         }
-        if (completed)
+        if (!levelfire1Added && completed)
         {
             fire = true;
             Arena = true;
@@ -327,17 +367,23 @@ public class Saving : MonoBehaviour
 
     public void Addlevelfireboss()
     {
-        if (Arena == true)
+        if (!levelfirebossAdded && Arena == true)
         {
             completed = true;
         }
-        if (completed)
+        if (!levelfirebossAdded && completed)
         {
             Arenaclear = true;
             SavePlayerData();
         }
     }
+    public void Fire()
+    {
+        fire = true;
+        Arena = true;
 
+        SavePlayerData();
+    }
     // Method to load player data from JSON
     public void LoadPlayerData()
     {
@@ -364,6 +410,7 @@ public class Saving : MonoBehaviour
             storyButton2Destroyed = saveData.storyButton2Destroyed;
             storyButton3Destroyed = saveData.storyButton3Destroyed;
             generalButtonDestroyed = saveData.generalButtonDestroyed;
+            Final = saveData.Final;
             Debug.Log("Player data loaded!");
         }
         else
@@ -391,6 +438,7 @@ public class Saving : MonoBehaviour
         public bool Fireemblem;
         public bool storyButton2Destroyed; 
         public bool storyButton3Destroyed; 
-        public bool generalButtonDestroyed; 
+        public bool generalButtonDestroyed;
+        public bool Final;
     }
 }

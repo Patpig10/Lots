@@ -24,6 +24,8 @@ public class LevelManager : MonoBehaviour
     public GameObject levelIce2;
     public GameObject levelIceBoss;
     public GameObject levelFireBoss;
+    public GameObject Wall;
+    public GameObject Finalcastle;
     private void Awake()
     {
 
@@ -52,6 +54,15 @@ public class LevelManager : MonoBehaviour
         SetButtonState(fire, Saving.levelUnlocked >= 6);
         SetButtonState(Ice1, Saving.levelUnlocked >= 6);
         SetButtonState(fire1, Saving.levelUnlocked >= 6);
+
+        SetButtonState(Finalcastle,Saving.Final == true );
+
+        if(Saving.Final == true)
+        {
+            Wall.SetActive(false);
+        }
+
+
     }
 
     void SetButtonState(GameObject button, bool shouldBeActive)
@@ -135,9 +146,25 @@ public class LevelManager : MonoBehaviour
     {
         LoadLevel(9);
     }
-    public void Level6()
+    public void LevelICE1()
     {
         LoadLevel(10);
+    }
+    public void LevelICE2()
+    {
+        LoadLevel(11);
+    }
+    public void LevelICEBOSS()
+    {
+        LoadLevel(12);
+    }
+    public void LevelFIRE1()
+    {
+        LoadLevel(15);
+    }
+    public void LevelFIREBOSS()
+    {
+        LoadLevel(16);
     }
 
 

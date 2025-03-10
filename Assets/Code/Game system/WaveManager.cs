@@ -73,6 +73,7 @@ public class WaveManager : MonoBehaviour
 
         if (!string.IsNullOrEmpty(sceneToLoadAfterWave4))
         {
+            Saving.Fire();
             SceneManager.LoadScene(sceneToLoadAfterWave4);
         }
         else

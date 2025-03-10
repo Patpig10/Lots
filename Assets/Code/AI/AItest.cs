@@ -102,6 +102,10 @@ public class AItest : MonoBehaviour
             targetBlock = nearestBlock;
             Debug.Log("Moving closer to the player via block: " + targetBlock.name);
         }
+        else
+        {
+            Debug.Log("No valid block found to move towards the player.");
+        }
     }
 
     // Method to find the nearest block when the player is not nearby
@@ -137,6 +141,10 @@ public class AItest : MonoBehaviour
                 recentBlocks.Enqueue(nearestBlock);
                 targetBlock = nearestBlock;
                 Debug.Log("New target block set: " + targetBlock.name);
+            }
+            else
+            {
+                Debug.Log("No valid block found to move to.");
             }
         }
     }

@@ -24,6 +24,9 @@ public class Cutscene : MonoBehaviour
     public GameObject canvasOne; // Assign Canvas One in the Inspector
     public GameObject canvasTwo; // Assign Canvas Two in the Inspector
 
+    // Static variable to track if the cutscene has been played in the current session
+    private static bool hasCutscenePlayed = false;
+
     private void Start()
     {
         // Ensure Canvas Two is inactive at the start
@@ -32,8 +35,25 @@ public class Cutscene : MonoBehaviour
             canvasTwo.SetActive(false);
         }
 
-        // Start the cutscene
-        StartCoroutine(PlayCutscene());
+        // Check if the cutscene has already been played
+        if (!hasCutscenePlayed)
+        {
+            // Start the cutscene
+            StartCoroutine(PlayCutscene());
+            hasCutscenePlayed = true; // Mark the cutscene as played
+        }
+        else
+        {
+            // If the cutscene has already been played, skip to Canvas Two
+            if (canvasOne != null)
+            {
+                canvasOne.SetActive(false);
+            }
+            if (canvasTwo != null)
+            {
+                canvasTwo.SetActive(true);
+            }
+        }
     }
 
     IEnumerator PlayCutscene()

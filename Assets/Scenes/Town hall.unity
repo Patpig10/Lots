@@ -169,6 +169,16 @@ MonoBehaviour:
   storyButton2Destroyed: 0
   storyButton3Destroyed: 0
   generalButtonDestroyed: 0
+  level2Added: 0
+  level3Added: 0
+  level4Added: 0
+  level5Added: 0
+  level6Added: 0
+  levelice1Added: 0
+  levelice2Added: 0
+  levelicebossAdded: 0
+  levelfire1Added: 0
+  levelfirebossAdded: 0
 --- !u!4 &4280680
 Transform:
   m_ObjectHideFlags: 0
@@ -32416,9 +32426,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingDialogue: {fileID: 11400000, guid: 67cb7b06b2bc33b439ec08537ee64e7c, type: 2}
-  textUI: {fileID: 200039306}
-  nameUI: {fileID: 240880923}
-  Textbox: {fileID: 364852715}
+  textUI: {fileID: 2020250724}
+  nameUI: {fileID: 1750014502}
+  Textbox: {fileID: 2055617412}
   isPlayerInRange: 0
   Tutrial: 0
 --- !u!1 &2051518600
@@ -33505,6 +33515,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4280679}
+        m_TargetAssemblyTypeName: Saving, Assembly-CSharp
+        m_MethodName: Addlevel3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2111774146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33799,6 +33821,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4280679}
+        m_TargetAssemblyTypeName: Saving, Assembly-CSharp
+        m_MethodName: Addlevel6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
