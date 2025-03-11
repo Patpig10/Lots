@@ -65,6 +65,14 @@ public class Weapon : MonoBehaviour
             return; // Exit the method after dealing damage
         }
 
+        OrbHealth orb = other.GetComponent<OrbHealth>();
+
+        if (orb != null)
+        {
+            orb.TakeDamage(damage); // Deal damage to the dummy
+            return; // Exit the method after dealing damage
+        }
+
         // Check if the object hit has a BossSegment component
         BossSegment bossSegment = other.GetComponent<BossSegment>();
 

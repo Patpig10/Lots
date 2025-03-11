@@ -4753,7 +4753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Open
+  m_text: Next
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff312c89daa14a342b9b67382bfe6852, type: 2}
   m_sharedMaterial: {fileID: -2658018702179680829, guid: ff312c89daa14a342b9b67382bfe6852, type: 2}
@@ -5363,6 +5363,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1582305449}
         m_TargetAssemblyTypeName: Saving, Assembly-CSharp
         m_MethodName: shootunlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1582305449}
+        m_TargetAssemblyTypeName: Saving, Assembly-CSharp
+        m_MethodName: Grassemblemunlock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20557,7 +20569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Open
+  m_text: Next
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff312c89daa14a342b9b67382bfe6852, type: 2}
   m_sharedMaterial: {fileID: -2658018702179680829, guid: ff312c89daa14a342b9b67382bfe6852, type: 2}
@@ -44948,7 +44960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Open
+  m_text: Next
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff312c89daa14a342b9b67382bfe6852, type: 2}
   m_sharedMaterial: {fileID: -2658018702179680829, guid: ff312c89daa14a342b9b67382bfe6852, type: 2}
@@ -56187,6 +56199,20 @@ MonoBehaviour:
   fire: 0
   Arena: 0
   Arenaclear: 0
+  storyButton2Destroyed: 0
+  storyButton3Destroyed: 0
+  generalButtonDestroyed: 0
+  level2Added: 0
+  level3Added: 0
+  level4Added: 0
+  level5Added: 0
+  level6Added: 0
+  levelice1Added: 0
+  levelice2Added: 0
+  levelicebossAdded: 0
+  levelfire1Added: 0
+  levelfirebossAdded: 0
+  Final: 0
 --- !u!4 &1582305450
 Transform:
   m_ObjectHideFlags: 0
@@ -56677,7 +56703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Open
+  m_text: Next
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff312c89daa14a342b9b67382bfe6852, type: 2}
   m_sharedMaterial: {fileID: -2658018702179680829, guid: ff312c89daa14a342b9b67382bfe6852, type: 2}

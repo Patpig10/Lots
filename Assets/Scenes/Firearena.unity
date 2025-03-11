@@ -19948,6 +19948,20 @@ MonoBehaviour:
   fire: 0
   Arena: 0
   Arenaclear: 0
+  storyButton2Destroyed: 0
+  storyButton3Destroyed: 0
+  generalButtonDestroyed: 0
+  level2Added: 0
+  level3Added: 0
+  level4Added: 0
+  level5Added: 0
+  level6Added: 0
+  levelice1Added: 0
+  levelice2Added: 0
+  levelicebossAdded: 0
+  levelfire1Added: 0
+  levelfirebossAdded: 0
+  Final: 0
 --- !u!4 &887445010
 Transform:
   m_ObjectHideFlags: 0
@@ -37728,7 +37742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1600122520
 Transform:
   m_ObjectHideFlags: 0
