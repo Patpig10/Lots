@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class LichBossHealth : MonoBehaviour
@@ -7,7 +8,7 @@ public class LichBossHealth : MonoBehaviour
     public Slider healthBar;
     public GameObject core;
     public GameObject emblem;
-
+    private Saving savingSystem;
     public bool isShieldActive = true;
     public Image healthBarFill;
     public Color normalColor = Color.red;
@@ -79,4 +80,44 @@ public class LichBossHealth : MonoBehaviour
             healthBarFill.color = isShieldActive ? shieldColor : normalColor;
         }
     }
+
+    public void ApplyDamage(int damage)
+    {
+        if (isShieldActive) return; // No damage if the shield is active
+
+        savingSystem = FindObjectOfType<Saving>();
+
+        if (savingSystem != null)
+        {
+            // Set the weapon damage to the saved value
+            damage = savingSystem.weaponSavedDamage;
+        }
+
+        mainHealth -= damage;
+
+        // Update the health bar
+        if (healthBar != null)
+        {
+            healthBar.value = mainHealth;
+        }
+
+        // Check if the main health is depleted
+        if (mainHealth <= 0)
+        {
+            DestroyBoss();
+
+            Instantiate(emblem, transform.position, Quaternion.identity);
+            DestroyBoss();
+        }
+    }
+
+    private void DestroyBoss()
+    {
+
+
+      
+        Destroy(gameObject);
+        Debug.Log("Boss defeated!");
+    }
+
 }

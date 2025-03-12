@@ -19,8 +19,15 @@ public class HeartSystem : MonoBehaviour
     private void Start()
     {
         save = GameObject.FindObjectOfType<Saving>();
+        if (save == null)
+        {
+            Debug.LogError("Saving component not found!");
+            return;
+        }
+
         maxLife = save.maxSavedLife;
         life = maxLife;  // Start with full life
+        Debug.Log($"HeartSystem Start: maxLife = {maxLife}, life = {life}");
         SpawnHearts();  // Dynamically spawn hearts
     }
 

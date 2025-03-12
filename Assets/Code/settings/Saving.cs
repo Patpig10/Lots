@@ -62,7 +62,7 @@ public class Saving : MonoBehaviour
 
 
 
-    private void Start()
+    private void Awake()
     {
         // Set the file path for the save file
         saveFilePath = Path.Combine(Application.persistentDataPath, "playerSaveData.json");
@@ -412,13 +412,13 @@ public class Saving : MonoBehaviour
             generalButtonDestroyed = saveData.generalButtonDestroyed;
             Final = saveData.Final;
             Debug.Log("Player data loaded!");
+            Debug.Log($"maxSavedLife = {maxSavedLife}");
         }
         else
         {
             Debug.LogWarning("Save file not found! Starting with default values.");
         }
     }
-
     [System.Serializable]
     public class SaveData
     {

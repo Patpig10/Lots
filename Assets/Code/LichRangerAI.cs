@@ -17,16 +17,10 @@ public class LichRangerAI : MonoBehaviour
     public float chargeChance = 0.1f;     // Chance to charge towards the player when nearby
     public float runAwayChance = 0.3f;    // Chance to run away from the player when nearby
     public float rotationSpeed = 5f;      // Speed at which the boss rotates to face the player
-    public GameObject projectilePrefab;   // Prefab for the ranged attack projectile
-    public float attackCooldown = 2f;     // Cooldown between ranged attacks
-    public float attackRange = 7f;        // Range at which the Lich Ranger will attack
 
     private Transform targetBlock;        // The next block to move towards
-    private bool isMoving = false;        // Check if movement is ongoing
+    public bool isMoving = false;        // Check if movement is ongoing
     private Queue<Transform> recentBlocks = new Queue<Transform>(); // Queue to track the last two visited blocks
-    private bool isAttacking = false;     // Check if the Lich Ranger is attacking
-    private float lastAttackTime = 0f;    // Time of the last attack
-
     void Start()
     {
         StartCoroutine(ChangeTargetRoutine());
@@ -41,7 +35,7 @@ public class LichRangerAI : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving && !isAttacking)
+        if (!isMoving)
         {
             if (IsPlayerNearby()) // If the player is nearby, calculate the path to move away, to a guided spot, or charge
             {
@@ -74,8 +68,6 @@ public class LichRangerAI : MonoBehaviour
         {
             FacePlayer();
         }
-
-       
     }
 
     // Coroutine to choose a new block at regular intervals when the player is not nearby
@@ -151,7 +143,6 @@ public class LichRangerAI : MonoBehaviour
             Debug.Log("Moving away from the player via block: " + targetBlock.name);
         }
     }
-
     // Method to move the AI towards a guided spot
     private void MoveToGuidedSpot()
     {
@@ -231,7 +222,6 @@ public class LichRangerAI : MonoBehaviour
             Debug.Log("Moving closer to the player via block: " + targetBlock.name);
         }
     }
-
     // Method to find the nearest block to a given position
     private Transform FindNearestBlockToPosition(Vector3 position)
     {
@@ -365,7 +355,6 @@ public class LichRangerAI : MonoBehaviour
         }
         return false;
     }
-
     private bool IsBlockOccupiedByPlayer(Transform block)
     {
         Collider[] colliders = Physics.OverlapSphere(block.position, 0.1f); // Check for objects in the block's position
@@ -396,7 +385,6 @@ public class LichRangerAI : MonoBehaviour
 
         return false; // Path is clear
     }
-
     private bool IsCollidingWithUnpassable()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f); // Adjust radius as needed
@@ -409,6 +397,13 @@ public class LichRangerAI : MonoBehaviour
         }
         return false;
     }
+    public void StopMovement()
+    {
+        isMoving = true; // Prevent movement
+    }
 
-  
+    public void ResumeMovement()
+    {
+        isMoving = false; // Allow movement
+    }
 }

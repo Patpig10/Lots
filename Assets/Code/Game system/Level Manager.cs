@@ -166,6 +166,9 @@ public class LevelManager : MonoBehaviour
     {
         LoadLevel(16);
     }
-
+    public void LevelFINAL()
+    {
+        LoadLevel(18);
+    }
 
 }

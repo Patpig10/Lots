@@ -26,7 +26,12 @@ public class LichAttack : MonoBehaviour
     private int shotsRemainingInBurst;   // Number of shots remaining in the current burst
     private int attackType = 0;          // 0 = basic shot, 1 = spread shot, 2 = ground spikes
     private bool isOnCooldown = false;   // Whether the enemy is currently on cooldown
+    private LichRangerAI lichRangerAI; // Reference to the LichRangerAI script
 
+    void Start()
+    {
+        lichRangerAI = GetComponent<LichRangerAI>(); // Get the LichRangerAI component
+    }
     void Update()
     {
         // Increment the timer each frame
@@ -62,9 +67,16 @@ public class LichAttack : MonoBehaviour
     }
 
     // Shoot a burst of projectiles
+
     private IEnumerator ShootBurst()
     {
         isShootingBurst = true;
+
+        // Stop the Lich's movement
+        if (lichRangerAI != null)
+        {
+            lichRangerAI.StopMovement();
+        }
 
         // Determine the number of shots in this burst
         shotsRemainingInBurst = Random.Range(minShotsPerBurst, maxShotsPerBurst + 1);
@@ -94,7 +106,6 @@ public class LichAttack : MonoBehaviour
         // Start cooldown after the burst is finished
         StartCoroutine(AttackCooldown());
     }
-
     // Shoot a single basic projectile
     private void ShootBasicProjectile()
     {
@@ -171,6 +182,13 @@ public class LichAttack : MonoBehaviour
     {
         isOnCooldown = true;
         yield return new WaitForSeconds(attackCooldown);
+
+        // Resume the Lich's movement after cooldown
+        if (lichRangerAI != null)
+        {
+            lichRangerAI.ResumeMovement();
+        }
+
         isOnCooldown = false;
 
         // Cycle through attack types after cooldown

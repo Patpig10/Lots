@@ -12,16 +12,25 @@ public class Projectile : MonoBehaviour
     public int knockbackDistance = 2;        // The number of grid cells to knock back the player
     public float knockbackStrength = 5f;     // The strength of the knockback (speed of knockback movement)
     public bool player = false;              // Whether the projectile is a player projectile
+    public Weapon Weapon;                    // Reference to the Weapon script
     void Start()
     {
         // Destroy the projectile after 'lifetime' seconds to prevent it from existing indefinitely
         Destroy(gameObject, lifetime);
+        Weapon = GameObject.Find("Layer.3").GetComponent<Weapon>();
     }
+
+    public void Awake()
+    {
+        Weapon = GameObject.Find("Layer.3").GetComponent<Weapon>();
+    }
+    
 
     void Update()
     {
         // Move the projectile forward in the direction it's facing
         MoveForward();
+        Weapon = GameObject.Find("Layer.3").GetComponent<Weapon>();
     }
 
     // Move the projectile forward along its local forward axis
@@ -88,8 +97,14 @@ public class Projectile : MonoBehaviour
 
 
         }
+        Destroy(gameObject, 0.1f);
+        OrbHealth orb = other.GetComponent<OrbHealth>();
 
-
+        if (orb != null)
+        {
+            orb.TakeDamage(Weapon.damage); // Deal damage to the dummy
+            return; // Exit the method after dealing damage
+        }
     }
 
     void OnCollisionEnter(Collision collision)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -70,6 +71,16 @@ public class Weapon : MonoBehaviour
         if (orb != null)
         {
             orb.TakeDamage(damage); // Deal damage to the dummy
+            return; // Exit the method after dealing damage
+            Debug.Log("Orb hit!");
+        }
+
+        
+        LichBossHealth Lich = other.GetComponent<LichBossHealth>();
+
+        if (Lich != null)
+        {
+            Lich.ApplyDamage(damage);  // Deal damage to the dummy
             return; // Exit the method after dealing damage
         }
 

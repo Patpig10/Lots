@@ -8,7 +8,7 @@ public class OrbHealth : MonoBehaviour
    
     public bool isOrbActive = true;
     private OrbManager orbManager;
-
+    public bool Door = false;
     void Start()
     {
         orbManager = FindObjectOfType<OrbManager>();
@@ -22,13 +22,27 @@ public class OrbHealth : MonoBehaviour
         currentHealth -= damageAmount;
         
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && Door == false)
         {
             DeactivateOrb();
         }
+        if (currentHealth <= 0 && Door == true)
+        {
+            DeactivateOrba();
+        }
+    }
+    private void DeactivateOrba()
+    {
+        Laser laser1 = GetComponent<Laser>();
+        if (laser1 != null)
+        {
+            laser1.DisableLaser();
+            Debug.Log("Orb dddddd!");
+        }
+
     }
 
- 
+
 
     private void DeactivateOrb()
     {
@@ -40,6 +54,8 @@ public class OrbHealth : MonoBehaviour
         {
             laser.DisableLaser();
         }
+
+      
 
         GetComponent<Renderer>().material.color = Color.grey;
         if (GetComponent<Collider>() != null)
