@@ -17,12 +17,21 @@ public class LichRangerAI : MonoBehaviour
     public float chargeChance = 0.1f;     // Chance to charge towards the player when nearby
     public float runAwayChance = 0.3f;    // Chance to run away from the player when nearby
     public float rotationSpeed = 5f;      // Speed at which the boss rotates to face the player
+    public float dashSpeed = 10f;         // Speed during dash
+    public float dashDuration = 0.5f;     // Duration of the dash
 
     private Transform targetBlock;        // The next block to move towards
     public bool isMoving = false;        // Check if movement is ongoing
     private Queue<Transform> recentBlocks = new Queue<Transform>(); // Queue to track the last two visited blocks
+    private bool isDashing = false;      // Check if the Lich is currently dashing
+
+    private Vector3 lastPosition;
+    private float stuckTimer = 0f;
+    private float stuckThreshold = 3f; // 3 seconds threshold
+
     void Start()
     {
+        lastPosition = transform.position; // Initialize the last position
         StartCoroutine(ChangeTargetRoutine());
     }
 
@@ -30,12 +39,32 @@ public class LichRangerAI : MonoBehaviour
     {
         isMoving = false;
         targetBlock = null;
+        lastPosition = transform.position; // Reset the last position
         StartCoroutine(ChangeTargetRoutine());
     }
 
     void Update()
     {
-        if (!isMoving)
+        // Check if the Lich is stuck
+        if (Vector3.Distance(transform.position, lastPosition) < 0.01f)
+        {
+            stuckTimer += Time.deltaTime; // Increment the stuck timer
+        }
+        else
+        {
+            stuckTimer = 0f; // Reset the stuck timer if the Lich is moving
+        }
+
+        // If stuck for 3 seconds, move 1 unit to the left
+        if (stuckTimer >= stuckThreshold)
+        {
+            MoveLeftByOne();
+            stuckTimer = 0f; // Reset the stuck timer
+        }
+
+        lastPosition = transform.position; // Update the last position
+
+        if (!isMoving && !isDashing)
         {
             if (IsPlayerNearby()) // If the player is nearby, calculate the path to move away, to a guided spot, or charge
             {
@@ -45,7 +74,7 @@ public class LichRangerAI : MonoBehaviour
                 }
                 else if (Random.value < chargeChance)
                 {
-                    ChargeTowardsPlayer();
+                    StartCoroutine(DashTowardsPlayer());
                 }
                 else if (Random.value < guidedSpotChance)
                 {
@@ -55,6 +84,10 @@ public class LichRangerAI : MonoBehaviour
                 {
                     FindNextBlockTowardsPlayer();
                 }
+            }
+            else // If the player is not nearby, roam randomly
+            {
+                FindRandomBlock();
             }
 
             if (targetBlock != null) // Move to the calculated target block
@@ -70,6 +103,33 @@ public class LichRangerAI : MonoBehaviour
         }
     }
 
+    // Method to move the Lich 1 unit to the left
+    private void MoveLeftByOne()
+    {
+        Vector3 newPosition = transform.position + Vector3.left; // Move 1 unit to the left
+        if (IsPositionValid(newPosition)) // Check if the new position is valid
+        {
+            transform.position = newPosition;
+            Debug.Log("Moved left to unstick.");
+        }
+    }
+
+
+
+    // Method to check if a position is valid (not blocked by unpassable blocks)
+    private bool IsPositionValid(Vector3 position)
+    {
+        Collider[] colliders = Physics.OverlapSphere(position, 0.1f);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Unpassable"))
+            {
+                return false; // Position is blocked by an unpassable block
+            }
+        }
+        return true; // Position is valid
+    }
+
     // Coroutine to choose a new block at regular intervals when the player is not nearby
     private IEnumerator ChangeTargetRoutine()
     {
@@ -77,7 +137,7 @@ public class LichRangerAI : MonoBehaviour
         {
             if (!IsPlayerNearby()) // Only find a new block if the player isn't nearby
             {
-                FindNearestBlock();
+                FindRandomBlock();
             }
             yield return new WaitForSeconds(1f); // Shorter interval for smoother behavior
         }
@@ -95,6 +155,35 @@ public class LichRangerAI : MonoBehaviour
         return Vector3.Distance(transform.position, player.position) <= runAwayRadius;
     }
 
+    // Method to find a random block to move to (for roaming)
+    private void FindRandomBlock()
+    {
+        List<Transform> validBlocks = new List<Transform>();
+
+        foreach (Transform block in blocks)
+        {
+            // Skip unpassable blocks and recently visited blocks
+            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block))
+            {
+                continue;
+            }
+
+            // Check if the path to the block is clear
+            if (IsPathClear(transform.position, block.position))
+            {
+                validBlocks.Add(block);
+            }
+        }
+
+        if (validBlocks.Count > 0)
+        {
+            Transform randomBlock = validBlocks[Random.Range(0, validBlocks.Count)];
+            UpdateRecentBlocks(randomBlock);
+            targetBlock = randomBlock;
+            Debug.Log("Roaming to random block: " + targetBlock.name);
+        }
+    }
+
     // Method to find the next block that moves the AI away from the player
     private void FindNextBlockAwayFromPlayer()
     {
@@ -103,24 +192,23 @@ public class LichRangerAI : MonoBehaviour
 
         foreach (Transform block in blocks)
         {
-            // Skip blocks that are unpassable, recently visited, occupied, or occupied by the player
+            // Skip unpassable blocks and recently visited blocks
             if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
             {
                 continue;
             }
 
-            // Check if the block is within the maxRunAwayDistance from the boss's current position
+            // Check if the block is within the maxRunAwayDistance
             float distanceFromBoss = Vector3.Distance(block.position, transform.position);
             if (distanceFromBoss > maxRunAwayDistance)
             {
-                continue; // Skip blocks that are too far away
+                continue;
             }
 
-            // Check if the block is horizontally or vertically aligned with the AI's position
+            // Check alignment and distance to player
             if (Mathf.Abs(block.position.x - transform.position.x) < 0.1f ||
                 Mathf.Abs(block.position.z - transform.position.z) < 0.1f)
             {
-                // Calculate the Manhattan distance to the player
                 float distanceToPlayer = Mathf.Abs(block.position.x - player.position.x) +
                                          Mathf.Abs(block.position.z - player.position.z);
 
@@ -134,15 +222,12 @@ public class LichRangerAI : MonoBehaviour
 
         if (farthestBlock != null)
         {
-            if (recentBlocks.Count == 2)
-            {
-                recentBlocks.Dequeue(); // Remove the oldest block
-            }
-            recentBlocks.Enqueue(farthestBlock); // Add the new block to the queue
+            UpdateRecentBlocks(farthestBlock);
             targetBlock = farthestBlock;
             Debug.Log("Moving away from the player via block: " + targetBlock.name);
         }
     }
+
     // Method to move the AI towards a guided spot
     private void MoveToGuidedSpot()
     {
@@ -153,32 +238,40 @@ public class LichRangerAI : MonoBehaviour
 
             if (nearestBlockToSpot != null)
             {
-                if (recentBlocks.Count == 2)
-                {
-                    recentBlocks.Dequeue();
-                }
-                recentBlocks.Enqueue(nearestBlockToSpot);
+                UpdateRecentBlocks(nearestBlockToSpot);
                 targetBlock = nearestBlockToSpot;
                 Debug.Log("Moving towards guided spot via block: " + targetBlock.name);
             }
         }
     }
 
-    // Method to charge towards the player
-    private void ChargeTowardsPlayer()
+    // Coroutine to dash towards the player
+    private IEnumerator DashTowardsPlayer()
     {
-        Transform nearestBlockToPlayer = FindNearestBlockToPosition(player.position);
-
-        if (nearestBlockToPlayer != null)
+        // Check if the path to the player is clear
+        if (!IsPathClear(transform.position, player.position))
         {
-            if (recentBlocks.Count == 2)
-            {
-                recentBlocks.Dequeue();
-            }
-            recentBlocks.Enqueue(nearestBlockToPlayer);
-            targetBlock = nearestBlockToPlayer;
-            Debug.Log("Charging towards player via block: " + targetBlock.name);
+            Debug.Log("Path to player is blocked. Cancelling dash.");
+            yield break; // Exit the coroutine if the path is blocked
         }
+
+        isDashing = true;
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = player.position;
+        targetPosition.y = startPosition.y;
+
+        float startTime = Time.time;
+
+        while (Time.time - startTime < dashDuration)
+        {
+            float distanceCovered = (Time.time - startTime) * dashSpeed;
+            float fractionOfJourney = distanceCovered / Vector3.Distance(startPosition, targetPosition);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+        isDashing = false;
     }
 
     // Method to find the next block that brings the AI closer to the player
@@ -189,17 +282,16 @@ public class LichRangerAI : MonoBehaviour
 
         foreach (Transform block in blocks)
         {
-            // Skip blocks that are unpassable, recently visited, occupied, or occupied by the player
+            // Skip unpassable blocks and recently visited blocks
             if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
             {
                 continue;
             }
 
-            // Check if the block is horizontally or vertically aligned with the AI's position
+            // Check alignment and distance to player
             if (Mathf.Abs(block.position.x - transform.position.x) < 0.1f ||
                 Mathf.Abs(block.position.z - transform.position.z) < 0.1f)
             {
-                // Calculate the Manhattan distance to the player
                 float distanceToPlayer = Mathf.Abs(block.position.x - player.position.x) +
                                          Mathf.Abs(block.position.z - player.position.z);
 
@@ -213,15 +305,12 @@ public class LichRangerAI : MonoBehaviour
 
         if (nearestBlock != null)
         {
-            if (recentBlocks.Count == 2)
-            {
-                recentBlocks.Dequeue(); // Remove the oldest block
-            }
-            recentBlocks.Enqueue(nearestBlock); // Add the new block to the queue
+            UpdateRecentBlocks(nearestBlock);
             targetBlock = nearestBlock;
             Debug.Log("Moving closer to the player via block: " + targetBlock.name);
         }
     }
+
     // Method to find the nearest block to a given position
     private Transform FindNearestBlockToPosition(Vector3 position)
     {
@@ -230,7 +319,7 @@ public class LichRangerAI : MonoBehaviour
 
         foreach (Transform block in blocks)
         {
-            // Skip blocks that are unpassable, recently visited, or occupied
+            // Skip unpassable blocks and recently visited blocks
             if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block))
             {
                 continue;
@@ -257,7 +346,7 @@ public class LichRangerAI : MonoBehaviour
 
             foreach (Transform block in blocks)
             {
-                // Skip blocks that are unpassable, recently visited, occupied, or occupied by the player
+                // Skip unpassable blocks and recently visited blocks
                 if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
                 {
                     continue;
@@ -273,11 +362,7 @@ public class LichRangerAI : MonoBehaviour
 
             if (nearestBlock != null)
             {
-                if (recentBlocks.Count == 2)
-                {
-                    recentBlocks.Dequeue();
-                }
-                recentBlocks.Enqueue(nearestBlock);
+                UpdateRecentBlocks(nearestBlock);
                 targetBlock = nearestBlock;
                 Debug.Log("New target block set: " + targetBlock.name);
             }
@@ -287,15 +372,12 @@ public class LichRangerAI : MonoBehaviour
     // Coroutine for smooth movement to the target block
     private IEnumerator MoveToBlock()
     {
-        isMoving = true;  // Set the flag to prevent movement while transitioning
+        isMoving = true;
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = targetBlock.position;
-        targetPosition.y = startPosition.y;  // Ensure y remains constant
+        targetPosition.y = startPosition.y;
 
-        // Use increased speed if the player is nearby
         float currentSpeed = IsPlayerNearby() ? increasedSpeed : movementSpeed;
-
-        // Calculate the journey length and start time
         float journeyLength = Vector3.Distance(startPosition, targetPosition);
         float startTime = Time.time;
 
@@ -303,7 +385,7 @@ public class LichRangerAI : MonoBehaviour
 
         while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
         {
-            // Check if the AI is colliding with an unpassable block
+            // Check for collisions with unpassable blocks
             if (IsCollidingWithUnpassable())
             {
                 Debug.Log("Collided with an unpassable block. Stopping movement.");
@@ -314,20 +396,17 @@ public class LichRangerAI : MonoBehaviour
             float distanceCovered = (Time.time - startTime) * currentSpeed;
             float fractionOfJourney = distanceCovered / journeyLength;
             transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
-            yield return null;  // Wait for the next frame
+            yield return null;
         }
 
-        transform.position = targetPosition;  // Snap to the final target position
-
+        transform.position = targetPosition;
         Debug.Log("Reached block: " + targetBlock.name);
 
-        // Pause at the block
         yield return new WaitForSeconds(pauseDuration);
-
-        isMoving = false;  // Allow new movements
+        isMoving = false;
     }
 
-    // Method to smoothly face the player
+    // Method to smoothly face the player with blocky rotation
     private void FacePlayer()
     {
         Vector3 directionToPlayer = (player.position - transform.position).normalized;
@@ -345,22 +424,24 @@ public class LichRangerAI : MonoBehaviour
     // Method to check if a block is occupied by an object tagged as "Enemy"
     private bool IsBlockOccupied(Transform block)
     {
-        Collider[] colliders = Physics.OverlapSphere(block.position, 0.1f); // Check for objects in the block's position
+        Collider[] colliders = Physics.OverlapSphere(block.position, 0.1f);
         foreach (Collider collider in colliders)
         {
-            if (collider.CompareTag("Enemy") || collider.CompareTag("Unpassable")) // If an object tagged "Enemy" or "Unpassable" is found, the block is occupied
+            if (collider.CompareTag("Enemy") || collider.CompareTag("Unpassable"))
             {
                 return true;
             }
         }
         return false;
     }
+
+    // Method to check if a block is occupied by the player
     private bool IsBlockOccupiedByPlayer(Transform block)
     {
-        Collider[] colliders = Physics.OverlapSphere(block.position, 0.1f); // Check for objects in the block's position
+        Collider[] colliders = Physics.OverlapSphere(block.position, 0.1f);
         foreach (Collider collider in colliders)
         {
-            if (collider.CompareTag("Player")) // If an object tagged "Player" is found, the block is occupied
+            if (collider.CompareTag("Player"))
             {
                 return true;
             }
@@ -368,42 +449,55 @@ public class LichRangerAI : MonoBehaviour
         return false;
     }
 
-    private bool IsPathBlocked(Vector3 startPosition, Vector3 targetPosition)
-    {
-        Vector3 direction = (targetPosition - startPosition).normalized;
-        float distance = Vector3.Distance(startPosition, targetPosition);
-
-        // Perform a raycast to check for unpassable blocks
-        RaycastHit hit;
-        if (Physics.Raycast(startPosition, direction, out hit, distance))
-        {
-            if (hit.collider.CompareTag("Unpassable"))
-            {
-                return true; // Path is blocked by an unpassable block
-            }
-        }
-
-        return false; // Path is clear
-    }
+    // Method to check if the AI is colliding with an unpassable block
     private bool IsCollidingWithUnpassable()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f); // Adjust radius as needed
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f);
         foreach (Collider collider in colliders)
         {
             if (collider.CompareTag("Unpassable"))
             {
-                return true; // Colliding with an unpassable block
+                return true;
             }
         }
         return false;
     }
+
+    // Method to check if the path between two positions is clear
+    private bool IsPathClear(Vector3 start, Vector3 end)
+    {
+        Vector3 direction = (end - start).normalized;
+        float distance = Vector3.Distance(start, end);
+
+        RaycastHit hit;
+        if (Physics.Raycast(start, direction, out hit, distance))
+        {
+            if (hit.collider.CompareTag("Unpassable"))
+            {
+                return false; // Path is blocked by an unpassable block
+            }
+        }
+
+        return true; // Path is clear
+    }
+
+    // Helper method to update the recent blocks queue
+    private void UpdateRecentBlocks(Transform newBlock)
+    {
+        if (recentBlocks.Count == 2)
+        {
+            recentBlocks.Dequeue();
+        }
+        recentBlocks.Enqueue(newBlock);
+    }
+
     public void StopMovement()
     {
-        isMoving = true; // Prevent movement
+        isMoving = true;
     }
 
     public void ResumeMovement()
     {
-        isMoving = false; // Allow movement
+        isMoving = false;
     }
 }

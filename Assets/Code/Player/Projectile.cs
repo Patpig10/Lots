@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -8,29 +5,28 @@ public class Projectile : MonoBehaviour
     public float speed = 10f;                // Speed of the projectile
     public float lifetime = 5f;              // Time before the projectile is destroyed
     public bool destroyOnCollision = true;   // Whether to destroy the projectile on collision
-    public bool destroyOnCollisionPlayer = true;
+    public bool destroyOnCollisionPlayer = true; // Whether to destroy the projectile on collision with the player
     public int knockbackDistance = 2;        // The number of grid cells to knock back the player
     public float knockbackStrength = 5f;     // The strength of the knockback (speed of knockback movement)
-    public bool player = false;              // Whether the projectile is a player projectile
-    public Weapon Weapon;                    // Reference to the Weapon script
-    void Start()
+    public bool playerProjectile = false;    // Whether the projectile is a player projectile
+    public Weapon weapon;                    // Reference to the Weapon script
+
+    private void Start()
     {
         // Destroy the projectile after 'lifetime' seconds to prevent it from existing indefinitely
         Destroy(gameObject, lifetime);
-        Weapon = GameObject.Find("Layer.3").GetComponent<Weapon>();
+
+        // Find the Weapon script only once at the start
+        if (weapon == null)
+        {
+            weapon = GameObject.Find("Layer.3")?.GetComponent<Weapon>();
+        }
     }
 
-    public void Awake()
-    {
-        Weapon = GameObject.Find("Layer.3").GetComponent<Weapon>();
-    }
-    
-
-    void Update()
+    private void Update()
     {
         // Move the projectile forward in the direction it's facing
         MoveForward();
-        Weapon = GameObject.Find("Layer.3").GetComponent<Weapon>();
     }
 
     // Move the projectile forward along its local forward axis
@@ -39,55 +35,39 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    // Handle trigger collisions (e.g., hitting the player)
-    void OnTriggerEnter(Collider other)
+    // Handle trigger collisions (e.g., hitting the player, enemies, or other objects)
+    private void OnTriggerEnter(Collider other)
     {
+        HandleCollision(other.gameObject);
+    }
+
+    // Handle regular collisions (e.g., hitting walls or other objects)
+    private void OnCollisionEnter(Collision collision)
+    {
+        HandleCollision(collision.gameObject);
+    }
+
+    // Centralized method to handle collisions
+    private void HandleCollision(GameObject other)
+    {
+        // Handle collision with unpassable objects (e.g., walls)
         if (other.CompareTag("Unpassable"))
         {
             Destroy(gameObject);
-
+            return;
         }
+
+        // Handle collision with the player
         if (other.CompareTag("Player"))
         {
             if (destroyOnCollisionPlayer)
             {
                 Destroy(gameObject, 0.1f);
             }
+            return;
         }
 
-        // Check if the collided object is the player
-        if (other.CompareTag("enemys"))
-        {
-            
-
-                // Try to get the PlayerKnockbackTest script attached to the player
-                PlayerKnockbackTest playerKnockback = other.GetComponent<PlayerKnockbackTest>();
-
-
-
-                if (playerKnockback != null)
-                {
-                    // Calculate knockback direction (away from the projectile)
-                  //  Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
-
-                    // Apply knockback to the player
-                    // StartCoroutine(playerKnockback.ApplyKnockback(knockbackDirection, knockbackDistance));
-                }
-            // Destroy the projectile upon hitting the player
-            if (destroyOnCollision)
-            {
-                Destroy(gameObject, 0.1f);
-            }
-        }
-        else if (destroyOnCollision)
-        {
-            // Optionally, destroy the projectile upon entering a trigger collider that's not the player
-            //Destroy(gameObject, 0.1f);
-        }
-
-        //Destroy(gameObject) after 0.4 second
-        //Destroy(gameObject, 0.1f);
-
+        // Handle collision with enemies
         if (other.CompareTag("Enemy"))
         {
             if (destroyOnCollision)
@@ -95,25 +75,29 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject, 0.1f);
             }
 
-
+            // Apply knockback to the enemy (if applicable)
+            PlayerKnockbackTest enemyKnockback = other.GetComponent<PlayerKnockbackTest>();
+            if (enemyKnockback != null)
+            {
+                Vector3 knockbackDirection = (other.transform.position - transform.position).normalized;
+                StartCoroutine(enemyKnockback.ApplyKnockback(knockbackDirection, knockbackDistance, knockbackStrength));
+            }
+            return;
         }
-        Destroy(gameObject, 0.1f);
-        OrbHealth orb = other.GetComponent<OrbHealth>();
 
+        // Handle collision with the Orb (or other damageable objects)
+        OrbHealth orb = other.GetComponent<OrbHealth>();
         if (orb != null)
         {
-            orb.TakeDamage(Weapon.damage); // Deal damage to the dummy
-            return; // Exit the method after dealing damage
+            orb.TakeDamage(weapon != null ? weapon.damage : 1); // Deal damage to the orb
+            Destroy(gameObject, 0.1f); // Destroy the projectile after dealing damage
+            return;
         }
-    }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        // Optionally, destroy the projectile upon collision with any object
+        // Destroy the projectile on collision with any other object (if enabled)
         if (destroyOnCollision)
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 0.1f);
         }
     }
-
 }
