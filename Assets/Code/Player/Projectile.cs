@@ -56,7 +56,11 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        if (other.CompareTag("Block"))
+        {
+            Destroy(gameObject);
+            return;
+        }
         // Handle collision with the player
         if (other.CompareTag("Player"))
         {

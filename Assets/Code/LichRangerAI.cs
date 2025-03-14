@@ -28,15 +28,11 @@ public class LichRangerAI : MonoBehaviour
     private Vector3 lastPosition;
     private float stuckTimer = 0f;
     private float stuckThreshold = 3f; // 3 seconds threshold
-    public Transform spawnPoint; // Reference to the spawn point
-    private Rigidbody rb;
 
     void Start()
     {
         lastPosition = transform.position; // Initialize the last position
         StartCoroutine(ChangeTargetRoutine());
-            rb = GetComponent<Rigidbody>();
-
     }
 
     private void OnEnable()
@@ -59,19 +55,10 @@ public class LichRangerAI : MonoBehaviour
             stuckTimer = 0f; // Reset the stuck timer if the Lich is moving
         }
 
-        // If stuck for 3 seconds, try to unstick
+        // If stuck for 3 seconds, move 1 unit to the left
         if (stuckTimer >= stuckThreshold)
         {
-            Debug.Log("Lich is stuck. Attempting to unstick.");
-            MoveToUnstick();
-            stuckTimer = 0f; // Reset the stuck timer
-        }
-
-        // If stuck for an extended period (e.g., 10 seconds), teleport to spawn
-        if (stuckTimer >= 10f) // Adjust the duration as needed
-        {
-            Debug.Log("Lich has been stuck for too long. Teleporting to spawn.");
-            TeleportToSpawn();
+            MoveLeftByOne();
             stuckTimer = 0f; // Reset the stuck timer
         }
 
@@ -87,7 +74,7 @@ public class LichRangerAI : MonoBehaviour
                 }
                 else if (Random.value < chargeChance)
                 {
-                   // StartCoroutine(DashTowardsPlayer());
+                    StartCoroutine(DashTowardsPlayer());
                 }
                 else if (Random.value < guidedSpotChance)
                 {
@@ -95,7 +82,7 @@ public class LichRangerAI : MonoBehaviour
                 }
                 else
                 {
-                   FindNextBlockTowardsPlayer();
+                    FindNextBlockTowardsPlayer();
                 }
             }
             else // If the player is not nearby, roam randomly
@@ -116,38 +103,16 @@ public class LichRangerAI : MonoBehaviour
         }
     }
 
-    private void TeleportToSpawn()
-    {
-        if (spawnPoint != null)
-        {
-            transform.position = spawnPoint.position;
-            Debug.Log("Lich was stuck for too long. Teleported to spawn point.");
-        }
-        else
-        {
-            Debug.LogWarning("Spawn point not assigned. Cannot teleport.");
-        }
-    }
     // Method to move the Lich 1 unit to the left
-    private void MoveToUnstick()
+    private void MoveLeftByOne()
     {
-        // Try moving left, right, forward, and backward in sequence
-        Vector3[] directions = { Vector3.left, Vector3.right, Vector3.forward, Vector3.back };
-
-        foreach (Vector3 direction in directions)
+        Vector3 newPosition = transform.position + Vector3.left; // Move 1 unit to the left
+        if (IsPositionValid(newPosition)) // Check if the new position is valid
         {
-            Vector3 newPosition = transform.position + direction;
-            if (IsPositionValid(newPosition))
-            {
-                transform.position = newPosition;
-                Debug.Log("Unstuck by moving in direction: " + direction);
-                return; // Exit after the first valid move
-            }
+            transform.position = newPosition;
+            Debug.Log("Moved left to unstick.");
         }
-
-        Debug.Log("Failed to unstick. All directions blocked.");
     }
-
 
     // Method to check if a position is valid (not blocked by unpassable blocks)
     private bool IsPositionValid(Vector3 position)
@@ -155,11 +120,7 @@ public class LichRangerAI : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(position, 0.1f);
         foreach (Collider collider in colliders)
         {
-            if (collider.CompareTag("Unpassable"))
-            {
-                Debug.Log("Position is blocked by an unpassable block: " + collider.name);
-                return false; // Position is blocked by an unpassable block
-            }
+           
         }
         return true; // Position is valid
     }
@@ -180,25 +141,8 @@ public class LichRangerAI : MonoBehaviour
     // Method to detect if the player is within the detection radius
     private bool IsPlayerNearby()
     {
-        if (Vector3.Distance(transform.position, player.position) > detectionRadius)
-            return false;
-
-        // Perform a raycast from Lich to Player
-        Vector3 direction = (player.position - transform.position).normalized;
-        float distance = Vector3.Distance(transform.position, player.position);
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, direction, out hit, distance))
-        {
-            if (hit.collider.CompareTag("Unpassable"))
-            {
-                return false; // Player is behind an unpassable block
-            }
-        }
-
-        return true; // Player is visible
+        return Vector3.Distance(transform.position, player.position) <= detectionRadius;
     }
-
 
     // Method to check if the player is within the run-away radius
     private bool ShouldRunAway()
@@ -214,7 +158,7 @@ public class LichRangerAI : MonoBehaviour
         foreach (Transform block in blocks)
         {
             // Skip unpassable blocks and recently visited blocks
-            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block))
+            if (block.CompareTag("Finish") || recentBlocks.Contains(block) || IsBlockOccupied(block))
             {
                 continue;
             }
@@ -244,7 +188,7 @@ public class LichRangerAI : MonoBehaviour
         foreach (Transform block in blocks)
         {
             // Skip unpassable blocks and recently visited blocks
-            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
+            if (block.CompareTag("Finish") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
             {
                 continue;
             }
@@ -299,12 +243,6 @@ public class LichRangerAI : MonoBehaviour
     // Coroutine to dash towards the player
     private IEnumerator DashTowardsPlayer()
     {
-        // Avoid dash if the Lich is already too close to the player
-        if (Vector3.Distance(transform.position, player.position) < 2f)
-        {
-            yield break;
-        }
-
         // Check if the path to the player is clear
         if (!IsPathClear(transform.position, player.position))
         {
@@ -314,29 +252,21 @@ public class LichRangerAI : MonoBehaviour
 
         isDashing = true;
         Vector3 startPosition = transform.position;
-        Vector3 targetPosition = GetValidPosition(player.position); // Ensure the target position is valid
+        Vector3 targetPosition = player.position;
         targetPosition.y = startPosition.y;
 
         float startTime = Time.time;
 
         while (Time.time - startTime < dashDuration)
         {
-            // Check if the path ahead is blocked
-            if (!IsPathClear(transform.position, targetPosition))
-            {
-                Debug.Log("Path blocked during dash. Stopping.");
-                break;
-            }
-
-            // Move towards the target position
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, dashSpeed * Time.deltaTime);
+            float distanceCovered = (Time.time - startTime) * dashSpeed;
+            float fractionOfJourney = distanceCovered / Vector3.Distance(startPosition, targetPosition);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
             yield return null;
         }
 
-        // Ensure the Lich reaches the exact target position
         transform.position = targetPosition;
         isDashing = false;
-        Debug.Log("Dash completed.");
     }
 
     // Method to find the next block that brings the AI closer to the player
@@ -348,7 +278,7 @@ public class LichRangerAI : MonoBehaviour
         foreach (Transform block in blocks)
         {
             // Skip unpassable blocks and recently visited blocks
-            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
+            if (block.CompareTag("Finish") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
             {
                 continue;
             }
@@ -385,7 +315,7 @@ public class LichRangerAI : MonoBehaviour
         foreach (Transform block in blocks)
         {
             // Skip unpassable blocks and recently visited blocks
-            if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block))
+            if (block.CompareTag("Finish") || recentBlocks.Contains(block) || IsBlockOccupied(block))
             {
                 continue;
             }
@@ -412,7 +342,7 @@ public class LichRangerAI : MonoBehaviour
             foreach (Transform block in blocks)
             {
                 // Skip unpassable blocks and recently visited blocks
-                if (block.CompareTag("Unpassable") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
+                if (block.CompareTag("Finish") || recentBlocks.Contains(block) || IsBlockOccupied(block) || IsBlockOccupiedByPlayer(block))
                 {
                     continue;
                 }
@@ -437,26 +367,18 @@ public class LichRangerAI : MonoBehaviour
     // Coroutine for smooth movement to the target block
     private IEnumerator MoveToBlock()
     {
-        if (targetBlock == null || IsBlockOccupied(targetBlock)) // Check if the target block is valid
-        {
-            Debug.Log("Target block is invalid or occupied. Stopping movement.");
-            isMoving = false;
-            yield break;
-        }
-
         isMoving = true;
         Vector3 startPosition = transform.position;
-        Vector3 targetPosition = GetValidPosition(targetBlock.position); // Ensure the target position is valid
-        targetPosition.y = startPosition.y; // Keep Y axis fixed
+        Vector3 targetPosition = targetBlock.position;
+        targetPosition.y = startPosition.y;
 
         float currentSpeed = IsPlayerNearby() ? increasedSpeed : movementSpeed;
         float journeyLength = Vector3.Distance(startPosition, targetPosition);
-        float journeyTime = journeyLength / currentSpeed;
-        float elapsedTime = 0f;
+        float startTime = Time.time;
 
-        Debug.Log("Moving towards block: " + targetBlock.name);
+        Debug.Log("Moving towards: " + targetBlock.name);
 
-        while (elapsedTime < journeyTime)
+        while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
         {
             // Check for collisions with unpassable blocks
             if (IsCollidingWithUnpassable())
@@ -466,49 +388,22 @@ public class LichRangerAI : MonoBehaviour
                 yield break; // Exit the coroutine
             }
 
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / journeyTime;
-            t = Mathf.SmoothStep(0f, 1f, t); // Smooth interpolation
+            // Calculate the fraction of the journey completed based on speed and time
+            float distanceCovered = (Time.time - startTime) * currentSpeed;
+            float fractionOfJourney = distanceCovered / journeyLength;
 
-            // Move using Rigidbody for physics-based movement
-            Vector3 newPosition = Vector3.Lerp(startPosition, targetPosition, t);
-            GetComponent<Rigidbody>().MovePosition(newPosition);
-
+            // Move the object to the new position
+            transform.position = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
             yield return null;
         }
 
-        // Ensure it reaches the exact position
-        GetComponent<Rigidbody>().MovePosition(targetPosition);
+        transform.position = targetPosition;
         Debug.Log("Reached block: " + targetBlock.name);
 
         yield return new WaitForSeconds(pauseDuration);
         isMoving = false;
     }
-    private Vector3 GetValidPosition(Vector3 targetPosition)
-    {
-        // Check if the target position is valid
-        if (IsPositionValid(targetPosition))
-        {
-            return targetPosition;
-        }
 
-        // If the target position is invalid, find the nearest valid position
-        Vector3 direction = (targetPosition - transform.position).normalized;
-        float distance = Vector3.Distance(transform.position, targetPosition);
-
-        // Step back until a valid position is found
-        for (float step = 0.1f; step < distance; step += 0.1f)
-        {
-            Vector3 newPosition = transform.position + direction * step;
-            if (IsPositionValid(newPosition))
-            {
-                return newPosition;
-            }
-        }
-
-        // If no valid position is found, return the current position
-        return transform.position;
-    }
     // Method to smoothly face the player with blocky rotation
     private void FacePlayer()
     {
@@ -530,7 +425,7 @@ public class LichRangerAI : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(block.position, 0.1f);
         foreach (Collider collider in colliders)
         {
-            if (collider.CompareTag("Enemy") || collider.CompareTag("Unpassable"))
+            if (collider.CompareTag("Enemy"))
             {
                 return true;
             }
@@ -558,11 +453,7 @@ public class LichRangerAI : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f);
         foreach (Collider collider in colliders)
         {
-            if (collider.CompareTag("Unpassable"))
-            {
-                Debug.Log("Colliding with unpassable block: " + collider.name);
-                return true;
-            }
+            
         }
         return false;
     }
@@ -573,16 +464,12 @@ public class LichRangerAI : MonoBehaviour
         Vector3 direction = (end - start).normalized;
         float distance = Vector3.Distance(start, end);
 
-        // Use a sphere cast to check for obstacles along the path
-        float radius = 0.5f; // Adjust based on the size of the Lich
         RaycastHit hit;
-        if (Physics.SphereCast(start, radius, direction, out hit, distance))
+        if (Physics.Raycast(start, direction, out hit, distance))
         {
-            if (hit.collider.CompareTag("Unpassable"))
-            {
-                Debug.Log("Path is blocked by an unpassable block: " + hit.collider.name);
-                return false; // Path is blocked by an unpassable block
-            }
+          
+              
+            
         }
 
         return true; // Path is clear
