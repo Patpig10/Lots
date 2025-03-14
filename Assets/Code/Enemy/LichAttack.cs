@@ -75,7 +75,7 @@ public class LichAttack : MonoBehaviour
         // Stop the Lich's movement
         if (lichRangerAI != null)
         {
-            lichRangerAI.StopMovement();
+           // lichRangerAI.StopMovement();
         }
 
         // Determine the number of shots in this burst
@@ -186,7 +186,7 @@ public class LichAttack : MonoBehaviour
         // Resume the Lich's movement after cooldown
         if (lichRangerAI != null)
         {
-            lichRangerAI.ResumeMovement();
+            //lichRangerAI.ResumeMovement();
         }
 
         isOnCooldown = false;

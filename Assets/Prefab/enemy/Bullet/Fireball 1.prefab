@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 415945390540884016}
   - component: {fileID: 6532799357504721898}
   - component: {fileID: 8602719470914127505}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -141,7 +141,8 @@ MonoBehaviour:
   destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5
-  player: 0
+  playerProjectile: 0
+  weapon: {fileID: 0}
 --- !u!54 &8602719470914127505
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -184,7 +185,7 @@ GameObject:
   - component: {fileID: 3477235414210352101}
   - component: {fileID: 298183044038142323}
   - component: {fileID: 3353053624851963238}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Fireball 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +311,8 @@ MonoBehaviour:
   destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5
-  player: 0
+  playerProjectile: 0
+  weapon: {fileID: 0}
 --- !u!54 &3353053624851963238
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -419,8 +421,32 @@ PrefabInstance:
       value: Fireball
       objectReference: {fileID: 0}
     - target: {fileID: 2613869802870891594, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613869802870891594, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734669529110252754, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734761308211787880, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735293094083275088, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735428857641621934, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735527592432600822, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8504295857359798207, guid: 9951e0f91f665574aa9d2ad3d1d54578, type: 3}
       propertyPath: player
