@@ -123,12 +123,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  lifetime: 5
-  destroyOnCollision: 1
+  lifetime: 12
+  destroyOnCollision: 0
   destroyOnCollisionPlayer: 0
   knockbackDistance: 2
   knockbackStrength: 5
-  player: 1
+  playerProjectile: 1
+  weapon: {fileID: 0}
 --- !u!54 &416805023079625044
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -169,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  savingSystem: {fileID: 0}
 --- !u!1 &9114171374449481755
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +297,8 @@ MonoBehaviour:
   destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5
-  player: 0
+  playerProjectile: 0
+  weapon: {fileID: 0}
 --- !u!54 &5250423468966622260
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -440,7 +443,8 @@ MonoBehaviour:
   destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5
-  player: 1
+  playerProjectile: 0
+  weapon: {fileID: 0}
 --- !u!65 &3329928325451179733
 BoxCollider:
   m_ObjectHideFlags: 0

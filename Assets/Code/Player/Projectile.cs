@@ -54,12 +54,21 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Unpassable"))
         {
             Destroy(gameObject);
+            if (playerProjectile)
+            {
+                Destroy(gameObject, 0.1f);
+            }
             return;
         }
         if (other.CompareTag("Block"))
         {
             Destroy(gameObject);
             return;
+
+            if (playerProjectile)
+            {
+                Destroy(gameObject, 0.1f);
+            }
         }
         // Handle collision with the player
         if (other.CompareTag("Player"))
@@ -75,6 +84,11 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             if (destroyOnCollision)
+            {
+                Destroy(gameObject, 0.1f);
+            }
+
+            if(playerProjectile)
             {
                 Destroy(gameObject, 0.1f);
             }

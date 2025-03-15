@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: CastledashGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Castledash
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 635e955c-1bfc-48f1-b0ab-8e4c8effd444
+    <Name>k__BackingField: Castledash
+    <Text>k__BackingField: ' Alright, you''re in. You''ll have to fight your way
+      to the Lich.'
+    <Speaker>k__BackingField: Princess
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 832a6cc9-bb3f-4098-b1b7-029d771a8f80
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -31.199999, y: -98.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 832a6cc9-bb3f-4098-b1b7-029d771a8f80
+    <Name>k__BackingField: nm
+    <Text>k__BackingField: One of the deserters told us there are three keys needed
+      to open the boss door.
+    <Speaker>k__BackingField: Forest Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 40d52b87-cb00-49f9-b455-8fb8c632a79f
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 692, y: -98.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 40d52b87-cb00-49f9-b455-8fb8c632a79f
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: "Hahaha! We\u2019ll hold the line out here\u2014just make
+      sure you take him down!"
+    <Speaker>k__BackingField: Flame Empress
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: c99747b7-df6c-46cd-b906-7b9b040c59c9
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1441.6, y: -98.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: c99747b7-df6c-46cd-b906-7b9b040c59c9
+    <Name>k__BackingField: h
+    <Text>k__BackingField: "Don\u2019t waste time. I intend to return to my kingdom
+      in one piece."
+    <Speaker>k__BackingField: Ice Queen
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2141.5999, y: -98.399994}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Castledash
+  - nm
+  - DialogueName
+  - h
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

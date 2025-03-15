@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LichBossHealth : MonoBehaviour
 {
@@ -113,11 +114,13 @@ public class LichBossHealth : MonoBehaviour
 
     private void DestroyBoss()
     {
+       
 
 
-      
+
         Destroy(gameObject);
-        Debug.Log("Boss defeated!");
+        Debug.Log("Boss defeated!"); 
+        SceneManager.LoadScene(20);
     }
 
 }
