@@ -248,7 +248,10 @@ public class Saving : MonoBehaviour
     {
         SceneManager.LoadScene(6);
     }
-
+    public void ToFinalBoss()
+    {
+        SceneManager.LoadScene(19);
+    }
     public void ToIceboss()
     {
         SceneManager.LoadScene(12);

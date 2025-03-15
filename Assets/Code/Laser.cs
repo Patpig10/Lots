@@ -13,6 +13,8 @@ public class Laser : MonoBehaviour
     private bool isLaserActive = true; // Whether the laser is active
     public GameObject[] Awakeblocks;
     public GameObject[] Sleepblocks;
+    public bool brigdefinal = false;
+    public GameObject fixit;
     void Start()
     {
         CreateLaser();
@@ -116,6 +118,15 @@ public class Laser : MonoBehaviour
             }
            // Destroy(endPoint);
         }
+        if(brigdefinal == true)
+        {
+            BlockAndBridgeManager laser = fixit.GetComponent<BlockAndBridgeManager>();
+            if (laser != null)
+            {
+                laser.enabled = false; // Completely disable LaserController
+            }
+        }
+
     }
 
     // Enable the laser
@@ -131,5 +142,15 @@ public class Laser : MonoBehaviour
 
         // Update the laser to ensure it's correctly positioned
         UpdateLaser();
+
+        if (brigdefinal == true)
+        {
+            BlockAndBridgeManager laser = fixit.GetComponent<BlockAndBridgeManager>();
+            if (laser != null)
+            {
+                laser.enabled = true; // Completely disable LaserController
+            }
+        }
     }
+
 }

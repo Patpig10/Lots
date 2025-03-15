@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
+  m_Name: Lich
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Lich
+  <DialogueGroups>k__BackingField:
+    list: []
+  <UngroupedDialogues>k__BackingField:
+  - {fileID: 11400000, guid: 03bc6b14acb3712488965fc75089d595, type: 2}
+  - {fileID: 11400000, guid: 82198f074acdd904aba3469273f9d175, type: 2}
+  - {fileID: 11400000, guid: a44c4d43942950b4e988aef0e3960228, type: 2}
+  - {fileID: 11400000, guid: 653afde3f25c88f4e950bd1e0797f72f, type: 2}
+  - {fileID: 11400000, guid: 0f0b65b14a7cba04ebba248aaccaa800, type: 2}
+  - {fileID: 11400000, guid: 9559c2cdb497e3448a1b12230bc3c6c8, type: 2}
+  - {fileID: 11400000, guid: b4519aee2401053419a4d12b11b18b37, type: 2}
