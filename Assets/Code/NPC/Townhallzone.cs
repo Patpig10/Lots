@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Townhallzone : MonoBehaviour
 {
-    public GameObject targetObject; // The GameObject to destroy
-    private string saveFilePath;
+    public GameObject targetObject; // The object to disable instead of destroy
+    private static string saveFilePath;
 
     [System.Serializable]
     private class ObjectState
@@ -14,17 +14,22 @@ public class Townhallzone : MonoBehaviour
         public bool isDestroyed;
     }
 
-    private void Start()
+    private void Awake()
     {
-        if (targetObject == null)
+        saveFilePath = Path.Combine(Application.persistentDataPath, "TownhallState.json");
+
+        // If this is the scene where targetObject exists, load the state
+        if (targetObject != null)
         {
-            targetObject = gameObject; // Default to the current GameObject if not set
+            LoadState();
         }
+    }
 
-        // Define the save file path for JSON
-        saveFilePath = Path.Combine(Application.persistentDataPath, GetUniqueObjectID() + ".json");
-
-        // Check if the GameObject should be destroyed based on saved JSON state
+    /// <summary>
+    /// Loads the destruction state of the object and disables it if needed.
+    /// </summary>
+    private void LoadState()
+    {
         if (File.Exists(saveFilePath))
         {
             string savedStateJson = File.ReadAllText(saveFilePath);
@@ -33,36 +38,51 @@ public class Townhallzone : MonoBehaviour
             if (savedState.isDestroyed)
             {
                 targetObject.SetActive(false);
+                Debug.Log("Object was previously destroyed, keeping it disabled.");
             }
+            else
+            {
+                targetObject.SetActive(true);
+                Debug.Log("Object should be active.");
+            }
+        }
+        else
+        {
+            Debug.Log("No save file found, assuming object should be active.");
+            targetObject.SetActive(true);
         }
     }
 
-    public void ResetFairy()
+    /// <summary>
+    /// Call this from any scene to reset the destruction state.
+    /// </summary>
+    public static void ResetFairy()
     {
-        if (File.Exists(saveFilePath))
-        {
-            File.Delete(saveFilePath); // Delete the JSON file to reset the state
-        }
+        Debug.Log("Resetting object...");
+
+        // Reset state in JSON
+        ObjectState state = new ObjectState { isDestroyed = false };
+        string jsonState = JsonUtility.ToJson(state, true);
+        File.WriteAllText(saveFilePath, jsonState);
+
+        Debug.Log("Object reset. It will be reactivated in its scene.");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Destroy the GameObject if it enters a trigger collider
-        if (other.CompareTag("Trigger")) // Make sure the trigger collider has the tag "Trigger"
+        if (other.CompareTag("Trigger"))
         {
-            Destroy(targetObject);
-
-            // Save the destroyed state to a JSON file
-            ObjectState state = new ObjectState();
-            state.isDestroyed = true;
-            string jsonState = JsonUtility.ToJson(state);
-            File.WriteAllText(saveFilePath, jsonState);
+            targetObject.SetActive(false);
+            SaveState(true);
         }
     }
 
-    private string GetUniqueObjectID()
+    private void SaveState(bool isDestroyed)
     {
-        // Generate a unique ID using the object's name
-        return targetObject.name;
+        ObjectState state = new ObjectState { isDestroyed = isDestroyed };
+        string jsonState = JsonUtility.ToJson(state, true);
+        File.WriteAllText(saveFilePath, jsonState);
+
+        Debug.Log("Saved State: " + jsonState);
     }
 }

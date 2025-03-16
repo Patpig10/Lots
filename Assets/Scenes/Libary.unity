@@ -22265,7 +22265,7 @@ MonoBehaviour:
   - {fileID: 1500478939}
   - {fileID: 319313447}
   - {fileID: 2039996996}
-  talkCount: 0
+  talkCount: 2
 --- !u!1001 &1426585754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30150,6 +30150,20 @@ MonoBehaviour:
   fire: 0
   Arena: 0
   Arenaclear: 0
+  storyButton2Destroyed: 0
+  storyButton3Destroyed: 0
+  generalButtonDestroyed: 0
+  level2Added: 0
+  level3Added: 0
+  level4Added: 0
+  level5Added: 0
+  level6Added: 0
+  levelice1Added: 0
+  levelice2Added: 0
+  levelicebossAdded: 0
+  levelfire1Added: 0
+  levelfirebossAdded: 0
+  Final: 0
 --- !u!4 &1784222493
 Transform:
   m_ObjectHideFlags: 0

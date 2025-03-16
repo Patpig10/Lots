@@ -256,7 +256,15 @@ public class Saving : MonoBehaviour
     {
         SceneManager.LoadScene(12);
     }
+    public void Mainmenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
+    public void Credit()
+    {
+        SceneManager.LoadScene(21);
+    }
 
     public void Addlevel3()
     {
