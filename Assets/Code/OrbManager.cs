@@ -31,10 +31,11 @@ public class OrbManager : MonoBehaviour
             LaserController laser = orb.GetComponent<LaserController>();
             if (laser != null)
             {
-                laser.enabled = false; // Completely disable LaserController
+                laser.DisableLaser(); // Properly disable laser
             }
         }
     }
+
 
     public void OnOrbDeactivated(GameObject deactivatedOrb)
     {
@@ -62,9 +63,17 @@ public class OrbManager : MonoBehaviour
 
         ActivateRandomOrb(); // Select a new orb
 
-        // Reactivate the shield
-        lichBoss.ReactivateShield();
+        // Only reactivate the shield if a laser is actually enabled
+        if (FindObjectOfType<LaserController>() != null)
+        {
+            lichBoss.ReactivateShield();
+        }
+        else
+        {
+            Debug.Log("No lasers detected. Shield remains down.");
+        }
     }
+
 
     private void ActivateRandomOrb()
     {
