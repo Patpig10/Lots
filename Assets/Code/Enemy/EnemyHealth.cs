@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using JetBrains.Annotations;
+#if UNITY_EDITOR
+using UnityEditor; // Required for AssetDatabase
+#endif
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -20,6 +23,11 @@ public class EnemyHealth : MonoBehaviour
     public float potionSpawnChance = 0.2f; // Chance to spawn a potion (50% by default)
     public float coinSpawnChance = 0.5f; // Chance to spawn a potion (50% by default)
     public GameObject coin;
+
+    // References to VFX prefabs (loaded from Assets/Shader folder)
+    public GameObject hitVFX;
+    public GameObject blockBurstEffect;
+    public GameObject hitSFX;
     void Start()
     {
         savingSystem = FindObjectOfType<Saving>();
@@ -29,6 +37,22 @@ public class EnemyHealth : MonoBehaviour
 
         // Get the Animator component attached to the enemy
         animator = GetComponent<Animator>();
+
+        // Load VFX prefabs from the Assets/Shader folder (Editor only)
+
+      //  hitVFX = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Shaders/HitVFX.prefab");
+       // blockBurstEffect = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Shaders/BlockBurstEffect.prefab");
+
+
+        // Check if the prefabs were loaded successfully
+        if (hitVFX == null)
+        {
+            Debug.LogError("HitVFX prefab not found in Assets/Shader folder.");
+        }
+        if (blockBurstEffect == null)
+        {
+            Debug.LogError("BlockBurstEffect prefab not found in Assets/Shader folder.");
+        }
     }
 
     // This function will be called when the enemy takes damage
@@ -37,7 +61,16 @@ public class EnemyHealth : MonoBehaviour
         damageAmount = savingSystem.weaponSavedDamage;
         // Reduce the enemy's current health by the damage amount
         currentHealth -= damageAmount;
+        hitSFX.GetComponent<AudioSource>().Play();
+
+        // Show floating damage text
         ShowFloatingText(damageAmount);
+
+        // Play the hit VFX
+        if (hitVFX != null)
+        {
+            Instantiate(hitVFX, transform.position, Quaternion.identity);
+        }
 
         // Trigger the "Hurt" animation
         //animator.SetTrigger("Hurt");
@@ -53,7 +86,7 @@ public class EnemyHealth : MonoBehaviour
     public void ShowFloatingText(int damageAmount)
     {
         damagepoints.transform.position += targetObject.transform.position + textOffset;
-        var go =  Instantiate (damagepoints, targetObject.transform.position, Quaternion.identity, transform);
+        var go = Instantiate(damagepoints, targetObject.transform.position, Quaternion.identity, transform);
         // Calculate the position with the offset
 
         // damagepoints.transform.position += textOffset;
@@ -81,6 +114,11 @@ public class EnemyHealth : MonoBehaviour
     // Method to handle what happens when the enemy dies
     private void Die()
     {
+        if (blockBurstEffect != null)
+        {
+            Instantiate(blockBurstEffect, transform.position, Quaternion.identity);
+        }
+
         Debug.LogError("deadvvvvvvv");
         // For now, we just destroy the enemy GameObject
         Destroy(Body);
@@ -94,6 +132,5 @@ public class EnemyHealth : MonoBehaviour
         {
             Instantiate(coin, transform.position, Quaternion.identity);
         }
-
     }
 }

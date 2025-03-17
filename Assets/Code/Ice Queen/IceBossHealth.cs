@@ -37,7 +37,11 @@ public class IceBossHealth : MonoBehaviour
     // Grace Period Variables
     public float gracePeriod = 2f; // Time after reset during which the shield cannot be melted
     private bool isGracePeriodActive = false; // Whether the grace period is active
-   // public GameObject Emeblem;
+                                              // public GameObject Emeblem;
+    public GameObject hitVFX;
+    public GameObject blockBurstEffect;
+    public GameObject hitSFX;
+
     private void Start()
     {
         // Initialize the health bar
@@ -102,6 +106,12 @@ public class IceBossHealth : MonoBehaviour
 
     public void ApplyDamage(int damage)
     {
+        if (hitVFX != null)
+        {
+            Instantiate(hitVFX, transform.position, Quaternion.identity);
+        }
+
+        hitSFX.GetComponent<AudioSource>().Play();
         if (isShieldActive) return; // No damage if the shield is active
 
         savingSystem = FindObjectOfType<Saving>();
@@ -123,6 +133,8 @@ public class IceBossHealth : MonoBehaviour
         // Check if the main health is depleted
         if (mainHealth <= 0)
         {
+
+
             DestroyBoss();
 
             Instantiate(emblem, transform.position, Quaternion.identity);
@@ -132,8 +144,11 @@ public class IceBossHealth : MonoBehaviour
 
     private void DestroyBoss()
     {
-       
 
+        if (blockBurstEffect != null)
+        {
+            Instantiate(blockBurstEffect, transform.position, Quaternion.identity);
+        }
         Destroy(brain);
         Destroy(gameObject);
         Debug.Log("Boss defeated!");

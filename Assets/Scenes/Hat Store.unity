@@ -20153,6 +20153,20 @@ MonoBehaviour:
   fire: 0
   Arena: 0
   Arenaclear: 0
+  storyButton2Destroyed: 0
+  storyButton3Destroyed: 0
+  generalButtonDestroyed: 0
+  level2Added: 0
+  level3Added: 0
+  level4Added: 0
+  level5Added: 0
+  level6Added: 0
+  levelice1Added: 0
+  levelice2Added: 0
+  levelicebossAdded: 0
+  levelfire1Added: 0
+  levelfirebossAdded: 0
+  Final: 0
 --- !u!4 &1183711468
 Transform:
   m_ObjectHideFlags: 0
@@ -32977,7 +32991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd820bb93888184eb4cd913a87303a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hatName: Funny
+  hatName: Forest
   textBox: {fileID: 395998279}
   hatInfoText: {fileID: 1248116673}
   hatShop: {fileID: 0}

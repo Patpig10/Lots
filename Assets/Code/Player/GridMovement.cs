@@ -160,7 +160,7 @@ public class GridMovement : MonoBehaviour
             yield return null;
         }
 
-        transform.position = targetPosition;
+        transform.position = targetPosition; // Snap to the final position
 
         // Check if the target block has a portal
         Portal portal = targetBlock.GetComponent<Portal>();
@@ -171,13 +171,6 @@ public class GridMovement : MonoBehaviour
 
         isMoving = false;
         Debug.Log("Movement completed to block: " + targetBlock.name);
-
-        if (targetBlock == null)
-        {
-            Debug.LogWarning("Target block is null, cannot move.");
-            isMoving = false;  // Safeguard reset
-            yield break;
-        }
     }
 
     public IEnumerator MoveToBlockWithStrength(float knockbackSpeed)

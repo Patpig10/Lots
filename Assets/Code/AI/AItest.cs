@@ -157,7 +157,7 @@ public class AItest : MonoBehaviour
         Vector3 targetPosition = targetBlock.position;
         targetPosition.y = startPosition.y;  // Ensure y remains constant
 
-        // Rotate to face the target block
+        // Rotate to face the target block (blocky turn)
         yield return StartCoroutine(RotateTowardsTarget(targetPosition));
 
         float journeyLength = Vector3.Distance(startPosition, targetPosition);
@@ -191,20 +191,22 @@ public class AItest : MonoBehaviour
         isMoving = false;  // Allow new movements
     }
 
-    // Coroutine to rotate the AI to face the target position
+    // Coroutine to rotate the AI to face the target position with blocky 90-degree turns
     private IEnumerator RotateTowardsTarget(Vector3 targetPosition)
     {
         Vector3 directionToTarget = (targetPosition - transform.position).normalized;
         float targetAngle = Mathf.Atan2(directionToTarget.x, directionToTarget.z) * Mathf.Rad2Deg;
+
+        // Snap the target angle to the nearest 90-degree increment
+        targetAngle = Mathf.Round(targetAngle / 90) * 90;
+
+        // Create the target rotation
         Quaternion targetRotation = Quaternion.Euler(0, targetAngle, 0);
 
-        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            yield return null;  // Wait for the next frame
-        }
+        // Instantly snap to the target rotation
+        transform.rotation = targetRotation;
 
-        transform.rotation = targetRotation;  // Snap to the final rotation
+        yield return null; // Wait for the next frame (optional, for consistency with coroutine structure)
     }
 
     // Method to check if a block is occupied by an object tagged as "Enemy"

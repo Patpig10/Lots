@@ -26,12 +26,15 @@ public class LichAttack : MonoBehaviour
     private int shotsRemainingInBurst;   // Number of shots remaining in the current burst
     private int attackType = 0;          // 0 = basic shot, 1 = spread shot, 2 = ground spikes
     private bool isOnCooldown = false;   // Whether the enemy is currently on cooldown
-    private LichRangerAI lichRangerAI; // Reference to the LichRangerAI script
+    private LichRangerAI lichRangerAI;   // Reference to the LichRangerAI script
+    public GameObject magic;             // Reference to the magic audio source
+    public GameObject bones;             // Reference to the bones audio source
 
     void Start()
     {
         lichRangerAI = GetComponent<LichRangerAI>(); // Get the LichRangerAI component
     }
+
     void Update()
     {
         // Increment the timer each frame
@@ -67,7 +70,6 @@ public class LichAttack : MonoBehaviour
     }
 
     // Shoot a burst of projectiles
-
     private IEnumerator ShootBurst()
     {
         isShootingBurst = true;
@@ -75,7 +77,7 @@ public class LichAttack : MonoBehaviour
         // Stop the Lich's movement
         if (lichRangerAI != null)
         {
-           // lichRangerAI.StopMovement();
+            // lichRangerAI.StopMovement();
         }
 
         // Determine the number of shots in this burst
@@ -86,13 +88,13 @@ public class LichAttack : MonoBehaviour
             switch (attackType)
             {
                 case 0:
-                    ShootBasicProjectile();
+                    yield return StartCoroutine(PlayAudioAndShoot(magic, () => ShootBasicProjectile()));
                     break;
                 case 1:
-                    ShootSpreadProjectile();
+                    yield return StartCoroutine(PlayAudioAndShoot(magic, () => ShootSpreadProjectile()));
                     break;
                 case 2:
-                    StartCoroutine(ShootGroundSpikeTrail());
+                    yield return StartCoroutine(PlayAudioAndShoot(bones, () => StartCoroutine(ShootGroundSpikeTrail())));
                     break;
             }
             shotsRemainingInBurst--;
@@ -106,6 +108,20 @@ public class LichAttack : MonoBehaviour
         // Start cooldown after the burst is finished
         StartCoroutine(AttackCooldown());
     }
+
+    // Coroutine to play audio and execute the attack after 0.8 seconds
+    private IEnumerator PlayAudioAndShoot(GameObject audioSourceObject, System.Action attackAction)
+    {
+        // Play the audio
+        audioSourceObject.GetComponent<AudioSource>().Play();
+
+        // Wait for 0.8 seconds
+        yield return new WaitForSeconds(0.8f);
+
+        // Execute the attack
+        attackAction();
+    }
+
     // Shoot a single basic projectile
     private void ShootBasicProjectile()
     {
@@ -157,6 +173,7 @@ public class LichAttack : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
+
     // Get the nearest horizontal cardinal direction (forward, backward, left, or right)
     private Vector3 GetNearestHorizontalCardinalDirection(Vector3 direction)
     {

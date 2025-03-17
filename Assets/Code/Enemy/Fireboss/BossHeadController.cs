@@ -17,6 +17,7 @@ public class BossHeadController : MonoBehaviour
     private Vector3 headStartPosition; // Starting position of the head
     private Vector3 jawStartPosition; // Starting position of the jaw
     private bool isShooting = false; // Track if the head is shooting
+    public GameObject iceshot;
 
     private void Start()
     {
@@ -63,6 +64,7 @@ public class BossHeadController : MonoBehaviour
     private IEnumerator MoveDownAndShoot()
     {
         isShooting = true;
+        iceshot.GetComponent<AudioSource>().Play();
 
         // Move the jaw along the Z-axis from z = 0 to z = -5.85 (blocky movement)
         jaw.transform.localPosition = jawStartPosition + Vector3.forward * -jawDropDistance;

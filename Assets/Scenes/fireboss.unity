@@ -682,6 +682,39 @@ MonoBehaviour:
   partHealth: 1200
   bossHealth: {fileID: 1852223138}
   isArm: 1
+  hitVFX: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+  hitSFX: {fileID: 453112453}
+--- !u!1 &30661008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30661009}
+  m_Layer: 0
+  m_Name: fff
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &30661009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30661008}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 28.53, y: -6.14, z: -0.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &31659519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1421,6 +1454,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &92430550
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1601,7 +1637,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 9179206000465546774, guid: 6add79650933e984c9c6323ada94dd1e, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3250b860bb13ddb4bbdd86bc6cad1195, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1382381af5c1923409ab1797346a5120, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3033,6 +3069,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &151443783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4732,6 +4771,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &218629085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5900,6 +5942,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &281645649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7200,6 +7245,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &337730152
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8423,6 +8471,7 @@ MonoBehaviour:
   minShots: 1
   maxShots: 3
   jawDropDistance: 5
+  iceshot: {fileID: 675722906}
 --- !u!114 &409849216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8438,6 +8487,8 @@ MonoBehaviour:
   partHealth: 3600
   bossHealth: {fileID: 1852223138}
   isArm: 0
+  hitVFX: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+  hitSFX: {fileID: 453112453}
 --- !u!1 &417877804
 GameObject:
   m_ObjectHideFlags: 0
@@ -8522,6 +8573,68 @@ Transform:
   - {fileID: 1090604785}
   m_Father: {fileID: 1317701316}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -181.667}
+--- !u!1001 &453112452
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 38.88366
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.9764194
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.946744
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546881351895265845, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_Name
+      value: sword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+--- !u!1 &453112453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6546881351895265845, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+  m_PrefabInstance: {fileID: 453112452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &466602161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9787,6 +9900,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &519480987
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11438,6 +11554,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &614749646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12036,6 +12155,134 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673349976}
   m_Mesh: {fileID: 576818903993012370, guid: 3409e39aaab06c449ae2498d2845a78b, type: 3}
+--- !u!1 &675722906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 675722907}
+  - component: {fileID: 675722908}
+  m_Layer: 0
+  m_Name: dddddssss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &675722907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675722906}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.217281, y: 2.5915804, z: 6.2338715}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &675722908
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675722906}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 3965448966212349482, guid: 6add79650933e984c9c6323ada94dd1e, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 280920cd3171270439ec6a9f5baf30eb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &679632284
 GameObject:
   m_ObjectHideFlags: 0
@@ -15515,6 +15762,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &865445657
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17005,6 +17255,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &909499447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18808,6 +19061,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &998041529
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19563,6 +19819,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1064742625
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19816,6 +20075,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1084234092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22626,18 +22888,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
---- !u!1 &1224222584 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8771091787928289351, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-  m_PrefabInstance: {fileID: 1528489750}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1224222585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224222584}
+  m_GameObject: {fileID: 8771091789354706769}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9662d489af1fb0247bc76d6267a68817, type: 3}
@@ -22670,7 +22927,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1224222584}
+      - m_Target: {fileID: 8771091789354706769}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -22700,7 +22957,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224222584}
+  m_GameObject: {fileID: 8771091789354706769}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -22721,16 +22978,16 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224222584}
+  m_GameObject: {fileID: 8771091789354706769}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4726d42f5a2857c458f3cffe7a1cc078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverHeight: 1
+  hoverHeight: 0.1
   hoverSpeed: 1
   rotateSpeed: 5
-  floorHeight: 3.64
+  floorHeight: 1.673
 --- !u!1 &1224386219
 GameObject:
   m_ObjectHideFlags: 0
@@ -23362,6 +23619,8 @@ MonoBehaviour:
   partHealth: 1200
   bossHealth: {fileID: 1852223138}
   isArm: 1
+  hitVFX: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+  hitSFX: {fileID: 453112453}
 --- !u!1001 &1247214238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25548,6 +25807,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1311589096
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29545,84 +29807,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3580061263695596008, guid: 615a2afecc8af344baab15e6529016cb, type: 3}
   m_PrefabInstance: {fileID: 1526525233}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1528489750
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.0202768
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0202768
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0202768
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 295.8
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -52.1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.523
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.0083921
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.0187692
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.99967945
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.014779475
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -1.675
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -179.006
-      objectReference: {fileID: 0}
-    - target: {fileID: -3910990755373119420, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -2.166
-      objectReference: {fileID: 0}
-    - target: {fileID: 8771091787928289351, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      propertyPath: m_Name
-      value: Flameemblem
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8771091787928289351, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1224222587}
-    - targetCorrespondingSourceObject: {fileID: 8771091787928289351, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1224222586}
-    - targetCorrespondingSourceObject: {fileID: 8771091787928289351, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1224222585}
-  m_SourcePrefab: {fileID: -4161369568681901532, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
 --- !u!1 &1528609541
 GameObject:
   m_ObjectHideFlags: 0
@@ -30709,6 +30893,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1562206977
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31045,6 +31232,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1589151892
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36691,6 +36881,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1815799470
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37043,7 +37236,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 3600
   healthBar: {fileID: 1232998413}
-  emblem: {fileID: 1224222584}
+  emblem: {fileID: 8771091789354706769}
+  spawnpoint: {fileID: 30661008}
+  hitVFX: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+  blockBurstEffect: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
+  hitSFX: {fileID: 453112453}
 --- !u!114 &1852223139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39756,6 +39953,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1967812142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40503,6 +40703,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &2038718206
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41339,6 +41542,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &2080630404
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -42198,6 +42404,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &2139275337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -42415,6 +42624,92 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1562206981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &4177998213842596321
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771091789354706769}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -6646964436099724475, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!4 &5312381282137468754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771091789354706769}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0187692, y: -0.99967945, z: -0.014779475, w: 0.0083921}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0202768, y: 0.0202768, z: 0.0202768}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -1.675, y: -179.006, z: -2.166}
+--- !u!33 &7489653562311027614
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771091789354706769}
+  m_Mesh: {fileID: 576818903993012370, guid: ad2a97cf247c51843ae854586648bb7b, type: 3}
+--- !u!1 &8771091789354706769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5312381282137468754}
+  - component: {fileID: 7489653562311027614}
+  - component: {fileID: 4177998213842596321}
+  - component: {fileID: 1224222587}
+  - component: {fileID: 1224222586}
+  - component: {fileID: 1224222585}
+  m_Layer: 0
+  m_Name: Flameemblem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -42423,6 +42718,7 @@ SceneRoots:
   - {fileID: 1410228285}
   - {fileID: 176699492}
   - {fileID: 1118964746}
+  - {fileID: 30661009}
   - {fileID: 1852223140}
   - {fileID: 1854833185}
   - {fileID: 1395058979}
@@ -42438,8 +42734,10 @@ SceneRoots:
   - {fileID: 1652016167}
   - {fileID: 554714996}
   - {fileID: 333695985}
-  - {fileID: 1528489750}
+  - {fileID: 5312381282137468754}
   - {fileID: 1351405881}
   - {fileID: 882356723}
   - {fileID: 480086794}
   - {fileID: 1662830320}
+  - {fileID: 453112452}
+  - {fileID: 675722907}

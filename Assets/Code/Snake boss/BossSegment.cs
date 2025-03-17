@@ -10,6 +10,8 @@ public class BossSegment : MonoBehaviour
     public bool hit = false;
     public Animator animator; // Reference to the Animator component
     private Saving savingSystem;
+    public GameObject hitVFX;
+    public GameObject hitSFX;
 
 
     private void Start()
@@ -37,6 +39,12 @@ public class BossSegment : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
+        if (hitVFX != null)
+        {
+            Instantiate(hitVFX, transform.position, Quaternion.identity);
+        }
+        hitSFX.GetComponent<AudioSource>().Play();
         //savingSystem = FindObjectOfType<Saving>();
 
         if (savingSystem != null)

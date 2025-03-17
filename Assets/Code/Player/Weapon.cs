@@ -6,7 +6,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public int damage = 20; // Default damage, will be overridden by saved value
-
+    public bool boom = false;
     public Saving savingSystem;
 
     private void Start()
@@ -37,6 +37,10 @@ public class Weapon : MonoBehaviour
             enemy.TakeDamage(damage); // Deal damage to the enemy
             if(tag=="Block")
             {
+                if(boom)
+                {
+                    enemy.TakeDamage(damage* 3);
+                }
                 enemy.TakeDamage(damage -= 20);
             }
             return; // Exit the method after dealing damage
@@ -54,6 +58,10 @@ public class Weapon : MonoBehaviour
 
         if (fire != null)
         {
+            if (boom)
+            {
+                fire.TakeDamage(damage*3);
+            }
             fire.TakeDamage(damage); // Deal damage to the dummy
             return; // Exit the method after dealing damage
         }
@@ -80,6 +88,8 @@ public class Weapon : MonoBehaviour
 
         if (Lich != null)
         {
+          
+
             Lich.ApplyDamage(damage);  // Deal damage to the dummy
             return; // Exit the method after dealing damage
         }
@@ -90,12 +100,21 @@ public class Weapon : MonoBehaviour
         // If it does, apply damage to the boss segment
         if (bossSegment != null)
         {
+            if (boom)
+            {
+                bossSegment.TakeDamage(damage*3);
+            }
             bossSegment.TakeDamage(damage); // Deal damage to the boss segment
         }
 
         IceBossHealth iceBossHealth = other.GetComponent<IceBossHealth>();
         if (iceBossHealth != null)
         {
+
+            if (boom)
+            {
+                iceBossHealth.ApplyDamage(damage*4);
+            }
             iceBossHealth.ApplyDamage(damage);
         }
 

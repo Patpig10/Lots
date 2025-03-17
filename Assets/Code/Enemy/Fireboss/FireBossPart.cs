@@ -5,9 +5,18 @@ public class FireBossPart : MonoBehaviour
     public int partHealth = 1200; // Health of this specific part
     public FireBossHealth bossHealth; // Reference to the main boss health script
     public bool isArm = false; // Whether this part is an arm (can be disabled)
-
+    public GameObject hitVFX;
+    public GameObject hitSFX;
     public void TakeDamage(int damage)
     {
+
+        hitSFX.GetComponent<AudioSource>().Play();
+
+        if (hitVFX != null)
+        {
+            Instantiate(hitVFX, transform.position, Quaternion.identity);
+        }
+
         if (partHealth <= 0) return; // Ignore damage if the part is already disabled
 
         partHealth -= damage;

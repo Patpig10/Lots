@@ -102,11 +102,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   lifetime: 5
-  destroyOnCollision: 1
+  destroyOnCollision: 0
   destroyOnCollisionPlayer: 1
   knockbackDistance: 2
   knockbackStrength: 5
-  player: 1
+  playerProjectile: 0
+  weapon: {fileID: 0}
 --- !u!114 &1927450892525713659
 MonoBehaviour:
   m_ObjectHideFlags: 0

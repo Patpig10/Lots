@@ -10,7 +10,7 @@ public class EnemyShooter : MonoBehaviour
     public float detectionRange = 10f;   // Range in which the enemy can detect the player
     public Transform player;             // Reference to the player's transform
     public bool shootTowardPlayer = true; // Whether to shoot towards the player
-
+    public GameObject iceshot;
     private float fireTimer;
 
     void Update()
@@ -50,6 +50,8 @@ public class EnemyShooter : MonoBehaviour
     // Shoot a projectile
     private void ShootProjectile()
     {
+        iceshot.GetComponent<AudioSource>().Play();
+
         // Create the projectile at the fire point's position and rotation
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 

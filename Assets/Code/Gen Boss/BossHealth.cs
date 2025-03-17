@@ -11,6 +11,8 @@ public class BossHealth : MonoBehaviour
     public Slider healthBar; // Reference to the health bar slider
     public GameObject brain;
     public GameObject emblem; // Object to spawn when boss is destroyed
+    public GameObject blockBurstEffect;
+
     private void Start()
     {
 
@@ -50,6 +52,10 @@ public class BossHealth : MonoBehaviour
 
     private void DestroyBoss()
     {
+        if (blockBurstEffect != null)
+        {
+            Instantiate(blockBurstEffect, transform.position, Quaternion.identity);
+        }
 
         // Destroy all BossSegment objects
         BossSegment[] segments = FindObjectsOfType<BossSegment>();

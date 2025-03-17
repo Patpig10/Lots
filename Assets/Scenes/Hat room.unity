@@ -515,9 +515,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 9097041}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &9097041
 Transform:
   m_ObjectHideFlags: 0
@@ -2130,6 +2131,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1993224310}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
       objectReference: {fileID: 0}
@@ -3712,6 +3717,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -5781,6 +5790,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1993224310}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
       objectReference: {fileID: 0}
@@ -5950,6 +5963,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -13938,9 +13955,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 525054155}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &525054155
 Transform:
   m_ObjectHideFlags: 0
@@ -14382,6 +14400,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -15172,9 +15194,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 586227677}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &586227677
 Transform:
   m_ObjectHideFlags: 0
@@ -16121,6 +16144,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -18285,9 +18312,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 722034650}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &722034650
 Transform:
   m_ObjectHideFlags: 0
@@ -18505,9 +18533,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 733888260}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &733888260
 Transform:
   m_ObjectHideFlags: 0
@@ -18558,9 +18587,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 739091896}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &739091896
 Transform:
   m_ObjectHideFlags: 0
@@ -19546,6 +19576,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767014682}
   m_CullTransparentMesh: 1
+--- !u!1001 &770845788
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 38.88366
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.9764194
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.946744
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546881351895265845, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_Name
+      value: sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034733697395505693, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 280920cd3171270439ec6a9f5baf30eb, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
 --- !u!1001 &778501688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19889,6 +19980,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780411599}
   m_CullTransparentMesh: 1
+--- !u!1 &791195903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6546881351895265845, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+  m_PrefabInstance: {fileID: 770845788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &791224141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23380,6 +23476,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1993224310}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
       objectReference: {fileID: 0}
@@ -25214,9 +25314,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 986296601}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &986296601
 Transform:
   m_ObjectHideFlags: 0
@@ -25667,6 +25768,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -27227,9 +27332,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 1075806799}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &1075806799
 Transform:
   m_ObjectHideFlags: 0
@@ -28932,9 +29038,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 1151740265}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!1 &1153243421
 GameObject:
   m_ObjectHideFlags: 0
@@ -30318,9 +30425,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 1220554316}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &1220554316
 Transform:
   m_ObjectHideFlags: 0
@@ -31019,7 +31127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3228663814916404156, guid: 0e17abaadf2f92f46a2b2ed5d109b7ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3580655787218933979, guid: 0e17abaadf2f92f46a2b2ed5d109b7ec, type: 3}
       propertyPath: m_Layer
@@ -31072,9 +31180,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 1245414265}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &1245414265
 Transform:
   m_ObjectHideFlags: 0
@@ -31544,6 +31653,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -32376,6 +32489,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -40230,6 +40347,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1993224310}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
       objectReference: {fileID: 0}
@@ -40571,6 +40692,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -42243,11 +42368,13 @@ MonoBehaviour:
   level3Added: 0
   level4Added: 0
   level5Added: 0
+  level6Added: 0
   levelice1Added: 0
   levelice2Added: 0
   levelicebossAdded: 0
   levelfire1Added: 0
   levelfirebossAdded: 0
+  Final: 0
 --- !u!114 &1633010833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42417,9 +42544,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 1645063868}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &1645063868
 Transform:
   m_ObjectHideFlags: 0
@@ -42850,9 +42978,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 1674547204}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &1674547204
 Transform:
   m_ObjectHideFlags: 0
@@ -43199,6 +43328,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -44041,6 +44174,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993224310}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
@@ -45327,6 +45464,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1993224310}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
       objectReference: {fileID: 0}
@@ -45556,9 +45697,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 1795812054}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &1795812054
 Transform:
   m_ObjectHideFlags: 0
@@ -46260,9 +46402,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 1846253420}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &1846253420
 Transform:
   m_ObjectHideFlags: 0
@@ -48784,9 +48927,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7063512241777373203, guid: f5328d5879c303b408cd9e5fb2a95758, type: 3}
   firePoint: {fileID: 1921917857}
   fireRate: 5
-  detectionRange: 0.09
+  detectionRange: 14.16
   player: {fileID: 1993224310}
   shootTowardPlayer: 0
+  iceshot: {fileID: 791195903}
 --- !u!4 &1921917857
 Transform:
   m_ObjectHideFlags: 0
@@ -54065,6 +54209,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1993224310}
     - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 791195903}
+    - target: {fileID: 3464570777999395068, guid: caa8aead643132e42a0289791bc143aa, type: 3}
       propertyPath: detectionRange
       value: 19.78
       objectReference: {fileID: 0}
@@ -55330,3 +55478,4 @@ SceneRoots:
   - {fileID: 1992382074}
   - {fileID: 1593830629}
   - {fileID: 5165488805801623078}
+  - {fileID: 770845788}

@@ -881,6 +881,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!65 &981438104702729725
 BoxCollider:
@@ -1571,6 +1572,7 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 0}
+  blockBurstEffect: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
 --- !u!65 &2534285300527151452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1616,6 +1618,7 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
 --- !u!54 &200829600727732221
 Rigidbody:
   m_ObjectHideFlags: 0

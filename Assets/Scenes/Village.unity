@@ -542,9 +542,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5626511431826956244, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 26354078}
-    - targetCorrespondingSourceObject: {fileID: 5626511431826956244, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 26354077}
   m_SourcePrefab: {fileID: 100100000, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
 --- !u!4 &26354075 stripped
@@ -584,19 +581,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &26354078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26354076}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 353fa184b2094d940b392f71a1d5a504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 26354076}
 --- !u!1 &32348678
 GameObject:
   m_ObjectHideFlags: 0
@@ -6407,6 +6391,8 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
 --- !u!65 &245757660
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17826,6 +17812,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!1 &551300455
 GameObject:
@@ -19732,7 +19719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &617928905
 Transform:
   m_ObjectHideFlags: 0
@@ -24908,6 +24895,8 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
 --- !u!65 &783979338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27617,6 +27606,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!54 &872841172
 Rigidbody:
@@ -27731,6 +27721,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!23 &872841175
 MeshRenderer:
@@ -31259,6 +31250,8 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
 --- !u!65 &999594957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31924,7 +31917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1032275579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34950,7 +34943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1155332882
 Transform:
   m_ObjectHideFlags: 0
@@ -38328,6 +38321,20 @@ MonoBehaviour:
   fire: 0
   Arena: 0
   Arenaclear: 0
+  storyButton2Destroyed: 0
+  storyButton3Destroyed: 0
+  generalButtonDestroyed: 0
+  level2Added: 0
+  level3Added: 0
+  level4Added: 0
+  level5Added: 0
+  level6Added: 0
+  levelice1Added: 0
+  levelice2Added: 0
+  levelicebossAdded: 0
+  levelfire1Added: 0
+  levelfirebossAdded: 0
+  Final: 0
 --- !u!4 &1256430679
 Transform:
   m_ObjectHideFlags: 0
@@ -46907,6 +46914,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!1 &1592404389
 GameObject:
@@ -48281,9 +48289,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5626511431826956244, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1651429572}
-    - targetCorrespondingSourceObject: {fileID: 5626511431826956244, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1651429571}
   m_SourcePrefab: {fileID: 100100000, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
 --- !u!4 &1651429569 stripped
@@ -48323,19 +48328,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1651429572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651429570}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 353fa184b2094d940b392f71a1d5a504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 1651429570}
 --- !u!1001 &1655055340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52992,9 +52984,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5626511431826956244, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1789029800}
-    - targetCorrespondingSourceObject: {fileID: 5626511431826956244, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1789029799}
   m_SourcePrefab: {fileID: 100100000, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
 --- !u!1 &1789029797 stripped
@@ -53034,19 +53023,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1789029800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789029797}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 353fa184b2094d940b392f71a1d5a504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 1789029797}
 --- !u!1001 &1791714657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54928,6 +54904,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!1 &1853052427
 GameObject:
@@ -55378,9 +55355,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5626511431826956244, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1859229358}
-    - targetCorrespondingSourceObject: {fileID: 5626511431826956244, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1859229357}
   m_SourcePrefab: {fileID: 100100000, guid: d7f8dd9b26917d54b85f35160ab7da4c, type: 3}
 --- !u!1 &1859229355 stripped
@@ -55420,19 +55394,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1859229358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859229355}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 353fa184b2094d940b392f71a1d5a504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 1859229355}
 --- !u!1 &1860693285
 GameObject:
   m_ObjectHideFlags: 0
@@ -60070,6 +60031,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!54 &2007082462
 Rigidbody:
@@ -60184,6 +60146,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!23 &2007082465
 MeshRenderer:
@@ -63678,6 +63641,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!54 &2144164053
 Rigidbody:
@@ -63792,6 +63756,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!23 &2144164056
 MeshRenderer:
@@ -65893,6 +65858,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!114 &3919229365274833402
 MonoBehaviour:
@@ -65959,6 +65925,7 @@ MonoBehaviour:
   movementSpeed: 3
   pauseDuration: 1
   detectionRadius: 10
+  rotationSpeed: 5
   isMoving: 0
 --- !u!1 &3931827926547981735
 GameObject:
@@ -66509,6 +66476,8 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
 --- !u!114 &4913854780858412615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66533,6 +66502,8 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
 --- !u!1 &4946114244378360194
 GameObject:
   m_ObjectHideFlags: 0

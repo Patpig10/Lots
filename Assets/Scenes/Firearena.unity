@@ -1608,6 +1608,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &70364254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2412,6 +2415,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &100290439
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6064,6 +6070,18 @@ PrefabInstance:
       propertyPath: blocks.Array.data[98]
       value: 
       objectReference: {fileID: 1168501577}
+    - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 6850443068744226694, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15
@@ -6104,6 +6122,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8488887996973828848, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
     - target: {fileID: 9011653115019005756, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: player
       value: 
@@ -6274,6 +6296,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &257941347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7782,6 +7807,18 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 2919908199020734256, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: m_Name
       value: Cube (3)
@@ -7790,6 +7827,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1479331958}
+    - target: {fileID: 4531855155130916722, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
     - target: {fileID: 4531855155130916722, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -8252,6 +8293,18 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 2919908199020734256, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: m_Name
       value: Cube (1)
@@ -8260,6 +8313,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1479331958}
+    - target: {fileID: 4531855155130916722, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
     - target: {fileID: 4531855155130916722, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -8399,6 +8456,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &333672452
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9284,6 +9344,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &348441233
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9467,6 +9530,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &359030057
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11892,6 +11958,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &461907240
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14083,6 +14152,134 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7193226229456163787, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
   m_PrefabInstance: {fileID: 1163707086}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &589603262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 589603264}
+  - component: {fileID: 589603263}
+  m_Layer: 0
+  m_Name: aaaaaaa (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &589603263
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589603262}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 3965448966212349482, guid: 6add79650933e984c9c6323ada94dd1e, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8255fc65627d06e4b898b4c5ae9f58f8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &589603264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589603262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.4803357, y: 1.2051593, z: 55.239918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597568265
 GameObject:
   m_ObjectHideFlags: 0
@@ -14551,6 +14748,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &614302946
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15048,6 +15248,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640326803}
   m_CullTransparentMesh: 1
+--- !u!1001 &644459189
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 38.88366
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.9764194
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.946744
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522913185593762982, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546881351895265845, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+      propertyPath: m_Name
+      value: sword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+--- !u!1 &644459190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6546881351895265845, guid: 1109d809b40ec4e45b74d472f1982d55, type: 3}
+  m_PrefabInstance: {fileID: 644459189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &645494356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16751,6 +17013,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &739957768
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20799,6 +21064,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &912291485
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22799,6 +23067,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1049861818
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24222,6 +24493,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1121804325
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25913,6 +26187,18 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 2919908199020734256, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: m_Name
       value: Cube (2)
@@ -25921,6 +26207,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1479331958}
+    - target: {fileID: 4531855155130916722, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
     - target: {fileID: 4531855155130916722, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -26015,9 +26305,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1600122520}
     m_Modifications:
     - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 1803575353906562187, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
       propertyPath: player
       value: 
@@ -26474,6 +26776,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1479331958}
+    - target: {fileID: 4405961257100985647, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 589603262}
     - target: {fileID: 4505864868951128832, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
       propertyPath: m_Name
       value: Ice blast 1 (4)
@@ -26572,9 +26878,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1600122520}
     m_Modifications:
     - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 1803575353906562187, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
       propertyPath: player
       value: 
@@ -27031,6 +27349,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1479331958}
+    - target: {fileID: 4405961257100985647, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 589603262}
     - target: {fileID: 4505864868951128832, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
       propertyPath: m_Name
       value: Ice blast 1 (3)
@@ -31988,6 +32310,18 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 2919908199020734256, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: m_Name
       value: Cube
@@ -31996,6 +32330,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1479331958}
+    - target: {fileID: 4531855155130916722, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
     - target: {fileID: 4531855155130916722, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -32139,6 +32477,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1372209750
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32684,6 +33025,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1390229078
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33729,7 +34073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1438852898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35248,6 +35592,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5364630713723245490, guid: 4becdf41fba784e4ab0f9575c3c06d48, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 5364630713723245490, guid: 4becdf41fba784e4ab0f9575c3c06d48, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 5364630713723245490, guid: 4becdf41fba784e4ab0f9575c3c06d48, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 5457045239121436757, guid: 4becdf41fba784e4ab0f9575c3c06d48, type: 3}
       propertyPath: m_Name
       value: Ice golm 12 (1)
@@ -36583,9 +36939,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1600122520}
     m_Modifications:
     - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 327670045153196117, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 1803575353906562187, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
       propertyPath: player
       value: 
@@ -37042,6 +37410,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1479331958}
+    - target: {fileID: 4405961257100985647, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 589603262}
     - target: {fileID: 4505864868951128832, guid: 5e74d130124659f4ba4c2c9a25892cb0, type: 3}
       propertyPath: m_Name
       value: Ice blast 1
@@ -37428,6 +37800,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1581697981
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38683,6 +39058,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1610875605
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38811,6 +39189,134 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1610875602}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1623408604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1623408606}
+  - component: {fileID: 1623408605}
+  m_Layer: 0
+  m_Name: aaaaaaa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1623408605
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623408604}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 3965448966212349482, guid: 6add79650933e984c9c6323ada94dd1e, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 280920cd3171270439ec6a9f5baf30eb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1623408606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623408604}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.4803357, y: 1.2051593, z: 55.239918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624775432
 GameObject:
@@ -41786,6 +42292,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1727511926
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -42261,6 +42770,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1764547773
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -42894,6 +43406,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1806468129
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43230,6 +43745,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1819365227
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47532,6 +48050,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1479331956}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 442994532}
         m_TargetAssemblyTypeName: WaveManager, Assembly-CSharp
         m_MethodName: StartNextWave
@@ -48196,6 +48726,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &2120800694
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -48932,9 +49465,21 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5364630713723245490, guid: 4becdf41fba784e4ab0f9575c3c06d48, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 5364630713723245490, guid: 4becdf41fba784e4ab0f9575c3c06d48, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 5364630713723245490, guid: 4becdf41fba784e4ab0f9575c3c06d48, type: 3}
       propertyPath: maxHealth
       value: 1300
       objectReference: {fileID: 0}
+    - target: {fileID: 5364630713723245490, guid: 4becdf41fba784e4ab0f9575c3c06d48, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 5457045239121436757, guid: 4becdf41fba784e4ab0f9575c3c06d48, type: 3}
       propertyPath: m_Name
       value: Ice golm 12
@@ -49473,6 +50018,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1479331958}
     - target: {fileID: 4515314166125813577, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: movementSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515314166125813577, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: blocks.Array.data[0]
       value: 
       objectReference: {fileID: 1835387611}
@@ -49868,17 +50417,29 @@ PrefabInstance:
       propertyPath: blocks.Array.data[98]
       value: 
       objectReference: {fileID: 1168501577}
+    - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 644459190}
+    - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: blockBurstEffect
+      value: 
+      objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
     - target: {fileID: 6850443068744226694, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.42
       objectReference: {fileID: 0}
     - target: {fileID: 6850443068744226694, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 6850443068744226694, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.77
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 6850443068744226694, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: m_LocalRotation.w
@@ -49908,6 +50469,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8488887996973828848, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
     - target: {fileID: 9011653115019005756, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: player
       value: 
@@ -51024,3 +51589,6 @@ SceneRoots:
   - {fileID: 328089263643542616}
   - {fileID: 1122297263}
   - {fileID: 5312381282272190207}
+  - {fileID: 644459189}
+  - {fileID: 1623408606}
+  - {fileID: 589603264}
