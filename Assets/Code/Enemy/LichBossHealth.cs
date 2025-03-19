@@ -18,9 +18,11 @@ public class LichBossHealth : MonoBehaviour
 
     public float shieldCooldown = 10f;
     private bool isShieldOnCooldown = false;
-
+    public OrbManager orbManager;
     private void Start()
     {
+        orbManager = FindObjectOfType<OrbManager>(); // Find the OrbManager in the scene
+       // orbManager.ActivateRandomOrb(); // Activate a random orb at the start
         if (healthBar != null)
         {
             healthBar.maxValue = mainHealth;

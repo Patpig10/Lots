@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserController : MonoBehaviour
@@ -28,6 +26,12 @@ public class LaserController : MonoBehaviour
     // Create the laser using small cubes
     private void CreateLaser()
     {
+        if (startPoint == null || endPoint == null)
+        {
+            Debug.LogWarning("Laser start or end point is not set!");
+            return;
+        }
+
         // Calculate the distance between the start and end points
         float distance = Vector3.Distance(startPoint.position, endPoint.position);
 
@@ -63,15 +67,18 @@ public class LaserController : MonoBehaviour
         Vector3 direction = (endPoint.position - startPoint.position).normalized;
         float distance = Vector3.Distance(startPoint.position, endPoint.position);
 
+        // Debug laser path
+        Debug.DrawLine(startPoint.position, endPoint.position, Color.red, 0.1f);
+
         // Update the position and scale of each cube
         for (int i = 0; i < laserCubes.Length; i++)
         {
             float t = (float)i / (laserCubes.Length - 1);
-            Vector3 position = Vector3.Lerp(startPoint.position, endPoint.position, t);
+            Vector3 position = Vector3.Lerp(startPoint.position, endPoint.position, t) + Vector3.up * cubeSize * 0.5f;
             laserCubes[i].transform.position = position;
 
             // Rotate the cube to align with the laser direction
-            laserCubes[i].transform.rotation = Quaternion.LookRotation(direction);
+            laserCubes[i].transform.LookAt(endPoint);
         }
     }
 
@@ -80,6 +87,7 @@ public class LaserController : MonoBehaviour
     {
         startPoint = start;
         endPoint = end;
+        UpdateLaser();
     }
 
     // Disable the laser
