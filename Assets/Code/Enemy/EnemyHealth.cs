@@ -114,23 +114,33 @@ public class EnemyHealth : MonoBehaviour
     // Method to handle what happens when the enemy dies
     private void Die()
     {
+        // Spawn block burst effect if available
         if (blockBurstEffect != null)
         {
             Instantiate(blockBurstEffect, transform.position, Quaternion.identity);
         }
 
         Debug.LogError("deadvvvvvvv");
-        // For now, we just destroy the enemy GameObject
+
+        // Destroy the enemy GameObject
         Destroy(Body);
 
+        // Determine which item to spawn (potion or coin)
+        float randomValue = Random.value; // Generate a single random value for both checks
+
         // Spawn a potion with a certain chance
-        if (Random.value <= potionSpawnChance && potionPrefab != null)
+        if (randomValue <= potionSpawnChance && potionPrefab != null)
         {
-            Instantiate(potionPrefab, transform.position, Quaternion.identity);
+            // Rotate the potionPrefab by -90 degrees on the X-axis
+            Quaternion rotation = Quaternion.Euler(-90f, 0f, 0f);
+            Instantiate(potionPrefab, transform.position, rotation);
         }
-        if (Random.value <= coinSpawnChance && coin != null)
+        // Spawn a coin only if the potion was not spawned
+        else if (randomValue <= potionSpawnChance + coinSpawnChance && coin != null)
         {
-            Instantiate(coin, transform.position, Quaternion.identity);
+            // Rotate the coin by -90 degrees on the X-axis
+            Quaternion rotation = Quaternion.Euler(-90f, 0f, 0f);
+            Instantiate(coin, transform.position, rotation);
         }
     }
 }
