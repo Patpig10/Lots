@@ -42,7 +42,7 @@ public class IceBossHealth : MonoBehaviour
     public GameObject blockBurstEffect;
     public GameObject hitSFX;
     public GameObject Shatter;
-
+    public Animator animator;
     private void Start()
     {
         // Initialize the health bar
@@ -221,6 +221,7 @@ public class IceBossHealth : MonoBehaviour
     // Complete the shield reset process
     private void ResetShieldComplete()
     {
+        animator.SetTrigger("Shield");
         isResettingShield = false;
         isShieldActive = true;
         isShieldOnCooldown = false;
