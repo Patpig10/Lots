@@ -29,6 +29,7 @@ public class LichAttack : MonoBehaviour
     private LichRangerAI lichRangerAI;   // Reference to the LichRangerAI script
     public GameObject magic;             // Reference to the magic audio source
     public GameObject bones;             // Reference to the bones audio source
+    public Animator animator;            // Reference to the animator
 
     void Start()
     {
@@ -73,7 +74,6 @@ public class LichAttack : MonoBehaviour
     private IEnumerator ShootBurst()
     {
         isShootingBurst = true;
-
         // Stop the Lich's movement
         if (lichRangerAI != null)
         {
@@ -125,6 +125,8 @@ public class LichAttack : MonoBehaviour
     // Shoot a single basic projectile
     private void ShootBasicProjectile()
     {
+        animator.SetTrigger("Shot1");
+
         // Create the projectile at the fire point's position and rotation
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
@@ -135,6 +137,8 @@ public class LichAttack : MonoBehaviour
     // Shoot a spread of projectiles
     private void ShootSpreadProjectile()
     {
+        animator.SetTrigger("Shot");
+
         float angleStep = spreadAngle / (numberOfSpreadShots - 1);
         float startAngle = -spreadAngle / 2;
 
@@ -150,6 +154,8 @@ public class LichAttack : MonoBehaviour
     // Shoot a trail of ground spikes toward the player
     private IEnumerator ShootGroundSpikeTrail()
     {
+        animator.SetTrigger("Bones");
+
         Vector3 directionToPlayer = (player.position - transform.position).normalized;
 
         // Snap the direction to the nearest horizontal cardinal direction (forward, backward, left, or right)
