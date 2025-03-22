@@ -1,0 +1,60 @@
+{
+  "asset": {
+    "generator": "UnityGLTF",
+    "version": "2.0"
+  },
+  "extensionsUsed": [
+    "KHR_materials_ior",
+    "KHR_materials_clearcoat"
+  ],
+  "images": [
+    {
+      "uri": "Texture_0%20.png",
+      "name": ""
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 1
+        },
+        "metallicFactor": 0.90499997138977051,
+        "roughnessFactor": 0.81499999761581421
+      },
+      "emissiveFactor": [
+        0.02641511,
+        0.003139908,
+        0.003139908
+      ],
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.63099998235702515,
+      "name": "Material.1",
+      "extensions": {
+        "KHR_materials_ior": {
+          "ior": 1.833
+        },
+        "KHR_materials_clearcoat": {}
+      }
+    }
+  ],
+  "samplers": [
+    {
+      "minFilter": 9987
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0,
+      "name": "Texture_0 "
+    }
+  ]
+}

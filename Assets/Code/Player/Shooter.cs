@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-
     public GameObject projectilePrefab;  // The projectile to shoot
     public Transform firePoint;  // The point where the projectile will be spawned
     public float projectileSpeed = 10f;  // Speed of the projectile
     private HeartSystem heartSystem;  // Reference to the HeartSystem
+    public GameObject slimeshot;
+    public Animator Player;
+    public float shootDelay = 1f;  // Delay before shooting the projectile
 
     void Start()
     {
@@ -23,14 +25,30 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-       /* if (Input.GetKeyDown(KeyCode.Q))
+        /* if (Input.GetKeyDown(KeyCode.Q))
         {
             ShootProjectile();
         }*/
     }
 
-  public void ShootProjectile()
+    public void ShootProjectile()
     {
+        // Trigger the shoot animation
+        Player.SetTrigger("Shoot");
+
+        // Play the shooting sound
+
+        // Start the coroutine to delay the projectile instantiation
+        StartCoroutine(ShootAfterDelay());
+    }
+
+    private IEnumerator ShootAfterDelay()
+    {
+        slimeshot.GetComponent<AudioSource>().Play();
+
+        // Wait for the specified delay
+        yield return new WaitForSeconds(shootDelay);
+
         // Check if the player has enough hearts to shoot
         if (heartSystem != null && heartSystem.GetCurrentLife() > 0)
         {
@@ -45,7 +63,7 @@ public class Shooter : MonoBehaviour
             }
 
             // Remove one heart
-           // heartSystem.TakeDamage(1);
+            // heartSystem.TakeDamage(1);
         }
         else
         {

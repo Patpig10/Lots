@@ -9,7 +9,9 @@ public class Shop : MonoBehaviour
     public Weapon weapon;  // Reference to the Weapon script
     public int cost;
     public int coins;
+    public int Attack;  
     public TextMeshProUGUI coinsText;  // Reference to the UI text displaying the player's coins
+    public TextMeshProUGUI AttackText;
     public Saving save;
 
     // Start is called before the first frame update
@@ -23,8 +25,9 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Attack = weapon.damage;
         coins = save.maxcoins;  // Set the player's coins to the amount saved in the SaveData object
-
+        AttackText.text = "Attack: " + Attack.ToString();  // Update the UI text to display the player's coins
         coinsText.text = "Coins: " + coins.ToString();  // Update the UI text to display the player's coins
     }
 
@@ -44,7 +47,7 @@ public class Shop : MonoBehaviour
         cost = 150;
         if (coins >= cost)
         {
-            weapon.damage += 10;  // Increase the damage of the weapon
+            weapon.damage += 20;  // Increase the damage of the weapon
             save.SetWeaponDamage(weapon.damage);  // Update the saved damage value
             coins -= cost;  // Subtract the cost from the player's coins
             save.maxcoins = coins;  // Update the saved coins value

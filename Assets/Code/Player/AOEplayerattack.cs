@@ -10,7 +10,6 @@ public class AOEplayerattack : MonoBehaviour
     public GameObject fireAOEPrefab; // Reference to the Fire AOE prefab (particle system)
     public Transform playerTransform; // Reference to the player's transform
     public GameObject aoeSphere; // Reference to the sphere GameObject
-
     private List<EnemyHealth> enemiesHit = new List<EnemyHealth>();
     private bool isAOEActive = false; // Track if the AOE attack is currently active
 
@@ -26,6 +25,7 @@ public class AOEplayerattack : MonoBehaviour
     // Coroutine to handle the expanding AOE attack over time
     private IEnumerator ExpandingAOEAttack()
     {
+
         isAOEActive = true; // Mark AOE as active
         float currentRadius = 0f;
         float timeElapsed = 0f;

@@ -705,12 +705,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41943684}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0021330316, y: -0.68646693, z: 0.00038155436, w: 0.72715783}
-  m_LocalPosition: {x: 27.8, y: -8.1, z: -2}
+  m_LocalRotation: {x: -0.002132972, y: -0.68646693, z: 0.00038152456, w: 0.72715783}
+  m_LocalPosition: {x: 27.800005, y: -8.100015, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 362613144}
+  m_Father: {fileID: 244020612}
   m_LocalEulerAnglesHint: {x: -0.148, y: -86.703, z: 0.2}
 --- !u!23 &41943686
 MeshRenderer:
@@ -1225,6 +1225,10 @@ PrefabInstance:
     - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
       propertyPath: m_Name
       value: bench desk (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
       propertyPath: m_TagString
@@ -3207,6 +3211,40 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &244020611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244020612}
+  m_Layer: 0
+  m_Name: stack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244020612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244020611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 690955561}
+  - {fileID: 41943685}
+  - {fileID: 1384952470}
+  m_Father: {fileID: 362613144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &247438486
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,6 +4082,10 @@ PrefabInstance:
       value: bench desk (9)
       objectReference: {fileID: 0}
     - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
       propertyPath: m_TagString
       value: Unpassable
       objectReference: {fileID: 0}
@@ -4778,27 +4820,21 @@ PrefabInstance:
       addedObject: {fileID: 267028454}
     - targetCorrespondingSourceObject: {fileID: -3910990755373119420, guid: 792e4c8df52cc4a4385393c661fe360a, type: 3}
       insertIndex: 6
-      addedObject: {fileID: 690955561}
+      addedObject: {fileID: 244020612}
     - targetCorrespondingSourceObject: {fileID: -3910990755373119420, guid: 792e4c8df52cc4a4385393c661fe360a, type: 3}
       insertIndex: 7
-      addedObject: {fileID: 41943685}
-    - targetCorrespondingSourceObject: {fileID: -3910990755373119420, guid: 792e4c8df52cc4a4385393c661fe360a, type: 3}
-      insertIndex: 8
       addedObject: {fileID: 1930026284}
     - targetCorrespondingSourceObject: {fileID: -3910990755373119420, guid: 792e4c8df52cc4a4385393c661fe360a, type: 3}
-      insertIndex: 9
+      insertIndex: 8
       addedObject: {fileID: 1923645708}
     - targetCorrespondingSourceObject: {fileID: -3910990755373119420, guid: 792e4c8df52cc4a4385393c661fe360a, type: 3}
-      insertIndex: 10
+      insertIndex: 9
       addedObject: {fileID: 617996079}
     - targetCorrespondingSourceObject: {fileID: -3910990755373119420, guid: 792e4c8df52cc4a4385393c661fe360a, type: 3}
-      insertIndex: 11
-      addedObject: {fileID: 1384952470}
-    - targetCorrespondingSourceObject: {fileID: -3910990755373119420, guid: 792e4c8df52cc4a4385393c661fe360a, type: 3}
-      insertIndex: 12
+      insertIndex: 10
       addedObject: {fileID: 1041836645}
     - targetCorrespondingSourceObject: {fileID: -3910990755373119420, guid: 792e4c8df52cc4a4385393c661fe360a, type: 3}
-      insertIndex: 13
+      insertIndex: 11
       addedObject: {fileID: 324888142}
     - targetCorrespondingSourceObject: {fileID: -3910990755373119420, guid: 792e4c8df52cc4a4385393c661fe360a, type: 3}
       insertIndex: -1
@@ -9469,12 +9505,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690955560}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0021330316, y: -0.68646693, z: 0.00038155436, w: 0.72715783}
-  m_LocalPosition: {x: 27.8, y: -8.1, z: -2}
+  m_LocalRotation: {x: -0.002132972, y: -0.68646693, z: 0.00038152456, w: 0.72715783}
+  m_LocalPosition: {x: 27.800005, y: -8.100015, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 362613144}
+  m_Father: {fileID: 244020612}
   m_LocalEulerAnglesHint: {x: -0.148, y: -86.703, z: 0.2}
 --- !u!23 &690955562
 MeshRenderer:
@@ -11064,6 +11100,10 @@ PrefabInstance:
     - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
       propertyPath: m_Name
       value: bench desk (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
       propertyPath: m_TagString
@@ -14071,7 +14111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &936799629
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18202,6 +18242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bench desk (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21395,12 +21439,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384952469}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0021330316, y: -0.68646693, z: 0.00038155436, w: 0.72715783}
-  m_LocalPosition: {x: 27.8, y: -8.1, z: -2}
+  m_LocalRotation: {x: -0.002132972, y: -0.68646693, z: 0.00038152456, w: 0.72715783}
+  m_LocalPosition: {x: 27.800005, y: -8.100015, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 362613144}
+  m_Father: {fileID: 244020612}
   m_LocalEulerAnglesHint: {x: -0.148, y: -86.703, z: 0.2}
 --- !u!23 &1384952471
 MeshRenderer:
@@ -23464,6 +23508,10 @@ PrefabInstance:
     - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
       propertyPath: m_Name
       value: bench desk (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: beb053fd370bff34db7214557d3b97fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26407,7 +26455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1597137189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28267,6 +28315,7 @@ MonoBehaviour:
   aoeCooldown: 10
   Abilityhole: {fileID: 0}
   cooldownSlider: {fileID: 194391528}
+  bomb: {fileID: 0}
 --- !u!114 &1663564226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28283,6 +28332,7 @@ MonoBehaviour:
   shieldActive: 0
   shieldPrefab: {fileID: 352610535}
   activateShieldKey: 121
+  Shatter: {fileID: 0}
 --- !u!114 &1663564227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28298,6 +28348,9 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1897191908717681953, guid: 3543519449a483f42aac03042337b86f, type: 3}
   firePoint: {fileID: 410875977}
   projectileSpeed: 10
+  slimeshot: {fileID: 0}
+  Player: {fileID: 0}
+  shootDelay: 1
 --- !u!114 &1663564228
 MonoBehaviour:
   m_ObjectHideFlags: 0

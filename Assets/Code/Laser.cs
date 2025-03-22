@@ -15,6 +15,7 @@ public class Laser : MonoBehaviour
     public GameObject[] Sleepblocks;
     public bool brigdefinal = false;
     public GameObject fixit;
+    public GameObject shutdownsfx;
     void Start()
     {
         CreateLaser();
@@ -89,7 +90,7 @@ public class Laser : MonoBehaviour
     public void DisableLaser()
     {
         isLaserActive = false;
-
+        shutdownsfx.GetComponent<AudioSource>().Play();
         // Disable all laser cubes
         foreach (var cube in laserCubes)
         {

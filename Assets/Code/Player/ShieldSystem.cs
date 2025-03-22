@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ShieldSystem : MonoBehaviour
 {
-    public int maxShieldHits = 3;  // Maximum hits the shield can take
+    public int maxShieldHits = 6;  // Maximum hits the shield can take
     private int shieldHitsRemaining;
     public bool shieldActive = false;  // Flag to check if the shield is active
     public GameObject shieldPrefab;  // Reference to the shield visual effect
     private GameObject activeShield;  // Holds the spawned shield visual
     public KeyCode activateShieldKey = KeyCode.Y;  // Key to activate the shield
-
+    public GameObject Shatter;  // Visual effect for shield hit
     private HeartSystem heartSystem;  // Reference to the HeartSystem
 
     private void Start()
@@ -83,6 +83,7 @@ public class ShieldSystem : MonoBehaviour
             {
                 // Deactivate the shield if it has taken all hits
                 DeactivateShield();
+                Shatter.GetComponent<AudioSource>().Play();
             }
         }
         else

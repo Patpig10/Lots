@@ -46,7 +46,7 @@ public class PlayerAbilities : MonoBehaviour
 
     Saving save;
     public Slider cooldownSlider;
-
+    public GameObject bomb; 
     private void Start()
     {
         save = GameObject.FindObjectOfType<Saving>();
@@ -174,6 +174,8 @@ public class PlayerAbilities : MonoBehaviour
             case Ability.AoE:
                 if (isAoEUnlocked && canUseAoE)
                 {
+                    bomb.GetComponent<AudioSource>().Play();
+
                     aoeAbility.AOE(); // Call the AoE method
                     StartCoroutine(AbilityCooldown("AoE", aoeCooldown));
                 }

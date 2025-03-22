@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4384938398369394145}
   - component: {fileID: 6990176166756682735}
   - component: {fileID: 7856270612310281514}
+  - component: {fileID: 8024759149247538078}
   m_Layer: 0
   m_Name: right
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956585990014269542}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1772a0a51a996849b71c48ba071afd7, type: 3}
   m_Name: 
@@ -70,9 +71,9 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3711817777724923665}
-        m_TargetAssemblyTypeName: GridPush, Assembly-CSharp
-        m_MethodName: MoveRight
+      - m_Target: {fileID: 8024759149247538078}
+        m_TargetAssemblyTypeName: pushanimation, Assembly-CSharp
+        m_MethodName: push
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -121,6 +122,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8024759149247538078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956585990014269542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39339796ff69ed04c89f606c446cfd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PlayerAnimator: {fileID: 0}
 --- !u!1 &1408944969903160757
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +148,7 @@ GameObject:
   - component: {fileID: 809503472009591727}
   - component: {fileID: 19282043440140451}
   - component: {fileID: 3500385922080227912}
+  - component: {fileID: 8958722879958861354}
   m_Layer: 0
   m_Name: foward
   m_TagString: Untagged
@@ -183,7 +199,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408944969903160757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1772a0a51a996849b71c48ba071afd7, type: 3}
   m_Name: 
@@ -191,9 +207,9 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3711817777724923665}
-        m_TargetAssemblyTypeName: GridPush, Assembly-CSharp
-        m_MethodName: MoveForward
+      - m_Target: {fileID: 8024759149247538078}
+        m_TargetAssemblyTypeName: pushanimation, Assembly-CSharp
+        m_MethodName: push
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -242,6 +258,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8958722879958861354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408944969903160757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39339796ff69ed04c89f606c446cfd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PlayerAnimator: {fileID: 0}
 --- !u!1 &2611400149315074902
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +422,8 @@ MonoBehaviour:
   movementSpeed: 5
   isMoving: 0
   stuckThreshold: 0.35
+  Player: {fileID: 0}
+  PlayerAnimator: {fileID: 0}
 --- !u!1 &3329265067385665755
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +436,7 @@ GameObject:
   - component: {fileID: 3140649813696166286}
   - component: {fileID: 1857045520103414596}
   - component: {fileID: 8041072271457373361}
+  - component: {fileID: 812185961767531066}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -454,7 +487,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3329265067385665755}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1772a0a51a996849b71c48ba071afd7, type: 3}
   m_Name: 
@@ -462,9 +495,9 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3711817777724923665}
-        m_TargetAssemblyTypeName: GridPush, Assembly-CSharp
-        m_MethodName: MoveBackward
+      - m_Target: {fileID: 8024759149247538078}
+        m_TargetAssemblyTypeName: pushanimation, Assembly-CSharp
+        m_MethodName: push
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -513,6 +546,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &812185961767531066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329265067385665755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39339796ff69ed04c89f606c446cfd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PlayerAnimator: {fileID: 0}
 --- !u!1 &4913351497312462971
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +572,7 @@ GameObject:
   - component: {fileID: 5320710660259607153}
   - component: {fileID: 1808511709293988441}
   - component: {fileID: 1133779740520821143}
+  - component: {fileID: 6678881286436591374}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -575,7 +623,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4913351497312462971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1772a0a51a996849b71c48ba071afd7, type: 3}
   m_Name: 
@@ -583,9 +631,9 @@ MonoBehaviour:
   interact:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3711817777724923665}
-        m_TargetAssemblyTypeName: GridPush, Assembly-CSharp
-        m_MethodName: MoveLeft
+      - m_Target: {fileID: 8024759149247538078}
+        m_TargetAssemblyTypeName: pushanimation, Assembly-CSharp
+        m_MethodName: push
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -634,6 +682,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6678881286436591374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913351497312462971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39339796ff69ed04c89f606c446cfd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PlayerAnimator: {fileID: 0}
 --- !u!1 &5454617468262984229
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +800,8 @@ MonoBehaviour:
   movementSpeed: 5
   isMoving: 0
   stuckThreshold: 0.000002
+  Player: {fileID: 0}
+  PlayerAnimator: {fileID: 0}
 --- !u!1 &8265257958760859193
 GameObject:
   m_ObjectHideFlags: 0

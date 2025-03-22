@@ -41,6 +41,7 @@ public class IceBossHealth : MonoBehaviour
     public GameObject hitVFX;
     public GameObject blockBurstEffect;
     public GameObject hitSFX;
+    public GameObject Shatter;
 
     private void Start()
     {
@@ -204,6 +205,7 @@ public class IceBossHealth : MonoBehaviour
     // Shield cooldown coroutine
     private IEnumerator ShieldCooldown()
     {
+        Shatter.GetComponent<AudioSource>().Play();
         isShieldOnCooldown = true;
         Debug.Log("Shield cooldown started!");
 
