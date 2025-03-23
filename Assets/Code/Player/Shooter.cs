@@ -10,7 +10,6 @@ public class Shooter : MonoBehaviour
     private HeartSystem heartSystem;  // Reference to the HeartSystem
     public GameObject slimeshot;
     public Animator Player;
-    public float shootDelay = 1f;  // Delay before shooting the projectile
 
     void Start()
     {
@@ -37,17 +36,7 @@ public class Shooter : MonoBehaviour
         Player.SetTrigger("Shoot");
 
         // Play the shooting sound
-
-        // Start the coroutine to delay the projectile instantiation
-        StartCoroutine(ShootAfterDelay());
-    }
-
-    private IEnumerator ShootAfterDelay()
-    {
         slimeshot.GetComponent<AudioSource>().Play();
-
-        // Wait for the specified delay
-        yield return new WaitForSeconds(shootDelay);
 
         // Check if the player has enough hearts to shoot
         if (heartSystem != null && heartSystem.GetCurrentLife() > 0)

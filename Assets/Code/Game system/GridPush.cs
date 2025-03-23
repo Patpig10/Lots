@@ -10,15 +10,15 @@ public class GridPush : MonoBehaviour
     public bool isMoving = false; // Check if the block is currently moving
     private float stuckTimer = 0f;    // Timer to detect if the block is stuck
     public float stuckThreshold = 1f; // How long the block can be stuck before taking action
-   // public GameObject Player;
-  //  public Animator PlayerAnimator;
+    public GameObject Player;
+   public Animator PlayerAnimator;
     void Start()
     {
         //Look for gameobject with the name Slime Knight
-      //  Player = GameObject.Find("Slime Knight");
+       Player = GameObject.Find("Slime Knight");
         //Get Slime Knight Animator
-       // PlayerAnimator = Player.GetComponent<Animator>();
-        // Populate the blocks array with all GrassBlock objects in the scene
+        PlayerAnimator = Player.GetComponent<Animator>();
+        //Populate the blocks array with all GrassBlock objects in the scene
         GrassBlock[] grassBlocks = FindObjectsOfType<GrassBlock>();
         gridBlocks = new Transform[grassBlocks.Length];
 
@@ -103,7 +103,7 @@ public class GridPush : MonoBehaviour
     // New functions for moving in specific directions
     public void MoveForward()
     {
-       // PlayerAnimator.SetTrigger("Push");
+        PlayerAnimator.SetTrigger("Push");
         if (!isMoving)
         {
             StartCoroutine(MoveBlock(Vector3.forward));
@@ -113,7 +113,7 @@ public class GridPush : MonoBehaviour
 
     public void MoveBackward()
     {
-        //PlayerAnimator.SetTrigger("Push");
+        PlayerAnimator.SetTrigger("Push");
         if (!isMoving)
         {
 
@@ -124,7 +124,7 @@ public class GridPush : MonoBehaviour
 
     public void MoveLeft()
     {
-       // PlayerAnimator.SetTrigger("Push");
+        PlayerAnimator.SetTrigger("Push");
 
         if (!isMoving)
         {
@@ -136,7 +136,7 @@ public class GridPush : MonoBehaviour
 
     public void MoveRight()
     {
-      //  PlayerAnimator.SetTrigger("Push");
+       PlayerAnimator.SetTrigger("Push");
         if (!isMoving)
         {
             

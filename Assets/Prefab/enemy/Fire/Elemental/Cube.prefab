@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 8915083132697771768}
   - component: {fileID: 1813194874404249538}
   - component: {fileID: 4681867741055100408}
+  - component: {fileID: 989476973412531644}
   m_Layer: 0
   m_Name: Flamber
   m_TagString: Enemy
@@ -193,6 +194,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 0}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!95 &4681867741055100408
 Animator:
   serializedVersion: 5
@@ -206,7 +210,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 998a8917896723a499906b546a96aaef, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -214,6 +218,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &989476973412531644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2865890245584075316}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea10c127f262a54fa79a4a032916dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6177189338585312435, guid: 8a2827816fe0349489a47d3088f9cf61, type: 3}
+  firePoint: {fileID: 2828797234586595452}
+  fireRate: 2
+  detectionRange: 5
+  player: {fileID: 0}
+  shootTowardPlayer: 1
+  iceshot: {fileID: 0}
 --- !u!1 &2919908199020734256
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +251,8 @@ GameObject:
   - component: {fileID: 8577563109009772064}
   - component: {fileID: 826719079998309057}
   - component: {fileID: 4531855155130916722}
+  - component: {fileID: 888461202059523822}
+  - component: {fileID: 6824545552766254386}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -357,17 +382,60 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2919908199020734256}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea10c127f262a54fa79a4a032916dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5950933977406893763, guid: f97c3334ed29fda42b88c31ea487d8ec, type: 3}
+  projectilePrefab: {fileID: 6177189338585312435, guid: 8a2827816fe0349489a47d3088f9cf61, type: 3}
   firePoint: {fileID: 2828797234586595452}
   fireRate: 2
-  detectionRange: 2.5
+  detectionRange: 5
   player: {fileID: 0}
   shootTowardPlayer: 1
+  iceshot: {fileID: 0}
+--- !u!114 &888461202059523822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919908199020734256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ff5abbc39541d4abfd53860c8340a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6177189338585312435, guid: 8a2827816fe0349489a47d3088f9cf61, type: 3}
+  firePoint: {fileID: 2828797234586595452}
+  fireRate: 2
+  detectionRange: 10
+  player: {fileID: 0}
+  shootTowardPlayer: 1
+  iceshot: {fileID: 0}
+  animator: {fileID: 0}
+  Flambertes: {fileID: 0}
+--- !u!95 &6824545552766254386
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919908199020734256}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 998a8917896723a499906b546a96aaef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5011602801751562671
 GameObject:
   m_ObjectHideFlags: 0

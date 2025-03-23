@@ -590,7 +590,6 @@ MonoBehaviour:
   fireAOEPrefab: {fileID: 3768390507257459567, guid: 9b3d5ebd4e8fa8c42a4da9fb72ec8b8d, type: 3}
   playerTransform: {fileID: 3102187623962432034}
   aoeSphere: {fileID: 8536097597229584789}
-  bomb: {fileID: 9169731577818248993}
 --- !u!114 &3503702038783203504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,7 +694,6 @@ MonoBehaviour:
   fireAOEPrefab: {fileID: 3768390507257459567, guid: 9b3d5ebd4e8fa8c42a4da9fb72ec8b8d, type: 3}
   playerTransform: {fileID: 3102187623962432034}
   aoeSphere: {fileID: 9169731577818248993}
-  bomb: {fileID: 5004508621275666682}
 --- !u!114 &363870265787054741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,12 +1899,12 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8670477005862867352}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: df5b03ea55c4c1547984a3d8e2cd1348, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

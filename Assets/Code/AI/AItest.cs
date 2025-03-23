@@ -12,8 +12,11 @@ public class AItest : MonoBehaviour
     public float rotationSpeed = 5f;      // Speed at which the AI rotates to face the target
 
     private Transform targetBlock;        // The next block to move towards
-    public bool isMoving = false;        // Check if movement is ongoing
+    private bool isMoving = false;        // Check if movement is ongoing
     private Queue<Transform> recentBlocks = new Queue<Transform>(); // Queue to track the last two visited blocks
+    private Transform currentBlock;       // The block the enemy is currently occupying
+
+    private static HashSet<Transform> occupiedBlocks = new HashSet<Transform>(); // Shared list of occupied blocks
 
     void Start()
     {
@@ -183,6 +186,14 @@ public class AItest : MonoBehaviour
 
         transform.position = targetPosition;  // Snap to the final target position
 
+        // Update block occupation
+        if (currentBlock != null)
+        {
+            ReleaseBlock(currentBlock); // Release the current block
+        }
+        OccupyBlock(targetBlock); // Occupy the new block
+        currentBlock = targetBlock;
+
         Debug.Log("Reached block: " + targetBlock.name);
 
         // Pause at the block
@@ -212,15 +223,7 @@ public class AItest : MonoBehaviour
     // Method to check if a block is occupied by an object tagged as "Enemy"
     private bool IsBlockOccupied(Transform block)
     {
-        Collider[] colliders = Physics.OverlapSphere(block.position, 0.1f); // Check for objects in the block's position
-        foreach (Collider collider in colliders)
-        {
-            if (collider.CompareTag("Enemy") || collider.CompareTag("Unpassable")) // If an object tagged "Enemy" or "Unpassable" is found, the block is occupied
-            {
-                return true;
-            }
-        }
-        return false;
+        return occupiedBlocks.Contains(block); // Check if the block is in the occupied list
     }
 
     // Method to check if the AI is colliding with an unpassable object
@@ -235,5 +238,17 @@ public class AItest : MonoBehaviour
             }
         }
         return false;
+    }
+
+    // Method to mark a block as occupied
+    private void OccupyBlock(Transform block)
+    {
+        occupiedBlocks.Add(block);
+    }
+
+    // Method to release a block
+    private void ReleaseBlock(Transform block)
+    {
+        occupiedBlocks.Remove(block);
     }
 }

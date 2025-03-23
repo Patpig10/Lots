@@ -7831,6 +7831,14 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 324166218}
     - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: hitSFX
       value: 
@@ -7907,6 +7915,11 @@ PrefabInstance:
 --- !u!4 &324166217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7852781812702330776, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+  m_PrefabInstance: {fileID: 324166216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &324166218 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4681867741055100408, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
   m_PrefabInstance: {fileID: 324166216}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &332954425
@@ -8317,6 +8330,14 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 332954427}
     - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: hitSFX
       value: 
@@ -8393,6 +8414,11 @@ PrefabInstance:
 --- !u!4 &332954426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7852781812702330776, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+  m_PrefabInstance: {fileID: 332954425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &332954427 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4681867741055100408, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
   m_PrefabInstance: {fileID: 332954425}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &333672448
@@ -26334,6 +26360,14 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1155846768}
     - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: hitSFX
       value: 
@@ -26410,6 +26444,11 @@ PrefabInstance:
 --- !u!4 &1155846767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7852781812702330776, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+  m_PrefabInstance: {fileID: 1155846766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1155846768 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4681867741055100408, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
   m_PrefabInstance: {fileID: 1155846766}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1156102558
@@ -32591,6 +32630,14 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: iceshot
+      value: 
+      objectReference: {fileID: 1623408604}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1366318396}
     - target: {fileID: 1813194874404249538, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: hitSFX
       value: 
@@ -32671,6 +32718,11 @@ PrefabInstance:
 --- !u!4 &1366318395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7852781812702330776, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+  m_PrefabInstance: {fileID: 1366318394}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1366318396 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4681867741055100408, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
   m_PrefabInstance: {fileID: 1366318394}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1372209746
@@ -35470,7 +35522,6 @@ MonoBehaviour:
   projectileSpeed: 10
   slimeshot: {fileID: 0}
   Player: {fileID: 0}
-  shootDelay: 1
 --- !u!114 &1479331966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50772,6 +50823,10 @@ PrefabInstance:
       propertyPath: iceshot
       value: 
       objectReference: {fileID: 1623408604}
+    - target: {fileID: 8720780997754693816, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9011653115019005756, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: player
       value: 
