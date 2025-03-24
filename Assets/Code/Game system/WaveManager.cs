@@ -63,6 +63,7 @@ public class WaveManager : MonoBehaviour
             Debug.Log("Wave " + (currentWave + 1) + " completed!");
             currentWave++;
 
+            // Only start intermission if this wasn't the last wave
             if (currentWave < 4)
             {
                 yield return StartCoroutine(Intermission());

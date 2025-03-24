@@ -6103,6 +6103,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
     - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: maxHealth
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: blockBurstEffect
       value: 
       objectReference: {fileID: 539204974212448436, guid: 0d085422696a7d94bbd88a09792c1106, type: 3}
@@ -7832,6 +7836,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1959593717}
     - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1479331958}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: iceshot
       value: 
       objectReference: {fileID: 1623408604}
@@ -8330,6 +8338,10 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1479331958}
     - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: iceshot
       value: 
@@ -26361,6 +26373,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1959593717}
     - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1479331958}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: iceshot
       value: 
       objectReference: {fileID: 1623408604}
@@ -32630,6 +32646,10 @@ PrefabInstance:
       propertyPath: blocks.Array.data[97]
       value: 
       objectReference: {fileID: 1959593717}
+    - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1479331958}
     - target: {fileID: 888461202059523822, guid: 7e430c2bc1b4ae6438634747bd3e64e3, type: 3}
       propertyPath: iceshot
       value: 
@@ -48387,6 +48407,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1438852897}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1479331956}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -50775,6 +50807,10 @@ PrefabInstance:
       propertyPath: hitVFX
       value: 
       objectReference: {fileID: 582503965734693648, guid: 9ea4c3af0cafa304fbfc0604d395686e, type: 3}
+    - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
+      propertyPath: maxHealth
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 5306197395422913920, guid: f8f2fb76e0216dd47801746b10321605, type: 3}
       propertyPath: blockBurstEffect
       value: 
