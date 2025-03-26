@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OrbManager : MonoBehaviour
 {
@@ -133,6 +134,9 @@ public class OrbManager : MonoBehaviour
             StartCoroutine(Blast()); // Start the AOE effect
            // ResetOrbs(); // Reset orbs after the blast
             ActivateNextOrb(); // Activate the next orb immediately after reset
+
+            //after 3 seconds reset current scene
+            StartCoroutine(RestartScene());
         }
         else
         {
@@ -156,7 +160,11 @@ public class OrbManager : MonoBehaviour
             Debug.Log("No active orbs detected. Shield remains down.");
         }
     }
-
+    public IEnumerator RestartScene()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     private bool HasActiveOrb()
     {
         foreach (GameObject orb in orbs)
