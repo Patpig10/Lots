@@ -21614,6 +21614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  boom: 0
   savingSystem: {fileID: 0}
 --- !u!33 &7745625802685694536
 MeshFilter:
