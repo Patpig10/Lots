@@ -55,6 +55,12 @@ public class HatShopDisplay : MonoBehaviour
                 return hatShop.forestCost;
             case "Funny":
                 return hatShop.funnyCost;
+                case "Sleep":
+                return hatShop.sleepCost;
+            case "Forge":
+                return hatShop.forgeCost;
+            case "Fancy":
+                return hatShop.fancyCost;
             default:
                 Debug.LogWarning($"Unknown hat name: {hatName}");
                 return 0; // Default cost if the hat name is not recognized

@@ -14,6 +14,9 @@ public class HatShop : MonoBehaviour
     public int crownCost = 30000;
     public int forestCost = 350;
     public int funnyCost = 1000000;
+    public int sleepCost = 100;
+    public int fancyCost = 100;
+    public int forgeCost = 100;
 
 
 
@@ -98,6 +101,50 @@ public class HatShop : MonoBehaviour
                     }
                     break;
 
+                    case "Sleep":
+                    if (!hatManager.havesleep)
+                    {
+                        hatManager.havesleep = true;
+                        coins -= hatCost; // Deduct the cost of the hat
+                        save.maxcoins = coins; // Update the saved coin balance
+                        save.SavePlayerData(); // Save the updated data
+                        Debug.Log("Sleep hat purchased!");
+                    }
+                    else
+                    {
+                        Debug.Log("You already own the Sleep hat!");
+                    }
+                    break;
+
+                    case "Fancy":
+                    if (!hatManager.havefancy)
+                    {
+                        hatManager.havefancy = true;
+                        coins -= hatCost; // Deduct the cost of the hat
+                        save.maxcoins = coins; // Update the saved coin balance
+                        save.SavePlayerData(); // Save the updated data
+                        Debug.Log("Fancy hat purchased!");
+                    }
+                    else
+                    {
+                        Debug.Log("You already own the Fancy hat!");
+                    }
+                    break;
+
+                    case "Forge":
+                    if (!hatManager.haveforge)
+                    {
+                        hatManager.haveforge = true;
+                        coins -= hatCost; // Deduct the cost of the hat
+                        save.maxcoins = coins; // Update the saved coin balance
+                        save.SavePlayerData(); // Save the updated data
+                        Debug.Log("Forge hat purchased!");
+                    }
+                    else
+                    {
+                        Debug.Log("You already own the Forge hat!");
+                    }
+                    break;
                 default:
                     Debug.Log("Invalid hat name!");
                     break;
@@ -125,6 +172,21 @@ public class HatShop : MonoBehaviour
     public void BuyFunnyHat()
     {
         BuyHat("Funny", funnyCost);
+    }
+
+    public void BuySleepHat()
+    {
+        BuyHat("Sleep", sleepCost);
+    }
+
+    public void BuyFancyHat()
+    {
+        BuyHat("Fancy", fancyCost);
+    }
+
+    public void BuyForgeHat()
+    {
+        BuyHat("Forge", forgeCost);
     }
 
     // Method to equip a hat
@@ -170,6 +232,41 @@ public class HatShop : MonoBehaviour
                 else
                 {
                     Debug.Log("You don't own the Funny hat!");
+                }
+                break;
+
+            case "Sleep":
+                if (hatManager.havesleep)
+                {
+                    hatManager.WearHat(hatName);
+                    Debug.Log("Sleep hat equipped!");
+                }
+                else
+                {
+                    Debug.Log("You don't own the Sleep hat!");
+                }
+                break;
+
+                case "Fancy":
+                if (hatManager.havefancy)
+                {
+                    hatManager.WearHat(hatName);
+                    Debug.Log("Fancy hat equipped!");
+                }
+                else
+                {
+                    Debug.Log("You don't own the Fancy hat!");
+                }
+                break;
+                case "Forge":
+                if (hatManager.haveforge)
+                {
+                    hatManager.WearHat(hatName);
+                    Debug.Log("Forge hat equipped!");
+                }
+                else
+                {
+                    Debug.Log("You don't own the Forge hat!");
                 }
                 break;
 

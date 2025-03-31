@@ -10,11 +10,17 @@ public class HatUnlockButton : MonoBehaviour
     public GameObject Crown;
     public GameObject Forest;
     public GameObject Funny;
+    public GameObject Sleep;
+    public GameObject Fancy;
+    public GameObject Forge;
 
     public GameObject Defaultshadow;
     public GameObject Crownshadow;
     public GameObject Forestshadow;
     public GameObject Funnyshadow;
+    public GameObject Sleepshadow;
+    public GameObject Fancyshadow;
+    public GameObject Forgeshadow;
 
     public void Awake()
     {
@@ -64,6 +70,39 @@ public class HatUnlockButton : MonoBehaviour
         {
             Funnyshadow.SetActive(false);
             Funny.SetActive(true);
+        }
+
+        if (hatManager.havesleep == false)
+        {
+            Sleepshadow.SetActive(true);
+            Sleep.SetActive(false);
+        }
+        else
+        {
+            Sleepshadow.SetActive(false);
+            Sleep.SetActive(true);
+        }
+
+        if (hatManager.havefancy == false)
+        {
+            Fancyshadow.SetActive(true);
+            Fancy.SetActive(false);
+        }
+        else
+        {
+            Fancyshadow.SetActive(false);
+            Fancy.SetActive(true);
+        }
+
+        if (hatManager.haveforge == false)
+        {
+            Forgeshadow.SetActive(true);
+            Forge.SetActive(false);
+        }
+        else
+        {
+            Forgeshadow.SetActive(false);
+            Forge.SetActive(true);
         }
 
 
