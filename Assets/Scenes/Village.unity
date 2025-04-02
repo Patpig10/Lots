@@ -18170,7 +18170,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!1 &551300455
 GameObject:
   m_ObjectHideFlags: 0
@@ -27965,7 +27964,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!54 &872841172
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28080,7 +28078,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!23 &872841175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39474,6 +39471,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4306657955337378079, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
+      propertyPath: Ice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306657955337378079, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
+      propertyPath: Grass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306657955337378079, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
       propertyPath: searchRadius
       value: 5
       objectReference: {fileID: 0}
@@ -39785,7 +39790,6 @@ MonoBehaviour:
   projectileSpeed: 10
   slimeshot: {fileID: 0}
   Player: {fileID: 0}
-  shootDelay: 1
 --- !u!114 &1282812773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39834,6 +39838,9 @@ MonoBehaviour:
   crownCost: 30000
   forestCost: 350
   funnyCost: 1000000
+  sleepCost: 100
+  fancyCost: 100
+  forgeCost: 100
 --- !u!1 &1286053412
 GameObject:
   m_ObjectHideFlags: 0
@@ -47535,7 +47542,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!1 &1592404389
 GameObject:
   m_ObjectHideFlags: 0
@@ -49542,6 +49548,9 @@ MonoBehaviour:
   crownCost: 30000
   forestCost: 350
   funnyCost: 1000000
+  sleepCost: 100
+  fancyCost: 100
+  forgeCost: 100
 --- !u!114 &1673913781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55696,7 +55705,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!1 &1853052427
 GameObject:
   m_ObjectHideFlags: 0
@@ -60880,7 +60888,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!54 &2007082462
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60995,7 +61002,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!23 &2007082465
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64630,7 +64636,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!54 &2144164053
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64745,7 +64750,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!23 &2144164056
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66847,7 +66851,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!114 &3919229365274833402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66914,7 +66917,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!1 &3931827926547981735
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,13 +8,21 @@ public class GridMovement : MonoBehaviour
     public float rotationSpeed = 180f;    // Speed of the rotation in degrees per second
     public List<Transform> blocks;        // List of block transforms representing grid cells
     public Animator animator;              // Animator reference
+    public AudioSource GrassS;
+    public AudioSource IceS;
+    public AudioSource StoneS;
+    public AudioSource WoodS;
+
 
     private Transform targetBlock;         // The target block to move towards
     public bool isMoving = false;         // Check if movement is ongoing
     private Quaternion targetRotation;     // The target rotation to smoothly rotate towards
     public float searchRadius = 1.5f;      // Define the radius for searching blocks (adjacent blocks only)
     private bool isKnockbackActive = false; // Separate knockback state
-
+    public bool Grass;
+    public bool Ice;
+    public bool Stone;
+    public bool Wood;
     void Start()
     {
         // Initialize the blocks list
@@ -139,6 +147,18 @@ public class GridMovement : MonoBehaviour
     public IEnumerator MoveToBlock()
     {
         isMoving = true;
+        if(Grass == true)
+        {
+           GrassS.Play();
+        }
+        if (Ice == true)
+        {
+            IceS.Play();
+        }
+        if (Stone == true)
+        {
+            StoneS.Play();
+        }
 
         if (targetBlock == null)
         {

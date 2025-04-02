@@ -24053,6 +24053,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4306657955337378079, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
+      propertyPath: Wood
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306657955337378079, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
+      propertyPath: Grass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306657955337378079, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
       propertyPath: searchRadius
       value: 5
       objectReference: {fileID: 0}
