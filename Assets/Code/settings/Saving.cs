@@ -108,7 +108,42 @@ public class Saving : MonoBehaviour
         SavePlayerData();
         Debug.Log("Game reset to default values!");
     }
+    public void Expogame()
+    {
+        // Step 1: Delete the save file if it exists
+        if (File.Exists(saveFilePath))
+        {
+            File.Delete(saveFilePath);
+            Debug.Log("Save file deleted!");
+            File.Delete(Application.dataPath + "forest primness");
+            // UnityEditor.AssetDatabase.Refresh();
+        }
 
+        // Step 2: Reset all player data to default values
+        maxSavedLife = 13;
+        weaponSavedDamage = 80;
+        levelUnlocked = 12;
+        maxcoins = 100000;
+        isShootUnlocked = true;
+        isShieldUnlocked = true;
+        isAoEUnlocked = true;
+        Grassemblem = DEFAULT_GRASSEMBLEM;
+        fire = DEFAULT_fire;
+        ice = true;
+        Arena = true;
+        Arenaclear = true;
+        Iceemblem = DEFAULT_IceEMBLEM;
+        Fireemblem = DEFAULT_FireEMBLEM;
+        storyButton2Destroyed = DEFAULT_storyButton2Destroyed;
+        storyButton3Destroyed = DEFAULT_storyButton3Destroyed;
+        generalButtonDestroyed = DEFAULT_generalButtonDestroyed;
+        Final = true;
+
+
+        // Step 3: Save the default values to a new save file
+        SavePlayerData();
+        Debug.Log("Game reset to default values!");
+    }
     // Automatically save player data when the application quits
     private void OnApplicationQuit()
     {

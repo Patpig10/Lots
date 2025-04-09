@@ -23,6 +23,7 @@ public class Cutscene : MonoBehaviour
     [Header("Canvases")]
     public GameObject canvasOne; // Assign Canvas One in the Inspector
     public GameObject canvasTwo; // Assign Canvas Two in the Inspector
+    private Coroutine cutsceneCoroutine; // Reference to the running cutscene coroutine
 
     // Static variable to track if the cutscene has been played in the current session
     private static bool hasCutscenePlayed = false;
@@ -38,21 +39,56 @@ public class Cutscene : MonoBehaviour
         // Check if the cutscene has already been played
         if (!hasCutscenePlayed)
         {
-            // Start the cutscene
-            StartCoroutine(PlayCutscene());
+            // Start the cutscene and store the reference
+            cutsceneCoroutine = StartCoroutine(PlayCutscene());
             hasCutscenePlayed = true; // Mark the cutscene as played
         }
         else
         {
             // If the cutscene has already been played, skip to Canvas Two
-            if (canvasOne != null)
-            {
-                canvasOne.SetActive(false);
-            }
-            if (canvasTwo != null)
-            {
-                canvasTwo.SetActive(true);
-            }
+            SkipCutscene();
+        }
+    }
+    public void SkipCutscene()
+    {
+        // If the cutscene is playing
+        if (cutsceneCoroutine != null)
+        {
+            StopCoroutine(cutsceneCoroutine);
+            cutsceneCoroutine = null;
+        }
+
+        // Immediately fade out all images
+        SetImageAlpha(mapImage, 0);
+        SetImageAlpha(weaponsImage, 0);
+        SetImageAlpha(slimeImage, 0);
+
+        // Hide all images
+        mapImage.gameObject.SetActive(false);
+        weaponsImage.gameObject.SetActive(false);
+        slimeImage.gameObject.SetActive(false);
+
+        // Clear the text
+        storyText.text = "";
+
+        // Switch to Canvas Two
+        if (canvasOne != null)
+        {
+            canvasOne.SetActive(false);
+        }
+        if (canvasTwo != null)
+        {
+            canvasTwo.SetActive(true);
+        }
+    }
+
+    private void SetImageAlpha(Image image, float alpha)
+    {
+        if (image != null)
+        {
+            Color color = image.color;
+            color.a = alpha;
+            image.color = color;
         }
     }
 
