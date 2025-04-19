@@ -42,10 +42,24 @@ public class GridMovement : MonoBehaviour
 
         if (!isMoving)
         {
-            float horizontalInput = Input.GetAxisRaw("Horizontal");
-            float verticalInput = Input.GetAxisRaw("Vertical");
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
 
+            float deadzone = 0.5f; // Adjust this threshold as needed
             Vector3 input = Vector3.zero;
+
+            // Only process input if above deadzone to avoid accidental joystick drift
+            if (Mathf.Abs(horizontalInput) > deadzone && Mathf.Abs(verticalInput) < deadzone)
+            {
+                input = new Vector3(Mathf.Sign(horizontalInput), 0, 0);  // Horizontal only
+            }
+            else if (Mathf.Abs(verticalInput) > deadzone && Mathf.Abs(horizontalInput) < deadzone)
+            {
+                input = new Vector3(0, 0, Mathf.Sign(verticalInput));  // Vertical only
+            }
+
+
+           // Vector3 input = Vector3.zero;
 
             // Enforce single-axis movement (no diagonal movement)
             if (Mathf.Abs(horizontalInput) > 0 && Mathf.Abs(verticalInput) == 0)

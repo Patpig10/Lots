@@ -30,7 +30,13 @@ public class DialogueTrigger : MonoBehaviour
             ShowText(); // Show the dialogue text when "F" is pressed
         }
 
-        if(isPlayerInRange && Tutrial == true)
+        if (isPlayerInRange && Input.GetButtonDown("Interact"))
+        {
+            ShowText(); // Show the dialogue text when "F" is pressed
+        }
+
+
+        if (isPlayerInRange && Tutrial == true)
         {
             ShowText();
         }

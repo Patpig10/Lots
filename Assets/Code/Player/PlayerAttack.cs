@@ -18,6 +18,11 @@ public class PlayerAttack : MonoBehaviour
         {
             TriggerAttackAnimation();
         }
+
+        else if (Input.GetButtonDown("Attack2"))
+            {
+            TriggerAttackAnimation();
+        }
     }
 
     void TriggerAttackAnimation()
