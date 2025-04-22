@@ -72,6 +72,16 @@ public class Setting : MonoBehaviour
             else
                 PauseGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton7)
+)
+        {
+            if (isPaused)
+                ResumeGame();
+            else
+                PauseGame();
+        }
+
     }
 
     void SetResolution(int index)
@@ -132,6 +142,7 @@ public class Setting : MonoBehaviour
         isPaused = true;
         Heart.SetActive(false);
         box.SetActive(false);
+        CursorManager.Instance.ShowCursor();
     }
 
     public void ResumeGame()
@@ -142,6 +153,8 @@ public class Setting : MonoBehaviour
         isPaused = false;
         Heart.SetActive(true);
         box.SetActive(true);
+        CursorManager.Instance.HideCursor(); // 
+
     }
     public void Quit()
     {

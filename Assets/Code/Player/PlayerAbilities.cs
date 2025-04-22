@@ -88,11 +88,24 @@ public class PlayerAbilities : MonoBehaviour
             SelectAbility(Ability.AoE);
         }
 
+        if (Input.GetButtonDown("SwitchAbilityLeft"))
+            SwitchAbility(-1);
+        else if (Input.GetButtonDown("SwitchAbilityRight"))
+            SwitchAbility(1);
+
+
         // Use the selected ability
         if (Input.GetKeyDown(KeyCode.Q))
         {
             UseAbility();
         }
+
+        // Use the selected ability
+        if (Input.GetButtonDown("Shoot"))
+        {
+            UseAbility();
+        }
+
 
         // Update the ability panel every frame
         UpdateAbilityPanel();
@@ -133,6 +146,24 @@ public class PlayerAbilities : MonoBehaviour
         {
             Debug.Log("This ability is locked!");
         }
+    }
+    private void SwitchAbility(int direction)
+    {
+        List<Ability> unlockedAbilities = new List<Ability>();
+
+        if (isShootUnlocked) unlockedAbilities.Add(Ability.Shoot);
+        if (isShieldUnlocked) unlockedAbilities.Add(Ability.Shield);
+        if (isAoEUnlocked) unlockedAbilities.Add(Ability.AoE);
+
+        if (unlockedAbilities.Count == 0) return;
+
+        int currentIndex = unlockedAbilities.IndexOf(selectedAbility);
+        int newIndex = (currentIndex + direction + unlockedAbilities.Count) % unlockedAbilities.Count;
+        selectedAbility = unlockedAbilities[newIndex];
+
+        Debug.Log("Switched to: " + selectedAbility);
+        UpdateAbilityPanel();
+        UpdateSliderVisibility();
     }
 
     private void UseAbility()

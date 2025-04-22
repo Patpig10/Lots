@@ -30,7 +30,7 @@ public class DialogueTrigger : MonoBehaviour
             ShowText(); // Show the dialogue text when "F" is pressed
         }
 
-        if (isPlayerInRange && Input.GetButtonDown("Interact"))
+        if (isPlayerInRange && Input.GetButtonDown("Talk"))
         {
             ShowText(); // Show the dialogue text when "F" is pressed
         }
@@ -51,6 +51,7 @@ public class DialogueTrigger : MonoBehaviour
             textUI.gameObject.SetActive(true);         // Enable the text UI
             nameUI.gameObject.SetActive(true);         // Enable the name UI
             Textbox.gameObject.SetActive(true);        // Enable the textbox UI
+           CursorManager.Instance.ShowCursor(); // 
         }
     }
 
@@ -59,6 +60,8 @@ public class DialogueTrigger : MonoBehaviour
         textUI.gameObject.SetActive(false);            // Hide the text UI
         nameUI.gameObject.SetActive(false);            // Hide the name UI
         Textbox.gameObject.SetActive(false);           // Hide the textbox UI
+        CursorManager.Instance.HideCursor();
+
     }
 
     public void OnOptionChosen(int choiceIndex)
@@ -74,12 +77,13 @@ public class DialogueTrigger : MonoBehaviour
         if (nextDialogue == null)
         {
             Debug.Log("End of dialogue");
-            HideText(); // Hide the dialogue when there are no more dialogues
+            HideText();
+            CursorManager.Instance.HideCursor(); // <-- Only now!
             return;
         }
 
         currentDialogue = nextDialogue;
-        ShowText(); // Show the next dialogue text
+        ShowText();
     }
 
     // Unity method called when another object enters the trigger collider
