@@ -34,5 +34,11 @@ public class InteractF : MonoBehaviour
             Debug.Log("Player pressed F to interact.");
             interact.Invoke(); // Invoke assigned UnityEvent
         }
+
+        if (canInteract && Input.GetButtonDown("Talk"))
+        {
+            Debug.Log("Player pressed F to interact.");
+            interact.Invoke(); // Invoke assigned UnityEvent
+        }
     }
 }

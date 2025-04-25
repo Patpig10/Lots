@@ -49621,6 +49621,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 1786257440}
+  Controller: 0
+  titleScreen: 1
 --- !u!1001 &1674438670
 PrefabInstance:
   m_ObjectHideFlags: 0

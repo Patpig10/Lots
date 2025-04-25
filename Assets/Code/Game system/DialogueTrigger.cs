@@ -7,38 +7,40 @@ using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    [SerializeField] public DSDialogueSO startingDialogue;
+    [SerializeField] public TextMeshProUGUI textUI;
+    [SerializeField] public TextMeshProUGUI nameUI;
+    [SerializeField] public Image Textbox;
 
-    [SerializeField] public DSDialogueSO startingDialogue;    // Starting dialogue object
-    [SerializeField] public TextMeshProUGUI textUI;           // Text UI for the dialogue text
-    [SerializeField] public TextMeshProUGUI nameUI;           // Text UI for the speaker's name
-    [SerializeField] public Image Textbox;                    // UI Image for the dialogue textbox
-
-    private DSDialogueSO currentDialogue;                     // Current dialogue being shown
-    public bool isPlayerInRange = false;                      // Track if the player is inside the trigger area
+    private DSDialogueSO currentDialogue;
+    public bool isPlayerInRange = false;
     public bool Tutrial = false;
+
+    private float inputCooldown = 0.25f; // Cooldown between allowed inputs
+    private float lastInputTime = -1f;
+
     private void Awake()
     {
-        currentDialogue = startingDialogue; // Initialize the starting dialogue
-        HideText();                         // Ensure the text is hidden at the start
+        currentDialogue = startingDialogue;
+        HideText();
     }
 
     private void Update()
     {
-        // Check if the player presses the "F" key and is within the trigger area
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
+        // Only allow input if enough time has passed
+        if (Time.time - lastInputTime > inputCooldown)
         {
-            ShowText(); // Show the dialogue text when "F" is pressed
-        }
+            if (isPlayerInRange && (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Talk")))
+            {
+                ShowText();
+                lastInputTime = Time.time;
+            }
 
-        if (isPlayerInRange && Input.GetButtonDown("Talk"))
-        {
-            ShowText(); // Show the dialogue text when "F" is pressed
-        }
-
-
-        if (isPlayerInRange && Tutrial == true)
-        {
-            ShowText();
+            if (isPlayerInRange && Tutrial)
+            {
+                ShowText();
+                lastInputTime = Time.time;
+            }
         }
     }
 
@@ -46,22 +48,21 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (currentDialogue != null)
         {
-            textUI.text = currentDialogue.Text;        // Display the dialogue text
-            nameUI.text = currentDialogue.Speaker;     // Display the speaker's name
-            textUI.gameObject.SetActive(true);         // Enable the text UI
-            nameUI.gameObject.SetActive(true);         // Enable the name UI
-            Textbox.gameObject.SetActive(true);        // Enable the textbox UI
-           CursorManager.Instance.ShowCursor(); // 
+            textUI.text = currentDialogue.Text;
+            nameUI.text = currentDialogue.Speaker;
+            textUI.gameObject.SetActive(true);
+            nameUI.gameObject.SetActive(true);
+            Textbox.gameObject.SetActive(true);
+            CursorManager.Instance.ShowCursor();
         }
     }
 
     public void HideText()
     {
-        textUI.gameObject.SetActive(false);            // Hide the text UI
-        nameUI.gameObject.SetActive(false);            // Hide the name UI
-        Textbox.gameObject.SetActive(false);           // Hide the textbox UI
+        textUI.gameObject.SetActive(false);
+        nameUI.gameObject.SetActive(false);
+        Textbox.gameObject.SetActive(false);
         CursorManager.Instance.HideCursor();
-
     }
 
     public void OnOptionChosen(int choiceIndex)
@@ -78,7 +79,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             Debug.Log("End of dialogue");
             HideText();
-            CursorManager.Instance.HideCursor(); // <-- Only now!
+            CursorManager.Instance.HideCursor();
             return;
         }
 
@@ -86,28 +87,27 @@ public class DialogueTrigger : MonoBehaviour
         ShowText();
     }
 
-    // Unity method called when another object enters the trigger collider
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Check if the object is tagged as "Player"
+        if (other.CompareTag("Player"))
         {
-            isPlayerInRange = true;     // Set the flag to true when the player enters
+            isPlayerInRange = true;
         }
     }
 
-    // Unity method called when another object exits the trigger collider
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) // Check if the object is tagged as "Player"
+        if (other.CompareTag("Player"))
         {
-            isPlayerInRange = false;    // Set the flag to false when the player exits
-            currentDialogue = startingDialogue; // Reset the dialogue to the starting point
-            HideText();                 // Hide the dialogue text when the player leaves the area
+            isPlayerInRange = false;
+            currentDialogue = startingDialogue;
+            HideText();
         }
     }
+
     public void Reset()
     {
-        currentDialogue = startingDialogue; // Reset the dialogue to the starting point
-        HideText();                         // Hide the dialogue text
+        currentDialogue = startingDialogue;
+        HideText();
     }
 }

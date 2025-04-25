@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class StoryButtonManager : MonoBehaviour
 {
-    public GameObject storyButton2; // GameObject for condition 1
-    public GameObject storyButton3; // GameObject for condition 2
-    public GameObject generalButton; // GameObject for general condition
+    public GameObject storyButton2;
+    public GameObject storyButton3;
+    public GameObject generalButton;
 
-    public Saving saving; // Reference to the Saving class
+    public Saving saving;
 
     void Start()
     {
-        // Find the Saving component in the scene
         saving = FindObjectOfType<Saving>();
 
         if (saving == null)
@@ -22,98 +21,83 @@ public class StoryButtonManager : MonoBehaviour
             return;
         }
 
-        // Check conditions and activate buttons
-        CheckButtons();
-    }
-
-    public void Update()
-    {
-        // Check conditions and activate buttons
-        CheckButtons();
         LoadButtonStates();
+        CheckButtons();
     }
 
     void LoadButtonStates()
     {
-        // Load the saved state for each button
         if (saving.storyButton2Destroyed)
         {
-            storyButton2.SetActive(false); // Keep the button inactive if it was destroyed
+            storyButton2.SetActive(false);
         }
 
         if (saving.storyButton3Destroyed)
         {
-            storyButton3.SetActive(false); // Keep the button inactive if it was destroyed
+            storyButton3.SetActive(false);
         }
 
         if (saving.generalButtonDestroyed)
         {
-            generalButton.SetActive(false); // Keep the button inactive if it was destroyed
+            generalButton.SetActive(false);
         }
     }
 
     void CheckButtons()
     {
-        // Condition 1: levelUnlocked == 5 && Grassemblem == true
-        if (saving.levelUnlocked == 5 && saving.Grassemblem)
+        if (saving.levelUnlocked == 5 && saving.Grassemblem && !saving.storyButton2Destroyed)
         {
-            storyButton2.SetActive(true); // Ensure the GameObject is active
-            storyButton2.GetComponent<Button>().onClick.AddListener(() => OnButtonPressed(storyButton2));
+            ActivateButton(storyButton2, () => OnButtonPressed(storyButton2, 2));
         }
         else
         {
-            storyButton2.SetActive(false); // Hide the GameObject if the condition is not met
+            storyButton2.SetActive(false);
         }
 
-        // Condition 2: Iceemblem == true && Fireemblem == true
-        if (saving.Iceemblem && saving.Fireemblem)
+        if (saving.Iceemblem && saving.Fireemblem && !saving.storyButton3Destroyed)
         {
-            storyButton3.SetActive(true); // Ensure the GameObject is active
-            storyButton3.GetComponent<Button>().onClick.AddListener(() => OnButtonPressed(storyButton3));
+            ActivateButton(storyButton3, () => OnButtonPressed(storyButton3, 3));
         }
         else
         {
-            storyButton3.SetActive(false); // Hide the GameObject if the condition is not met
+            storyButton3.SetActive(false);
         }
 
-        // General Condition: levelUnlocked >= 2
-        if (saving.levelUnlocked >= 2)
+        if (saving.levelUnlocked >= 2 && !saving.generalButtonDestroyed)
         {
-            generalButton.SetActive(true); // Ensure the GameObject is active
-            generalButton.GetComponent<Button>().onClick.AddListener(() => OnButtonPressed(generalButton));
+            ActivateButton(generalButton, () => OnButtonPressed(generalButton, 1));
         }
         else
         {
-            generalButton.SetActive(false); // Hide the GameObject if the condition is not met
+            generalButton.SetActive(false);
         }
     }
 
-    void OnButtonPressed(GameObject buttonObject)
+    void ActivateButton(GameObject button, UnityEngine.Events.UnityAction action)
     {
-        // Destroy the entire GameObject when the button is pressed
+        button.SetActive(true);
+        Button btnComponent = button.GetComponent<Button>();
+        btnComponent.onClick.RemoveAllListeners();
+        btnComponent.onClick.AddListener(action);
+    }
+
+    void OnButtonPressed(GameObject buttonObject, int buttonID)
+    {
         Destroy(buttonObject);
 
-        // Save the game state (optional, if you want to persist the button state)
-        saving.SavePlayerData();
+        switch (buttonID)
+        {
+            case 1:
+                saving.generalButtonDestroyed = true;
+                break;
+            case 2:
+                saving.storyButton2Destroyed = true;
+                break;
+            case 3:
+                saving.storyButton3Destroyed = true;
+                break;
+        }
 
-    }
-
-    public void OnDestroy1()
-    {
-        saving.generalButtonDestroyed = true;
-        saving.SavePlayerData();
-    }
-
-    public void OnDestroy2()
-    {
-        saving.storyButton2Destroyed = true;
-        saving.SavePlayerData();
-    }
-
-    public void OnDestroy3()
-    {
-        saving.storyButton3Destroyed = true;
         saving.SavePlayerData();
     }
 }
-
