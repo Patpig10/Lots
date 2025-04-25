@@ -21,10 +21,13 @@ public class Chest : MonoBehaviour
     void Update()
     {
         // Check if the player presses the 'F' key and is near the chest
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.F))
+        if (isPlayerNearby && (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Talk")))
         {
             OpenChest(); // Call the function to open the chest
         }
+
+
+
     }
 
     private void OpenChest()

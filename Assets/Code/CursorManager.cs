@@ -17,10 +17,20 @@ public class CursorManager : MonoBehaviour
 
     private void Awake()
     {
+        if (titleScreen == false &&  Controller == false)
+        { 
+            hideAll();
+        }
+
+        if (titleScreen == false && Controller == true)
+        {
+            hideAll();
+        }
+
         if (Instance == null)
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject); // Optional
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -44,9 +54,31 @@ public class CursorManager : MonoBehaviour
         isControllerConnected = Input.GetJoystickNames().Any(name => !string.IsNullOrEmpty(name));
         Controller = isControllerConnected;
 
-        UpdateCursorVisibility();
+        if (!titleScreen)
+        {
+            hideAll();
+
+        }
+
+
+        if (titleScreen)
+        {
+            UpdateCursorVisibility();
+
+        }
+
     }
 
+   
+ IEnumerator Start()
+    {
+        yield return null; // Wait one frame
+        if (!titleScreen)
+        {
+            Cursor.visible = false;
+            SetCursorAlpha(0f);
+        }
+    }
     private void Update()
     {
         bool controllerNowConnected = Input.GetJoystickNames().Any(name => !string.IsNullOrEmpty(name));
@@ -100,6 +132,18 @@ public class CursorManager : MonoBehaviour
     }
 
     public void HideCursor()
+    {
+        if (Controller)
+        {
+            SetCursorAlpha(0f);
+        }
+        else
+        {
+            Cursor.visible = false;
+        }
+    }
+
+    public void hideAll()
     {
         if (Controller)
         {

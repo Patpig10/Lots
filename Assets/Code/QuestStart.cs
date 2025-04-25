@@ -18,7 +18,7 @@ public class QuestStart : MonoBehaviour
         // Check if the player entered the trigger area
         if (other.CompareTag("Player"))
         {
-           // questStartUI.SetActive(true);
+            //  questStartUI.SetActive(true);
         }
     }
 
