@@ -29,8 +29,11 @@ public class HatShopDisplay : MonoBehaviour
             // Activate the text box
             textBox.SetActive(true);
             isShopping = true;
+            CursorManager.Instance.ShowCursor();
 
         }
+
+       
     }
 
     private void OnTriggerExit(Collider other)
@@ -41,6 +44,8 @@ public class HatShopDisplay : MonoBehaviour
             // Deactivate the text box
             textBox.SetActive(false);
             isShopping = false;
+            CursorManager.Instance.HideCursor();
+
         }
     }
 

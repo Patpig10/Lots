@@ -12,7 +12,7 @@ public class LichFinalCutscene : MonoBehaviour
     public Image spectralSwordsImage;
     public Image owlSkeletonImage;
     public Image townHallImage;
-    public Image endingImage; // Added for the ending picture
+    public Image endingImage;
 
     [Header("Text")]
     public TextMeshProUGUI dialogueText;
@@ -22,74 +22,90 @@ public class LichFinalCutscene : MonoBehaviour
     public float textDisplayTime = 4.0f;
 
     [Header("Music")]
-    public AudioSource battleMusic; // Music during the battle
-    public AudioSource townHallMusic; // Music during the town hall ceremony
-    public AudioSource endingMusic; // Music during the ending
+    public AudioSource battleMusic;
+    public AudioSource townHallMusic;
+    public AudioSource endingMusic;
 
     [Header("Canvases")]
-    public GameObject mainCanvas; // Single canvas for everything
+    public GameObject mainCanvas;
+
+    private Coroutine cutsceneCoroutine;
+    private bool skipRequested = false;
 
     private void Start()
     {
-        // Ensure the ending image is hidden at the start
         if (endingImage != null)
             endingImage.gameObject.SetActive(false);
 
-        // Start the battle music
         if (battleMusic != null)
             battleMusic.Play();
 
-        // Start the cutscene
-        StartCoroutine(PlayCutscene());
+        cutsceneCoroutine = StartCoroutine(PlayCutscene());
+    }
+
+    public void skipre()
+    {
+
+        if (!skipRequested)
+        {
+            skipRequested = true;
+            if (cutsceneCoroutine != null)
+            {
+                StopCoroutine(cutsceneCoroutine);
+                StartCoroutine(SkipToEnding());
+            }
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S)) // Press 'S' to skip
+        {
+            if (!skipRequested)
+            {
+                skipRequested = true;
+                if (cutsceneCoroutine != null)
+                {
+                    StopCoroutine(cutsceneCoroutine);
+                    StartCoroutine(SkipToEnding());
+                }
+            }
+        }
     }
 
     IEnumerator PlayCutscene()
     {
-        // Ensure the Lich image is visible at the start
         lichImage.gameObject.SetActive(true);
 
-        // Lich's last stand
         yield return ShowDialogue("Lich", "Ugh… Don’t think you’ve won just yet.");
         yield return ShowDialogue("Lich", "You pest!");
         yield return ShowDialogue("Lich", "This place… shall be your tomb!");
 
-        // Lich summons spectral swords
         spectralSwordsImage.gameObject.SetActive(true);
         lichImage.gameObject.SetActive(false);
         yield return new WaitForSeconds(1f);
         yield return ShowDialogue("Lich", "What?! How… how is this possible?!");
 
-        // Sword Hero appears (using the Owl Skeleton image)
         owlSkeletonImage.gameObject.SetActive(true);
         spectralSwordsImage.gameObject.SetActive(false);
 
         yield return ShowDialogue("???", "Old friend… you, of all people, should know the answer to that.");
         yield return ShowDialogue("Lich", "No… It can’t be… You—you should be dead! Sword Hero!");
-
         yield return ShowDialogue("Sword Hero", "Slime, you’ve done well. Every battle you’ve fought, every challenge you’ve overcome… I have witnessed it all.");
         yield return ShowDialogue("Sword Hero", "You have the heart of a true hero.");
-
         yield return ShowDialogue("Lich", "Damn you… Damn you all!");
         yield return ShowDialogue("Sword Hero", "Lich, our tale ends here. Let this be the path for new legends to rise.");
 
-        // Lich defeated, fade out the Lich image and deactivate it
-        yield return StartCoroutine(FadeImage(lichImage, 1, 0)); // Fade out and deactivate
-
-        // Fade the screen to white and show "3 Days Later" text
+        yield return StartCoroutine(FadeImage(lichImage, 1, 0));
         yield return StartCoroutine(FadeScreenToWhite());
 
-        // Transition to town hall
         townHallImage.gameObject.SetActive(true);
         owlSkeletonImage.gameObject.SetActive(false);
 
-
-        // Switch to town hall music
         if (battleMusic != null)
             battleMusic.Stop();
         if (townHallMusic != null)
             townHallMusic.Play();
 
-        // Town hall ceremony
         yield return ShowDialogue("Princess", "Today, we stand united in victory over the darkness that threatened our world.");
         yield return ShowDialogue("Princess", "We mourn those we lost, but through this battle, we have shattered the walls that once divided us.");
         yield return ShowDialogue("Princess", "And for that, we owe everything… to our slimy friend.");
@@ -104,19 +120,16 @@ public class LichFinalCutscene : MonoBehaviour
         yield return ShowDialogue("Flame Empress", "Hahaha! Next time, we fight! My hammer’s eager to test your strength.");
         yield return ShowDialogue("Ice Queen", "Hmph… If you ever need anything… You may come to me.");
 
-        // Show the ending image
         endingImage.gameObject.SetActive(true);
         slimeImage.gameObject.SetActive(false);
 
-        yield return StartCoroutine(FadeImage(endingImage, 0, 1)); // Fade in the ending image
+        yield return StartCoroutine(FadeImage(endingImage, 0, 1));
 
-        // Switch to ending music
         if (townHallMusic != null)
             townHallMusic.Stop();
         if (endingMusic != null)
             endingMusic.Play();
 
-        // Wait for a moment before ending
         yield return new WaitForSeconds(5f);
     }
 
@@ -141,18 +154,15 @@ public class LichFinalCutscene : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the alpha is set to the final value
         color.a = endAlpha;
         image.color = color;
 
-        // If fading out, deactivate the image
         if (endAlpha == 0)
             image.gameObject.SetActive(false);
     }
 
     IEnumerator FadeScreenToWhite()
     {
-        // Create a white fade screen
         Image fadeScreen = new GameObject("FadeScreen").AddComponent<Image>();
         fadeScreen.color = new Color(1, 1, 1, 0);
         fadeScreen.rectTransform.SetParent(mainCanvas.transform, false);
@@ -161,10 +171,9 @@ public class LichFinalCutscene : MonoBehaviour
         fadeScreen.rectTransform.offsetMin = Vector2.zero;
         fadeScreen.rectTransform.offsetMax = Vector2.zero;
 
-        // Create "3 Days Later" text
         TextMeshProUGUI daysLaterText = new GameObject("DaysLaterText").AddComponent<TextMeshProUGUI>();
         daysLaterText.text = "3 Days Later";
-        daysLaterText.color = new Color(0, 0, 0, 0); // Start fully transparent
+        daysLaterText.color = new Color(0, 0, 0, 0);
         daysLaterText.alignment = TextAlignmentOptions.Center;
         daysLaterText.fontSize = 48;
         daysLaterText.rectTransform.SetParent(mainCanvas.transform, false);
@@ -172,10 +181,8 @@ public class LichFinalCutscene : MonoBehaviour
         daysLaterText.rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
         daysLaterText.rectTransform.anchoredPosition = Vector2.zero;
 
-        // Fade to white
         yield return StartCoroutine(FadeImage(fadeScreen, 0, 1));
 
-        // Fade in "3 Days Later" text
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
         {
@@ -184,14 +191,41 @@ public class LichFinalCutscene : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the text is fully visible
         daysLaterText.color = new Color(0, 0, 0, 1);
 
-        // Wait for a moment
         yield return new WaitForSeconds(2f);
 
-        // Destroy the fade screen and text
         Destroy(fadeScreen.gameObject);
         Destroy(daysLaterText.gameObject);
+    }
+
+    IEnumerator SkipToEnding()
+    {
+        // Clean up: deactivate all images
+        lichImage.gameObject.SetActive(false);
+        swordHeroImage.gameObject.SetActive(false);
+        slimeImage.gameObject.SetActive(false);
+        spectralSwordsImage.gameObject.SetActive(false);
+        owlSkeletonImage.gameObject.SetActive(false);
+        townHallImage.gameObject.SetActive(false);
+
+        // Stop any playing music
+        if (battleMusic != null)
+            battleMusic.Stop();
+        if (townHallMusic != null)
+            townHallMusic.Stop();
+
+        // Set the ending screen
+        endingImage.gameObject.SetActive(true);
+        endingImage.color = new Color(1, 1, 1, 1);
+
+        // Change music to ending music
+ 
+            endingMusic.Play();
+
+        // Show final text
+        dialogueText.text = "The End.";
+
+        yield return null;
     }
 }
