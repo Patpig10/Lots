@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ottocombat
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: Ottocombat
-  <Text>k__BackingField: Use " E" to attck, those with shield you can't be attacked
+  <Text>k__BackingField: Use " E" to attack, those with shield you can't be attacked
     in the front.
   <Speaker>k__BackingField: Otto
   <Choices>k__BackingField:

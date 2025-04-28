@@ -27,19 +27,6 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 97.6, y: 76.8}
     <ImageData>k__BackingField: 
     <ImagePath>k__BackingField: 
-  - <ID>k__BackingField: 82e45722-f658-4790-814c-5a744cb8cea8
-    <Name>k__BackingField: Ottocombat
-    <Text>k__BackingField: Use " E" to attck, those with shield you can't be attacked
-      in the front.
-    <Speaker>k__BackingField: Otto
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 953fe868-2a3d-44d5-a086-ac7ecf3deb92
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 915.2, y: 76.8}
-    <ImageData>k__BackingField: 
-    <ImagePath>k__BackingField: 
   - <ID>k__BackingField: 953fe868-2a3d-44d5-a086-ac7ecf3deb92
     <Name>k__BackingField: Ottoend
     <Text>k__BackingField: Just stay safe, slime.
@@ -52,10 +39,23 @@ MonoBehaviour:
     <Position>k__BackingField: {x: 1766.3999, y: 76.8}
     <ImageData>k__BackingField: 
     <ImagePath>k__BackingField: 
+  - <ID>k__BackingField: 82e45722-f658-4790-814c-5a744cb8cea8
+    <Name>k__BackingField: Ottocombat
+    <Text>k__BackingField: Use " E" to attack, those with shield you can't be attacked
+      in the front.
+    <Speaker>k__BackingField: Otto
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 953fe868-2a3d-44d5-a086-ac7ecf3deb92
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 917.60004, y: 76.8}
+    <ImageData>k__BackingField: 
+    <ImagePath>k__BackingField: 
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - Otto2
-  - Ottocombat
   - Ottoend
+  - Ottocombat
   <OldGroupedNodeNames>k__BackingField:
     list: []

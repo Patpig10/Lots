@@ -42582,7 +42582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8857e8ffea0488b49a2c2efd4b1c23e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainHealth: 6000
+  mainHealth: 3500
   healthBar: {fileID: 473200549}
   brain: {fileID: 1662623032}
   emblem: {fileID: 165845902}

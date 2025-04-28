@@ -146,7 +146,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!114 &5591182271757431877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +164,7 @@ MonoBehaviour:
   detectionRange: 6.74
   player: {fileID: 0}
   shootTowardPlayer: 1
+  iceshot: {fileID: 0}
 --- !u!54 &2182753751501053346
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -369,7 +369,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!114 &163327437368102802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +387,7 @@ MonoBehaviour:
   detectionRange: 6.74
   player: {fileID: 0}
   shootTowardPlayer: 1
+  iceshot: {fileID: 0}
 --- !u!54 &3214994565048803107
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -610,6 +610,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &3509545324954621118
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -770,6 +773,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &2399097315528559120
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -974,7 +980,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!114 &8471950229121744531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,6 +998,7 @@ MonoBehaviour:
   detectionRange: 6.74
   player: {fileID: 0}
   shootTowardPlayer: 1
+  iceshot: {fileID: 0}
 --- !u!54 &8906135592361079646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1166,7 +1172,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!114 &1944295205651312632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,6 +1190,7 @@ MonoBehaviour:
   detectionRange: 6.74
   player: {fileID: 0}
   shootTowardPlayer: 1
+  iceshot: {fileID: 0}
 --- !u!54 &831372383049614697
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1358,7 +1364,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!114 &733531215738502955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1377,6 +1382,7 @@ MonoBehaviour:
   detectionRange: 6.74
   player: {fileID: 0}
   shootTowardPlayer: 1
+  iceshot: {fileID: 0}
 --- !u!54 &5906244647210384180
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1537,6 +1543,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &8910359910048469332
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1609,7 +1618,7 @@ GameObject:
   - component: {fileID: 1700765684277101283}
   - component: {fileID: 6253088373194428651}
   - component: {fileID: 330289938277802841}
-  - component: {fileID: 445876172826324065}
+  - component: {fileID: 5247454552709683889}
   m_Layer: 0
   m_Name: Snowshooter
   m_TagString: Untagged
@@ -1729,6 +1738,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &330289938277802841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1756,7 +1768,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &445876172826324065
+--- !u!114 &5247454552709683889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1765,11 +1777,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3703353947080322091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdbe1665f98cf6c4586982d74619c9b5, type: 3}
+  m_Script: {fileID: 11500000, guid: b64f62769b5738745a44d302841f35b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 6
-  knockbackForce: 5
+  damageAmount: 1
+  knockbackForce: 0
+  hitCooldown: 2
 --- !u!1 &3721713404324699588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,7 +2090,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!114 &7954798920830275007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,6 +2108,7 @@ MonoBehaviour:
   detectionRange: 6.74
   player: {fileID: 0}
   shootTowardPlayer: 1
+  iceshot: {fileID: 0}
 --- !u!54 &806398977218165059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2137,7 +2150,7 @@ GameObject:
   - component: {fileID: 2994008392735120662}
   - component: {fileID: 3969801701465683275}
   - component: {fileID: 1950014588029616885}
-  - component: {fileID: 2433409839266937861}
+  - component: {fileID: 6041278012461999910}
   m_Layer: 0
   m_Name: Snowshooter
   m_TagString: Untagged
@@ -2257,6 +2270,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &1950014588029616885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2284,7 +2300,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &2433409839266937861
+--- !u!114 &6041278012461999910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2293,11 +2309,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5310527536064517833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdbe1665f98cf6c4586982d74619c9b5, type: 3}
+  m_Script: {fileID: 11500000, guid: b64f62769b5738745a44d302841f35b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 6
-  knockbackForce: 5
+  damageAmount: 1
+  knockbackForce: 0
+  hitCooldown: 2
 --- !u!1 &5457045239121436757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,7 +2476,6 @@ MonoBehaviour:
   pauseDuration: 1
   detectionRadius: 10
   rotationSpeed: 5
-  isMoving: 0
 --- !u!95 &4567404223719774274
 Animator:
   serializedVersion: 5
@@ -2526,6 +2542,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &5240159063164866563
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2686,6 +2705,9 @@ MonoBehaviour:
   potionSpawnChance: 0.2
   coinSpawnChance: 0.5
   coin: {fileID: 5869853544394079560, guid: 4f8824a1f5f55eb45963f9b0bb6dc7a5, type: 3}
+  hitVFX: {fileID: 0}
+  blockBurstEffect: {fileID: 0}
+  hitSFX: {fileID: 0}
 --- !u!54 &5370330150034566056
 Rigidbody:
   m_ObjectHideFlags: 0

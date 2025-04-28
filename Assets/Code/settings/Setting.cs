@@ -11,7 +11,8 @@ public class Setting : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     public TMP_Dropdown qualityDropdown;
     public Toggle fullscreenToggle;
-    public GameObject settingsPanel;  // The panel holding the settings UI
+    public Toggle vsyncToggle; // <-- New VSync toggle
+    public GameObject settingsPanel;
 
     private Resolution[] resolutions;
     private bool isPaused = false;
@@ -20,12 +21,10 @@ public class Setting : MonoBehaviour
 
     void Start()
     {
-        // Hide the settings panel at the start
         settingsPanel.SetActive(false);
         Heart.SetActive(true);
         box.SetActive(true);
 
-        // Initialize and populate resolutions (unique by width/height)
         resolutions = Screen.resolutions
             .Select(res => new Resolution { width = res.width, height = res.height })
             .Distinct()
@@ -34,7 +33,6 @@ public class Setting : MonoBehaviour
         resolutionDropdown.ClearOptions();
         resolutionDropdown.AddOptions(resolutions.Select(r => $"{r.width}x{r.height}").ToList());
 
-        // Check and populate quality levels
         string[] qualityNames = QualitySettings.names;
         if (qualityNames.Length > 1)
         {
@@ -46,61 +44,57 @@ public class Setting : MonoBehaviour
             Debug.LogWarning("Only one quality level found. Add more levels in Project Settings > Quality.");
         }
 
-        // Set UI elements to match current settings
         resolutionDropdown.value = GetCurrentResolutionIndex();
         resolutionDropdown.RefreshShownValue();
         qualityDropdown.value = QualitySettings.GetQualityLevel();
         qualityDropdown.RefreshShownValue();
         fullscreenToggle.isOn = Screen.fullScreen;
 
-        // Add listeners to apply and save changes immediately
+        vsyncToggle.isOn = QualitySettings.vSyncCount > 0;
+
         resolutionDropdown.onValueChanged.AddListener(index => SetResolution(index));
         qualityDropdown.onValueChanged.AddListener(index => SetQuality(index));
         fullscreenToggle.onValueChanged.AddListener(isFullscreen => SetFullscreen(isFullscreen));
+        vsyncToggle.onValueChanged.AddListener(isVSyncOn => SetVSync(isVSyncOn)); // <-- Listen to VSync toggle
 
-        // Load saved settings on startup
+        // Load saved settings
         LoadSettings();
     }
 
     void Update()
     {
-        // Toggle settings menu when ESC is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
         {
             if (isPaused)
                 ResumeGame();
             else
                 PauseGame();
         }
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton7)
-)
-        {
-            if (isPaused)
-                ResumeGame();
-            else
-                PauseGame();
-        }
-
     }
 
     void SetResolution(int index)
     {
         Resolution res = resolutions[index];
         Screen.SetResolution(res.width, res.height, Screen.fullScreen);
-        PlayerPrefs.SetInt("Resolution", index); // Save instantly
+        PlayerPrefs.SetInt("Resolution", index);
     }
 
     void SetQuality(int index)
     {
         QualitySettings.SetQualityLevel(index);
-        PlayerPrefs.SetInt("Quality", index); // Save instantly
+        PlayerPrefs.SetInt("Quality", index);
     }
 
     void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
-        PlayerPrefs.SetInt("Fullscreen", isFullscreen ? 1 : 0); // Save instantly
+        PlayerPrefs.SetInt("Fullscreen", isFullscreen ? 1 : 0);
+    }
+
+    void SetVSync(bool isVSyncOn)
+    {
+        QualitySettings.vSyncCount = isVSyncOn ? 1 : 0; // 1 = VSync ON, 0 = OFF
+        PlayerPrefs.SetInt("VSync", isVSyncOn ? 1 : 0);
     }
 
     int GetCurrentResolutionIndex()
@@ -110,7 +104,7 @@ public class Setting : MonoBehaviour
             if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
                 return i;
         }
-        return 0; // Default to the first option if no match is found
+        return 0;
     }
 
     public void LoadSettings()
@@ -132,13 +126,19 @@ public class Setting : MonoBehaviour
             fullscreenToggle.isOn = isFullscreen;
             Screen.fullScreen = isFullscreen;
         }
+
+        if (PlayerPrefs.HasKey("VSync"))
+        {
+            bool isVSyncOn = PlayerPrefs.GetInt("VSync") == 1;
+            vsyncToggle.isOn = isVSyncOn;
+            QualitySettings.vSyncCount = isVSyncOn ? 1 : 0;
+        }
     }
 
     void PauseGame()
     {
-        // Show settings panel and pause the game
         settingsPanel.SetActive(true);
-        Time.timeScale = 0f;  // Freeze game time
+        Time.timeScale = 0f;
         isPaused = true;
         Heart.SetActive(false);
         box.SetActive(false);
@@ -147,25 +147,16 @@ public class Setting : MonoBehaviour
 
     public void ResumeGame()
     {
-        // Hide settings panel and resume the game
         settingsPanel.SetActive(false);
-        Time.timeScale = 1f;  // Resume game time
+        Time.timeScale = 1f;
         isPaused = false;
         Heart.SetActive(true);
         box.SetActive(true);
-        CursorManager.Instance.HideCursor(); // 
-
+        CursorManager.Instance.HideCursor();
     }
+
     public void Quit()
     {
-        // If we are running in a standalone build of the game
-
         Application.Quit();
-
-
-
-        //UnityEditor.EditorApplication.isPlaying = false;
-        // UnityEditor.EditorApplication.isPlaying = false;
-
     }
 }
