@@ -13,7 +13,6 @@ public class GridMovement : MonoBehaviour
     public AudioSource StoneS;
     public AudioSource WoodS;
 
-
     private Transform targetBlock;         // The target block to move towards
     public bool isMoving = false;         // Check if movement is ongoing
     private Quaternion targetRotation;     // The target rotation to smoothly rotate towards
@@ -23,6 +22,7 @@ public class GridMovement : MonoBehaviour
     public bool Ice;
     public bool Stone;
     public bool Wood;
+
     void Start()
     {
         // Initialize the blocks list
@@ -40,60 +40,98 @@ public class GridMovement : MonoBehaviour
         if (isKnockbackActive)
             return;
 
-        if (!isMoving)
+        // Get left trigger value (returns 0-1)
+        float leftTriggerValue = Input.GetAxis("Control1");
+
+        // Check if either Left Shift is pressed OR left trigger is pressed past threshold
+        bool isRotatingOnly = Input.GetButton("Control") || leftTriggerValue > 0.5f;
+
+        if (isRotatingOnly)
         {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
-
-            float deadzone = 0.5f; // Adjust this threshold as needed
-            Vector3 input = Vector3.zero;
-
-            // Only process input if above deadzone to avoid accidental joystick drift
-            if (Mathf.Abs(horizontalInput) > deadzone && Mathf.Abs(verticalInput) < deadzone)
-            {
-                input = new Vector3(Mathf.Sign(horizontalInput), 0, 0);  // Horizontal only
-            }
-            else if (Mathf.Abs(verticalInput) > deadzone && Mathf.Abs(horizontalInput) < deadzone)
-            {
-                input = new Vector3(0, 0, Mathf.Sign(verticalInput));  // Vertical only
-            }
-
-
-           // Vector3 input = Vector3.zero;
-
-            // Enforce single-axis movement (no diagonal movement)
-            if (Mathf.Abs(horizontalInput) > 0 && Mathf.Abs(verticalInput) == 0)
-            {
-                input = new Vector3(horizontalInput, 0, 0);  // Only horizontal movement
-            }
-            else if (Mathf.Abs(verticalInput) > 0 && Mathf.Abs(horizontalInput) == 0)
-            {
-                input = new Vector3(0, 0, verticalInput);  // Only vertical movement
-            }
-
-            if (input != Vector3.zero)
-            {
-                RotatePlayerSmooth(input);
-
-                // Find the nearest block and check for unpassable blocks
-                if (FindNearestBlock(input))
-                {
-                    if (animator != null)
-                    {
-                        animator.SetTrigger("Move");
-                    }
-
-                    Debug.Log("Moving to block: " + targetBlock.name);
-                    StartCoroutine(MoveToBlock());
-                }
-                else
-                {
-                    Debug.Log("No valid block found in direction: " + input);
-                }
-            }
+            Debug.Log("Rotating only - Control: " + Input.GetButton("Control") +
+                    ", Trigger: " + leftTriggerValue);
+            HandleShiftRotation();
+        }
+        else if (!isMoving)
+        {
+            HandleNormalMovement();
         }
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+
+    private void HandleShiftRotation()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        // Only process input if there's significant input to avoid accidental rotation
+        if (Mathf.Abs(horizontalInput) > 0.1f || Mathf.Abs(verticalInput) > 0.1f)
+        {
+            Vector3 input = Vector3.zero;
+
+            // Prioritize the stronger input axis
+            if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
+            {
+                input = new Vector3(Mathf.Sign(horizontalInput), 0, 0);
+            }
+            else
+            {
+                input = new Vector3(0, 0, Mathf.Sign(verticalInput));
+            }
+
+            RotatePlayerSmooth(input);
+        }
+    }
+
+    private void HandleNormalMovement()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        float deadzone = 0.5f; // Adjust this threshold as needed
+        Vector3 input = Vector3.zero;
+
+        // Only process input if above deadzone to avoid accidental joystick drift
+        if (Mathf.Abs(horizontalInput) > deadzone && Mathf.Abs(verticalInput) < deadzone)
+        {
+            input = new Vector3(Mathf.Sign(horizontalInput), 0, 0);  // Horizontal only
+        }
+        else if (Mathf.Abs(verticalInput) > deadzone && Mathf.Abs(horizontalInput) < deadzone)
+        {
+            input = new Vector3(0, 0, Mathf.Sign(verticalInput));  // Vertical only
+        }
+
+        // Enforce single-axis movement (no diagonal movement)
+        if (Mathf.Abs(horizontalInput) > 0 && Mathf.Abs(verticalInput) == 0)
+        {
+            input = new Vector3(horizontalInput, 0, 0);  // Only horizontal movement
+        }
+        else if (Mathf.Abs(verticalInput) > 0 && Mathf.Abs(horizontalInput) == 0)
+        {
+            input = new Vector3(0, 0, verticalInput);  // Only vertical movement
+        }
+
+        if (input != Vector3.zero)
+        {
+            RotatePlayerSmooth(input);
+
+            // Find the nearest block and check for unpassable blocks
+            if (FindNearestBlock(input))
+            {
+                if (animator != null)
+                {
+                    animator.SetTrigger("Move");
+                }
+
+                Debug.Log("Moving to block: " + targetBlock.name);
+                StartCoroutine(MoveToBlock());
+            }
+            else
+            {
+                Debug.Log("No valid block found in direction: " + input);
+            }
+        }
     }
 
     private void RotatePlayerSmooth(Vector3 input)
@@ -111,6 +149,7 @@ public class GridMovement : MonoBehaviour
 
         targetRotation = Quaternion.Euler(0, targetAngle, 0);
     }
+
     public bool FindNearestBlock(Vector3 direction)
     {
         float minDistance = float.MaxValue;
@@ -157,13 +196,12 @@ public class GridMovement : MonoBehaviour
         return false; // No valid block found
     }
 
-
     public IEnumerator MoveToBlock()
     {
         isMoving = true;
-        if(Grass == true)
+        if (Grass == true)
         {
-           GrassS.Play();
+            GrassS.Play();
         }
         if (Ice == true)
         {
@@ -246,5 +284,12 @@ public class GridMovement : MonoBehaviour
         }
 
         Debug.Log("Blocks list updated. Total blocks: " + blocks.Count);
+    }
+
+    // Helper method to detect gamepad connection
+    private bool IsGamepadConnected()
+    {
+        string[] joysticks = Input.GetJoystickNames();
+        return joysticks.Length > 0 && !string.IsNullOrEmpty(joysticks[0]);
     }
 }

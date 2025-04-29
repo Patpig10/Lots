@@ -617,6 +617,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Gamepad",
+            "id": "49ac8abb-579b-4aba-90e0-fdd312350855",
+            "actions": [
+                {
+                    "name": "Control1",
+                    "type": "Button",
+                    "id": "bd95b09b-e67b-40f3-a2a8-8108db51b09f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "79b1ba4d-44c2-4fa4-9af0-659710183774",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Control1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
