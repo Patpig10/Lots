@@ -86,6 +86,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/credit.unity
     guid: 1f32082dfaa79674b9ce9ffe597405ba
+  - enabled: 1
+    path: Assets/Scenes/Startcut.unity
+    guid: 6ed9c30e7f6e7164092485ee451cc6dd
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 290a6e6411d135049940bec2237b8938, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

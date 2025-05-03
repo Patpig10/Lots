@@ -104,4 +104,11 @@ public class Levelmenu : MonoBehaviour
     {
         LoadLevel(4);
     }
+
+    public void Startscence()
+    {
+        // Load the first level when the game starts
+        LoadLevel(22);
+    }
 }
+
