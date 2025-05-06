@@ -6375,7 +6375,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 7eb929196a5853c4ead0bc24141f079c, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 1ed2895b09edd404d9088da8b491a605, type: 2}
 --- !u!4 &327299022
 Transform:
   m_ObjectHideFlags: 0
@@ -12710,6 +12710,7 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 562088531}
   qualityDropdown: {fileID: 1136128562}
   fullscreenToggle: {fileID: 1921322720}
+  vsyncToggle: {fileID: 0}
   settingsPanel: {fileID: 1790799627}
   Heart: {fileID: 424308421}
   box: {fileID: 150640964}

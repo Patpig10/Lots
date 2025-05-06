@@ -1612,6 +1612,7 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 1998761002}
   qualityDropdown: {fileID: 582376519}
   fullscreenToggle: {fileID: 1814492434}
+  vsyncToggle: {fileID: 0}
   settingsPanel: {fileID: 417877804}
   Heart: {fileID: 1706784578}
   box: {fileID: 1450127483}
@@ -9932,7 +9933,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 7eb929196a5853c4ead0bc24141f079c, type: 2}
+  sharedProfile: {fileID: 11400000, guid: e6fdb097615ed6d42bcf63052a15ee38, type: 2}
 --- !u!4 &508844632
 Transform:
   m_ObjectHideFlags: 0
@@ -35162,6 +35163,10 @@ PrefabInstance:
     - target: {fileID: 4163380551894788369, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306657955337378079, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
+      propertyPath: Wood
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306657955337378079, guid: 95750545f310f474a87cf24f02079bbf, type: 3}
       propertyPath: Grass

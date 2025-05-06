@@ -211,6 +211,10 @@ public class GridMovement : MonoBehaviour
         {
             StoneS.Play();
         }
+        if (Wood == true)
+        {
+            WoodS.Play();
+        }
 
         if (targetBlock == null)
         {

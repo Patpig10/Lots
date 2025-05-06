@@ -19,6 +19,7 @@ public class Shop : MonoBehaviour
     {
         save = GameObject.FindObjectOfType<Saving>();
         coins = save.maxcoins;  // Set the player's coins to the amount saved in the SaveData object
+        weapon.damage = save.weaponSavedDamage;  // Make sure you have this variable in your Saving script!
 
     }
 
