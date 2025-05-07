@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e021b4c809a781e468c2988c016ebbea, type: 3}
   m_Name: ColorLookup
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -53,8 +53,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.33608308
-          value: 0.34574127
+          time: 0.27964097
+          value: 0.27064687
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
     m_Value: {r: 0.86415094, g: 0.86415094, b: 0.86415094, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: 38.4
+    m_Value: 49.2
 --- !u!114 &-5936376757599693156
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -322,10 +322,10 @@ MonoBehaviour:
     m_Value: {x: 1, y: 1, z: 1, w: 0.059779644}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.16465633}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.29743642}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.118510485}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.014938175}
 --- !u!114 &-3657005306927593209
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -397,19 +397,19 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 9.76
+    m_Value: 3.03
   intensity:
     m_OverrideState: 1
-    m_Value: 5.07
+    m_Value: 9.63
   scatter:
     m_OverrideState: 1
-    m_Value: 0.687
+    m_Value: 0.41
   clamp:
     m_OverrideState: 1
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0, b: 0, a: 1}
   highQualityFiltering:
     m_OverrideState: 1
     m_Value: 1
@@ -420,11 +420,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 6
   dirtTexture:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {fileID: 0}
     dimension: 1
   dirtIntensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -476,7 +476,7 @@ MonoBehaviour:
     m_Value: 30.92
   gaussianMaxRadius:
     m_OverrideState: 1
-    m_Value: 0.987
+    m_Value: 1.183
   highQualitySampling:
     m_OverrideState: 1
     m_Value: 1
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   intensity:
     m_OverrideState: 0
     m_Value: 0

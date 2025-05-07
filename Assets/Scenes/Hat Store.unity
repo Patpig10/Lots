@@ -14671,7 +14671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd820bb93888184eb4cd913a87303a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hatName: Sleep
+  hatName: Fancy
   textBox: {fileID: 375299182}
   hatInfoText: {fileID: 21606939}
   hatShop: {fileID: 0}
@@ -20266,7 +20266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd820bb93888184eb4cd913a87303a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hatName: Sleep
+  hatName: Funny
   textBox: {fileID: 1349138696}
   hatInfoText: {fileID: 1618336226}
   hatShop: {fileID: 0}

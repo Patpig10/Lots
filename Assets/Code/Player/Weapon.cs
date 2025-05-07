@@ -60,9 +60,13 @@ public class Weapon : MonoBehaviour
         {
             if (boom)
             {
-                fire.TakeDamage(damage*3);
+                fire.TakeDamage(damage*2);
             }
-            fire.TakeDamage(damage); // Deal damage to the dummy
+            else
+            {
+                fire.TakeDamage(damage); // Deal damage to the dummy
+            }
+           // fire.TakeDamage(damage); // Deal damage to the dummy
             return; // Exit the method after dealing damage
         }
 
@@ -102,9 +106,13 @@ public class Weapon : MonoBehaviour
         {
             if (boom)
             {
-                bossSegment.TakeDamage(damage*3);
+                bossSegment.TakeDamage(damage);
             }
-            bossSegment.TakeDamage(damage); // Deal damage to the boss segment
+
+            else
+            {
+                bossSegment.TakeDamage(damage); // Deal damage to the boss segment
+            }
         }
 
         IceBossHealth iceBossHealth = other.GetComponent<IceBossHealth>();
@@ -113,9 +121,13 @@ public class Weapon : MonoBehaviour
 
             if (boom)
             {
-                iceBossHealth.ApplyDamage(damage*4);
+                iceBossHealth.ApplyDamage(damage);
             }
-            iceBossHealth.ApplyDamage(damage);
+
+            else
+            {
+                iceBossHealth.ApplyDamage(damage);
+            }
         }
 
        
