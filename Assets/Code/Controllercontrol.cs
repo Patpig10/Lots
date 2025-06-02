@@ -11,13 +11,19 @@ public class Controllercontrol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bool gamepad = cursor.Controller; // Check if the gamepad is used
+       if(cursor.Controller == true)
+        { gamepad = true; } // Set gamepad to true if the controller is connected
+
+       if(cursor.Controller == false)
+        { gamepad = false; } 
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (cursor.Controller == true)
+        if (gamepad == true)
         {
             conrollerinc.SetActive(true); // Activate the player GameObject
         }
